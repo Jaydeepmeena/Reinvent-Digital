@@ -24,7 +24,7 @@ export default function CTASection({
           className="relative isolate overflow-hidden rounded-[1.75rem] bg-ink px-6 py-14 text-center sm:rounded-[2rem] sm:px-12 sm:py-20 lg:py-24"
         >
           <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-dark [mask-image:radial-gradient(ellipse_60%_70%_at_50%_0%,black,transparent)]" />
-          <div className={`pointer-events-none absolute left-1/2 top-0 -z-10 aspect-square w-[46rem] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full ${glow} blur-3xl`} />
+          <div className={`pointer-events-none absolute left-1/2 top-0 -z-10 aspect-square w-[36rem] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full will-change-transform ${glow} blur-2xl`} />
           <motion.div
             aria-hidden="true"
             className="pointer-events-none absolute -bottom-24 -left-16 -z-10 h-56 w-56 rounded-full border border-lime/20"

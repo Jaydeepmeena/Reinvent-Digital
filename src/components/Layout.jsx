@@ -61,7 +61,7 @@ export default function Layout() {
   if (reduceMotion) return page;
 
   return (
-    <ReactLenis root options={{ lerp: 0.1, anchors: { offset: NAV_OFFSET }, autoRaf: true }}>
+    <ReactLenis root options={{ lerp: 0.14, anchors: { offset: NAV_OFFSET }, autoRaf: true }}>
       {page}
     </ReactLenis>
   );

@@ -1,5 +1,5 @@
-import { useEffect, useId } from "react";
-import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useEffect, useId, useRef } from "react";
+import { motion, useInView, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { EASE } from "./motion/easing";
 
 const SPRING = { stiffness: 70, damping: 15, mass: 0.8 };
@@ -8,6 +8,8 @@ const CENTER = { transformBox: "fill-box", transformOrigin: "50% 50%" };
 
 export default function RobotDoctor({ className = "" }) {
   const uid = useId().replace(/:/g, "");
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "120px" });
   const reduce = useReducedMotion();
   const px = useMotionValue(0);
   const py = useMotionValue(0);
@@ -28,7 +30,7 @@ export default function RobotDoctor({ className = "" }) {
   const bodyX = useTransform(sx, (v) => v * 4);
 
   useEffect(() => {
-    if (reduce) return;
+    if (reduce || !inView) return;
     const move = (e) => {
       px.set((e.clientX / window.innerWidth) * 2 - 1);
       py.set((e.clientY / window.innerHeight) * 2 - 1);
@@ -43,12 +45,13 @@ export default function RobotDoctor({ className = "" }) {
       window.removeEventListener("pointermove", move);
       document.documentElement.removeEventListener("mouseleave", reset);
     };
-  }, [reduce, px, py]);
+  }, [reduce, inView, px, py]);
 
   const id = (name) => `${name}-${uid}`;
 
   return (
     <motion.svg
+      ref={ref}
       viewBox="48 28 304 412"
       preserveAspectRatio="xMidYMax meet"
       role="img"
@@ -77,13 +80,11 @@ export default function RobotDoctor({ className = "" }) {
           <stop offset="60%" stopColor="#cfcec4" />
           <stop offset="100%" stopColor="#9d9c92" />
         </radialGradient>
-        <filter id={id("glow")} x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="5" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
+        <radialGradient id={id("glow")} cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#a7cf3b" stopOpacity="0.55" />
+          <stop offset="60%" stopColor="#a7cf3b" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#a7cf3b" stopOpacity="0" />
+        </radialGradient>
       </defs>
 
       <motion.g style={{ x: bodyX }}>
@@ -107,7 +108,8 @@ export default function RobotDoctor({ className = "" }) {
       <motion.g style={{ x: headX, y: headY, rotate: headRotate, ...PIVOT }}>
         <motion.g style={{ rotate: antennaRotate, transformBox: "fill-box", transformOrigin: "50% 100%" }}>
           <line x1="200" y1="98" x2="200" y2="62" stroke="#b9b8ae" strokeWidth="7" strokeLinecap="round" />
-          <circle cx="200" cy="52" r="12" fill="#a7cf3b" filter={`url(#${id("glow")})`} />
+          <circle cx="200" cy="52" r="24" fill={`url(#${id("glow")})`} />
+          <circle cx="200" cy="52" r="12" fill="#a7cf3b" />
         </motion.g>
 
         <circle cx="96" cy="206" r="24" fill="#a7cf3b" />
@@ -131,8 +133,10 @@ export default function RobotDoctor({ className = "" }) {
               animate={reduce ? undefined : { scaleY: [1, 1, 0.08, 1] }}
               transition={{ duration: 0.35, times: [0, 0.4, 0.6, 1], repeat: Infinity, repeatDelay: 3.4, delay: 2 }}
             >
-              <rect x="158" y="186" width="26" height="36" rx="13" fill="#a7cf3b" filter={`url(#${id("glow")})`} />
-              <rect x="216" y="186" width="26" height="36" rx="13" fill="#a7cf3b" filter={`url(#${id("glow")})`} />
+              <ellipse cx="171" cy="204" rx="26" ry="32" fill={`url(#${id("glow")})`} />
+              <ellipse cx="229" cy="204" rx="26" ry="32" fill={`url(#${id("glow")})`} />
+              <rect x="158" y="186" width="26" height="36" rx="13" fill="#a7cf3b" />
+              <rect x="216" y="186" width="26" height="36" rx="13" fill="#a7cf3b" />
               <circle cx="166" cy="196" r="4" fill="#ffffff" opacity="0.9" />
               <circle cx="224" cy="196" r="4" fill="#ffffff" opacity="0.9" />
             </motion.g>

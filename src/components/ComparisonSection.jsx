@@ -35,15 +35,9 @@ export default function ComparisonSection() {
               </tr>
             </thead>
             <tbody>
-              {ROWS.map((row, i) => (
-                <motion.tr
-                  key={row.label}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.08, ease: EASE }}
-                  className="border-t border-ink/10"
-                >
+              {/* Plain rows: animating <tr> forces the whole table to re-layout every frame. */}
+              {ROWS.map((row) => (
+                <tr key={row.label} className="border-t border-ink/10">
                   <th scope="row" className="p-5 font-semibold text-ink">{row.label}</th>
                   <td className="border-l border-ink/10 p-5 text-center text-ink-soft">
                     <span className="inline-flex items-center gap-2">
@@ -57,7 +51,7 @@ export default function ComparisonSection() {
                       {row.us}
                     </span>
                   </td>
-                </motion.tr>
+                </tr>
               ))}
             </tbody>
           </table>

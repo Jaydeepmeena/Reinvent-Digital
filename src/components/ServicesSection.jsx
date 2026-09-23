@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "framer-motion";
 import { Megaphone, Wrench, LifeBuoy, ArrowUpRight, ArrowRight } from "lucide-react";
 import { SERVICES } from "../data/services";
 import SectionHeader from "./motion/SectionHeader";
 import useMediaQuery from "./motion/useMediaQuery";
 import { EASE } from "./motion/easing";
-import { gsap, useGSAP } from "./fx/gsap";
+import { gsap, ScrollTrigger, useGSAP } from "./fx/gsap";
 
 const CATEGORIES = [
   {
@@ -26,10 +26,14 @@ const CATEGORIES = [
   },
 ];
 
-// Keep in sync with the `pin` custom variant in index.css.
-const PIN_QUERY = "(min-width: 1024px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)";
+// Desktop always gets the big-card-plus-two-small layout.
+const WIDE_QUERY = "(min-width: 1024px)";
+// The scroll swap on top of it just needs room for a card under the navbar. Reduced-motion users
+// still get the swap (it is the section's structure), but without the travel animation.
+const PIN_QUERY = `${WIDE_QUERY} and (min-height: 560px)`;
 // One spring for every card, so the growing and shrinking cards stay in step.
 const SWAP = { layout: { type: "spring", stiffness: 85, damping: 20, mass: 1 } };
+const SWAP_INSTANT = { layout: { duration: 0 } };
 // Card colours flip fast; the text waits for them, so light text never lands on a light card.
 const FADE_IN = { duration: 0.35, ease: EASE, delay: 0.22 };
 const FADE_OUT = { duration: 0.15, ease: EASE };
@@ -37,6 +41,8 @@ const FADE_OUT = { duration: 0.15, ease: EASE };
 export default function ServicesSection() {
   const wrapRef = useRef(null);
   const [active, setActive] = useState(0);
+  const wide = useMediaQuery(WIDE_QUERY);
+  const reduce = useReducedMotion();
   const swapping = useMediaQuery(PIN_QUERY);
 
   useGSAP(
@@ -45,7 +51,12 @@ export default function ServicesSection() {
       mm.add(PIN_QUERY, () => {
         const steps = CATEGORIES.length;
         const st = ScrollTriggerCreate(wrapRef.current, steps, setActive);
-        return () => st.kill();
+        // The desktop grid height lands a frame after this runs, so re-measure once it has.
+        const raf = requestAnimationFrame(() => ScrollTrigger.refresh());
+        return () => {
+          cancelAnimationFrame(raf);
+          st.kill();
+        };
       });
       return () => mm.revert();
     },
@@ -75,26 +86,32 @@ export default function ServicesSection() {
 
         <div ref={wrapRef} className="section-head-gap">
           <LayoutGroup>
-          <div className="grid gap-4 sm:gap-5 lg:h-[40rem] lg:auto-rows-fr lg:grid-cols-3 lg:grid-rows-2">
+          <div
+            className={`grid gap-4 sm:gap-5 md:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3 lg:grid-rows-2 ${
+              swapping ? "lg:h-[min(40rem,max(30rem,calc(100dvh-9rem)))]" : ""
+            }`}
+          >
             {CATEGORIES.map(({ key, icon: Icon, body }, i) => {
               const items = SERVICES.filter((s) => s.category === key);
-              const isActive = swapping ? i === active : i === 0;
-              const expanded = !swapping || isActive;
+              const isActive = wide ? i === active : i === 0;
+              const expanded = !wide || isActive;
               const rank = (i - active + CATEGORIES.length) % CATEGORIES.length;
 
               return (
                 <motion.article
                   key={key}
                   layout
-                  transition={SWAP}
+                  transition={reduce ? SWAP_INSTANT : SWAP}
                   style={{ order: rank }}
-                  className={`flex flex-col rounded-2xl border p-6 transition-[background-color,border-color,color,box-shadow] duration-200 will-change-transform sm:p-8 ${
+                  className={`flex flex-col overflow-hidden rounded-2xl border transition-[background-color,border-color,color,box-shadow] duration-200 ${
+                    isActive ? "p-6 sm:p-8" : "p-4 sm:p-5"
+                  } ${
                     isActive
-                      ? `border-ink bg-ink text-cream shadow-xl shadow-ink/15 ${swapping ? "lg:col-span-2 lg:row-span-2" : ""}`
+                      ? "border-ink bg-ink text-cream shadow-xl shadow-ink/15 lg:col-span-2 lg:row-span-2"
                       : "border-ink/10 bg-cream text-ink hover:border-green/30"
-                  }`}
+                  } ${!wide && i === 0 ? "md:col-span-2" : ""}`}
                 >
-                  <motion.div layout="position" className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-4">
                     <span
                       className={`flex h-12 w-12 origin-left items-center justify-center rounded-xl transition-[background-color,color,scale] duration-300 ${
                         isActive ? "bg-lime text-ink" : "scale-90 bg-lime-soft text-green-deep"
@@ -109,45 +126,44 @@ export default function ServicesSection() {
                     >
                       {items.length} {items.length === 1 ? "service" : "services"}
                     </span>
-                  </motion.div>
+                  </div>
 
-                  <motion.h3
-                    layout="position"
+                  <h3
                     className={`mt-5 text-xl font-bold transition-colors duration-200 ${
                       isActive ? "text-cream" : "text-ink"
                     }`}
                   >
                     {key}
-                  </motion.h3>
-                  <motion.p
-                    layout="position"
+                  </h3>
+                  <p
                     className={`mt-2 max-w-md text-[15px] leading-relaxed transition-colors duration-200 ${
                       isActive ? "text-cream/60" : "text-ink-soft"
                     }`}
                   >
                     {body}
-                  </motion.p>
+                  </p>
 
-                  <div className="min-h-4 flex-1" />
+                  <div className="flex-1" />
 
-                  <AnimatePresence mode="popLayout" initial={false}>
+                  <AnimatePresence mode="wait" initial={false}>
                   {expanded ? (
                     <motion.ul
                       key="list"
-                      layout="position"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0, transition: FADE_OUT }}
                       transition={FADE_IN}
                       className={`mt-6 grid gap-1 border-t pt-5 ${
-                        isActive ? "border-cream/10 sm:grid-cols-2 sm:gap-x-4" : "border-ink/10"
+                        isActive
+                          ? "border-cream/10 sm:grid-cols-2 sm:gap-x-4"
+                          : "border-ink/10"
                       }`}
                     >
                       {items.map((item) => (
                         <li key={item.slug}>
                           <Link
                             to={`/what-we-do/${item.slug}`}
-                            className={`group/link flex items-center gap-2.5 rounded-lg px-2 py-2 text-[14px] leading-snug transition-colors ${
+                            className={`group/link flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[14px] leading-snug transition-colors ${
                               isActive
                                 ? "text-cream/80 hover:bg-white/5 hover:text-lime"
                                 : "font-semibold text-ink hover:bg-lime-soft hover:text-green-deep"
@@ -163,12 +179,11 @@ export default function ServicesSection() {
                   ) : (
                     <motion.p
                       key="preview"
-                      layout="position"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0, transition: FADE_OUT }}
                       transition={FADE_IN}
-                      className="mt-5 text-[13px] font-semibold text-green-deep"
+                      className="mt-3 line-clamp-1 text-[13px] font-semibold text-green-deep"
                     >
                       {items
                         .slice(0, 2)
@@ -184,17 +199,19 @@ export default function ServicesSection() {
           </div>
           </LayoutGroup>
 
-          <div className="mt-6 hidden items-center gap-2 pin:flex">
-            {CATEGORIES.map(({ key }, i) => (
-              <span
-                key={key}
-                aria-hidden="true"
-                className={`h-1 rounded-full transition-all duration-500 ${
-                  i === active ? "w-10 bg-ink" : "w-5 bg-ink/15"
-                }`}
-              />
-            ))}
-          </div>
+          {swapping && (
+            <div className="mt-6 flex items-center gap-2">
+              {CATEGORIES.map(({ key }, i) => (
+                <span
+                  key={key}
+                  aria-hidden="true"
+                  className={`h-1 rounded-full transition-all duration-500 ${
+                    i === active ? "w-10 bg-ink" : "w-5 bg-ink/15"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -206,7 +223,8 @@ function ScrollTriggerCreate(el, steps, onStep) {
   return gsap.timeline({
     scrollTrigger: {
       trigger: el,
-      start: "center center",
+      // Slightly below centre so the pinned cards clear the floating navbar.
+      start: "center 55%",
       // A full screen of scroll per card: one flick should never skip past a card.
       end: () => `+=${steps * window.innerHeight}`,
       pin: true,

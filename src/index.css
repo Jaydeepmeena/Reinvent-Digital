@@ -80,6 +80,33 @@ html {
   scroll-padding-top: 5.5rem;
 }
 
+/* Large monitors (roughly 28" and up): widen the page column and scale the whole design with the
+   root font size, instead of leaving a 1280px strip marooned in the middle of the screen.
+   These sit outside Tailwind's layers on purpose, so they win over the utility classes. */
+@media (min-width: 1600px) {
+  .max-w-7xl { max-width: 84rem; }
+}
+
+@media (min-width: 1800px) {
+  html { font-size: 17px; }
+  .max-w-7xl { max-width: 92rem; }
+}
+
+@media (min-width: 2200px) {
+  html { font-size: 18px; }
+  .max-w-7xl { max-width: 104rem; }
+}
+
+@media (min-width: 2600px) {
+  html { font-size: 19px; }
+  .max-w-7xl { max-width: 116rem; }
+}
+
+@media (min-width: 3200px) {
+  html { font-size: 20px; }
+  .max-w-7xl { max-width: 128rem; }
+}
+
 body {
   background-color: var(--color-cream);
   color: var(--color-ink);

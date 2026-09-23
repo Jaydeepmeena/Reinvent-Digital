@@ -67,7 +67,8 @@ export default function ProofSection() {
           {/* Tall visual */}
           <Tile className="relative min-h-[22rem] overflow-hidden rounded-3xl bg-gradient-to-b from-lime-mist to-lime-soft md:row-span-2 lg:min-h-0">
             <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_50%_40%,black,transparent_75%)]" />
-            <RobotDoctor className="absolute inset-x-0 bottom-0 mx-auto h-[88%] w-full drop-shadow-[0_24px_30px_rgba(27,27,23,0.16)]" />
+            <span aria-hidden="true" className="absolute bottom-[2%] left-1/2 h-8 w-[55%] -translate-x-1/2 rounded-[100%] bg-ink/20 blur-xl" />
+            <RobotDoctor className="absolute inset-x-0 bottom-0 mx-auto h-[88%] w-full" />
             <span className="absolute left-4 top-4 rounded-full bg-ink px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-cream">
               Case study
             </span>

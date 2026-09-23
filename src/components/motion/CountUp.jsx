@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { animate, useInView, useReducedMotion } from "framer-motion";
 import { EASE } from "./easing";
 
@@ -23,28 +23,30 @@ function parse(value) {
   };
 }
 
+// Writes straight to the DOM while counting: no React re-render per frame.
 export default function CountUp({ value, duration = 1.6, className }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduce = useReducedMotion();
   const parsed = useMemo(() => parse(value), [value]);
-  const [display, setDisplay] = useState(() =>
-    parsed && !reduce ? `${parsed.prefix}${parsed.format(0)}${parsed.suffix}` : String(value)
-  );
+  const animated = parsed && !reduce;
 
   useEffect(() => {
-    if (!inView || !parsed || reduce) return;
+    if (!inView || !animated) return;
+    const el = ref.current;
     const controls = animate(0, parsed.target, {
       duration,
       ease: EASE,
-      onUpdate: (v) => setDisplay(`${parsed.prefix}${parsed.format(v)}${parsed.suffix}`),
+      onUpdate: (v) => {
+        el.textContent = `${parsed.prefix}${parsed.format(v)}${parsed.suffix}`;
+      },
     });
     return () => controls.stop();
-  }, [inView, parsed, reduce, duration]);
+  }, [inView, animated, parsed, duration]);
 
   return (
     <span ref={ref} className={`tabular-nums ${className ?? ""}`}>
-      {display}
+      {animated ? `${parsed.prefix}${parsed.format(0)}${parsed.suffix}` : String(value)}
     </span>
   );
 }

@@ -86,7 +86,7 @@ export default function Navbar() {
       }`}
     >
       <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-ink/[0.06] bg-white/85 px-4 py-2.5 backdrop-blur-xl transition-shadow duration-300 sm:px-5 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-ink/[0.06] bg-white/92 px-4 py-2.5 backdrop-blur-md transition-shadow duration-300 sm:px-5 ${
           scrolled || openMenu
             ? "shadow-[0_18px_45px_-22px_rgba(27,27,23,0.45)]"
             : "shadow-[0_10px_30px_-18px_rgba(27,27,23,0.35)]"
@@ -155,7 +155,7 @@ export default function Navbar() {
               if (!menu) return null;
               return (
                 <div
-                  className={`rounded-[1.75rem] border border-ink/[0.07] bg-white/95 p-6 shadow-[0_34px_70px_-34px_rgba(27,27,23,0.5)] backdrop-blur-xl ${
+                  className={`rounded-[1.75rem] border border-ink/[0.07] bg-white/97 p-6 shadow-[0_34px_70px_-34px_rgba(27,27,23,0.5)] backdrop-blur-sm ${
                     menu.type === "mega"
                       ? "w-[640px] max-w-full"
                       : menu.type === "locations"

@@ -23,6 +23,14 @@ export default function Scene3D({ scene, className = "" }) {
   useEffect(() => {
     if (reduceMotion || !supportsWebGL()) return;
     const el = ref.current;
+
+    // Warm the chunks during idle time so the 500KB parse never lands in the middle of a scroll.
+    const idle = window.requestIdleCallback ?? ((cb) => setTimeout(cb, 1500));
+    const cancelIdle = window.cancelIdleCallback ?? clearTimeout;
+    const warm = idle(() => {
+      import("./engine.js");
+      SCENES[scene]();
+    });
     let dispose;
     let cancelled = false;
 
@@ -45,6 +53,7 @@ export default function Scene3D({ scene, className = "" }) {
 
     return () => {
       cancelled = true;
+      cancelIdle(warm);
       loadWhenNear.disconnect();
       dispose?.();
     };

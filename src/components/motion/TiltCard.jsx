@@ -53,7 +53,7 @@ export default function TiltCard({
         rotateY: reduce ? 0 : rotateY,
         transformPerspective: 1100,
       }}
-      className={`relative will-change-transform ${className}`}
+      className={`relative ${className}`}
       {...motionProps}
     >
       {children}
