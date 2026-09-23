@@ -104,12 +104,12 @@ export default function IndustriesSection() {
                         aria-hidden="true"
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 h-full w-full object-cover opacity-30 transition-transform duration-700 group-hover:scale-105"
+                        className="absolute inset-0 h-full w-full object-cover opacity-[0.55] transition-transform duration-700 group-hover:scale-105"
                       />
                       <span
                         aria-hidden="true"
                         className={`absolute inset-0 bg-gradient-to-t ${
-                          dark ? "from-ink via-ink/85 to-ink/35" : "from-lime-soft via-lime-soft/85 to-lime-soft/40"
+                          dark ? "from-ink via-ink/70 to-ink/20" : "from-lime-soft via-lime-soft/75 to-lime-soft/25"
                         }`}
                       />
 
