@@ -118,7 +118,7 @@ export default function ProblemSection() {
                 <p className="relative mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-cream/60 transition-colors duration-300 group-hover:text-ink/80">
                   {body}
                 </p>
-                <span className="relative mt-5 inline-block rounded-full border border-cream/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cream/70 transition-colors duration-300 group-hover:border-ink/30 group-hover:bg-ink/10 group-hover:text-ink">
+                <span className="relative mt-5 inline-block rounded-full border border-cream/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cream/70 transition-colors duration-300 group-hover:border-ink group-hover:bg-ink group-hover:text-lime">
                   {tag}
                 </span>
               </motion.div>
