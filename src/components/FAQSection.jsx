@@ -53,7 +53,7 @@ function FAQItem({ q, a, n, isOpen, onClick, id }) {
   return (
     <div
       className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${
-        isOpen ? "border-ink/15 bg-cream" : "border-ink/10 bg-cream/50 hover:border-ink/25"
+        isOpen ? "border-cream/20 bg-cream/[0.07]" : "border-cream/10 bg-cream/[0.03] hover:border-cream/25"
       }`}
     >
       <h3>
@@ -65,13 +65,13 @@ function FAQItem({ q, a, n, isOpen, onClick, id }) {
           id={`${id}-trigger`}
           className="group flex w-full items-center gap-4 p-5 text-left sm:gap-5 sm:p-6"
         >
-          <span className="text-[13px] font-bold tabular-nums text-ink-soft">{n}</span>
-          <span className="flex-1 text-[15px] font-bold text-ink transition-colors group-hover:text-green-deep sm:text-base">
+          <span className="text-[13px] font-bold tabular-nums text-cream/40">{n}</span>
+          <span className="flex-1 text-[15px] font-bold text-cream transition-colors group-hover:text-lime sm:text-base">
             {q}
           </span>
           <span
             className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-              isOpen ? "rotate-45 border-lime bg-lime text-ink" : "border-ink/15 text-ink group-hover:border-ink"
+              isOpen ? "rotate-45 border-lime bg-lime text-ink" : "border-cream/20 text-cream group-hover:border-cream"
             }`}
           >
             <Plus className="h-4 w-4" />
@@ -90,7 +90,7 @@ function FAQItem({ q, a, n, isOpen, onClick, id }) {
             transition={{ duration: 0.35, ease: EASE }}
             className="overflow-hidden"
           >
-            <p className="px-5 pb-5 pl-[3.25rem] pr-12 text-[15px] leading-relaxed text-ink-soft sm:px-6 sm:pb-6 sm:pl-[4rem] sm:pr-16">
+            <p className="px-5 pb-5 pl-[3.25rem] pr-12 text-[15px] leading-relaxed text-cream/60 sm:px-6 sm:pb-6 sm:pl-[4rem] sm:pr-16">
               {a}
             </p>
           </motion.div>
@@ -106,14 +106,16 @@ export default function FAQSection() {
   const shown = FAQS.filter((item) => item.group === group);
 
   return (
-    <section id="faq" className="section-y border-y border-ink/[0.06] bg-paper">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+    <section id="faq" className="section-y relative overflow-hidden bg-ink text-cream">
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
+
+      <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
         <Reveal className="text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-lime">
             <span className="h-2 w-2 rounded-full bg-lime" />
             Frequently asked questions
           </span>
-          <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-ink">
+          <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-cream">
             What healthcare leaders ask before changing their acquisition system.
           </h2>
         </Reveal>
@@ -121,7 +123,7 @@ export default function FAQSection() {
         <div
           role="tablist"
           aria-label="FAQ categories"
-          className="mt-9 flex flex-wrap justify-center gap-x-7 gap-y-2 border-b border-ink/10"
+          className="mt-9 flex flex-wrap justify-center gap-x-7 gap-y-2 border-b border-cream/10"
         >
           {GROUPS.map((name) => {
             const active = name === group;
@@ -136,7 +138,7 @@ export default function FAQSection() {
                   setOpenIndex(0);
                 }}
                 className={`relative -mb-px pb-3 text-[15px] font-semibold transition-colors ${
-                  active ? "text-green-deep" : "text-ink-soft hover:text-ink"
+                  active ? "text-lime" : "text-cream/50 hover:text-cream"
                 }`}
               >
                 {name}
