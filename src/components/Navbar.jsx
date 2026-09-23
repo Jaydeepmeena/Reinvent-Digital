@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Menu, X, ArrowUpRight, ChevronDown, MapPin } from "lucide-react";
@@ -20,20 +20,68 @@ const LOCATIONS = [
 ];
 
 const MENU = [
-  { key: "what-we-do", label: "What We Do", type: "mega" },
-  { key: "industries", label: "Industries", type: "list", items: INDUSTRIES, base: "/industries" },
-  { key: "resources", label: "Resources", type: "list", items: RESOURCE_PAGES, base: "/resources" },
+  { key: "what-we-do", label: "What We Do", type: "mega", match: "/what-we-do" },
+  { key: "industries", label: "Industries", type: "list", items: INDUSTRIES, base: "/industries", match: "/industries" },
+  { key: "resources", label: "Resources", type: "list", items: RESOURCE_PAGES, base: "/resources", match: "/resources" },
   { key: "locations", label: "Locations", type: "locations" },
-  { key: "about", label: "About Us", type: "list", items: ABOUT_PAGES, base: "/about" },
+  { key: "about", label: "About Us", type: "list", items: ABOUT_PAGES, base: "/about", match: "/about" },
 ];
+
+const PILL = { type: "spring", stiffness: 380, damping: 32 };
+
+// Dropdown contents fade up one after another rather than all at once.
+const panel = {
+  hidden: { opacity: 0, y: 8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.18, ease: "easeOut", staggerChildren: 0.035, delayChildren: 0.04 },
+  },
+  exit: { opacity: 0, y: 8, transition: { duration: 0.12 } },
+};
+const panelItem = {
+  hidden: { opacity: 0, y: 6 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.22, ease: "easeOut" } },
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const [openMobileSection, setOpenMobileSection] = useState(null);
+  const [hovered, setHovered] = useState(null);
   const navRef = useRef(null);
+  const hoverTimer = useRef(null);
   const lenis = useLenis();
+  const { pathname } = useLocation();
+
+  // The sliding pill follows the pointer, falls back to the open menu, then to the current page.
+  const activeKey =
+    pathname === "/" ? "home" : (MENU.find((m) => m.match && pathname.startsWith(m.match))?.key ?? null);
+  const pillKey = hovered ?? openMenu ?? activeKey;
+
+  const clearHoverTimer = () => {
+    if (hoverTimer.current) {
+      clearTimeout(hoverTimer.current);
+      hoverTimer.current = null;
+    }
+  };
+  const scheduleOpen = (key) => {
+    clearHoverTimer();
+    hoverTimer.current = setTimeout(() => setOpenMenu(key), 90);
+  };
+  const scheduleClose = () => {
+    clearHoverTimer();
+    hoverTimer.current = setTimeout(() => setOpenMenu(null), 160);
+  };
+  const onItemEnter = (e, key) => {
+    setHovered(key);
+    if (e.pointerType !== "mouse") return;
+    if (key === "home") scheduleClose();
+    else scheduleOpen(key);
+  };
+
+  useEffect(() => clearHoverTimer, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -81,6 +129,10 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
+      onPointerLeave={() => {
+        setHovered(null);
+        scheduleClose();
+      }}
       className={`fixed inset-x-0 top-0 z-50 px-3 transition-all duration-300 sm:px-5 ${
         scrolled ? "pt-2" : "pt-3 sm:pt-5"
       }`}
@@ -92,30 +144,63 @@ export default function Navbar() {
             : "shadow-[0_10px_30px_-18px_rgba(27,27,23,0.35)]"
         }`}
       >
-        <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpenMenu(null)}>
-          <img src={logo} alt="Reinvent Digital" className="h-11 w-auto sm:h-12" />
+        <Link
+          to="/"
+          className="group flex shrink-0 items-center gap-2"
+          onClick={() => setOpenMenu(null)}
+          onPointerEnter={(e) => onItemEnter(e, "home")}
+        >
+          <img
+            src={logo}
+            alt="Reinvent Digital"
+            className="h-11 w-auto transition-transform duration-300 group-hover:scale-[1.04] sm:h-12"
+          />
         </Link>
 
         <div className="hidden items-center gap-0.5 lg:flex">
           <Link
             to="/"
-            className="rounded-full px-3.5 py-2 text-[14.5px] font-medium tracking-[-0.01em] text-ink-soft transition-colors hover:bg-ink/[0.04] hover:text-ink"
+            onPointerEnter={(e) => onItemEnter(e, "home")}
+            className={`relative rounded-full px-3.5 py-2 text-[14.5px] font-medium tracking-[-0.01em] transition-colors ${
+              pillKey === "home" || activeKey === "home" ? "text-ink" : "text-ink-soft"
+            }`}
           >
-            Home
+            {pillKey === "home" && (
+              <motion.span
+                layoutId="nav-pill"
+                transition={PILL}
+                className="absolute inset-0 rounded-full bg-ink/[0.07]"
+              />
+            )}
+            <span className="relative">Home</span>
           </Link>
           {MENU.map((menu) => (
             <button
               key={menu.key}
               type="button"
               onClick={() => toggleMenu(menu.key)}
-              className={`flex items-center gap-1 rounded-full px-3.5 py-2 text-[14.5px] font-medium tracking-[-0.01em] transition-colors ${
-                openMenu === menu.key ? "bg-ink/[0.06] text-ink" : "text-ink-soft hover:bg-ink/[0.04] hover:text-ink"
+              onPointerEnter={(e) => onItemEnter(e, menu.key)}
+              aria-expanded={openMenu === menu.key}
+              className={`relative flex items-center gap-1 rounded-full px-3.5 py-2 text-[14.5px] font-medium tracking-[-0.01em] transition-colors ${
+                pillKey === menu.key || activeKey === menu.key ? "text-ink" : "text-ink-soft"
               }`}
             >
-              {menu.label}
+              {pillKey === menu.key && (
+                <motion.span
+                  layoutId="nav-pill"
+                  transition={PILL}
+                  className="absolute inset-0 rounded-full bg-ink/[0.07]"
+                />
+              )}
+              <span className="relative">{menu.label}</span>
               <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform ${openMenu === menu.key ? "rotate-180" : ""}`}
+                className={`relative h-3.5 w-3.5 transition-transform duration-300 ${
+                  openMenu === menu.key ? "rotate-180" : ""
+                }`}
               />
+              {activeKey === menu.key && (
+                <span aria-hidden="true" className="absolute inset-x-4 bottom-0.5 h-0.5 rounded-full bg-lime" />
+              )}
             </button>
           ))}
         </div>
@@ -123,7 +208,7 @@ export default function Navbar() {
         <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[14px] font-semibold text-cream shadow-[0_12px_24px_-14px_rgba(27,27,23,0.9)] transition-colors hover:bg-green-deep"
+            className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[14px] font-semibold text-cream shadow-[0_12px_24px_-14px_rgba(27,27,23,0.9)] transition-[background-color,scale] duration-300 hover:bg-green-deep active:scale-95"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-lime transition-transform group-hover:scale-125" />
             Contact Us
@@ -137,17 +222,19 @@ export default function Navbar() {
           className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/10 bg-white text-ink transition-colors hover:bg-ink hover:text-cream lg:hidden"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <span className={`transition-transform duration-300 ${mobileOpen ? "rotate-90" : ""}`}>
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </span>
         </button>
       </nav>
 
       <AnimatePresence>
         {openMenu && (
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
+            variants={panel}
+            initial="hidden"
+            animate="show"
+            exit="exit"
             className="absolute inset-x-0 top-full hidden justify-center px-5 pt-2 lg:flex"
           >
             {(() => {
@@ -166,7 +253,7 @@ export default function Navbar() {
                   {menu.type === "mega" && (
                     <div className="grid grid-cols-3 gap-6">
                       {WHAT_WE_DO.map((group) => (
-                        <div key={group.title}>
+                        <motion.div key={group.title} variants={panelItem}>
                           <h4 className="text-xs font-semibold uppercase tracking-wide text-green-deep">
                             {group.title}
                           </h4>
@@ -184,7 +271,7 @@ export default function Navbar() {
                               </li>
                             ))}
                           </ul>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   )}
@@ -192,7 +279,7 @@ export default function Navbar() {
                   {menu.type === "list" && (
                     <ul className="space-y-1">
                       {menu.items.map(({ slug, title, icon: Icon }) => (
-                        <li key={slug}>
+                        <motion.li key={slug} variants={panelItem}>
                           <Link
                             to={`${menu.base}/${slug}`}
                             onClick={() => setOpenMenu(null)}
@@ -201,7 +288,7 @@ export default function Navbar() {
                             <Icon className="h-4 w-4 shrink-0" />
                             {title}
                           </Link>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   )}
@@ -209,8 +296,8 @@ export default function Navbar() {
                   {menu.type === "locations" && (
                     <div className="grid grid-cols-2 gap-x-3 gap-y-1">
                       {LOCATIONS.map((city) => (
+                        <motion.div key={city} variants={panelItem}>
                         <Link
-                          key={city}
                           to="/contact"
                           onClick={() => setOpenMenu(null)}
                           className="flex min-w-0 items-start gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium leading-tight text-ink-soft transition-colors hover:bg-lime-soft hover:text-green-deep"
@@ -218,6 +305,7 @@ export default function Navbar() {
                           <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-deep" />
                           <span className="min-w-0 break-words">{city}</span>
                         </Link>
+                        </motion.div>
                       ))}
                     </div>
                   )}
