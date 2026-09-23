@@ -94,7 +94,7 @@ export default function IndustriesSection() {
                 >
                   <Link to={`/industries/${slug}`} className="group block">
                     <div
-                      className={`relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[1.5rem] p-6 transition-colors duration-300 sm:p-7 ${
+                      className={`relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[1.5rem] border-4 border-white p-6 shadow-lg shadow-ink/10 transition-[background-color,color,box-shadow] duration-300 group-hover:shadow-xl group-hover:shadow-ink/15 sm:p-7 ${
                         dark ? "bg-ink text-cream" : "bg-lime-soft text-ink"
                       }`}
                     >
