@@ -4,7 +4,7 @@ import { useReducedMotion } from "framer-motion";
 const SCENES = {
   patientGlobe: () => import("./patientGlobe.js"),
   healthCross: () => import("./healthCross.js"),
-  metricBars: () => import("./metricBars.js"),
+  pulseLine: () => import("./pulseLine.js"),
 };
 
 function supportsWebGL() {

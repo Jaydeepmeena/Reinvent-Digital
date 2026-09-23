@@ -50,72 +50,77 @@ export default function ComparisonSection() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            {/* Bars that keep turning: the tallest — the booked patient — is the lime one */}
-            <div aria-hidden="true" className="pointer-events-none relative -mt-4 h-40 sm:h-48 lg:-mt-8 lg:h-56">
-              <Scene3D scene="metricBars" className="absolute inset-0 h-full w-full" />
-            </div>
-
-            <p className="mt-2 max-w-md text-[15px] leading-relaxed text-cream/60 sm:text-base">
+            <p className="max-w-md text-[15px] leading-relaxed text-cream/60 sm:text-base">
               Billing against media spend rewards spending more. We're measured on what happens after the click — how
               fast enquiries are answered, how many become bookings, and how many walk in.
             </p>
           </Reveal>
         </div>
 
-        <div className="section-head-gap grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
-          {ROWS.map(({ icon: Icon, label, them, us }, i) => (
-            <motion.article
-              key={label}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
-              transition={{ duration: 0.6, delay: i * 0.09, ease: EASE }}
-              className="group relative isolate flex flex-col overflow-hidden rounded-[1.75rem] border border-cream/10 bg-cream/[0.03] p-6 transition-[background-color,border-color,box-shadow] duration-300 hover:border-lime/40 hover:bg-cream/[0.06] hover:shadow-2xl hover:shadow-lime/10 sm:p-7"
-            >
-              {/* Lime bloom rises from the icon corner on hover */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute -bottom-12 -right-12 -z-10 h-44 w-44 rounded-full bg-lime/25 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-              />
+        <div className="section-head-gap relative isolate">
+          {/* A slow ECG trace running behind the cards */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 hidden h-[150%] w-[120%] -translate-x-1/2 -translate-y-1/2 opacity-60 xl:block"
+          >
+            <Scene3D scene="pulseLine" className="h-full w-full" />
+          </div>
 
-              <h3 className="text-lg font-bold text-cream transition-colors duration-300 group-hover:text-lime">
-                {label}
-              </h3>
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
+            {ROWS.map(({ icon: Icon, label, them, us }, i) => (
+              <motion.article
+                key={label}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
+                transition={{ duration: 0.6, delay: i * 0.09, ease: EASE }}
+                className="group relative isolate flex flex-col overflow-hidden rounded-[1.75rem] border border-cream/10 bg-cream/[0.03] p-6 transition-[background-color,border-color,box-shadow] duration-300 hover:border-lime/40 hover:bg-cream/[0.06] hover:shadow-2xl hover:shadow-lime/10 sm:p-7"
+              >
+                {/* Lime bloom rises from the icon corner on hover */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -bottom-12 -right-12 -z-10 h-44 w-44 rounded-full bg-lime/25 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+                />
 
-              <div className="mt-5 border-t border-cream/10 pt-5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-cream/40">
-                  Typical agency
-                </span>
-                <p className="mt-1.5 flex items-start gap-2 text-[13px] leading-snug text-cream/45 transition-colors duration-300 group-hover:text-cream/35">
-                  <X className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-                  {them}
-                </p>
-              </div>
+                <h3 className="text-lg font-bold text-cream transition-colors duration-300 group-hover:text-lime">
+                  {label}
+                </h3>
 
-              <div className="mt-4">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-lime">
-                  Reinvent Digital
-                </span>
-                <p className="mt-1.5 flex items-start gap-2 text-[14px] font-semibold leading-snug text-cream">
-                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-lime" />
-                  {us}
-                </p>
-              </div>
+                <div className="mt-5 border-t border-cream/10 pt-5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-cream/40">
+                    Typical agency
+                  </span>
+                  <p className="mt-1.5 flex items-start gap-2 text-[13px] leading-snug text-cream/45 transition-colors duration-300 group-hover:text-cream/35">
+                    <X className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                    {them}
+                  </p>
+                </div>
 
-              <div className="mt-8 flex items-end justify-between gap-4">
-                <div>
-                  <span className="block text-[13px] font-bold uppercase tracking-wide text-cream">Shift</span>
-                  <span className="block text-[2.25rem] font-extrabold leading-none tracking-tight text-lime">
-                    0{i + 1}
+                <div className="mt-4">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-lime">
+                    Reinvent Digital
+                  </span>
+                  <p className="mt-1.5 flex items-start gap-2 text-[14px] font-semibold leading-snug text-cream">
+                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-lime" />
+                    {us}
+                  </p>
+                </div>
+
+                <div className="mt-8 flex items-end justify-between gap-4">
+                  <div>
+                    <span className="block text-[13px] font-bold uppercase tracking-wide text-cream">Shift</span>
+                    <span className="block text-[2.25rem] font-extrabold leading-none tracking-tight text-lime">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime text-ink transition-[scale,box-shadow] duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-lime/40 sm:h-[4.5rem] sm:w-[4.5rem]">
+                    <Icon className="h-7 w-7" />
                   </span>
                 </div>
-                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime text-ink transition-[scale,box-shadow] duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-lime/40 sm:h-[4.5rem] sm:w-[4.5rem]">
-                  <Icon className="h-7 w-7" />
-                </span>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
