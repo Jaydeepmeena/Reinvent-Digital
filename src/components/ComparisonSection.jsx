@@ -63,16 +63,25 @@ export default function ComparisonSection() {
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
               transition={{ duration: 0.6, delay: i * 0.09, ease: EASE }}
-              className="flex flex-col rounded-[1.75rem] border border-cream/10 bg-cream/[0.03] p-6 transition-colors duration-300 hover:border-lime/40 hover:bg-cream/[0.06] sm:p-7"
+              className="group relative isolate flex flex-col overflow-hidden rounded-[1.75rem] border border-cream/10 bg-cream/[0.03] p-6 transition-[background-color,border-color,box-shadow] duration-300 hover:border-lime/40 hover:bg-cream/[0.06] hover:shadow-2xl hover:shadow-lime/10 sm:p-7"
             >
-              <h3 className="text-lg font-bold text-cream">{label}</h3>
+              {/* Lime bloom rises from the icon corner on hover */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-12 -right-12 -z-10 h-44 w-44 rounded-full bg-lime/25 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+              />
+
+              <h3 className="text-lg font-bold text-cream transition-colors duration-300 group-hover:text-lime">
+                {label}
+              </h3>
 
               <div className="mt-5 border-t border-cream/10 pt-5">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-cream/40">
                   Typical agency
                 </span>
-                <p className="mt-1.5 flex items-start gap-2 text-[13px] leading-snug text-cream/45">
+                <p className="mt-1.5 flex items-start gap-2 text-[13px] leading-snug text-cream/45 transition-colors duration-300 group-hover:text-cream/35">
                   <X className="mt-0.5 h-3.5 w-3.5 shrink-0" />
                   {them}
                 </p>
@@ -95,7 +104,7 @@ export default function ComparisonSection() {
                     0{i + 1}
                   </span>
                 </div>
-                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime text-ink sm:h-[4.5rem] sm:w-[4.5rem]">
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime text-ink transition-[scale,box-shadow] duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-lime/40 sm:h-[4.5rem] sm:w-[4.5rem]">
                   <Icon className="h-7 w-7" />
                 </span>
               </div>
