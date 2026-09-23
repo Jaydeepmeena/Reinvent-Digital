@@ -2,9 +2,21 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { INDUSTRIES } from "../data/industries";
+// Free-licence photos from Unsplash, bundled rather than hotlinked.
+import dentalImg from "../assets/cards/industry-dental.jpg";
+import fertilityImg from "../assets/cards/industry-fertility.jpg";
+import eyeImg from "../assets/cards/industry-eye.jpg";
+import hospitalImg from "../assets/cards/industry-hospital.jpg";
 import Reveal from "./motion/Reveal";
 import CountUp from "./motion/CountUp";
 import { EASE } from "./motion/easing";
+
+const IMAGES = {
+  "dental-clinic": dentalImg,
+  "ivf-clinic": fertilityImg,
+  "eye-clinics": eyeImg,
+  "multi-speciality-hospital": hospitalImg,
+};
 
 const COUNTERS = [
   {
@@ -86,14 +98,29 @@ export default function IndustriesSection() {
                         dark ? "bg-ink text-cream" : "bg-lime-soft text-ink"
                       }`}
                     >
-                      <Icon
+                      <img
+                        src={IMAGES[slug]}
+                        alt=""
                         aria-hidden="true"
-                        className={`h-20 w-20 transition-transform duration-500 group-hover:scale-105 ${
-                          dark ? "text-lime/30" : "text-green-deep/25"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover opacity-30 transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className={`absolute inset-0 bg-gradient-to-t ${
+                          dark ? "from-ink via-ink/85 to-ink/35" : "from-lime-soft via-lime-soft/85 to-lime-soft/40"
                         }`}
                       />
 
-                      <div>
+                      <Icon
+                        aria-hidden="true"
+                        className={`relative h-20 w-20 transition-transform duration-500 group-hover:scale-105 ${
+                          dark ? "text-lime/40" : "text-green-deep/30"
+                        }`}
+                      />
+
+                      <div className="relative">
                         <div
                           className={`text-[clamp(2.25rem,1.6rem+2.2vw,3.25rem)] font-extrabold leading-none tracking-tight ${
                             dark ? "text-lime" : "text-green-deep"
