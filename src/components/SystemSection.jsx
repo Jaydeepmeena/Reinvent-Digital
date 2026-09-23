@@ -6,6 +6,11 @@ import TiltCard from "./motion/TiltCard";
 import useMediaQuery from "./motion/useMediaQuery";
 import { EASE } from "./motion/easing";
 import Scene3D from "./three/Scene3D";
+// Free-licence photos from Unsplash, bundled so nothing loads from a third party at runtime.
+import demandImg from "../assets/cards/demand.jpg";
+import routingImg from "../assets/cards/routing.jpg";
+import callsImg from "../assets/cards/calls.jpg";
+import reportingImg from "../assets/cards/reporting.jpg";
 import { gsap, ScrollTrigger, useGSAP } from "./fx/gsap";
 
 // The step cards start as a stacked, fanned deck in ConnectBand's stage and fall into this grid on scroll.
@@ -36,24 +41,28 @@ function pageBox(el) {
 const STEPS = [
   {
     icon: Target,
+    image: demandImg,
     title: "Create demand",
     body: "Paid ads, SEO, AEO, GEO and Google Maps capture patients already looking for care.",
     tags: ["Search intent", "Local intent", "AI answers"],
   },
   {
     icon: Zap,
+    image: routingImg,
     title: "Route instantly",
     body: "CRM, call tracking and messaging bring every enquiry into one patient record.",
     tags: ["Source tagging", "Auto-routing", "Agent roster"],
   },
   {
     icon: TrendingUp,
+    image: callsImg,
     title: "Improve the call",
     body: "Call scoring, coaching and follow-up rules improve the conversations that create bookings.",
     tags: ["Call scoring", "Agent coaching", "Follow-up rules"],
   },
   {
     icon: BadgeCheck,
+    image: reportingImg,
     title: "Prove the outcome",
     body: "Bookings connect back to source. Walk-ins connect when clinic systems provide attendance data.",
     tags: ["Cost per booking", "Walk-in match", "Channel decisions"],
@@ -156,7 +165,7 @@ export default function SystemSection() {
           </div>
 
           <ol className="relative grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
-            {STEPS.map(({ icon: Icon, title, body, tags }, i) => (
+            {STEPS.map(({ icon: Icon, image, title, body, tags }, i) => (
               <li key={title} data-fly-card className="flex">
                 <TiltCard
                   glare="rgba(167,207,59,0.12)"
@@ -172,9 +181,18 @@ export default function SystemSection() {
                           ease: EASE,
                         },
                       })}
-                  className="flex w-full flex-col rounded-2xl border border-cream/10 bg-[#23231e]/90 p-6 backdrop-blur-sm"
+                  className="flex w-full flex-col overflow-hidden rounded-2xl border border-cream/10 bg-[#23231e]/90 p-6 backdrop-blur-sm"
                 >
-                  <div className="flex items-center justify-between">
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.13]"
+                  />
+
+                  <div className="relative flex items-center justify-between">
                     <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-lime text-xs font-bold tabular-nums text-ink">
                       0{i + 1}
                     </span>
