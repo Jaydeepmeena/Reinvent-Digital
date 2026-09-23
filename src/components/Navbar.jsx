@@ -141,7 +141,7 @@ export default function Navbar() {
         }`}
       >
         {/* Black block: logo and links */}
-        <div className="flex items-center gap-6 bg-ink py-3 pl-5 pr-5 sm:pl-8 lg:gap-8 lg:pr-8">
+        <div className="flex items-center gap-6 bg-ink py-3 pl-5 pr-5 sm:pl-8 lg:gap-5 lg:pl-6 lg:pr-3">
           <Link
             to="/"
             className="group flex shrink-0 items-center gap-2"
@@ -155,7 +155,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden items-center gap-0.5 lg:flex">
+          <div className="hidden items-center lg:flex">
             {MENU.map((menu) => (
               <button
                 key={menu.key}
@@ -163,7 +163,7 @@ export default function Navbar() {
                 onClick={() => toggleMenu(menu.key)}
                 onPointerEnter={(e) => onItemEnter(e, menu.key)}
                 aria-expanded={openMenu === menu.key}
-                className={`relative flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors ${
+                className={`relative flex items-center gap-1.5 rounded-full px-2.5 py-2 text-[13px] font-bold uppercase tracking-[0.04em] transition-colors ${
                   pillKey === menu.key || activeKey === menu.key ? "text-cream" : "text-cream/70"
                 }`}
               >
