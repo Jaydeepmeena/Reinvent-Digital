@@ -218,15 +218,15 @@ export default function ServicesSection() {
   );
 }
 
-// Pins the cards and promotes one category per screen of scrolling.
+// Pins the cards and promotes one category per scroll gesture.
 function ScrollTriggerCreate(el, steps, onStep) {
   return gsap.timeline({
     scrollTrigger: {
       trigger: el,
       // Slightly below centre so the pinned cards clear the floating navbar.
       start: "center 55%",
-      // A full screen of scroll per card: one flick should never skip past a card.
-      end: () => `+=${steps * window.innerHeight}`,
+      // Roughly one scroll gesture per card, so a single swipe advances exactly one.
+      end: () => `+=${steps * window.innerHeight * 0.45}`,
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
