@@ -50,6 +50,8 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [openMobileSection, setOpenMobileSection] = useState(null);
   const [hovered, setHovered] = useState(null);
+  // Where the open menu's trigger sits, so the panel drops under it.
+  const [anchorX, setAnchorX] = useState(0);
   const navRef = useRef(null);
   const hoverTimer = useRef(null);
   const lenis = useLenis();
@@ -74,8 +76,15 @@ export default function Navbar() {
     clearHoverTimer();
     hoverTimer.current = setTimeout(() => setOpenMenu(null), 160);
   };
+  // Remember the trigger's offset inside the header before the menu opens.
+  const anchorTo = (el) => {
+    if (!el || !navRef.current) return;
+    setAnchorX(el.getBoundingClientRect().left - navRef.current.getBoundingClientRect().left);
+  };
+
   const onItemEnter = (e, key) => {
     setHovered(key);
+    anchorTo(e.currentTarget);
     if (e.pointerType !== "mouse") return;
     if (key === "home") scheduleClose();
     else scheduleOpen(key);
@@ -160,7 +169,10 @@ export default function Navbar() {
               <button
                 key={menu.key}
                 type="button"
-                onClick={() => toggleMenu(menu.key)}
+                onClick={(e) => {
+                  anchorTo(e.currentTarget);
+                  toggleMenu(menu.key);
+                }}
                 onPointerEnter={(e) => onItemEnter(e, menu.key)}
                 aria-expanded={openMenu === menu.key}
                 className={`relative flex items-center gap-1.5 rounded-full px-2.5 py-2 text-[13px] font-bold uppercase tracking-[0.04em] transition-colors ${
@@ -233,13 +245,17 @@ export default function Navbar() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="absolute inset-x-0 top-full hidden justify-center px-5 pt-3 lg:flex"
+            className="absolute inset-x-0 top-full hidden pt-3 lg:block"
           >
             {(() => {
               const menu = MENU.find((m) => m.key === openMenu);
               if (!menu) return null;
+              const width = menu.type === "mega" ? 640 : menu.type === "locations" ? 320 : 256;
+              // Sit under the trigger, but never past the right edge.
+              const left = Math.max(20, Math.min(anchorX, window.innerWidth - width - 24));
               return (
                 <div
+                  style={{ marginLeft: left }}
                   className={`rounded-[1.75rem] border border-ink/[0.07] bg-white/97 p-6 shadow-[0_34px_70px_-34px_rgba(27,27,23,0.5)] backdrop-blur-sm ${
                     menu.type === "mega"
                       ? "w-[640px] max-w-full"
