@@ -45,14 +45,6 @@ const SOCIALS = [
   },
 ];
 
-// A sparse, fixed starfield — no animation, so it costs nothing to scroll past.
-const STARS = [
-  [4, 22], [7, 62], [11, 15], [13, 78], [17, 40], [19, 8], [22, 88], [26, 33],
-  [29, 70], [33, 12], [36, 55], [41, 92], [45, 25], [49, 66], [53, 6],
-  [58, 44], [62, 81], [67, 19], [71, 58], [76, 35], [81, 73], [85, 11],
-  [89, 49], [93, 86], [96, 28],
-];
-
 export default function Footer() {
   return (
     <footer className="relative isolate overflow-hidden bg-ink text-cream">
@@ -61,16 +53,6 @@ export default function Footer() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[24rem] bg-[radial-gradient(38%_88%_at_-2%_0%,rgba(167,207,59,0.28),transparent_68%),radial-gradient(38%_88%_at_102%_0%,rgba(167,207,59,0.28),transparent_68%)]"
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        {STARS.map(([top, left]) => (
-          <span
-            key={`${top}-${left}`}
-            className="absolute h-px w-px rounded-full bg-lime/70 shadow-[0_0_4px_1px_rgba(167,207,59,0.45)]"
-            style={{ top: `${top}%`, left: `${left}%` }}
-          />
-        ))}
-      </div>
-
       <div className="mx-auto max-w-7xl px-5 pb-8 pt-14 sm:px-8 sm:pt-16">
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_0.8fr]">
           <div>
