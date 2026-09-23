@@ -38,7 +38,7 @@ const COUNTERS = [
 
 export default function IndustriesSection() {
   return (
-    <section id="industries" className="section-y bg-cream">
+    <section id="industries" className="section-y-tight bg-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.75fr_2fr] lg:gap-16">
         {/* Left rail: label, context and the headline numbers */}
         <div className="lg:sticky lg:top-28 lg:self-start">

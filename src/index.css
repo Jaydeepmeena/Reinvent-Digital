@@ -57,6 +57,10 @@
   padding-block: clamp(4rem, 3rem + 4vw, 6.5rem);
 }
 
+@utility section-y-tight {
+  padding-block: clamp(2.25rem, 1.75rem + 2vw, 3.5rem);
+}
+
 @utility section-head-gap {
   margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem);
 }

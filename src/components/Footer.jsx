@@ -10,7 +10,7 @@ const DIGITAL_MARKETING = SERVICES.filter((s) => s.category === "Digital Marketi
 export default function Footer() {
   return (
     <footer className="border-t border-ink/10 bg-paper">
-      <div className="mx-auto max-w-7xl px-5 pb-10 pt-14 sm:px-8 sm:pt-16">
+      <div className="mx-auto max-w-7xl px-5 pb-10 pt-10 sm:px-8 sm:pt-12">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link to="/">

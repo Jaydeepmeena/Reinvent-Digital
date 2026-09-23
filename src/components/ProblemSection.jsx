@@ -29,7 +29,7 @@ const PROBLEMS = [
 // On desktop (lg) the text column also sticks beside them.
 export default function ProblemSection() {
   return (
-    <section className="bg-cream pb-12 pt-12 sm:pb-14 sm:pt-14 lg:pb-16 lg:pt-16">
+    <section className="bg-cream pb-8 pt-12 sm:pb-9 sm:pt-14 lg:pb-10 lg:pt-16">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
         <div className="self-start lg:sticky lg:top-28">
           <Reveal>

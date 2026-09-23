@@ -73,7 +73,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="border-y border-ink/[0.06] bg-paper pb-[clamp(4rem,3rem+4vw,6.5rem)] pt-8 sm:pt-10 lg:pt-12"
+      className="border-y border-ink/[0.06] bg-paper pb-[clamp(2.25rem,1.75rem+2vw,3.5rem)] pt-6 sm:pt-7 lg:pt-8"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeader

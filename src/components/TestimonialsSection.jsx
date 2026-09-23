@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
     setState(([i]) => [(i + step + TESTIMONIALS.length) % TESTIMONIALS.length, step]);
 
   return (
-    <section className="section-y bg-cream">
+    <section className="section-y-tight bg-cream">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">

@@ -33,7 +33,7 @@ const ROWS = [
 
 export default function ComparisonSection() {
   return (
-    <section className="section-y relative overflow-hidden bg-ink text-cream">
+    <section className="section-y-tight relative overflow-hidden bg-ink text-cream">
       <div className="pointer-events-none absolute inset-0 bg-grid-dark [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">

@@ -49,7 +49,7 @@ export default function CTASection({
   monochrome = false,
 }) {
   return (
-    <section id={id} className="section-y bg-cream">
+    <section id={id} className="section-y-tight bg-cream">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal
           y={40}

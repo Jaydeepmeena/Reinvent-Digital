@@ -224,7 +224,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="section-y relative overflow-hidden bg-ink text-cream"
+      className="section-y-tight relative overflow-hidden bg-ink text-cream"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-dark [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
 

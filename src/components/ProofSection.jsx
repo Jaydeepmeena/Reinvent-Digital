@@ -35,7 +35,7 @@ function Tile({ className = "", delay = 0, children }) {
 
 export default function ProofSection() {
   return (
-    <section id="results" className="bg-cream pb-8 pt-12 sm:pb-10 sm:pt-14 lg:pb-12 lg:pt-16">
+    <section id="results" className="bg-cream pb-6 pt-8 sm:pb-7 sm:pt-9 lg:pb-8 lg:pt-10">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-5 lg:grid-cols-[1fr_2fr] lg:gap-10">
           <Reveal>
