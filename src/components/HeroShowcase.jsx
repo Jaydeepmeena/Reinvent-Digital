@@ -36,20 +36,20 @@ const CHANNELS = [
 
 function SocialRing() {
   return (
-    <div className="relative h-28 w-28 sm:h-36 sm:w-36 lg:h-44 lg:w-44">
+    <div className="pointer-events-none relative h-56 w-56 sm:h-72 sm:w-72 lg:h-[26rem] lg:w-[26rem]">
       {/* Outer track with a single dot running round it */}
       <div aria-hidden="true" className="animate-spin-slow absolute inset-0 rounded-full border border-ink/20">
-        <span className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-lime shadow-[0_0_8px_2px_rgba(167,207,59,0.6)]" />
+        <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-lime shadow-[0_0_10px_3px_rgba(167,207,59,0.6)]" />
       </div>
 
       {/* The lime band itself */}
       <div
         aria-hidden="true"
-        className="absolute inset-3 rounded-full border-[1.25rem] border-lime sm:inset-[0.9rem] sm:border-[1.6rem] lg:inset-4 lg:border-[1.9rem]"
+        className="absolute inset-5 rounded-full border-[2.25rem] border-lime sm:inset-6 sm:border-[2.75rem] lg:inset-7 lg:border-[3.25rem]"
       />
 
       {/* Icons ride the middle of the band, turning the other way */}
-      <div className="animate-spin-slow absolute inset-[1.375rem] [animation-direction:reverse] sm:inset-[1.7rem] lg:inset-[1.95rem]">
+      <div className="animate-spin-slow absolute inset-[2.375rem] [animation-direction:reverse] sm:inset-[2.875rem] lg:inset-[3.375rem]">
         {CHANNELS.map(({ label, href, path }, i) => {
           const angle = (i / CHANNELS.length) * (Math.PI * 2);
           return (
@@ -59,7 +59,7 @@ function SocialRing() {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 text-ink transition-opacity hover:opacity-60 sm:h-6 sm:w-6"
+              className="pointer-events-auto absolute h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-ink transition-opacity hover:opacity-60 sm:h-7 sm:w-7 lg:h-9 lg:w-9"
               style={{
                 left: `${50 + Math.sin(angle) * 50}%`,
                 top: `${50 - Math.cos(angle) * 50}%`,
@@ -142,7 +142,7 @@ export default function HeroShowcase() {
           initial={{ scale: 0.7, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
-          className="absolute -right-3 top-[28%] sm:-right-8 lg:-right-14"
+          className="absolute right-0 top-[24%] translate-x-1/2"
         >
           <SocialRing />
         </motion.div>
