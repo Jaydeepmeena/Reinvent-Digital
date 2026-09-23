@@ -142,7 +142,7 @@ export default function HeroShowcase() {
           initial={{ scale: 0.7, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
-          className="absolute right-0 top-[24%] translate-x-1/2"
+          className="absolute right-0 top-[24%] w-[5.5rem] overflow-hidden sm:w-28 lg:w-[9.5rem]"
         >
           <SocialRing />
         </motion.div>
