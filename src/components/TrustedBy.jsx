@@ -43,7 +43,7 @@ function MarqueePanel({ clients, direction, from }) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.9, ease: EASE }}
-      className="group relative min-w-0 flex-1 overflow-hidden py-2 sm:py-3"
+      className="group relative min-w-0 flex-1 overflow-hidden py-1 sm:py-1.5"
     >
       <div className={`overflow-hidden ${fade}`}>
         <ul
@@ -75,7 +75,7 @@ function MarqueePanel({ clients, direction, from }) {
 
 export default function TrustedBy() {
   return (
-    <section className="overflow-x-clip bg-cream py-6 sm:py-8">
+    <section className="overflow-x-clip bg-cream py-3 sm:py-4">
       <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 sm:px-8 md:flex-row md:items-stretch md:gap-0">
         <Reveal
           as="p"
