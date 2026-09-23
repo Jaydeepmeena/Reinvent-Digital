@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import Reveal from "./motion/Reveal";
+import CountUp from "./motion/CountUp";
 import { EASE } from "./motion/easing";
 
 const TESTIMONIALS = [
@@ -161,9 +162,12 @@ export default function TestimonialsSection() {
                 <StarRow rating={active.rating} />
 
                 <div className="mt-5 flex items-baseline gap-2">
-                  <span className="bg-gradient-to-r from-lime-deep to-green-deep bg-clip-text text-[clamp(3rem,2rem+5vw,4.5rem)] font-extrabold leading-none tracking-tight text-transparent">
-                    {active.rating.toFixed(1)}
-                  </span>
+                  <CountUp
+                    key={active.name}
+                    value={active.rating.toFixed(1)}
+                    duration={1.3}
+                    className="bg-gradient-to-r from-lime-deep to-green-deep bg-clip-text text-[clamp(3rem,2rem+5vw,4.5rem)] font-extrabold leading-none tracking-tight text-transparent"
+                  />
                   <span className="text-lg font-semibold text-ink-soft">/ 5</span>
                 </div>
 

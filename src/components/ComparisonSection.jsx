@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CalendarCheck, Check, Coins, Headphones, Route, X } from "lucide-react";
 import Reveal from "./motion/Reveal";
+import CountUp from "./motion/CountUp";
 import Scene3D from "./three/Scene3D";
 import { EASE } from "./motion/easing";
 
@@ -110,9 +111,12 @@ export default function ComparisonSection() {
                 <div className="mt-8 flex items-end justify-between gap-4">
                   <div>
                     <span className="block text-[13px] font-bold uppercase tracking-wide text-cream">Shift</span>
-                    <span className="block text-[2.25rem] font-extrabold leading-none tracking-tight text-lime">
-                      0{i + 1}
-                    </span>
+                    <CountUp
+                      value={String(i + 1)}
+                      pad={2}
+                      duration={1.1}
+                      className="block text-[2.25rem] font-extrabold leading-none tracking-tight text-lime"
+                    />
                   </div>
                   <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-lime text-ink transition-[scale,box-shadow] duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-lime/40 sm:h-[4.5rem] sm:w-[4.5rem]">
                     <Icon className="h-7 w-7" />

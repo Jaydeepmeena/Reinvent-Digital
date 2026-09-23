@@ -95,28 +95,30 @@ export default function ProblemSection() {
                 whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: EASE }}
-                className="group relative overflow-hidden rounded-[1.25rem] border border-cream/5 bg-gradient-to-b from-[#2d2d28] to-ink px-6 py-8 text-center shadow-xl shadow-ink/15 transition-[border-color,box-shadow] duration-300 hover:border-lime/30 hover:shadow-2xl hover:shadow-lime/10 sm:px-10 sm:py-10"
+                className="group relative overflow-hidden rounded-[1.25rem] border border-cream/5 bg-gradient-to-b from-[#2d2d28] to-ink px-6 py-8 text-center shadow-xl shadow-ink/15 transition-[border-color,box-shadow] duration-300 hover:border-lime hover:shadow-2xl hover:shadow-lime/25 sm:px-10 sm:py-10"
               >
-                {/* Lime glow blooms behind the icon on hover */}
+                {/* The card floods lime on hover, wiping up from the bottom */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-x-0 -top-20 mx-auto h-44 w-44 rounded-full bg-lime/25 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 origin-bottom scale-y-0 bg-gradient-to-b from-lime to-lime-deep transition-transform duration-500 ease-out group-hover:scale-y-100"
                 />
 
                 <span
                   aria-hidden="true"
-                  className="absolute right-5 top-4 text-4xl font-extrabold tabular-nums text-cream/[0.06] transition-colors duration-500 group-hover:text-lime/25 sm:text-5xl"
+                  className="absolute right-5 top-4 text-4xl font-extrabold tabular-nums text-cream/[0.06] transition-colors duration-500 group-hover:text-ink/15 sm:text-5xl"
                 >
                   0{i + 1}
                 </span>
-                <span className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime/15 text-lime transition-[background-color,color,scale] duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-ink">
+                <span className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime/15 text-lime transition-[background-color,color,scale,rotate] duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-ink group-hover:text-lime">
                   <Icon className="h-6 w-6" />
                 </span>
-                <h3 className="relative mt-5 text-xl font-bold text-cream sm:text-2xl">{title}</h3>
-                <p className="relative mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-cream/60 transition-colors duration-300 group-hover:text-cream/75">
+                <h3 className="relative mt-5 text-xl font-bold text-cream transition-colors duration-300 group-hover:text-ink sm:text-2xl">
+                  {title}
+                </h3>
+                <p className="relative mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-cream/60 transition-colors duration-300 group-hover:text-ink/80">
                   {body}
                 </p>
-                <span className="relative mt-5 inline-block rounded-full border border-cream/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cream/70 transition-colors duration-300 group-hover:border-lime/40 group-hover:text-lime">
+                <span className="relative mt-5 inline-block rounded-full border border-cream/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-cream/70 transition-colors duration-300 group-hover:border-ink/30 group-hover:bg-ink/10 group-hover:text-ink">
                   {tag}
                 </span>
               </motion.div>

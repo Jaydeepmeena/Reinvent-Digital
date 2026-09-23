@@ -4,7 +4,7 @@ import { EASE } from "./easing";
 
 const NUMBER = /^([^\d]*)(\d[\d,]*(?:\.\d+)?)(.*)$/;
 
-function parse(value) {
+function parse(value, pad) {
   const match = String(value).match(NUMBER);
   if (!match) return null;
   const [, prefix, raw, suffix] = match;
@@ -18,17 +18,18 @@ function parse(value) {
       n.toLocaleString("en-US", {
         minimumFractionDigits: decimals,
         maximumFractionDigits: decimals,
+        minimumIntegerDigits: pad ?? 1,
         useGrouping: raw.includes(","),
       }),
   };
 }
 
 // Writes straight to the DOM while counting: no React re-render per frame.
-export default function CountUp({ value, duration = 1.6, className }) {
+export default function CountUp({ value, duration = 1.6, pad, className }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduce = useReducedMotion();
-  const parsed = useMemo(() => parse(value), [value]);
+  const parsed = useMemo(() => parse(value, pad), [value, pad]);
   const animated = parsed && !reduce;
 
   useEffect(() => {
