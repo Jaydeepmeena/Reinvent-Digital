@@ -61,7 +61,7 @@ export default function ComparisonSection() {
           {/* A slow ECG trace running behind the cards */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 hidden h-[150%] w-[120%] -translate-x-1/2 -translate-y-1/2 opacity-60 xl:block"
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 hidden h-[150%] w-[120%] -translate-x-1/2 -translate-y-1/2 opacity-90 xl:block"
           >
             <Scene3D scene="pulseLine" className="h-full w-full" />
           </div>
@@ -75,7 +75,7 @@ export default function ComparisonSection() {
                 viewport={{ once: true, margin: "-60px" }}
                 whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
                 transition={{ duration: 0.6, delay: i * 0.09, ease: EASE }}
-                className="group relative isolate flex flex-col overflow-hidden rounded-[1.75rem] border border-cream/10 bg-cream/[0.03] p-6 transition-[background-color,border-color,box-shadow] duration-300 hover:border-lime/40 hover:bg-cream/[0.06] hover:shadow-2xl hover:shadow-lime/10 sm:p-7"
+                className="group relative isolate flex flex-col overflow-hidden rounded-[1.75rem] border border-cream/10 bg-[#22221e] p-6 transition-[background-color,border-color,box-shadow] duration-300 hover:border-lime/40 hover:bg-[#282823] hover:shadow-2xl hover:shadow-lime/10 sm:p-7"
               >
                 {/* Lime bloom rises from the icon corner on hover */}
                 <span
