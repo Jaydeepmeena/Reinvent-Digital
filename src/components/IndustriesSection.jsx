@@ -79,7 +79,7 @@ export default function IndustriesSection() {
           </Reveal>
 
           <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8">
-            {INDUSTRIES.map(({ slug, title, eyebrow, icon: Icon, metric }, i) => {
+            {INDUSTRIES.map(({ slug, title, eyebrow, metric }, i) => {
               // Cards 1 and 4 sit dark, so the two columns read as a checkerboard.
               const dark = i === 0 || i === 3;
               return (
@@ -94,7 +94,7 @@ export default function IndustriesSection() {
                 >
                   <Link to={`/industries/${slug}`} className="group block">
                     <div
-                      className={`relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[1.5rem] p-6 transition-colors duration-300 sm:p-7 ${
+                      className={`relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[1.5rem] p-6 transition-colors duration-300 sm:p-7 ${
                         dark ? "bg-ink text-cream" : "bg-lime-soft text-ink"
                       }`}
                     >
@@ -110,13 +110,6 @@ export default function IndustriesSection() {
                         aria-hidden="true"
                         className={`absolute inset-0 bg-gradient-to-t ${
                           dark ? "from-ink via-ink/70 to-ink/20" : "from-lime-soft via-lime-soft/75 to-lime-soft/25"
-                        }`}
-                      />
-
-                      <Icon
-                        aria-hidden="true"
-                        className={`relative h-20 w-20 transition-transform duration-500 group-hover:scale-105 ${
-                          dark ? "text-lime/40" : "text-green-deep/30"
                         }`}
                       />
 
