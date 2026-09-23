@@ -133,7 +133,7 @@ export default function Navbar() {
         setHovered(null);
         scheduleClose();
       }}
-      className="fixed inset-x-0 top-0 z-50"
+      className="absolute inset-x-0 top-0 z-50"
     >
       <nav
         className={`relative flex items-stretch bg-ink transition-shadow duration-300 lg:bg-transparent ${

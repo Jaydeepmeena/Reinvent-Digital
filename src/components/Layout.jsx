@@ -45,7 +45,7 @@ export default function Layout() {
   const reduceMotion = useReducedMotion();
 
   const page = (
-    <div className="min-h-screen bg-cream text-ink">
+    <div className="relative min-h-screen bg-cream text-ink">
       <ScrollProgress />
       <ScrollManager />
       <Navbar />
