@@ -136,8 +136,8 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50"
     >
       <nav
-        className={`relative flex items-stretch bg-ink transition-shadow duration-300 lg:bg-lime ${
-          scrolled || openMenu ? "shadow-[0_16px_40px_-22px_rgba(27,27,23,0.55)]" : ""
+        className={`relative flex items-stretch bg-ink transition-shadow duration-300 lg:bg-transparent ${
+          scrolled || openMenu ? "shadow-[0_16px_40px_-22px_rgba(27,27,23,0.55)] lg:shadow-none" : ""
         }`}
       >
         {/* Black block: logo and links */}
@@ -221,7 +221,7 @@ export default function Navbar() {
         <div className="ml-auto flex items-center gap-3 self-center pr-5 sm:pr-8">
           <Link
             to="/contact"
-            className="group hidden items-center gap-3 rounded-xl bg-ink py-2 pl-2 pr-4 text-[13px] font-bold uppercase tracking-[0.08em] text-cream transition-[background-color,scale] duration-300 hover:bg-green-deep active:scale-95 lg:flex"
+            className="group hidden items-center gap-3 rounded-xl bg-ink py-2 pl-2 pr-4 text-[13px] font-bold uppercase tracking-[0.08em] text-cream shadow-[0_12px_24px_-14px_rgba(27,27,23,0.9)] ring-1 ring-cream/15 transition-[background-color,scale] duration-300 hover:bg-green-deep active:scale-95 lg:flex"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime text-ink transition-transform duration-300 group-hover:scale-105">
               <ArrowUpRight className="h-4 w-4" />
