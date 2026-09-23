@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* Viewports big enough to pin a section and scroll it sideways. Keep in sync with PIN_QUERY in HorizontalScroll. */
+@custom-variant pin (@media (min-width: 1024px) and (min-height: 700px));
+
+@theme {
+  --color-ink: #1b1b17;
+  --color-ink-soft: #4a4a42;
+  --color-cream: #f6f5ef;
+  --color-cream-dim: #efeee4;
+  --color-paper: #fbfaf5;
+  --color-green: #0c9c53;
+  --color-green-deep: #086b3a;
+  --color-lime: #a7cf3b;
+  --color-lime-deep: #8fb72c;
+  --color-lime-soft: #e9f2ce;
+  --color-lime-mist: #dee9b9;
+
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-serif: "Fraunces", "Georgia", serif;
+
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+  --animate-spin-slow: spin 22s linear infinite;
+  --animate-caret: caret 1s steps(1) infinite;
+  --animate-bob: bob 1.2s ease-in-out infinite;
+}
+
+/* Highlighter sweep for hero accents. A CSS animation (not GSAP) because SplitText clones the span per line. */
+.hl-marker {
+  background-image: linear-gradient(transparent 58%, rgba(167, 207, 59, 0.9) 58%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: marker 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+}
+
+@keyframes marker {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
+}
+
+@keyframes caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bob {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* One vertical rhythm for every page section: 64px on phones, ~104px on wide screens. */
+@utility section-y {
+  padding-block: clamp(4rem, 3rem + 4vw, 6.5rem);
+}
+
+@utility section-head-gap {
+  margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: var(--color-lime);
+  color: var(--color-ink);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-optical-sizing: auto;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(27, 27, 23, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 27, 23, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(246, 245, 239, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(246, 245, 239, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
