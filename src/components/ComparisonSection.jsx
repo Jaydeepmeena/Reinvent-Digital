@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CalendarCheck, Check, Coins, Headphones, Route, X } from "lucide-react";
 import Reveal from "./motion/Reveal";
+import Scene3D from "./three/Scene3D";
 import { EASE } from "./motion/easing";
 
 const ROWS = [
@@ -49,7 +50,12 @@ export default function ComparisonSection() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <p className="max-w-md text-[15px] leading-relaxed text-cream/60 sm:text-base">
+            {/* Bars that keep turning: the tallest — the booked patient — is the lime one */}
+            <div aria-hidden="true" className="pointer-events-none relative -mt-4 h-40 sm:h-48 lg:-mt-8 lg:h-56">
+              <Scene3D scene="metricBars" className="absolute inset-0 h-full w-full" />
+            </div>
+
+            <p className="mt-2 max-w-md text-[15px] leading-relaxed text-cream/60 sm:text-base">
               Billing against media spend rewards spending more. We're measured on what happens after the click — how
               fast enquiries are answered, how many become bookings, and how many walk in.
             </p>
