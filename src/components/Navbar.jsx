@@ -156,22 +156,6 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-0.5 lg:flex">
-            <Link
-              to="/"
-              onPointerEnter={(e) => onItemEnter(e, "home")}
-              className={`relative rounded-full px-3 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors ${
-                pillKey === "home" || activeKey === "home" ? "text-cream" : "text-cream/70"
-              }`}
-            >
-              {pillKey === "home" && (
-                <motion.span
-                  layoutId="nav-pill"
-                  transition={PILL}
-                  className="absolute inset-0 rounded-full bg-cream/10"
-                />
-              )}
-              <span className="relative">Home</span>
-            </Link>
             {MENU.map((menu) => (
               <button
                 key={menu.key}
@@ -340,14 +324,6 @@ export default function Navbar() {
             className="mx-3 mt-3 overflow-hidden rounded-[1.75rem] border border-ink/[0.07] bg-white shadow-[0_30px_60px_-30px_rgba(27,27,23,0.5)] sm:mx-5 lg:hidden"
           >
             <div data-lenis-prevent className="flex h-[calc(100dvh-7rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-4 py-4">
-              <Link
-                to="/"
-                onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-base font-semibold text-ink"
-              >
-                Home
-              </Link>
-
               {MENU.map((menu) => (
                 <div key={menu.key} className="border-t border-ink/5 pt-1 first:border-t-0 first:pt-0">
                   <button
