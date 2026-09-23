@@ -5,6 +5,7 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { EASE } from "./motion/easing";
 import CountUp from "./motion/CountUp";
 import HeroShowcase from "./HeroShowcase";
+import SocialRing from "./SocialRing";
 import useMediaQuery from "./motion/useMediaQuery";
 
 const STATS = [
@@ -41,6 +42,15 @@ export default function Hero() {
         style={{ y: glowY }}
         className="pointer-events-none absolute -top-32 right-[-20%] h-[28rem] w-[28rem] rounded-full bg-white/40 blur-3xl sm:right-[-8%]"
       />
+
+      <motion.div
+        initial={{ scale: 0.7, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
+        className="absolute right-0 top-[62%] translate-x-1/2 sm:top-[64%] lg:top-[38%]"
+      >
+        <SocialRing />
+      </motion.div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <motion.div style={{ y: textY }}>
