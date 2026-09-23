@@ -67,11 +67,11 @@ export default function VelocityMarquee({ items, tone = "light", className = "" 
     <div
       ref={ref}
       aria-hidden="true"
-      className={`overflow-hidden py-6 sm:py-8 ${dark ? "bg-ink" : ""} ${className}`}
+      className={`overflow-hidden py-3 sm:py-4 ${dark ? "bg-ink" : ""} ${className}`}
     >
       <div
         ref={trackRef}
-        className="flex w-max whitespace-nowrap text-[clamp(2.25rem,1.5rem+4vw,5.5rem)] font-extrabold leading-none tracking-tight will-change-transform"
+        className="flex w-max whitespace-nowrap text-[clamp(1.5rem,1.05rem+2.2vw,3rem)] font-extrabold leading-none tracking-tight will-change-transform"
       >
         {row}
         {row}
