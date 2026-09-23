@@ -133,99 +133,113 @@ export default function Navbar() {
         setHovered(null);
         scheduleClose();
       }}
-      className={`fixed inset-x-0 top-0 z-50 px-3 transition-all duration-300 sm:px-5 ${
-        scrolled ? "pt-2" : "pt-3 sm:pt-5"
-      }`}
+      className="fixed inset-x-0 top-0 z-50"
     >
       <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-ink/[0.06] bg-white/92 px-4 py-2.5 backdrop-blur-md transition-shadow duration-300 sm:px-5 ${
-          scrolled || openMenu
-            ? "shadow-[0_18px_45px_-22px_rgba(27,27,23,0.45)]"
-            : "shadow-[0_10px_30px_-18px_rgba(27,27,23,0.35)]"
+        className={`relative flex items-stretch bg-ink transition-shadow duration-300 lg:bg-lime ${
+          scrolled || openMenu ? "shadow-[0_16px_40px_-22px_rgba(27,27,23,0.55)]" : ""
         }`}
       >
-        <Link
-          to="/"
-          className="group flex shrink-0 items-center gap-2"
-          onClick={() => setOpenMenu(null)}
-          onPointerEnter={(e) => onItemEnter(e, "home")}
-        >
-          <img
-            src={logo}
-            alt="Reinvent Digital"
-            className="h-11 w-auto transition-transform duration-300 group-hover:scale-[1.04] sm:h-12"
-          />
-        </Link>
-
-        <div className="hidden items-center gap-0.5 lg:flex">
+        {/* Black block: logo and links */}
+        <div className="flex items-center gap-6 bg-ink py-3 pl-5 pr-5 sm:pl-8 lg:gap-8 lg:pr-8">
           <Link
             to="/"
+            className="group flex shrink-0 items-center gap-2"
+            onClick={() => setOpenMenu(null)}
             onPointerEnter={(e) => onItemEnter(e, "home")}
-            className={`relative rounded-full px-3.5 py-2 text-[14.5px] font-medium tracking-[-0.01em] transition-colors ${
-              pillKey === "home" || activeKey === "home" ? "text-ink" : "text-ink-soft"
-            }`}
           >
-            {pillKey === "home" && (
-              <motion.span
-                layoutId="nav-pill"
-                transition={PILL}
-                className="absolute inset-0 rounded-full bg-ink/[0.07]"
-              />
-            )}
-            <span className="relative">Home</span>
+            <img
+              src={logo}
+              alt="Reinvent Digital"
+              className="h-11 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-[1.04] sm:h-12"
+            />
           </Link>
-          {MENU.map((menu) => (
-            <button
-              key={menu.key}
-              type="button"
-              onClick={() => toggleMenu(menu.key)}
-              onPointerEnter={(e) => onItemEnter(e, menu.key)}
-              aria-expanded={openMenu === menu.key}
-              className={`relative flex items-center gap-1 rounded-full px-3.5 py-2 text-[14.5px] font-medium tracking-[-0.01em] transition-colors ${
-                pillKey === menu.key || activeKey === menu.key ? "text-ink" : "text-ink-soft"
+
+          <div className="hidden items-center gap-0.5 lg:flex">
+            <Link
+              to="/"
+              onPointerEnter={(e) => onItemEnter(e, "home")}
+              className={`relative rounded-full px-3 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors ${
+                pillKey === "home" || activeKey === "home" ? "text-cream" : "text-cream/70"
               }`}
             >
-              {pillKey === menu.key && (
+              {pillKey === "home" && (
                 <motion.span
                   layoutId="nav-pill"
                   transition={PILL}
-                  className="absolute inset-0 rounded-full bg-ink/[0.07]"
+                  className="absolute inset-0 rounded-full bg-cream/10"
                 />
               )}
-              <span className="relative">{menu.label}</span>
-              <ChevronDown
-                className={`relative h-3.5 w-3.5 transition-transform duration-300 ${
-                  openMenu === menu.key ? "rotate-180" : ""
+              <span className="relative">Home</span>
+            </Link>
+            {MENU.map((menu) => (
+              <button
+                key={menu.key}
+                type="button"
+                onClick={() => toggleMenu(menu.key)}
+                onPointerEnter={(e) => onItemEnter(e, menu.key)}
+                aria-expanded={openMenu === menu.key}
+                className={`relative flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors ${
+                  pillKey === menu.key || activeKey === menu.key ? "text-cream" : "text-cream/70"
                 }`}
-              />
-              {activeKey === menu.key && (
-                <span aria-hidden="true" className="absolute inset-x-4 bottom-0.5 h-0.5 rounded-full bg-lime" />
-              )}
-            </button>
-          ))}
+              >
+                {pillKey === menu.key && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    transition={PILL}
+                    className="absolute inset-0 rounded-full bg-cream/10"
+                  />
+                )}
+                <span className="relative">{menu.label}</span>
+                {/* Lime badge marks the items that open a menu, like the reference */}
+                <span
+                  className={`relative flex h-[18px] w-[18px] items-center justify-center rounded-full transition-colors duration-300 ${
+                    activeKey === menu.key ? "bg-lime text-ink" : "bg-lime/85 text-ink"
+                  }`}
+                >
+                  <ChevronDown
+                    className={`h-3 w-3 transition-transform duration-300 ${
+                      openMenu === menu.key ? "rotate-180" : ""
+                    }`}
+                  />
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="hidden lg:block">
+        {/* The black block sweeps into the lime band */}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 64 80"
+          preserveAspectRatio="none"
+          className="hidden w-12 self-stretch text-ink lg:block xl:w-16"
+        >
+          <path d="M0 0 H64 C44 4 40 32 24 58 C16 70 8 76 0 80 Z" fill="currentColor" />
+        </svg>
+
+        <div className="ml-auto flex items-center gap-3 self-center pr-5 sm:pr-8">
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[14px] font-semibold text-cream shadow-[0_12px_24px_-14px_rgba(27,27,23,0.9)] transition-[background-color,scale] duration-300 hover:bg-green-deep active:scale-95"
+            className="group hidden items-center gap-3 rounded-xl bg-ink py-2 pl-2 pr-4 text-[13px] font-bold uppercase tracking-[0.08em] text-cream transition-[background-color,scale] duration-300 hover:bg-green-deep active:scale-95 lg:flex"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-lime transition-transform group-hover:scale-125" />
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-lime text-ink transition-transform duration-300 group-hover:scale-105">
+              <ArrowUpRight className="h-4 w-4" />
+            </span>
             Contact Us
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
-        </div>
 
-        <button
-          type="button"
-          onClick={() => setMobileOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/10 bg-white text-ink transition-colors hover:bg-ink hover:text-cream lg:hidden"
-          aria-label="Toggle menu"
-        >
-          <span className={`transition-transform duration-300 ${mobileOpen ? "rotate-90" : ""}`}>
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </span>
-        </button>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg bg-lime text-ink transition-colors hover:bg-lime-deep lg:hidden"
+            aria-label="Toggle menu"
+          >
+            <span className={`transition-transform duration-300 ${mobileOpen ? "rotate-90" : ""}`}>
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </span>
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -235,7 +249,7 @@ export default function Navbar() {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="absolute inset-x-0 top-full hidden justify-center px-5 pt-2 lg:flex"
+            className="absolute inset-x-0 top-full hidden justify-center px-5 pt-3 lg:flex"
           >
             {(() => {
               const menu = MENU.find((m) => m.key === openMenu);
@@ -323,7 +337,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="mt-2 overflow-hidden rounded-[1.75rem] border border-ink/[0.07] bg-white shadow-[0_30px_60px_-30px_rgba(27,27,23,0.5)] lg:hidden"
+            className="mx-3 mt-3 overflow-hidden rounded-[1.75rem] border border-ink/[0.07] bg-white shadow-[0_30px_60px_-30px_rgba(27,27,23,0.5)] sm:mx-5 lg:hidden"
           >
             <div data-lenis-prevent className="flex h-[calc(100dvh-7rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-4 py-4">
               <Link
