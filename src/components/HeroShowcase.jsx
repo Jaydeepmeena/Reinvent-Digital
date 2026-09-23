@@ -36,7 +36,7 @@ const CHANNELS = [
 
 function SocialRing() {
   return (
-    <div className="pointer-events-none relative h-56 w-56 sm:h-72 sm:w-72 lg:h-[26rem] lg:w-[26rem]">
+    <div className="pointer-events-none relative h-44 w-44 sm:h-56 sm:w-56 lg:h-[19rem] lg:w-[19rem]">
       {/* Outer track with a single dot running round it */}
       <div aria-hidden="true" className="animate-spin-slow absolute inset-0 rounded-full border border-ink/20">
         <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-lime shadow-[0_0_10px_3px_rgba(167,207,59,0.6)]" />
@@ -45,11 +45,11 @@ function SocialRing() {
       {/* The lime band itself */}
       <div
         aria-hidden="true"
-        className="absolute inset-5 rounded-full border-[2.25rem] border-lime sm:inset-6 sm:border-[2.75rem] lg:inset-7 lg:border-[3.25rem]"
+        className="absolute inset-4 rounded-full border-[1.75rem] border-lime sm:inset-5 sm:border-[2.1rem] lg:inset-6 lg:border-[2.5rem]"
       />
 
       {/* Icons ride the middle of the band, turning the other way */}
-      <div className="animate-spin-slow absolute inset-[2.375rem] [animation-direction:reverse] sm:inset-[2.875rem] lg:inset-[3.375rem]">
+      <div className="animate-spin-slow absolute inset-[1.875rem] [animation-direction:reverse] sm:inset-[2.3rem] lg:inset-[2.75rem]">
         {CHANNELS.map(({ label, href, path }, i) => {
           const angle = (i / CHANNELS.length) * (Math.PI * 2);
           return (
@@ -59,7 +59,7 @@ function SocialRing() {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="pointer-events-auto absolute h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-ink transition-opacity hover:opacity-60 sm:h-7 sm:w-7 lg:h-9 lg:w-9"
+              className="pointer-events-auto absolute h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-ink transition-opacity hover:opacity-60 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
               style={{
                 left: `${50 + Math.sin(angle) * 50}%`,
                 top: `${50 - Math.cos(angle) * 50}%`,
