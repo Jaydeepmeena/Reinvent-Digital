@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "framer-motion";
 import { Megaphone, Wrench, LifeBuoy, ArrowUpRight, ArrowRight } from "lucide-react";
 import { SERVICES } from "../data/services";
+// Reuses the photos already bundled for the system cards.
+import demandImg from "../assets/cards/demand.jpg";
+import reportingImg from "../assets/cards/reporting.jpg";
+import callsImg from "../assets/cards/calls.jpg";
 import SectionHeader from "./motion/SectionHeader";
 import useMediaQuery from "./motion/useMediaQuery";
 import { EASE } from "./motion/easing";
@@ -12,16 +16,19 @@ const CATEGORIES = [
   {
     key: "Digital Marketing",
     icon: Megaphone,
+    image: demandImg,
     body: "Full-funnel campaigns engineered to turn search, social and AI visibility into booked patients.",
   },
   {
     key: "Tools",
     icon: Wrench,
+    image: reportingImg,
     body: "The CRM that connects every channel to one patient record and real booking data.",
   },
   {
     key: "Support",
     icon: LifeBuoy,
+    image: callsImg,
     body: "A call centre discipline that turns fast response into a consistent booking rate.",
   },
 ];
@@ -91,7 +98,7 @@ export default function ServicesSection() {
               swapping ? "lg:h-[min(40rem,max(30rem,calc(100dvh-9rem)))]" : ""
             }`}
           >
-            {CATEGORIES.map(({ key, icon: Icon, body }, i) => {
+            {CATEGORIES.map(({ key, icon: Icon, image, body }, i) => {
               const items = SERVICES.filter((s) => s.category === key);
               const isActive = wide ? i === active : i === 0;
               const expanded = !wide || isActive;
@@ -103,7 +110,7 @@ export default function ServicesSection() {
                   layout
                   transition={reduce ? SWAP_INSTANT : SWAP}
                   style={{ order: rank }}
-                  className={`flex flex-col overflow-hidden rounded-2xl border transition-[background-color,border-color,color,box-shadow] duration-200 ${
+                  className={`relative isolate flex flex-col overflow-hidden rounded-2xl border transition-[background-color,border-color,color,box-shadow] duration-200 ${
                     isActive ? "p-6 sm:p-8" : "p-4 sm:p-5"
                   } ${
                     isActive
@@ -111,6 +118,18 @@ export default function ServicesSection() {
                       : "border-ink/10 bg-cream text-ink hover:border-green/30"
                   } ${!wide && i === 0 ? "md:col-span-2" : ""}`}
                 >
+                  {/* Only the big card carries a photo */}
+                  {isActive && (
+                    <img
+                      src={image}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.1]"
+                    />
+                  )}
+
                   <div className="flex items-start justify-between gap-4">
                     <span
                       className={`flex h-12 w-12 origin-left items-center justify-center rounded-xl transition-[background-color,color,scale] duration-300 ${
