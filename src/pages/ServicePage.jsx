@@ -10,6 +10,7 @@ import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
 import StackCards from "../components/fx/StackCards";
 import VelocityMarquee from "../components/fx/VelocityMarquee";
+import IncludesCarousel from "../components/fx/IncludesCarousel";
 import { BentoGrid, BentoTile, GrowthBars } from "../components/fx/Bento";
 
 export default function ServicePage() {
@@ -77,7 +78,7 @@ export default function ServicePage() {
               {includes.map((item, i) => (
                 <BentoTile
                   key={item}
-                  className={`flex flex-col gap-6 border ${
+                  className={`hidden flex-col gap-6 border md:flex ${
                     i === 2 ? "border-lime bg-lime text-ink" : "border-ink/10 bg-white text-ink hover:border-ink/30"
                   }`}
                 >
@@ -96,6 +97,8 @@ export default function ServicePage() {
               ))}
             </BentoGrid>
           </div>
+
+          <IncludesCarousel items={includes} className="mt-5 md:hidden" />
         </section>
 
         <section className="section-y border-t border-ink/[0.06] bg-white">
