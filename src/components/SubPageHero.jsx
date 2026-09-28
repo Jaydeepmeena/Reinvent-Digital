@@ -125,9 +125,9 @@ export default function SubPageHero({
       {/* Page-specific photo, faded into the cream so the copy stays first */}
       {image && (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-[0.22] lg:opacity-[0.45]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/90 to-cream/60 lg:via-cream/85 lg:to-cream/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-cream/45" />
+          <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-[0.4] lg:opacity-[0.72]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream from-10% via-cream/85 via-55% to-cream/55 lg:via-cream/75 lg:via-50% lg:to-cream/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-cream/40" />
         </div>
       )}
 
