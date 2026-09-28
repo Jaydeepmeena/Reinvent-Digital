@@ -13,14 +13,18 @@ const COPY = { services: "lines", industries: "lines", about: "blur", resources:
 
 const MARKER = "hl-marker font-serif-italic font-medium text-ink";
 
-function ServiceCard({ icon: Icon, highlights, metric }) {
+function ServiceCard({ icon: Icon, highlights, metric, banner }) {
   return (
     <div data-hero-card>
       <div className="animate-float">
         <TiltCard
           max={5}
           glare="rgba(255,255,255,0.08)"
-          className="rounded-3xl border border-white/10 bg-ink p-6 shadow-2xl shadow-ink/20 sm:p-8"
+          className={`rounded-3xl border p-6 shadow-2xl sm:p-8 ${
+            banner
+              ? "border-cream/20 bg-ink/60 shadow-ink/50 backdrop-blur-md"
+              : "border-white/10 bg-ink shadow-ink/20"
+          }`}
         >
           {Icon && (
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-lime text-ink">
@@ -74,6 +78,8 @@ export default function SubPageHero({
 }) {
   const ref = useRef(null);
   const isServices = variant === "services";
+  // With a photo the hero becomes a dark banner, so the copy flips to cream.
+  const banner = Boolean(image);
 
   useGSAP(
     () => {
@@ -121,17 +127,24 @@ export default function SubPageHero({
   );
 
   return (
-    <section ref={ref} className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24">
-      {/* Page-specific photo, faded into the cream so the copy stays first */}
-      {image && (
+    <section
+      ref={ref}
+      className={`relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24 ${banner ? "bg-ink text-cream" : ""}`}
+    >
+      {/* The page's own photo, running the full width as a banner */}
+      {banner && (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-[0.4] lg:opacity-[0.72]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream from-10% via-cream/85 via-55% to-cream/55 lg:via-cream/75 lg:via-50% lg:to-cream/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-cream/40" />
+          <img src={image} alt="" decoding="async" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/55 lg:via-ink/75 lg:to-ink/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-ink/70" />
         </div>
       )}
 
-      <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
+      <div
+        className={`pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)] ${
+          banner ? "bg-grid-dark" : "bg-grid"
+        }`}
+      />
       <div className="pointer-events-none absolute -top-24 right-[-25%] h-96 w-96 rounded-full bg-lime/25 blur-3xl sm:right-[-10%]" />
 
       {isServices && (
@@ -139,32 +152,58 @@ export default function SubPageHero({
           <div
             aria-hidden="true"
             data-watermark
-            className="pointer-events-none absolute bottom-2 left-0 select-none whitespace-nowrap text-[clamp(5rem,16vw,15rem)] font-extrabold leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(27,27,23,0.07)]"
+            className={`pointer-events-none absolute bottom-2 left-0 select-none whitespace-nowrap text-[clamp(5rem,16vw,15rem)] font-extrabold leading-none tracking-tighter text-transparent ${
+              banner
+                ? "[-webkit-text-stroke:1px_rgba(246,245,239,0.14)]"
+                : "[-webkit-text-stroke:1px_rgba(27,27,23,0.07)]"
+            }`}
           >
             {title} · {title}
           </div>
-          <Plus aria-hidden="true" data-shape className="pointer-events-none absolute left-[54%] top-40 hidden h-6 w-6 text-ink/25 lg:block" />
-          <Plus aria-hidden="true" data-shape className="pointer-events-none absolute bottom-20 left-[55%] hidden h-5 w-5 text-ink/20 lg:block" />
-          <div aria-hidden="true" data-shape className="pointer-events-none absolute right-[8%] top-28 hidden h-16 w-16 rounded-full border border-dashed border-ink/20 md:block" />
+          <Plus
+            aria-hidden="true"
+            data-shape
+            className={`pointer-events-none absolute left-[54%] top-40 hidden h-6 w-6 lg:block ${
+              banner ? "text-cream/30" : "text-ink/25"
+            }`}
+          />
+          <Plus
+            aria-hidden="true"
+            data-shape
+            className={`pointer-events-none absolute bottom-20 left-[55%] hidden h-5 w-5 lg:block ${
+              banner ? "text-cream/25" : "text-ink/20"
+            }`}
+          />
+          <div
+            aria-hidden="true"
+            data-shape
+            className={`pointer-events-none absolute right-[8%] top-28 hidden h-16 w-16 rounded-full border border-dashed md:block ${
+              banner ? "border-cream/25" : "border-ink/20"
+            }`}
+          />
         </>
       )}
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12">
         <div data-hero-copy className="min-w-0">
           <div data-hero-fade>
-            <Breadcrumb trail={trail} />
+            <Breadcrumb trail={trail} tone={banner ? "dark" : "light"} />
           </div>
 
           <div
             data-hero-fade
-            className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-ink/10 bg-paper/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink-soft backdrop-blur sm:px-4 sm:text-xs"
+            className={`mt-5 inline-flex max-w-full items-center gap-2 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider backdrop-blur sm:px-4 sm:text-xs ${
+              banner ? "border-cream/15 bg-cream/10 text-cream/80" : "border-ink/10 bg-paper/80 text-ink-soft"
+            }`}
           >
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-lime ring-4 ring-lime/25" />
             <span className="truncate">{eyebrow}</span>
           </div>
 
           {variant === "resources" ? (
-            <h1 className="mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.08] tracking-tight text-ink">
+            <h1 className={`mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.08] tracking-tight ${
+                banner ? "text-cream" : "text-ink"
+              }`}>
               <SplitReveal as="span" type="words" onLoad delay={0.15}>
                 {title}
               </SplitReveal>
@@ -176,7 +215,9 @@ export default function SubPageHero({
               type={HEADLINE[variant]}
               onLoad
               delay={0.15}
-              className="mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.08] tracking-tight text-ink"
+              className={`mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.08] tracking-tight ${
+                banner ? "text-cream" : "text-ink"
+              }`}
             >
               {title}
               {accentNode}
@@ -188,7 +229,9 @@ export default function SubPageHero({
             type={COPY[variant]}
             onLoad
             delay={0.45}
-            className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink-soft sm:mt-6 sm:text-[17px]"
+            className={`mt-5 max-w-xl text-[16px] leading-relaxed sm:mt-6 sm:text-[17px] ${
+              banner ? "text-cream/70" : "text-ink-soft"
+            }`}
           >
             {description}
           </SplitReveal>
@@ -197,7 +240,11 @@ export default function SubPageHero({
             <Magnetic className="w-full sm:w-auto">
               <a
                 href={ctaHref}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[15px] font-semibold text-cream shadow-lg shadow-ink/15 transition-colors hover:bg-lime hover:text-ink sm:w-auto"
+                className={`group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-semibold shadow-lg transition-colors sm:w-auto ${
+                  banner
+                    ? "bg-lime text-ink shadow-lime/20 hover:bg-cream"
+                    : "bg-ink text-cream shadow-ink/15 hover:bg-lime hover:text-ink"
+                }`}
               >
                 {ctaLabel}
                 <span className="relative flex h-5 w-5 items-center justify-center overflow-hidden">
@@ -209,14 +256,25 @@ export default function SubPageHero({
           </div>
 
           {stats.length > 0 && (
-            <dl data-hero-stats className="mt-10 grid grid-cols-3 gap-4 border-t border-ink/10 pt-6 sm:mt-12 sm:gap-8 sm:pt-7">
+            <dl
+              data-hero-stats
+              className={`mt-10 grid grid-cols-3 gap-4 border-t pt-6 sm:mt-12 sm:gap-8 sm:pt-7 ${
+                banner ? "border-cream/15" : "border-ink/10"
+              }`}
+            >
               {stats.map(({ value, label }) => (
                 <div key={label} className="min-w-0">
                   <dt className="sr-only">{label}</dt>
-                  <dd className="text-[clamp(1.25rem,0.95rem+1.5vw,1.6rem)] font-extrabold leading-none text-ink">
+                  <dd
+                    className={`text-[clamp(1.25rem,0.95rem+1.5vw,1.6rem)] font-extrabold leading-none ${
+                      banner ? "text-cream" : "text-ink"
+                    }`}
+                  >
                     <CountUp value={value} />
                   </dd>
-                  <dd className="mt-1.5 text-[12px] leading-snug text-ink-soft sm:text-sm">{label}</dd>
+                  <dd className={`mt-1.5 text-[12px] leading-snug sm:text-sm ${banner ? "text-cream/60" : "text-ink-soft"}`}>
+                    {label}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -229,7 +287,7 @@ export default function SubPageHero({
               <div data-disc className="aspect-square w-[92%] rounded-full bg-lime/30" />
             </div>
           )}
-          {visual ?? <ServiceCard icon={icon} highlights={highlights} metric={metric} />}
+          {visual ?? <ServiceCard icon={icon} highlights={highlights} metric={metric} banner={banner} />}
         </div>
       </div>
     </section>
