@@ -29,9 +29,12 @@
 
 /* Highlighter sweep for hero accents. A CSS animation (not GSAP) because SplitText clones the span per line. */
 .hl-marker {
-  background-image: linear-gradient(transparent 58%, rgba(167, 207, 59, 0.9) 58%);
+  /* A full block behind the words, not a half-height underline: the accent sits
+     on a dark banner photo, so the ink text needs lime under all of it. */
+  background-image: linear-gradient(rgba(167, 207, 59, 0.95), rgba(167, 207, 59, 0.95));
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  box-shadow: 0 0 0 0.12em rgba(167, 207, 59, 0.95);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   animation: marker 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
