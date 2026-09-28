@@ -76,10 +76,11 @@ export default function SubPageHero({
   visual,
   image,
 }) {
+  const [photo, crop] = Array.isArray(image) ? image : [image, "center"];
   const ref = useRef(null);
   const isServices = variant === "services";
   // With a photo the hero becomes a dark banner, so the copy flips to cream.
-  const banner = Boolean(image);
+  const banner = Boolean(photo);
 
   useGSAP(
     () => {
@@ -134,7 +135,13 @@ export default function SubPageHero({
       {/* The page's own photo, running the full width as a banner */}
       {banner && (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <img src={image} alt="" decoding="async" className="h-full w-full object-cover" />
+          <img
+            src={photo}
+            alt=""
+            decoding="async"
+            style={{ objectPosition: crop }}
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/55 lg:via-ink/75 lg:to-ink/35" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-ink/70" />
         </div>
