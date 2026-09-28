@@ -1,5 +1,6 @@
 import { Mail, Phone, Clock, ArrowUpRight, MapPin } from "lucide-react";
 import SubPageHero from "../components/SubPageHero";
+import { CONTACT_HERO_IMAGE } from "../data/heroImages";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
@@ -24,6 +25,7 @@ export default function ContactPage() {
     <InnerPage>
       <SubPageHero
         variant="contact"
+        image={CONTACT_HERO_IMAGE}
         trail={[{ label: "Contact Us" }]}
         eyebrow="Let's talk"
         title="Contact Us"

@@ -7,6 +7,7 @@ import CountUp from "./motion/CountUp";
 import HeroShowcase from "./HeroShowcase";
 import SocialRing from "./SocialRing";
 import useMediaQuery from "./motion/useMediaQuery";
+import { HOME_HERO_IMAGE } from "../data/heroImages";
 
 const STATS = [
   ["2.1x", "avg. increase in booked patients"],
@@ -37,6 +38,19 @@ export default function Hero() {
       ref={ref}
       className="relative overflow-hidden bg-lime-mist pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-28 lg:pt-40"
     >
+      {/* A clinic floor behind the lime, faint enough to read as texture */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <img
+          src={HOME_HERO_IMAGE}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover opacity-[0.12]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-lime-mist via-lime-mist/85 to-lime-mist/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-lime-mist via-lime-mist/20 to-lime-mist/65" />
+      </div>
+
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
       <motion.div
         style={{ y: glowY }}

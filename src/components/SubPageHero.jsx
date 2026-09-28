@@ -70,6 +70,7 @@ export default function SubPageHero({
   highlights = [],
   metric,
   visual,
+  image,
 }) {
   const ref = useRef(null);
   const isServices = variant === "services";
@@ -121,6 +122,15 @@ export default function SubPageHero({
 
   return (
     <section ref={ref} className="relative overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24">
+      {/* Page-specific photo, faded into the cream so the copy stays first */}
+      {image && (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-[0.22] lg:opacity-[0.45]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/90 to-cream/60 lg:via-cream/85 lg:to-cream/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-cream/45" />
+        </div>
+      )}
+
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
       <div className="pointer-events-none absolute -top-24 right-[-25%] h-96 w-96 rounded-full bg-lime/25 blur-3xl sm:right-[-10%]" />
 

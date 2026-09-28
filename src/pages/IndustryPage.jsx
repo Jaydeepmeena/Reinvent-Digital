@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
 import { getIndustryBySlug, INDUSTRIES } from "../data/industries";
 import SubPageHero from "../components/SubPageHero";
+import { INDUSTRY_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import CountUp from "../components/motion/CountUp";
 import Scene3D from "../components/three/Scene3D";
@@ -131,6 +132,7 @@ export default function IndustryPage() {
       <Fragment key={slug}>
         <SubPageHero
           variant="industries"
+          image={INDUSTRY_HERO_IMAGES[slug]}
           trail={[{ label: "Industries", href: "/#industries" }, { label: title }]}
           eyebrow={eyebrow}
           title={title}

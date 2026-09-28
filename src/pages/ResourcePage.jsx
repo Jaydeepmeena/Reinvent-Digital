@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { getResourceBySlug, RESOURCE_PAGES } from "../data/resources";
 import SubPageHero from "../components/SubPageHero";
+import { RESOURCE_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
@@ -24,6 +25,7 @@ export default function ResourcePage() {
       <Fragment key={slug}>
         <SubPageHero
           variant="resources"
+          image={RESOURCE_HERO_IMAGES[slug]}
           trail={[{ label: "Resources", href: "/resources/case-study" }, { label: title }]}
           eyebrow={eyebrow}
           title={title}

@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { Check } from "lucide-react";
 import { getServiceBySlug } from "../data/services";
 import SubPageHero from "../components/SubPageHero";
+import { SERVICE_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import CountUp from "../components/motion/CountUp";
 import InnerPage from "../components/fx/InnerPage";
@@ -29,6 +30,7 @@ export default function ServicePage() {
       <Fragment key={slug}>
         <SubPageHero
           variant="services"
+          image={SERVICE_HERO_IMAGES[slug]}
           trail={[
             { label: "What We Do", href: "/#services" },
             { label: category },

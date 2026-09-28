@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { Quote } from "lucide-react";
 import { getAboutBySlug } from "../data/about";
 import SubPageHero from "../components/SubPageHero";
+import { ABOUT_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
@@ -29,6 +30,7 @@ export default function AboutPage() {
       <Fragment key={slug}>
         <SubPageHero
           variant="about"
+          image={ABOUT_HERO_IMAGES[slug]}
           trail={[{ label: "About Us", href: "/about/our-story" }, { label: title }]}
           eyebrow={eyebrow}
           title={title}
