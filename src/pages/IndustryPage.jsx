@@ -14,7 +14,13 @@ import ScrollTimeline from "../components/fx/ScrollTimeline";
 import BeforeAfter from "../components/fx/BeforeAfter";
 import { gsap, MOTION_OK, useGSAP } from "../components/fx/gsap";
 
-const CHIP_POSITIONS = ["xl:left-0 xl:top-2", "xl:right-0 xl:top-16", "xl:left-0 xl:top-[40%]", "xl:right-0 xl:top-[55%]"];
+// The chips ring the cross at every width — they used to stack under it below xl.
+const CHIP_POSITIONS = [
+  "left-0 top-0 xl:top-2",
+  "right-0 top-[19%] xl:top-16",
+  "left-0 top-[46%] xl:top-[40%]",
+  "right-0 top-[56%] xl:top-[55%]",
+];
 const PANEL_TONES = ["bg-ink text-cream", "bg-lime text-ink", "bg-white text-ink border border-ink/10"];
 
 function IndustryVisual({ highlights, metric }) {
@@ -26,8 +32,7 @@ function IndustryVisual({ highlights, metric }) {
       mm.add(MOTION_OK, () => {
         gsap.from("[data-chip]", { scale: 0.4, opacity: 0, stagger: 0.12, duration: 0.8, delay: 0.9, ease: "back.out(2)" });
       });
-      // Chips only float when they are spread around the cross; in the wrapped mobile row they would collide.
-      mm.add(`${MOTION_OK} and (min-width: 1280px)`, () => {
+      mm.add(MOTION_OK, () => {
         gsap.utils.toArray("[data-chip]").forEach((chip, i) => {
           gsap.to(chip, { y: i % 2 ? 10 : -10, duration: 2.4 + i * 0.4, ease: "sine.inOut", repeat: -1, yoyo: true, delay: 1.8 });
         });
@@ -38,13 +43,13 @@ function IndustryVisual({ highlights, metric }) {
 
   return (
     <div ref={ref} className="relative">
-      <Scene3D scene="healthCross" className="mx-auto h-64 w-full sm:h-80 lg:h-[22rem] xl:h-[30rem]" />
-      <ul className="mt-4 flex flex-wrap justify-center gap-2 xl:pointer-events-none xl:absolute xl:inset-0 xl:mt-0 xl:block">
+      <Scene3D scene="healthCross" className="mx-auto h-[24rem] w-full sm:h-[26rem] lg:h-[24rem] xl:h-[30rem]" />
+      <ul className="pointer-events-none absolute inset-0 block">
         {highlights.map((item, i) => (
           <li
             key={item}
             data-chip
-            className={`max-w-[16rem] rounded-full border border-ink/10 bg-white px-4 py-2 text-[13px] font-semibold text-ink shadow-lg shadow-ink/10 xl:absolute ${CHIP_POSITIONS[i % CHIP_POSITIONS.length]}`}
+            className={`absolute max-w-[9.5rem] rounded-full border border-ink/10 bg-white px-3 py-1.5 text-[11px] font-semibold leading-snug text-ink shadow-lg shadow-ink/10 sm:max-w-[13rem] sm:px-4 sm:py-2 sm:text-[12px] xl:max-w-[16rem] xl:text-[13px] ${CHIP_POSITIONS[i % CHIP_POSITIONS.length]}`}
           >
             {item}
           </li>
@@ -53,7 +58,7 @@ function IndustryVisual({ highlights, metric }) {
       {metric && (
         <div
           data-chip
-          className="mx-auto mt-3 w-fit rounded-2xl bg-ink px-5 py-4 text-cream shadow-xl shadow-ink/20 xl:absolute xl:bottom-0 xl:left-0 xl:mt-0"
+          className="absolute bottom-0 left-1/2 w-fit -translate-x-1/2 rounded-2xl bg-ink px-4 py-3 text-cream shadow-xl shadow-ink/20 sm:px-5 sm:py-4 xl:left-0 xl:translate-x-0"
         >
           <div className="text-2xl font-extrabold text-lime">
             <CountUp value={metric.value} />
