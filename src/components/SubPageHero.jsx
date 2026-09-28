@@ -201,7 +201,7 @@ export default function SubPageHero({
           </div>
 
           {variant === "resources" ? (
-            <h1 className={`mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.08] tracking-tight ${
+            <h1 className={`mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.22] tracking-tight ${
                 banner ? "text-cream" : "text-ink"
               }`}>
               <SplitReveal as="span" type="words" onLoad delay={0.15}>
@@ -215,7 +215,7 @@ export default function SubPageHero({
               type={HEADLINE[variant]}
               onLoad
               delay={0.15}
-              className={`mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.08] tracking-tight ${
+              className={`mt-5 text-balance text-[clamp(2.1rem,1.5rem+3vw,3.4rem)] font-extrabold leading-[1.22] tracking-tight ${
                 banner ? "text-cream" : "text-ink"
               }`}
             >

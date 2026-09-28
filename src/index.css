@@ -31,10 +31,16 @@
 .hl-marker {
   /* A full block behind the words, not a half-height underline: the accent sits
      on a dark banner photo, so the ink text needs lime under all of it. */
-  background-image: linear-gradient(rgba(167, 207, 59, 0.95), rgba(167, 207, 59, 0.95));
+  background-image: linear-gradient(
+    transparent 7%,
+    rgba(167, 207, 59, 0.95) 7%,
+    rgba(167, 207, 59, 0.95) 93%,
+    transparent 93%
+  );
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  box-shadow: 0 0 0 0.12em rgba(167, 207, 59, 0.95);
+  padding-inline: 0.12em;
+  margin-inline: -0.12em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   animation: marker 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
