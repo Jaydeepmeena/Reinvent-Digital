@@ -52,8 +52,8 @@ export default function ComparisonSection() {
 
           <Reveal delay={0.08}>
             <p className="max-w-md text-[15px] leading-relaxed text-cream/60 sm:text-base">
-              Billing against media spend rewards spending more. We're measured on what happens after the click — how
-              fast enquiries are answered, how many become bookings, and how many walk in.
+              Billing against the media spend rewards spending more. We're measured on what happens after the click:
+              how fast enquiries are answered, how many become bookings and how many walk in.
             </p>
           </Reveal>
         </div>

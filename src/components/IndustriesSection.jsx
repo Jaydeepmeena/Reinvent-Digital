@@ -20,12 +20,12 @@ const IMAGES = {
 
 const COUNTERS = [
   {
-    value: "120+",
+    value: "115+",
     title: "Locations",
     body: "Clinics and hospitals running on the same acquisition system.",
   },
   {
-    value: "12+",
+    value: "8+",
     title: "Departments",
     body: "Specialities coordinated inside a single hospital group.",
   },
@@ -47,9 +47,13 @@ export default function IndustriesSection() {
               <span className="h-2 w-2 rounded-full bg-lime" />
               Designed for operational scale
             </span>
+            <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
+              Best for healthcare groups{" "}
+              <span className="font-serif-italic font-medium text-ink-soft">with more than one front door.</span>
+            </h2>
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">
-              The system earns its keep when patient demand, locations and call teams are too complex for disconnected
-              channel reports.
+              The patient acquisition system pays off when patient demand, locations and call teams are too complex to
+              run from disconnected channel reports.
             </p>
           </Reveal>
 

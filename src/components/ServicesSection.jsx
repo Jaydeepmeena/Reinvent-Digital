@@ -17,19 +17,19 @@ const CATEGORIES = [
     key: "Digital Marketing",
     icon: Megaphone,
     image: demandImg,
-    body: "Full-funnel campaigns engineered to turn search, social and AI visibility into booked patients.",
+    body: "Healthcare campaigns across search, social, Google Maps and AI answers, planned by treatment and centre, and judged on bookings, not clicks.",
   },
   {
     key: "Tools",
     icon: Wrench,
     image: reportingImg,
-    body: "The CRM that connects every channel to one patient record and real booking data.",
+    body: "One patient record for every enquiry, with the source saved at the door, follow-up automated, and a dashboard showing each channel's spend, leads and walk-ins.",
   },
   {
     key: "Support",
     icon: LifeBuoy,
     image: callsImg,
-    body: "A call centre discipline that turns fast response into a consistent booking rate.",
+    body: "Rosters, routing, call scoring and coaching for your team, so enquiries are answered fast and more calls end in a booking.",
   },
 ];
 
@@ -77,9 +77,9 @@ export default function ServicesSection() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeader
-          eyebrow="What we do"
+          eyebrow="How Reinvent Digital stands out"
           title="Patient acquisition,"
-          accent="under one roof."
+          accent="connected end to end."
           action={
             <Link
               to="/contact"

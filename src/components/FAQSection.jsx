@@ -10,42 +10,47 @@ const FAQS = [
   {
     group: "General",
     q: "What does Reinvent Digital do?",
-    a: "We build patient acquisition systems for healthcare organisations. That means connecting demand generation, CRM, telephony, messaging and clinic data so teams can improve booking conversion and measure which channels create patient visits.",
+    a: "Reinvent Digital builds patient acquisition systems for multi-location healthcare groups in India. We run your ads, search and Google Maps, then connect them to your CRM, call team and follow-up. More enquiries become booked appointments, and you can see which channel brought each patient who walked in.",
   },
   {
     group: "General",
-    q: "How is this different from a lead generation agency?",
-    a: "Most agencies stop at the lead and hand over a report. We own the full journey — response, call quality, booking and walk-in — and we're measured on booked patients, not lead volume.",
+    q: "How is the patient acquisition system different from a lead generation agency?",
+    a: "A lead generation agency is usually judged on lead volume and cost per lead. We're judged on what happens next: how fast enquiries are answered, how many book and how many patients arrive. So we work on call handling, follow-up and attribution as well as the campaigns themselves.",
   },
   {
     group: "General",
-    q: "Who is this system best for?",
-    a: "Dental groups, fertility and IVF networks, eye care chains and multi-speciality hospitals with more than one location — where disconnected channel reporting is already costing you bookings.",
+    q: "Who is the patient acquisition system best for?",
+    a: "Healthcare groups with more than one centre and a team handling patient enquiries: dental chains, IVF and fertility networks, eye hospitals, multi-speciality hospitals and diagnostic centres. It helps most when demand, locations and call volumes are too complex to manage from separate channel reports.",
   },
   {
     group: "Channels & systems",
-    q: "Which marketing channels do you manage?",
-    a: "Google Ads, Meta Ads, ChatGPT & AI ads, SEO, AEO & GEO, Google Business Profile & local SEO, YouTube, social media and marketing automation — tailored to where your patients actually search.",
+    q: "Which channels do you manage?",
+    a: "Google Ads, Meta Ads, healthcare SEO, AEO, GEO, Google Maps and Business Profiles, YouTube and social media. Each channel is planned by treatment and centre. Every enquiry it produces carries its source into your CRM, so channels are compared on bookings rather than clicks.",
   },
   {
     group: "Channels & systems",
-    q: "Can you work with our existing CRM and call centre?",
-    a: "Yes. We integrate with the CRM and telephony you already run, or set one up if you don't have one — rather than asking you to rebuild your stack around us.",
+    q: "Do we need to replace our CRM or call-tracking provider?",
+    a: "Usually not. We start by auditing your current CRM, telephony and booking setup. If it can capture the source, assign an owner, log calls and record outcomes, we keep it and configure it properly. If you'd rather move, we can run everything on our own healthcare CRM.",
   },
   {
     group: "Channels & systems",
-    q: "How do you help teams respond in under 60 seconds?",
-    a: "We plan call centre coverage against your actual enquiry patterns, auto-route to available agents, escalate missed SLAs and coach agents against a consistent booking rubric.",
+    q: "Can you run our call centre, or only train our team?",
+    a: "Both. If you have agents, we set up rosters, routing and escalation, score calls against a 100-point rubric and coach your team on real conversations. If you'd rather hand it over, our team handles your enquiries and bookings, on your CRM or ours, with the same response targets and reporting.",
   },
   {
     group: "Setup & reporting",
-    q: "How long does setup take?",
-    a: "Campaigns typically launch within 48 hours. CRM and call-routing integration usually takes 1–2 weeks depending on your existing systems and locations.",
+    q: "How long does setup take, and when will we see results?",
+    a: "Implementation runs as a 90-day sprint. Google Ads usually produces meaningful data within 30 to 45 days, with budget decisions at 60 to 90 days. Business Profile and SEO improvements typically appear in 60 to 90 days, and organic rankings move from months four to six. Timelines vary by market, competition and data access.",
   },
   {
     group: "Setup & reporting",
-    q: "How do you track bookings and walk-ins?",
-    a: "Every call, form and WhatsApp enquiry enters with a source. Bookings are measured in the CRM, and walk-ins are reconciled with your clinic's PMS or attendance data when access is available.",
+    q: "How are walk-ins measured?",
+    a: "Where you authorise access, we match booked appointments against your PMS or HIS attendance records, using approved identifiers such as appointment ID or phone number. Every report shows the match rate and the records we couldn't match, so walk-in figures reflect only what the data can prove.",
+  },
+  {
+    group: "Setup & reporting",
+    q: "What data do you need, and how is patient data protected?",
+    a: "Only what the reporting needs: enquiry source, booking status and attendance status, plus identifiers for matching. Access, permissions, retention and each party's responsibilities are agreed with your team before any data moves, in line with your obligations under India's Digital Personal Data Protection Act, 2023.",
   },
 ];
 
@@ -235,8 +240,7 @@ export default function FAQSection() {
             Frequently asked questions
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-cream">
-            What healthcare leaders ask before changing their acquisition
-            system.
+            Common queries about the acquisition system, answered.
           </h2>
         </Reveal>
 

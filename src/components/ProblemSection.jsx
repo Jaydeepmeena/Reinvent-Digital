@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Radar, Clock3, HelpCircle, ArrowUpRight } from "lucide-react";
+import { UserX, Clock3, HelpCircle, ArrowUpRight } from "lucide-react";
 import Reveal from "./motion/Reveal";
 import { EASE } from "./motion/easing";
 
 const PROBLEMS = [
   {
-    icon: Radar,
-    tag: "Unclear source",
-    title: "Scattered demand",
-    body: "Paid, organic, Maps and AI search are managed as separate channels with no shared view of patient intent.",
-  },
-  {
     icon: Clock3,
     tag: "Lost time",
     title: "Slow first response",
-    body: "Calls ring out. Forms sit in inboxes. WhatsApp enquiries wait while the patient books with another clinic.",
+    quote: "We called back, but they'd already booked elsewhere.",
+    body: "A patient enquires at 8 pm. Your team calls at 11 am the next day.",
+  },
+  {
+    icon: UserX,
+    tag: "No owner",
+    title: "Follow-up nobody owns",
+    quote: "The patient said they'd think about it.",
+    body: "Then nobody called again. Booked patients get no reminder and never arrive.",
   },
   {
     icon: HelpCircle,
     tag: "Missing proof",
     title: "Broken attribution",
-    body: "Marketing reports the lead. The clinic reports the walk-in. Nobody can reliably connect the two.",
+    quote: "Which campaign brought patients in?",
+    body: "Marketing shows leads, the clinic shows walk-ins, and no report connects the two.",
   },
 ];
 
@@ -35,18 +38,18 @@ export default function ProblemSection() {
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
               <span className="h-2 w-2 rounded-full bg-lime" />
-              Where growth gets lost
+              Where you're actually missing out
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink">
-              Most agencies stop at the lead.{" "}
+              Agencies aim for the leads.{" "}
               <span className="font-serif-italic font-medium text-ink-soft">We work on what happens next.</span>
             </h2>
             <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink-soft sm:text-[17px]">
-              Demand without a response system creates a bigger queue, not a healthier clinic.
+              Report says leads are up. But your front desk says numbers haven't changed.
             </p>
             <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ink-soft/80">
-              The patient journey breaks between platforms, people and disconnected reports. These are the three leaks we
-              find in almost every clinic we audit.
+              Both are right, and the gap is where your patients go: unanswered calls at peak hours, follow-ups with no
+              owner, and nobody able to say which campaign brought today's walk-ins.
             </p>
           </Reveal>
 
@@ -83,7 +86,7 @@ export default function ProblemSection() {
         </div>
 
         <ol className="flex flex-col gap-6 pin:gap-8">
-          {PROBLEMS.map(({ icon: Icon, tag, title, body }, i) => (
+          {PROBLEMS.map(({ icon: Icon, tag, title, quote, body }, i) => (
             <li
               key={title}
               className="[@media(min-height:460px)]:sticky"
@@ -115,6 +118,9 @@ export default function ProblemSection() {
                 <h3 className="relative mt-5 text-xl font-bold text-cream transition-colors duration-300 group-hover:text-ink sm:text-2xl">
                   {title}
                 </h3>
+                <p className="relative mx-auto mt-3 max-w-sm font-serif-italic text-[15px] leading-snug text-lime transition-colors duration-300 group-hover:text-ink/70 sm:text-base">
+                  &ldquo;{quote}&rdquo;
+                </p>
                 <p className="relative mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-cream/60 transition-colors duration-300 group-hover:text-ink/80">
                   {body}
                 </p>

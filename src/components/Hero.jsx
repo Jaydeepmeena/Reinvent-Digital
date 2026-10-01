@@ -11,7 +11,7 @@ import { HOME_HERO_IMAGE } from "../data/heroImages";
 
 const STATS = [
   ["2.1x", "avg. increase in booked patients"],
-  ["120+", "clinics & hospitals scaled"],
+  ["115+", "locations served"],
   ["<60 sec", "avg. enquiry response time"],
 ];
 
@@ -20,7 +20,7 @@ const fadeUp = {
   show: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.1 + i * 0.09, ease: EASE } }),
 };
 
-const headline = ["More enquiries", "isn't the outcome."];
+const headline = ["Stop counting leads."];
 
 export default function Hero() {
   const ref = useRef(null);
@@ -99,7 +99,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
               >
-                Patients are.
+                Start counting patient walk-ins.
               </motion.span>
             </span>
           </h1>
@@ -111,9 +111,8 @@ export default function Hero() {
             custom={3}
             className="mt-5 max-w-lg text-[16px] leading-relaxed text-ink-soft sm:mt-6 sm:text-[17px]"
           >
-            We connect Google, Meta, AI search and Maps to the CRM, call
-            centre and follow-up systems that turn clinic enquiries into
-            booked appointments and measurable walk-ins.
+            Demand from Meta, Google, AI search and Google Maps. Response through
+            your call team and CRM. Proof in bookings and walk-ins.
           </motion.p>
 
           <motion.div

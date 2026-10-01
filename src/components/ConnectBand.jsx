@@ -18,8 +18,8 @@ export default function ConnectBand() {
           align="center"
           tone="dark"
           eyebrow="The Reinvent Digital system"
-          title="One operating chain, from"
-          accent="intent to arrival."
+          title="From search to actual walk-ins, in"
+          accent="four traceable stages."
           description="Every stage has an owner, a timestamp and a number your team can act on."
         />
       </div>

@@ -81,7 +81,7 @@ export default function TrustedBy() {
           as="p"
           className="flex items-center justify-center text-balance text-center text-lg font-semibold leading-snug tracking-tight text-ink sm:text-xl md:w-64 md:shrink-0 md:justify-start md:pr-6 md:text-left lg:w-80 lg:text-2xl"
         >
-          Trusted by dental, fertility, eye care &amp; hospital groups
+          Trusted by 185+ clinics, hospitals &amp; chains
         </Reveal>
 
         <motion.div

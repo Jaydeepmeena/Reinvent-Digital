@@ -41,7 +41,7 @@ const DETAILS = [
 export default function CTASection({
   id = "contact",
   eyebrow = "Contact us",
-  heading = "Want to work with us? Let's connect.",
+  heading = "Want a patient acquisition system for your group? Let's talk.",
   body = "Talk to us about the gaps between your channels, CRM, call centre and clinic data — and what it would take to connect them.",
   ctaLabel = "Discuss your growth plan",
   ctaHref = "mailto:hello@reinventdigital.com",
