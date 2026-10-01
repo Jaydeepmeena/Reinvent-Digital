@@ -1,6 +1,6 @@
 import {
   Search, Share2, Sparkles, TrendingUp, Bot, MapPin, PlaySquare, Users, Workflow,
-  Database, Headset,
+  Database, Headset, PhoneCall, Route, DoorOpen, MessageCircle,
 } from "lucide-react";
 
 export const SERVICES = [
@@ -375,7 +375,7 @@ export const SERVICES = [
   },
   {
     slug: "crm",
-    category: "Tools",
+    category: "Tools & Measurement",
     icon: Database,
     eyebrow: "Patient Relationship Management",
     title: "Healthcare CRM",
@@ -416,10 +416,10 @@ export const SERVICES = [
   },
   {
     slug: "call-centre-management",
-    category: "Support",
+    category: "Response & Call Centre",
     icon: Headset,
     eyebrow: "Response & Conversion",
-    title: "Call Centre Management",
+    title: "Call Centre Optimisation",
     accent: "where sixty seconds is a system, not a slogan.",
     description:
       "Coverage planning, routing, escalation and call scoring built around your actual enquiry patterns — so every patient reaches an agent fast, and every call is coached toward a booking.",
@@ -453,6 +453,170 @@ export const SERVICES = [
       { value: "<60 sec", label: "avg response time" },
       { value: "92%", label: "within SLA" },
       { value: "+31%", label: "booking rate after coaching" },
+    ],
+  },
+  {
+    slug: "telephony",
+    category: "Tools & Measurement",
+    icon: PhoneCall,
+    eyebrow: "Call Infrastructure",
+    title: "Telephony",
+    accent: "that never loses a ringing phone.",
+    description:
+      "Virtual numbers per campaign and centre, routing rules, IVR and recording — so every call is answered, logged against the right source and reviewable afterwards.",
+    highlights: [
+      "Virtual numbers per campaign & centre",
+      "Routing, overflow & escalation rules",
+      "Call recording for scoring",
+      "Missed-call alerts and callbacks",
+    ],
+    metric: { value: "<60 sec", label: "first response target", sub: "on every managed line" },
+    heroStats: [
+      { value: "100%", label: "calls logged to a source" },
+      { value: "<60 sec", label: "first response target" },
+      { value: "24/7", label: "missed-call capture" },
+    ],
+    includes: [
+      "Number provisioning by campaign & centre",
+      "Routing, overflow & escalation rules",
+      "IVR and working-hours handling",
+      "Call recording & storage policy",
+      "Missed-call alerts & callback queues",
+      "CRM logging of every call outcome",
+    ],
+    process: [
+      { title: "Map the call paths", body: "Every number, queue and after-hours route is documented before anything changes." },
+      { title: "Provision the numbers", body: "Separate tracking numbers per campaign and centre, so the source survives the call." },
+      { title: "Set the rules", body: "Routing, overflow, escalation and callback rules are built around your roster." },
+      { title: "Log every outcome", body: "Calls, durations and outcomes write back to the patient record automatically." },
+    ],
+    proofStats: [
+      { value: "100%", label: "calls source-tagged" },
+      { value: "<60 sec", label: "response target" },
+      { value: "0", label: "enquiries with no owner" },
+    ],
+  },
+  {
+    slug: "booking-attribution",
+    category: "Tools & Measurement",
+    icon: Route,
+    eyebrow: "Source to Booking",
+    title: "Booking Attribution",
+    accent: "that follows the patient, not the click.",
+    description:
+      "Every enquiry carries its source into the CRM, so campaigns are compared on bookings rather than clicks, and budget decisions rest on what actually fills the diary.",
+    highlights: [
+      "Source saved at the first touch",
+      "Campaign-level booking reports",
+      "Cost per booked patient",
+      "Channel comparison on outcomes",
+    ],
+    metric: { value: "1", label: "source per enquiry", sub: "carried from click to booking" },
+    heroStats: [
+      { value: "100%", label: "enquiries source-tagged" },
+      { value: "1 report", label: "across every channel" },
+      { value: "CPB", label: "cost per booked patient" },
+    ],
+    includes: [
+      "Tracking plan across every channel",
+      "Source capture on call, form & WhatsApp",
+      "Campaign and centre tagging",
+      "Booking status in the patient record",
+      "Cost per booking reporting",
+      "Channel comparison dashboard",
+    ],
+    process: [
+      { title: "Audit the tracking", body: "We check what each channel passes today and where the source is being lost." },
+      { title: "Fix the capture", body: "Source, campaign and centre are stamped on the enquiry at the point it arrives." },
+      { title: "Connect the booking", body: "Booking status is written back, so each campaign can be judged on bookings." },
+      { title: "Report on cost per booking", body: "Spend is compared against booked patients, not leads, by campaign and centre." },
+    ],
+    proofStats: [
+      { value: "100%", label: "enquiries tagged" },
+      { value: "1 view", label: "spend to bookings" },
+      { value: "Weekly", label: "budget decisions" },
+    ],
+  },
+  {
+    slug: "walk-in-tracking",
+    category: "Tools & Measurement",
+    icon: DoorOpen,
+    eyebrow: "Attendance Matching",
+    title: "Walk-In Tracking",
+    accent: "that proves who actually arrived.",
+    description:
+      "Booked appointments are matched against your PMS or HIS attendance records, so walk-in numbers reflect what the data can prove — including the records that could not be matched.",
+    highlights: [
+      "Booking matched to attendance",
+      "Approved identifiers only",
+      "Match rate shown on every report",
+      "Walk-ins traced back to channel",
+    ],
+    metric: { value: "100%", label: "match rate disclosed", sub: "on every walk-in report" },
+    heroStats: [
+      { value: "PMS/HIS", label: "attendance matched" },
+      { value: "100%", label: "match rate disclosed" },
+      { value: "DPDP", label: "handled under the 2023 Act" },
+    ],
+    includes: [
+      "Data access and permissions agreed",
+      "Identifier mapping for matching",
+      "Scheduled attendance imports",
+      "Match rate and exception reporting",
+      "Walk-ins attributed back to channel",
+      "Retention and deletion policy",
+    ],
+    process: [
+      { title: "Agree the data", body: "Access, identifiers, retention and responsibilities are agreed with your team first." },
+      { title: "Map the records", body: "Appointment IDs or phone numbers are mapped between the CRM and your clinic system." },
+      { title: "Match attendance", body: "Attendance is matched on a schedule, with unmatched records listed openly." },
+      { title: "Close the loop", body: "Walk-ins are reported by channel, campaign and centre, with the match rate shown." },
+    ],
+    proofStats: [
+      { value: "Matched", label: "booking to attendance" },
+      { value: "Shown", label: "unmatched records" },
+      { value: "Agreed", label: "data scope before access" },
+    ],
+  },
+  {
+    slug: "messaging-follow-up",
+    category: "Response & Call Centre",
+    icon: MessageCircle,
+    eyebrow: "Follow-Up That Has an Owner",
+    title: "Messaging & Follow-Up",
+    accent: "so no enquiry goes cold.",
+    description:
+      "WhatsApp and SMS sequences with an owner, a timer and an end state — reminders before the appointment, structured follow-up after it, and escalation when nobody replies.",
+    highlights: [
+      "WhatsApp & SMS sequences",
+      "Named owner for every enquiry",
+      "Appointment reminders",
+      "Escalation when follow-up stalls",
+    ],
+    metric: { value: "0", label: "enquiries with no owner", sub: "every follow-up is assigned" },
+    heroStats: [
+      { value: "0", label: "enquiries with no owner" },
+      { value: "<60 sec", label: "first response target" },
+      { value: "3 steps", label: "before an enquiry closes" },
+    ],
+    includes: [
+      "WhatsApp Business setup & templates",
+      "Follow-up sequences by procedure",
+      "Appointment reminder flows",
+      "Owner assignment and SLA timers",
+      "Escalation and re-engagement rules",
+      "Reporting on follow-up outcomes",
+    ],
+    process: [
+      { title: "Define the cadence", body: "Follow-up timing is set per procedure, from same-day calls to multi-week nurture." },
+      { title: "Assign an owner", body: "Every enquiry gets a named owner and a timer, so nothing sits unattended." },
+      { title: "Automate the reminders", body: "Confirmations and reminders go out before the appointment, not after it's missed." },
+      { title: "Escalate and report", body: "Stalled follow-ups escalate, and outcomes are reported back by stage." },
+    ],
+    proofStats: [
+      { value: "0", label: "unowned enquiries" },
+      { value: "Reminders", label: "before every appointment" },
+      { value: "Tracked", label: "to booking or closure" },
     ],
   },
 ];

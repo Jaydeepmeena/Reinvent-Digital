@@ -9,7 +9,7 @@ import { INDUSTRIES } from "../data/industries";
 import { RESOURCE_PAGES } from "../data/resources";
 import { ABOUT_PAGES } from "../data/about";
 
-const WHAT_WE_DO = ["Digital Marketing", "Tools", "Support"].map((category) => ({
+const WHAT_WE_DO = ["Digital Marketing", "Tools & Measurement", "Response & Call Centre"].map((category) => ({
   title: category,
   items: SERVICES.filter((s) => s.category === category),
 }));

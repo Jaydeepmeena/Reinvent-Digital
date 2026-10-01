@@ -20,13 +20,13 @@ const CATEGORIES = [
     body: "Healthcare campaigns across search, social, Google Maps and AI answers, planned by treatment and centre, and judged on bookings, not clicks.",
   },
   {
-    key: "Tools",
+    key: "Tools & Measurement",
     icon: Wrench,
     image: reportingImg,
     body: "One patient record for every enquiry, with the source saved at the door, follow-up automated, and a dashboard showing each channel's spend, leads and walk-ins.",
   },
   {
-    key: "Support",
+    key: "Response & Call Centre",
     icon: LifeBuoy,
     image: callsImg,
     body: "Rosters, routing, call scoring and coaching for your team, so enquiries are answered fast and more calls end in a booking.",
