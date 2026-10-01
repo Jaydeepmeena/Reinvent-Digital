@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     group: "General",
-    q: "How is the patient acquisition system different from a lead generation agency?",
+    q: "How is the patient acquisition system by Reinvent Digital different from a lead generation agency?",
     a: "A lead generation agency is usually judged on lead volume and cost per lead. We're judged on what happens next: how fast enquiries are answered, how many book and how many patients arrive. So we work on call handling, follow-up and attribution as well as the campaigns themselves.",
   },
   {
@@ -240,7 +240,7 @@ export default function FAQSection() {
             Frequently asked questions
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-cream">
-            Common queries about the acquisition system, answered.
+            Common queries about the acquisition system from healthcare leaders, answered.
           </h2>
         </Reveal>
 

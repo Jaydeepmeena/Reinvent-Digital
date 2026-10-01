@@ -254,7 +254,7 @@ export const SERVICES = [
       },
       {
         title: "Paired with GEO",
-        body: "Paid placements run alongside healthcare GEO, so work on being cited in ChatGPT answers and the sponsored placements below them support each other instead of competing for budget.",
+        body: "Paid placements run alongside healthcare GEO services, so work on being cited in ChatGPT answers and the sponsored placements below them support each other instead of competing for budget.",
       },
     ],
     processEyebrow: "How we approach it",
