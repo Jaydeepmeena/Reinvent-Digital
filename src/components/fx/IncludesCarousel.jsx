@@ -66,7 +66,7 @@ export default function IncludesCarousel({ items, className = "" }) {
       >
         {items.map((item, i) => (
           <li
-            key={item}
+            key={item.title}
             className={`flex min-h-[13rem] w-[78%] shrink-0 snap-start flex-col justify-between rounded-3xl border p-6 transition-colors duration-300 ${
               i === index ? "border-lime bg-lime text-ink" : "border-ink/10 bg-white text-ink"
             }`}
@@ -81,7 +81,10 @@ export default function IncludesCarousel({ items, className = "" }) {
                 <Check className="h-4 w-4" />
               </span>
             </div>
-            <p className="mt-6 text-[15px] font-semibold leading-snug">{item}</p>
+            <div className="mt-6">
+              <p className="text-[15px] font-semibold leading-snug">{item.title}</p>
+              {item.body && <p className="mt-2 text-[13px] leading-relaxed opacity-70">{item.body}</p>}
+            </div>
           </li>
         ))}
       </ul>
@@ -89,7 +92,7 @@ export default function IncludesCarousel({ items, className = "" }) {
       <div className="mt-4 flex justify-center gap-1.5" aria-hidden="true">
         {items.map((item, i) => (
           <button
-            key={item}
+            key={item.title}
             type="button"
             tabIndex={-1}
             onClick={() => go(i)}
