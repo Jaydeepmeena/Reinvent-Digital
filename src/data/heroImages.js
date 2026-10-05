@@ -9,6 +9,14 @@ import dental from "../assets/cards/industry-dental.jpg";
 import fertility from "../assets/cards/industry-fertility.jpg";
 import eye from "../assets/cards/industry-eye.jpg";
 import hospital from "../assets/cards/industry-hospital.jpg";
+// Purpose-made banners, one per channel page.
+import googleAdsBanner from "../assets/heroes/google-ads.jpg";
+import metaAdsBanner from "../assets/heroes/meta-ads.jpg";
+import chatgptAdsBanner from "../assets/heroes/chatgpt-ads.jpg";
+import seoBanner from "../assets/heroes/seo.jpg";
+import aeoBanner from "../assets/heroes/aeo.jpg";
+import geoBanner from "../assets/heroes/geo.jpg";
+import businessProfileBanner from "../assets/heroes/business-profile.jpg";
 
 const LEFT = "left center";
 const RIGHT = "right center";
@@ -17,12 +25,13 @@ const BOTTOM = "center bottom";
 const CENTER = "center";
 
 export const SERVICE_HERO_IMAGES = {
-  "google-ads": [analytics, LEFT],
-  "meta-ads": [social, CENTER],
-  "chatgpt-ads": [hospital, RIGHT],
-  seo: [analytics, RIGHT],
-  "aeo-geo": [workspace, RIGHT],
-  "business-profile-optimisation": [hospital, LEFT],
+  "google-ads": [googleAdsBanner, CENTER],
+  "meta-ads": [metaAdsBanner, CENTER],
+  "chatgpt-ads": [chatgptAdsBanner, CENTER],
+  seo: [seoBanner, CENTER],
+  aeo: [aeoBanner, CENTER],
+  geo: [geoBanner, CENTER],
+  "business-profile-optimisation": [businessProfileBanner, CENTER],
   "youtube-marketing": [social, TOP],
   "social-media-management": [social, BOTTOM],
   "marketing-automation": [workspace, LEFT],
