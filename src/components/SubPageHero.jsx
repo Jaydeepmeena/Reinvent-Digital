@@ -15,14 +15,14 @@ const MARKER = "hl-marker font-serif-italic font-medium text-ink";
 
 function ServiceCard({ icon: Icon, highlights, metric, banner }) {
   return (
-    <div data-hero-card>
+    <div data-hero-card className="lg:ml-auto lg:max-w-[23rem]">
       <div className="animate-float">
         <TiltCard
           max={5}
           glare="rgba(255,255,255,0.08)"
           className={`rounded-3xl border p-6 shadow-2xl sm:p-8 ${
             banner
-              ? "border-cream/20 bg-ink/60 shadow-ink/50 backdrop-blur-md"
+              ? "border-cream/25 bg-ink/55 shadow-ink/50"
               : "border-white/10 bg-ink shadow-ink/20"
           }`}
         >
