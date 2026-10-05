@@ -142,8 +142,8 @@ export default function SubPageHero({
             style={{ objectPosition: crop }}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/55 lg:via-ink/75 lg:to-ink/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-ink/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/30 lg:via-ink/55 lg:to-ink/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-ink/55" />
         </div>
       )}
 
