@@ -44,10 +44,10 @@ export default function Hero() {
           src={HOME_HERO_IMAGE}
           alt=""
           decoding="async"
-          className="h-full w-full object-cover opacity-[0.62]"
+          className="h-full w-full object-cover opacity-[0.85]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime-mist/85 via-lime-mist/45 via-45% to-lime-mist/70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/95 via-lime-mist/55 to-lime-mist/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-lime-mist/75 via-lime-mist/30 via-45% to-lime-mist/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/92 via-lime-mist/62 via-55% to-lime-mist/10" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
