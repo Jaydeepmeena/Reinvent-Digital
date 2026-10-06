@@ -5,11 +5,16 @@
 // backend can be used instead as long as it returns the simplified shape
 // documented in docs/blog-api.md — both are normalised to the same Post below.
 import DOMPurify from "dompurify";
+import { SAMPLE_POSTS } from "../data/sampleBlogs";
 
 const BASE = (import.meta.env.VITE_BLOG_API_URL ?? "").replace(/\/+$/, "");
 const PER_PAGE = 9;
 
 export const isBlogConfigured = Boolean(BASE);
+
+// Until the CMS is connected, the blog runs on the bundled sample posts so the
+// page is never empty. Every one of these paths disappears once BASE is set.
+const samples = () => SAMPLE_POSTS.map(normalisePost);
 
 /** Tags we allow through from the CMS. Anything else is stripped. */
 const SANITISE = {
@@ -100,6 +105,15 @@ async function request(path, { signal } = {}) {
 }
 
 export async function fetchPosts({ page = 1, perPage = PER_PAGE, signal } = {}) {
+  if (!BASE) {
+    const all = samples();
+    const start = (page - 1) * perPage;
+    return {
+      posts: all.slice(start, start + perPage),
+      totalPages: Math.max(1, Math.ceil(all.length / perPage)),
+      total: all.length,
+    };
+  }
   const { list, totalPages, total } = await request(
     `/posts?_embed=wp:featuredmedia,wp:term,author&per_page=${perPage}&page=${page}&orderby=date&order=desc`,
     { signal }
@@ -108,6 +122,7 @@ export async function fetchPosts({ page = 1, perPage = PER_PAGE, signal } = {}) 
 }
 
 export async function fetchPost(slug, { signal } = {}) {
+  if (!BASE) return samples().find((post) => post.slug === slug) ?? null;
   const { list } = await request(
     `/posts?_embed=wp:featuredmedia,wp:term,author&slug=${encodeURIComponent(slug)}`,
     { signal }

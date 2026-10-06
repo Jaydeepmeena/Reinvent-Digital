@@ -188,7 +188,14 @@ gracefully. Sort newest first — the frontend does not re-sort.
 
 ---
 
-## 7. Notes for us (frontend side)
+## 7. Before the API is live
+
+With `VITE_BLOG_API_URL` unset, the blog runs on six bundled sample posts
+(`src/data/sampleBlogs.js`) so the page is never empty. Setting the variable
+switches the site to the real feed and the samples are never read again —
+delete that file after launch if you prefer.
+
+## 8. Notes for us (frontend side)
 
 - Config: `VITE_BLOG_API_URL` (see `.env.example`). Unset, the blog page says
   the feed is not connected rather than erroring.

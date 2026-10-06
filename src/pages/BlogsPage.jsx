@@ -9,7 +9,7 @@ import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
 import FannedDocs from "../components/fx/FannedDocs";
 import { getResourceBySlug } from "../data/resources";
-import { fetchPosts, formatDate, isBlogConfigured } from "../lib/blog";
+import { fetchPosts, formatDate } from "../lib/blog";
 
 const page = getResourceBySlug("blogs");
 
@@ -91,14 +91,13 @@ function CardSkeleton() {
 
 export default function BlogsPage() {
   const [posts, setPosts] = useState([]);
-  const [status, setStatus] = useState(isBlogConfigured ? "loading" : "unconfigured");
+  const [status, setStatus] = useState("loading");
   const [pageNo, setPageNo] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
   const abort = useRef(null);
 
   const load = useCallback(async (next) => {
-    if (!isBlogConfigured) return;
     abort.current?.abort();
     const controller = new AbortController();
     abort.current = controller;
@@ -211,17 +210,6 @@ export default function BlogsPage() {
               </div>
             )}
 
-            {status === "unconfigured" && (
-              <div className="section-head-gap rounded-2xl border border-dashed border-ink/20 bg-paper p-6">
-                <p className="text-[15px] font-semibold text-ink">The blog feed isn&rsquo;t connected yet.</p>
-                <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-ink-soft">
-                  Set <code className="rounded bg-ink/[0.06] px-1.5 py-0.5">VITE_BLOG_API_URL</code> to the WordPress
-                  REST endpoint (for example{" "}
-                  <code className="rounded bg-ink/[0.06] px-1.5 py-0.5">https://blog.example.com/wp-json/wp/v2</code>)
-                  and published posts will appear here.
-                </p>
-              </div>
-            )}
           </div>
         </section>
 

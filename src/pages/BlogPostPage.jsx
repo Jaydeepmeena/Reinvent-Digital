@@ -4,7 +4,7 @@ import { ArrowLeft, Clock3 } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
-import { fetchPost, fetchPosts, formatDate, isBlogConfigured } from "../lib/blog";
+import { fetchPost, fetchPosts, formatDate } from "../lib/blog";
 
 function Related({ posts }) {
   if (posts.length === 0) return null;
@@ -40,10 +40,6 @@ export default function BlogPostPage() {
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
-    if (!isBlogConfigured) {
-      setStatus("missing");
-      return undefined;
-    }
     const controller = new AbortController();
     setStatus("loading");
 
