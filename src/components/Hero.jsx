@@ -44,10 +44,10 @@ export default function Hero() {
           src={HOME_HERO_IMAGE}
           alt=""
           decoding="async"
-          className="h-[58vw] w-full object-cover opacity-[0.85] lg:h-full"
+          className="h-[58vw] w-full object-cover lg:h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/10 via-lime-mist/45 to-lime-mist lg:bg-gradient-to-r lg:from-lime-mist/75 lg:via-lime-mist/30 lg:via-45% lg:to-lime-mist/55" />
-        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/92 lg:via-lime-mist/62 lg:via-55% lg:to-lime-mist/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 via-lime-mist/30 to-lime-mist lg:bg-gradient-to-r lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
+        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/80 lg:via-lime-mist/40 lg:via-55% lg:to-lime-mist/5" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
@@ -66,7 +66,8 @@ export default function Hero() {
       </motion.div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-        <motion.div style={{ y: textY }}>
+        {/* Below lg the photo is a band above the copy, so the text starts under it. */}
+        <motion.div style={{ y: textY }} className="pt-[44vw] lg:pt-0">
           <motion.div
             variants={fadeUp}
             initial="hidden"
