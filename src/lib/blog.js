@@ -112,8 +112,19 @@ export async function fetchPost(slug, { signal } = {}) {
     `/posts?_embed=wp:featuredmedia,wp:term,author&slug=${encodeURIComponent(slug)}`,
     { signal }
   );
-  const raw = Array.isArray(list) ? list[0] : list;
-  return normalisePost(raw);
+  const batch = (Array.isArray(list) ? list : [list]).map(normalisePost).filter(Boolean);
+  const match = batch.find((post) => post.slug === slug);
+  if (match) return match;
+
+  // A backend that ignores ?slug= just returns its list, so walk the pages
+  // instead. That way a single list endpoint is enough to run the whole blog.
+  for (let page = 1; page <= 10; page++) {
+    const { posts, totalPages } = await fetchPosts({ page, perPage: 50, signal });
+    const found = posts.find((post) => post.slug === slug);
+    if (found) return found;
+    if (page >= totalPages) break;
+  }
+  return null;
 }
 
 export const formatDate = (value) =>

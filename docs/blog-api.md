@@ -46,6 +46,11 @@ X-WP-TotalPages: 5
 
 ### A single post (the article page)
 
+> Optional. If the backend ignores `slug` and just returns the list, the site
+> finds the post in the list instead — so **one list endpoint is enough**.
+> Supporting `slug` is simply faster, because it avoids fetching pages the
+> reader does not need.
+
 ```http
 GET {base}/posts?_embed=wp:featuredmedia,wp:term,author&slug=the-post-slug
 ```
