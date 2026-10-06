@@ -39,15 +39,15 @@ export default function Hero() {
       className="relative overflow-hidden bg-lime-mist pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-28 lg:pt-40"
     >
       {/* The waiting hall the headline is about, under a lime wash so the copy still leads */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-20 lg:inset-0 lg:top-0">
         <img
           src={HOME_HERO_IMAGE}
           alt=""
           decoding="async"
-          className="h-full w-full object-cover opacity-[0.85]"
+          className="h-[58vw] w-full object-cover opacity-[0.85] lg:h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime-mist/75 via-lime-mist/30 via-45% to-lime-mist/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/92 via-lime-mist/62 via-55% to-lime-mist/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/10 via-lime-mist/45 to-lime-mist lg:bg-gradient-to-r lg:from-lime-mist/75 lg:via-lime-mist/30 lg:via-45% lg:to-lime-mist/55" />
+        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/92 lg:via-lime-mist/62 lg:via-55% lg:to-lime-mist/10" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
