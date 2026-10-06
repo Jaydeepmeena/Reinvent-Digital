@@ -168,3 +168,108 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Article bodies come from the CMS, so the tags are styled here rather than
+   with utility classes on each element. */
+.prose-post {
+  color: var(--color-ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose-post > * + * { margin-top: 1.25em; }
+
+.prose-post h2,
+.prose-post h3,
+.prose-post h4 {
+  color: var(--color-ink);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-top: 2em;
+  text-wrap: balance;
+}
+
+.prose-post h2 { font-size: 1.6rem; }
+.prose-post h3 { font-size: 1.3rem; }
+.prose-post h4 { font-size: 1.1rem; }
+
+.prose-post strong { color: var(--color-ink); font-weight: 700; }
+
+.prose-post a {
+  color: var(--color-green-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-post a:hover { color: var(--color-ink); }
+
+.prose-post ul,
+.prose-post ol { padding-left: 1.3em; }
+.prose-post ul { list-style: disc; }
+.prose-post ol { list-style: decimal; }
+.prose-post li::marker { color: var(--color-lime-deep); }
+.prose-post li + li { margin-top: 0.5em; }
+
+.prose-post blockquote {
+  border-left: 3px solid var(--color-lime);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  padding-left: 1.25rem;
+}
+
+.prose-post img,
+.prose-post iframe {
+  border-radius: 1.25rem;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.prose-post figure { margin-top: 2em; }
+.prose-post figcaption {
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.prose-post iframe { aspect-ratio: 16 / 9; width: 100%; }
+
+.prose-post pre {
+  background: var(--color-ink);
+  border-radius: 1rem;
+  color: var(--color-cream);
+  font-size: 0.9rem;
+  overflow-x: auto;
+  padding: 1.25rem;
+}
+.prose-post code {
+  background: rgba(27, 27, 23, 0.06);
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+}
+.prose-post pre code { background: none; padding: 0; }
+
+.prose-post table {
+  border-collapse: collapse;
+  display: block;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  width: 100%;
+}
+.prose-post th,
+.prose-post td {
+  border-bottom: 1px solid rgba(27, 27, 23, 0.1);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.prose-post th { color: var(--color-ink); font-weight: 700; }
+
+.prose-post hr {
+  border: 0;
+  border-top: 1px solid rgba(27, 27, 23, 0.12);
+  margin-block: 2.5em;
+}

@@ -7,6 +7,8 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const IndustryPage = lazy(() => import("./pages/IndustryPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ResourcePage = lazy(() => import("./pages/ResourcePage"));
+const BlogsPage = lazy(() => import("./pages/BlogsPage"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -18,6 +20,9 @@ export default function App() {
         <Route path="what-we-do/:slug" element={<ServicePage />} />
         <Route path="industries/:slug" element={<IndustryPage />} />
         <Route path="about/:slug" element={<AboutPage />} />
+        {/* The blog is CMS-backed, so it has its own list and article routes. */}
+        <Route path="resources/blogs" element={<BlogsPage />} />
+        <Route path="resources/blogs/:slug" element={<BlogPostPage />} />
         <Route path="resources/:slug" element={<ResourcePage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />
