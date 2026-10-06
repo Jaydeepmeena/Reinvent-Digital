@@ -38,17 +38,16 @@ export default function Hero() {
       ref={ref}
       className="relative overflow-hidden bg-lime-mist pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-28 lg:pt-40"
     >
-      {/* A clinic floor behind the lime, faint enough to read as texture */}
+      {/* The waiting hall the headline is about, under a lime wash so the copy still leads */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <img
           src={HOME_HERO_IMAGE}
           alt=""
-          loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover opacity-[0.12]"
+          className="h-full w-full object-cover opacity-[0.62]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-lime-mist via-lime-mist/85 to-lime-mist/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-lime-mist via-lime-mist/20 to-lime-mist/65" />
+        <div className="absolute inset-0 bg-gradient-to-r from-lime-mist from-12% via-lime-mist/70 via-52% to-lime-mist/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-lime-mist via-lime-mist/25 to-lime-mist/55" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />

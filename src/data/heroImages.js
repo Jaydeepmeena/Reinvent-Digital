@@ -17,6 +17,7 @@ import seoBanner from "../assets/heroes/seo.jpg";
 import aeoBanner from "../assets/heroes/aeo.jpg";
 import geoBanner from "../assets/heroes/geo.jpg";
 import businessProfileBanner from "../assets/heroes/business-profile.jpg";
+import homeBanner from "../assets/heroes/home.jpg";
 
 const LEFT = "left center";
 const RIGHT = "right center";
@@ -60,4 +61,4 @@ export const RESOURCE_HERO_IMAGES = {
 };
 
 export const CONTACT_HERO_IMAGE = [meeting, TOP];
-export const HOME_HERO_IMAGE = hospital;
+export const HOME_HERO_IMAGE = homeBanner;
