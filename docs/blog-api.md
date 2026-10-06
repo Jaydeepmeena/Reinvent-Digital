@@ -1,69 +1,153 @@
-# Blog API contract
+# Blog integration brief — WordPress → reinventdigital.com
 
-The blog page reads posts over HTTP at build-free runtime. Set one environment
-variable and the site does the rest:
+The website's blog is already built. It reads posts over HTTP at runtime, so
+once WordPress is reachable, **publishing a post is all it takes for it to
+appear** on `/resources/blogs` — no deploy, no code change.
 
-```bash
-# .env
-VITE_BLOG_API_URL=https://blog.reinventdigital.com/wp-json/wp/v2
-```
-
-Two request shapes are supported. **Option A needs no backend work** — it is
-WordPress's own REST API, which is enabled by default on every WordPress site.
+This brief is everything the WordPress developer needs.
 
 ---
 
-## Option A — plain WordPress (recommended)
+## 1. What we need back from you
 
-Point `VITE_BLOG_API_URL` at the site's `wp-json/wp/v2` base. The frontend calls:
-
-| Purpose | Request |
+| | |
 | --- | --- |
-| Latest posts | `GET /posts?_embed=wp:featuredmedia,wp:term,author&per_page=9&page=1&orderby=date&order=desc` |
-| One post | `GET /posts?_embed=wp:featuredmedia,wp:term,author&slug=<slug>` |
+| **The REST base URL** | e.g. `https://blog.reinventdigital.com/wp-json/wp/v2` |
+| **CORS enabled** for the website origin | see §4 |
+| **Posts published** with a featured image, excerpt and category | see §3 |
 
-Paging is read from the standard response headers:
+Send us the base URL and we set `VITE_BLOG_API_URL` — that's the whole
+connection.
 
+---
+
+## 2. The endpoints we call
+
+Both are **stock WordPress** — they exist on every install with the REST API
+enabled. No custom routes, no plugin, no authentication (posts are public).
+
+### Latest posts (the blog index)
+
+```http
+GET {base}/posts?_embed=wp:featuredmedia,wp:term,author&per_page=9&page=1&orderby=date&order=desc
 ```
+
+We page through with `page=2`, `page=3`, … for the **Load more** button, and
+read the paging from the response headers:
+
+```http
 X-WP-Total: 37
 X-WP-TotalPages: 5
 ```
 
-A published post then appears in **Latest blogs** automatically — newest first,
-no deploy needed.
+> These two headers must be **exposed** to the browser — see the CORS snippet,
+> which includes `Access-Control-Expose-Headers`. Without it, Load more never
+> appears.
 
-### Requirements on the WordPress side
+### A single post (the article page)
 
-1. **CORS.** The site must allow the website's origin, otherwise the browser
-   blocks the request. Add to the theme's `functions.php` or a small plugin:
+```http
+GET {base}/posts?_embed=wp:featuredmedia,wp:term,author&slug=the-post-slug
+```
 
-   ```php
-   add_action('rest_api_init', function () {
-     remove_filter('rest_pre_serve_request', 'rest_send_cors_headers');
-     add_filter('rest_pre_serve_request', function ($value) {
-       header('Access-Control-Allow-Origin: https://reinventdigital.com');
-       header('Access-Control-Allow-Methods: GET');
-       header('Access-Control-Allow-Headers: Accept, Content-Type');
-       return $value;
-     });
-   }, 15);
-   ```
-
-2. **Featured image set on every post** — it becomes the card image and the
-   article banner.
-3. **Excerpt filled in** — used as the card summary. WordPress generates one
-   automatically if left blank.
-4. **A category assigned** — shown as the pill on the card and the article.
-5. Posts must be **published** (drafts and private posts are not returned).
+Returns a one-item array. The slug comes from the URL
+`/resources/blogs/the-post-slug`, so **WordPress slugs are the public URLs** —
+changing a slug changes the link.
 
 ---
 
-## Option B — custom backend
+## 3. What each post needs
 
-If the posts are served by a custom API instead, return this shape. Field names
-are what matter; anything extra is ignored.
+`_embed` pulls the image, category and author into the same response, so these
+are the fields we read:
 
-### `GET /posts?page=1&per_page=9`
+| What we show | WordPress field | Needed? |
+| --- | --- | --- |
+| Card and article heading | `title.rendered` | **Yes** |
+| URL segment | `slug` | **Yes** |
+| Article body | `content.rendered` | **Yes** |
+| Card summary | `excerpt.rendered` | Recommended — WordPress auto-generates if blank |
+| Card image + article banner | `_embedded["wp:featuredmedia"][0].source_url` | Recommended — a lime placeholder shows without it |
+| Image alt text | `_embedded["wp:featuredmedia"][0].alt_text` | Recommended, for accessibility |
+| Category pill | `_embedded["wp:term"][…].name` (taxonomy `category`) | Recommended |
+| Author name and avatar | `_embedded.author[0].name` / `.avatar_urls["96"]` | Optional |
+| Date | `date` | Optional, shown as "2 October 2026" |
+
+Reading time is calculated from the content — nothing to set.
+
+**Editorial notes for whoever publishes:**
+- Set a featured image at **1600×900 or larger**; it is used full-bleed.
+- Assign exactly one category — the first non-"Uncategorized" one is shown.
+- Only **published** posts appear. Drafts, private and password-protected posts
+  are not returned.
+
+---
+
+## 4. CORS (the one piece of work)
+
+The website runs on a different domain, so WordPress must allow it. Add this as
+a must-use plugin (`wp-content/mu-plugins/rd-cors.php`) or in the theme's
+`functions.php`:
+
+```php
+<?php
+add_action('rest_api_init', function () {
+    remove_filter('rest_pre_serve_request', 'rest_send_cors_headers');
+    add_filter('rest_pre_serve_request', function ($value) {
+        $allowed = [
+            'https://reinventdigital.com',
+            'https://www.reinventdigital.com',
+            'http://localhost:5173', // local development
+        ];
+        $origin = get_http_origin();
+        if ($origin && in_array($origin, $allowed, true)) {
+            header('Access-Control-Allow-Origin: ' . $origin);
+            header('Vary: Origin');
+        }
+        header('Access-Control-Allow-Methods: GET, OPTIONS');
+        header('Access-Control-Allow-Headers: Accept, Content-Type');
+        header('Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages');
+        return $value;
+    });
+}, 15);
+```
+
+Replace the domains with the live ones. Nothing else needs to change.
+
+---
+
+## 5. How to test it
+
+From a terminal:
+
+```bash
+BASE=https://blog.reinventdigital.com/wp-json/wp/v2
+
+# 1. Posts come back, with paging headers
+curl -sD- -o /dev/null "$BASE/posts?per_page=9&page=1" | grep -i x-wp-
+
+# 2. A post carries its image, category and author
+curl -s "$BASE/posts?_embed=wp:featuredmedia,wp:term,author&per_page=1" \
+  | python -m json.tool | head -40
+
+# 3. CORS is set for our origin
+curl -sD- -o /dev/null -H "Origin: https://reinventdigital.com" "$BASE/posts?per_page=1" \
+  | grep -i access-control
+```
+
+**Done when:**
+1. Request 1 returns `200` plus `X-WP-Total` and `X-WP-TotalPages`.
+2. Request 2 shows `title.rendered`, `content.rendered`, `slug`, and an
+   `_embedded` block containing `wp:featuredmedia` and `wp:term`.
+3. Request 3 shows `Access-Control-Allow-Origin` echoing our domain and
+   `Access-Control-Expose-Headers` listing the two `X-WP-` headers.
+
+---
+
+## 6. Alternative — a custom backend
+
+Only if posts will not be served by WordPress directly. Return this shape from
+`GET /posts?page=1&per_page=9` and `GET /posts?slug=<slug>`:
 
 ```json
 {
@@ -72,7 +156,7 @@ are what matter; anything extra is ignored.
       "id": 128,
       "slug": "why-cost-per-lead-is-the-wrong-metric",
       "title": "Why cost per lead is the wrong metric for healthcare marketing",
-      "excerpt": "And what to measure instead if you actually want fuller appointment books.",
+      "excerpt": "And what to measure instead if you want fuller appointment books.",
       "content": "<p>Full article HTML…</p><h2>A heading</h2><p>…</p>",
       "date": "2026-10-02T09:30:00+05:30",
       "category": "Strategy",
@@ -94,46 +178,18 @@ are what matter; anything extra is ignored.
 }
 ```
 
-### `GET /posts?slug=<slug>`
-
-Return the same object shape — either as a one-item `posts` array or a bare
-array. The frontend takes the first match.
-
-### Field reference
-
-| Field | Type | Required | Notes |
-| --- | --- | --- | --- |
-| `id` | number \| string | no | Falls back to `slug` |
-| `slug` | string | **yes** | URL segment: `/resources/blogs/<slug>` |
-| `title` | string | **yes** | Plain text |
-| `excerpt` | string | no | Plain text or HTML; tags are stripped for the card |
-| `content` | string (HTML) | **yes** on the article route | Sanitised before rendering |
-| `date` | ISO 8601 string | no | Shown as "2 October 2026" |
-| `category` | string | no | Pill on the card and article |
-| `reading_time` | number (minutes) | no | Calculated from `content` when absent |
-| `author.name` | string | no | Hidden when absent |
-| `author.avatar` | URL | no | |
-| `image.src` | URL | no | Card image and article banner; a lime placeholder shows when absent |
-| `image.alt` | string | no | Leave empty for decorative images |
-
-Sorting is the backend's job — return **newest first**.
+Required: `slug`, `title`, `content`. Everything else is optional and degrades
+gracefully. Sort newest first — the frontend does not re-sort.
 
 ---
 
-## How it renders
+## 7. Notes for us (frontend side)
 
-- `/resources/blogs` — the hero, then **Latest blogs**: the newest post as a
-  wide featured card, the rest in a three-column grid, with **Load more** while
-  further pages exist. Loading shows skeletons; an empty feed and a failed
-  request each have their own message.
-- `/resources/blogs/<slug>` — the article: banner with the featured image,
-  category, title, author, date and reading time, then the body, a
-  "Keep reading" row of three other posts, and the contact CTA.
-
-## Security
-
-Article HTML is sanitised with DOMPurify before it reaches the DOM
-(`src/lib/blog.js`). Allowed: headings, text, lists, links, images, figures,
-tables, code blocks and iframes (for embeds). Scripts, event handlers, styles,
-forms and `javascript:` URLs are stripped — so a compromised CMS account cannot
-inject script into the site.
+- Config: `VITE_BLOG_API_URL` (see `.env.example`). Unset, the blog page says
+  the feed is not connected rather than erroring.
+- Data layer: `src/lib/blog.js` — normalises either shape into one post model
+  and **sanitises article HTML with DOMPurify** before it is rendered. Allowed:
+  headings, text, lists, links, images, figures, tables, code, embed iframes.
+  Stripped: `<script>`, inline event handlers, `javascript:` URLs, forms.
+- Pages: `src/pages/BlogsPage.jsx` (index) and `src/pages/BlogPostPage.jsx`
+  (article). CMS markup is styled by `.prose-post` in `src/index.css`.
