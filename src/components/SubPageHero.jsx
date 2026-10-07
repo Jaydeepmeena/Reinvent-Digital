@@ -134,16 +134,17 @@ export default function SubPageHero({
     >
       {/* The page's own photo, running the full width as a banner */}
       {banner && (
-        <div className="pointer-events-none absolute inset-x-0 top-20 lg:inset-0 lg:top-0">
+        <div className="pointer-events-none absolute inset-0">
           <img
             src={photo}
             alt=""
             decoding="async"
             style={{ objectPosition: crop }}
-            className="h-[58vw] w-full object-cover lg:h-full"
+            className="h-full w-full object-cover"
           />
-          {/* Phones: fade the band into the section. Desktop: hold the copy column dark. */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/70 to-ink lg:bg-gradient-to-r lg:from-ink lg:via-ink/55 lg:to-ink/10" />
+          {/* Phones read top to bottom, so the scrim deepens under the copy.
+              Desktop holds the left column dark and lets the photo breathe right. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/80 via-45% to-ink/92 lg:bg-gradient-to-r lg:from-ink lg:via-ink/55 lg:to-ink/10" />
           <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-ink/90 lg:via-ink/10 lg:to-ink/55" />
         </div>
       )}
@@ -198,7 +199,7 @@ export default function SubPageHero({
       )}
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12">
-        <div data-hero-copy className="relative min-w-0 pt-[46vw] lg:pt-0">
+        <div data-hero-copy className="relative min-w-0">
           <div data-hero-fade>
             <Breadcrumb trail={trail} tone={banner ? "dark" : "light"} />
           </div>

@@ -39,14 +39,14 @@ export default function Hero() {
       className="relative overflow-hidden bg-lime-mist pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-28 lg:pt-40"
     >
       {/* The waiting hall the headline is about, under a lime wash so the copy still leads */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-20 lg:inset-0 lg:top-0">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <img
           src={HOME_HERO_IMAGE}
           alt=""
           decoding="async"
-          className="h-[58vw] w-full object-cover lg:h-full"
+          className="h-full w-full object-cover object-[38%_center] lg:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 from-55% via-lime-mist/35 via-80% to-lime-mist lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/10 via-lime-mist/78 via-40% to-lime-mist/92 lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
         <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/80 lg:via-lime-mist/40 lg:via-55% lg:to-lime-mist/5" />
       </div>
 
@@ -66,8 +66,7 @@ export default function Hero() {
       </motion.div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-        {/* Below lg the photo is a band above the copy, so the text starts under it. */}
-        <motion.div style={{ y: textY }} className="pt-[44vw] lg:pt-0">
+        <motion.div style={{ y: textY }}>
           <motion.div
             variants={fadeUp}
             initial="hidden"
