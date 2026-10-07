@@ -91,6 +91,8 @@ export function normalisePost(raw) {
   };
 }
 
+// The trailing slash on /posts/ matters: our backend 301-redirects without it,
+// and WordPress's own REST API accepts it either way.
 async function request(path, { signal } = {}) {
   if (!BASE) throw new Error("VITE_BLOG_API_URL is not set");
   const res = await fetch(`${BASE}${path}`, { signal, headers: { Accept: "application/json" } });
@@ -115,7 +117,7 @@ export async function fetchPosts({ page = 1, perPage = PER_PAGE, signal } = {}) 
     };
   }
   const { list, totalPages, total } = await request(
-    `/posts?_embed=wp:featuredmedia,wp:term,author&per_page=${perPage}&page=${page}&orderby=date&order=desc`,
+    `/posts/?_embed=wp:featuredmedia,wp:term,author&per_page=${perPage}&page=${page}&orderby=date&order=desc`,
     { signal }
   );
   return { posts: (list ?? []).map(normalisePost).filter(Boolean), totalPages, total };
@@ -124,7 +126,7 @@ export async function fetchPosts({ page = 1, perPage = PER_PAGE, signal } = {}) 
 export async function fetchPost(slug, { signal } = {}) {
   if (!BASE) return samples().find((post) => post.slug === slug) ?? null;
   const { list } = await request(
-    `/posts?_embed=wp:featuredmedia,wp:term,author&slug=${encodeURIComponent(slug)}`,
+    `/posts/?_embed=wp:featuredmedia,wp:term,author&slug=${encodeURIComponent(slug)}`,
     { signal }
   );
   const batch = (Array.isArray(list) ? list : [list]).map(normalisePost).filter(Boolean);
