@@ -46,7 +46,7 @@ export default function Hero() {
           decoding="async"
           className="h-[58vw] w-full object-cover lg:h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 via-lime-mist/30 to-lime-mist lg:bg-gradient-to-r lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 from-55% via-lime-mist/35 via-80% to-lime-mist lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
         <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/80 lg:via-lime-mist/40 lg:via-55% lg:to-lime-mist/5" />
       </div>
 

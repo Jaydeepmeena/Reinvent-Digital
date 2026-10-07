@@ -153,7 +153,12 @@ export default function SubPageHero({
           banner ? "bg-grid-dark" : "bg-grid"
         }`}
       />
-      <div className="pointer-events-none absolute -top-24 right-[-25%] h-96 w-96 rounded-full bg-lime/25 blur-3xl sm:right-[-10%]" />
+      <div
+        className={`pointer-events-none absolute -top-24 right-[-25%] h-96 w-96 rounded-full bg-lime/25 blur-3xl sm:right-[-10%] ${
+          /* On a phone this glow lands on the photo band and tints it green. */
+          banner ? "hidden lg:block" : ""
+        }`}
+      />
 
       {isServices && (
         <>
