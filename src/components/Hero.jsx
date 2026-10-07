@@ -39,14 +39,14 @@ export default function Hero() {
       className="relative overflow-hidden bg-lime-mist pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-28 lg:pt-40"
     >
       {/* The waiting hall the headline is about, under a lime wash so the copy still leads */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-20 h-[88vw] sm:h-[72vw] lg:inset-0 lg:top-0 lg:h-auto">
         <img
           src={HOME_HERO_IMAGE}
           alt=""
           decoding="async"
           className="h-full w-full object-cover object-[38%_center] lg:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/10 via-lime-mist/78 via-40% to-lime-mist/92 lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/10 via-lime-mist/62 via-55% to-lime-mist lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/92 lg:via-lime-mist/72 lg:via-40% lg:to-lime-mist/10" />
         <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/80 lg:via-lime-mist/40 lg:via-55% lg:to-lime-mist/5" />
       </div>
 

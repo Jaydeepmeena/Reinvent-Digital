@@ -134,7 +134,7 @@ export default function SubPageHero({
     >
       {/* The page's own photo, running the full width as a banner */}
       {banner && (
-        <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-x-0 top-20 h-[88vw] sm:h-[72vw] lg:inset-0 lg:top-0 lg:h-auto">
           <img
             src={photo}
             alt=""
@@ -142,9 +142,9 @@ export default function SubPageHero({
             style={{ objectPosition: crop }}
             className="h-full w-full object-cover"
           />
-          {/* Phones read top to bottom, so the scrim deepens under the copy.
-              Desktop holds the left column dark and lets the photo breathe right. */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/80 via-45% to-ink/92 lg:bg-gradient-to-r lg:from-ink lg:via-ink/55 lg:to-ink/10" />
+          {/* Phones read top to bottom, so the scrim deepens and ends on the
+              section colour. Desktop holds the left column dark instead. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/70 via-55% to-ink lg:bg-gradient-to-r lg:from-ink lg:via-ink/55 lg:to-ink/10" />
           <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-ink/90 lg:via-ink/10 lg:to-ink/55" />
         </div>
       )}
