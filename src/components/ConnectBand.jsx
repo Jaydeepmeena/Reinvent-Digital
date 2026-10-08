@@ -17,9 +17,9 @@ export default function ConnectBand() {
         <SectionHeader
           align="center"
           tone="dark"
-          eyebrow="The Reinvent Digital system"
-          title="From search to actual walk-ins, in"
-          accent="four traceable stages."
+          eyebrow="The Reinvent Digital System"
+          title="From Search to Actual Walk-Ins, in"
+          accent="Four Traceable Stages."
           description="Every stage has an owner, a timestamp and a number your team can act on."
         />
       </div>
@@ -27,7 +27,7 @@ export default function ConnectBand() {
       <div className="relative mx-auto mt-10 grid max-w-7xl gap-10 px-5 sm:mt-12 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:items-center lg:gap-12">
         <div>
           <Reveal as="h2" className="font-serif-italic text-[clamp(1.6rem,1.2rem+1.5vw,2.25rem)] leading-tight text-cream">
-            Built around one outcome: booked patients.
+            Built Around One Outcome: Booked Patients.
           </Reveal>
 
           <ol className="mt-7 grid max-w-md grid-cols-2 gap-3">

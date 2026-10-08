@@ -8,13 +8,13 @@ import { EASE } from "./motion/easing";
 const ROWS = [
   {
     icon: CalendarCheck,
-    label: "Primary output",
+    label: "Primary Output",
     them: "Leads and reports",
     us: "Bookings and journey visibility",
   },
   {
     icon: Headphones,
-    label: "Call centre",
+    label: "Call Centre",
     them: "Outside scope",
     us: "Routed, scored and coached",
   },
@@ -26,7 +26,7 @@ const ROWS = [
   },
   {
     icon: Coins,
-    label: "Decision metric",
+    label: "Decision Metric",
     them: "Cost per lead",
     us: "Cost per booked patient",
   },
@@ -42,11 +42,11 @@ export default function ComparisonSection() {
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-lime">
               <span className="h-2 w-2 rounded-full bg-lime" />
-              A different accountability line
+              A Different Accountability Line
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-cream">
-              We don't price our value around a{" "}
-              <span className="font-serif-italic font-medium text-lime">percentage of media spend.</span>
+              We Don't Price Our Value Around a{" "}
+              <span className="font-serif-italic font-medium text-lime">Percentage of Media Spend.</span>
             </h2>
           </Reveal>
 
@@ -90,7 +90,7 @@ export default function ComparisonSection() {
 
                 <div className="mt-5 border-t border-cream/10 pt-5">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-cream/40">
-                    Typical agency
+                    Typical Agency
                   </span>
                   <p className="mt-1.5 flex items-start gap-2 text-[13px] leading-snug text-cream/45 transition-colors duration-300 group-hover:text-cream/35">
                     <X className="mt-0.5 h-3.5 w-3.5 shrink-0" />

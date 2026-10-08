@@ -71,11 +71,11 @@ export default function TestimonialsSection() {
         <Reveal>
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
             <span className="h-2 w-2 rounded-full bg-lime" />
-            Client testimonials
+            Client Testimonials
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
-            What healthcare leaders say,{" "}
-            <span className="font-serif-italic font-medium text-ink-soft">in their own words.</span>
+            What Healthcare Leaders Say,{" "}
+            <span className="font-serif-italic font-medium text-ink-soft">In Their Own Words.</span>
           </h2>
         </Reveal>
 

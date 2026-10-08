@@ -77,15 +77,15 @@ export default function ServicesSection() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeader
-          eyebrow="How Reinvent Digital stands out"
-          title="Patient acquisition,"
-          accent="connected end to end."
+          eyebrow="How Reinvent Digital Stands Out"
+          title="Patient Acquisition,"
+          accent="Connected End to End."
           action={
             <Link
               to="/contact"
               className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream"
             >
-              Discuss your setup
+              Discuss Your Setup
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           }

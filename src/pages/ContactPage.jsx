@@ -15,7 +15,7 @@ const CITIES = [
 ];
 
 const STEPS = [
-  { tag: "Day 1", title: "Tell us about your clinic", body: "Share your current channels, locations and where enquiries seem to be getting lost." },
+  { tag: "Day 1", title: "Tell Us About Your Clinic", body: "Share your current channels, locations and where enquiries seem to be getting lost." },
   { tag: "Week 1", title: "We map the gaps", body: "We review your funnel — from first click to walk-in — and show you exactly where the system is leaking." },
   { tag: "Week 2", title: "We propose a plan", body: "A scoped plan across the channels, CRM and call centre work that will move the needle fastest." },
 ];
@@ -27,11 +27,11 @@ export default function ContactPage() {
         variant="contact"
         image={CONTACT_HERO_IMAGE}
         trail={[{ label: "Contact Us" }]}
-        eyebrow="Let's talk"
+        eyebrow="Let's Talk"
         title="Contact Us"
-        accent="let's map your patient acquisition system."
+        accent="Let's Map Your Patient Acquisition System."
         description="Tell us about your clinics, your current channels and where enquiries seem to go quiet. We'll come back with a clear view of where the gaps are — no generic pitch deck."
-        ctaLabel="Email us directly"
+        ctaLabel="Email Us Directly"
         ctaHref="mailto:hello@reinventdigital.com"
         visual={<ChatVisual />}
       />

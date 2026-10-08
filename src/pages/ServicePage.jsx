@@ -52,7 +52,7 @@ export default function ServicePage() {
           accent={accent}
           description={description}
           stats={heroStats}
-          ctaLabel={ctaLabel ?? "Discuss your growth plan"}
+          ctaLabel={ctaLabel ?? "Discuss Your Growth Plan"}
           ctaHref="/contact"
           icon={icon}
           highlights={highlights}
@@ -122,7 +122,7 @@ export default function ServicePage() {
 
         <section className="section-y border-t border-ink/[0.06] bg-white">
           <div className="mx-auto max-w-5xl px-5 sm:px-8">
-            <Eyebrow>{processEyebrow ?? "How we approach it"}</Eyebrow>
+            <Eyebrow>{processEyebrow ?? "How We Approach It"}</Eyebrow>
             <SplitReveal
               as="h2"
               type="chars3d"
@@ -163,7 +163,7 @@ export default function ServicePage() {
                 type="chars3d"
                 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink"
               >
-                {faqTitle ?? `Common queries about ${title}, answered.`}
+                {faqTitle ?? `Common Queries About ${title}, Answered.`}
               </SplitReveal>
 
               <dl className="section-head-gap divide-y divide-ink/10 border-y border-ink/10">

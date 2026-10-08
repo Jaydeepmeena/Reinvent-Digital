@@ -42,7 +42,7 @@ export default function NotFound() {
             to="/contact"
             className="group inline-flex items-center gap-1.5 text-[15px] font-semibold text-ink transition-colors hover:underline decoration-lime decoration-2 underline-offset-4"
           >
-            Contact us
+            Contact Us
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>

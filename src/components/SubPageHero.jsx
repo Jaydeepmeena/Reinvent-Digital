@@ -68,7 +68,7 @@ export default function SubPageHero({
   accent,
   description,
   stats = [],
-  ctaLabel = "Discuss your growth plan",
+  ctaLabel = "Discuss Your Growth Plan",
   ctaHref = "/contact",
   icon,
   highlights = [],

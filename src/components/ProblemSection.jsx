@@ -7,22 +7,22 @@ import { EASE } from "./motion/easing";
 const PROBLEMS = [
   {
     icon: Clock3,
-    tag: "Lost time",
-    title: "Slow first response",
+    tag: "Lost Time",
+    title: "Slow First Response",
     quote: "We called back, but they'd already booked elsewhere.",
     body: "A patient enquires at 8 pm. Your team calls at 11 am the next day.",
   },
   {
     icon: UserX,
-    tag: "No owner",
-    title: "Follow-up nobody owns",
+    tag: "No Owner",
+    title: "Follow-Up Nobody Owns",
     quote: "The patient said they'd think about it.",
     body: "Then nobody called again. Booked patients get no reminder and never arrive.",
   },
   {
     icon: HelpCircle,
-    tag: "Missing proof",
-    title: "Broken attribution",
+    tag: "Missing Proof",
+    title: "Broken Attribution",
     quote: "Which campaign brought patients in?",
     body: "Marketing shows leads, the clinic shows walk-ins, and no report connects the two.",
   },
@@ -41,8 +41,8 @@ export default function ProblemSection() {
               Where you're actually missing out
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink">
-              Agencies aim for the leads.{" "}
-              <span className="font-serif-italic font-medium text-ink-soft">We work on what happens next.</span>
+              Agencies Aim for the Leads.{" "}
+              <span className="font-serif-italic font-medium text-ink-soft">We Work on What Happens Next.</span>
             </h2>
             <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink-soft sm:text-[17px]">
               Report says leads are up. But your front desk says numbers haven't changed.
@@ -66,8 +66,8 @@ export default function ProblemSection() {
                 ))}
               </div>
               <div>
-                <p className="text-sm font-bold text-ink">3 leaks, one audit</p>
-                <p className="text-[13px] text-ink-soft">Free for qualifying clinics</p>
+                <p className="text-sm font-bold text-ink">3 Leaks, One Audit</p>
+                <p className="text-[13px] text-ink-soft">Free for Qualifying Clinics</p>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ export default function ProblemSection() {
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3 text-[15px] font-semibold text-ink shadow-lg shadow-lime/25 transition-colors hover:bg-lime-deep"
               >
-                Find your leaks
+                Find Your Leaks
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </motion.div>

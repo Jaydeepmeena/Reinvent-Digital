@@ -20,7 +20,7 @@ export const INDUSTRIES = [
       "Chair-utilisation focused reporting",
       "Review & reputation management",
     ],
-    metric: { value: "2.1x", label: "more booked appointments", sub: "across managed dental groups" },
+    metric: { value: "2.1x", label: "More Booked Appointments", sub: "across managed dental groups" },
     challenges: [
       { title: "High-value procedures, slow follow-up", body: "Implant and cosmetic enquiries are expensive to generate and easy to lose when follow-up takes hours instead of minutes.", tag: "Lost revenue" },
       { title: "Chair time sits empty", body: "Marketing reports leads while the schedule shows gaps — nobody connects enquiry volume to actual chair utilisation.", tag: "Utilisation gap" },
@@ -67,7 +67,7 @@ export const INDUSTRIES = [
       "Long-cycle nurture automation",
       "Consultation-to-cycle attribution",
     ],
-    metric: { value: "2.4x", label: "more consultation bookings", sub: "across managed fertility networks" },
+    metric: { value: "2.4x", label: "More Consultation Bookings", sub: "across managed fertility networks" },
     challenges: [
       { title: "Long, emotional decision cycles", body: "Patients research for weeks or months — generic follow-up cadences either annoy them or lose them entirely.", tag: "Long cycle" },
       { title: "One wrong call ends the relationship", body: "Fertility enquiries need a different tone than a routine booking call, and most call centres aren't trained for it.", tag: "Sensitivity risk" },
@@ -114,7 +114,7 @@ export const INDUSTRIES = [
       "Free-screening funnel design",
       "Surgical consult attribution",
     ],
-    metric: { value: "2.6x", label: "more surgical consultations", sub: "across managed eye care networks" },
+    metric: { value: "2.6x", label: "More Surgical Consultations", sub: "across managed eye care networks" },
     challenges: [
       { title: "Two very different patients, one campaign", body: "Routine eye-test demand and high-value LASIK/cataract demand get lumped into the same generic campaign, wasting budget on both.", tag: "Mixed intent" },
       { title: "Local search decides the click", body: "Most eye-care searches are hyper-local — 'near me' — and Maps visibility often loses to bigger chains with better profiles.", tag: "Local visibility" },
@@ -161,7 +161,7 @@ export const INDUSTRIES = [
       "Emergency vs elective demand separation",
       "Board-ready attribution reporting",
     ],
-    metric: { value: "1.9x", label: "more OPD bookings", sub: "across managed hospital groups" },
+    metric: { value: "1.9x", label: "More OPD Bookings", sub: "across managed hospital groups" },
     challenges: [
       { title: "Every department markets differently, badly", body: "Cardiology, orthopaedics and oncology each need distinct messaging and urgency, but often share one generic hospital campaign.", tag: "Department silos" },
       { title: "One call centre, a dozen specialties", body: "Front-desk and call teams struggle to route high-urgency emergency enquiries differently from elective OPD bookings.", tag: "Routing complexity" },

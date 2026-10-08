@@ -4,7 +4,7 @@ import { ArrowRight, Check, Headset, Plus } from "lucide-react";
 import Reveal from "./motion/Reveal";
 import { EASE } from "./motion/easing";
 
-const GROUPS = ["General", "Channels & systems", "Setup & reporting"];
+const GROUPS = ["General", "Channels & Systems", "Setup & Reporting"];
 
 const FAQS = [
   {
@@ -23,32 +23,32 @@ const FAQS = [
     a: "Healthcare groups with more than one centre and a team handling patient enquiries: dental chains, IVF and fertility networks, eye hospitals, multi-speciality hospitals and diagnostic centres. It helps most when demand, locations and call volumes are too complex to manage from separate channel reports.",
   },
   {
-    group: "Channels & systems",
+    group: "Channels & Systems",
     q: "Which channels do you manage?",
     a: "Google Ads, Meta Ads, healthcare SEO, AEO, GEO, Google Maps and Business Profiles, YouTube and social media. Each channel is planned by treatment and centre. Every enquiry it produces carries its source into your CRM, so channels are compared on bookings rather than clicks.",
   },
   {
-    group: "Channels & systems",
+    group: "Channels & Systems",
     q: "Do we need to replace our CRM or call-tracking provider?",
     a: "Usually not. We start by auditing your current CRM, telephony and booking setup. If it can capture the source, assign an owner, log calls and record outcomes, we keep it and configure it properly. If you'd rather move, we can run everything on our own healthcare CRM.",
   },
   {
-    group: "Channels & systems",
+    group: "Channels & Systems",
     q: "Can you run our call centre, or only train our team?",
     a: "Both. If you have agents, we set up rosters, routing and escalation, score calls against a 100-point rubric and coach your team on real conversations. If you'd rather hand it over, our team handles your enquiries and bookings, on your CRM or ours, with the same response targets and reporting.",
   },
   {
-    group: "Setup & reporting",
+    group: "Setup & Reporting",
     q: "How long does setup take, and when will we see results?",
     a: "Implementation runs as a 90-day sprint. Google Ads usually produces meaningful data within 30 to 45 days, with budget decisions at 60 to 90 days. Business Profile and SEO improvements typically appear in 60 to 90 days, and organic rankings move from months four to six. Timelines vary by market, competition and data access.",
   },
   {
-    group: "Setup & reporting",
+    group: "Setup & Reporting",
     q: "How are walk-ins measured?",
     a: "Where you authorise access, we match booked appointments against your PMS or HIS attendance records, using approved identifiers such as appointment ID or phone number. Every report shows the match rate and the records we couldn't match, so walk-in figures reflect only what the data can prove.",
   },
   {
-    group: "Setup & reporting",
+    group: "Setup & Reporting",
     q: "What data do you need, and how is patient data protected?",
     a: "Only what the reporting needs: enquiry source, booking status and attendance status, plus identifiers for matching. Access, permissions, retention and each party's responsibilities are agreed with your team before any data moves, in line with your obligations under India's Digital Personal Data Protection Act, 2023.",
   },
@@ -237,10 +237,10 @@ export default function FAQSection() {
         <Reveal className="text-center">
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-lime">
             <span className="h-2 w-2 rounded-full bg-lime" />
-            Frequently asked questions
+            Frequently Asked Questions
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-cream">
-            Common queries about the acquisition system from healthcare leaders, answered.
+            Common Queries About the Acquisition System From Healthcare Leaders, Answered.
           </h2>
         </Reveal>
 

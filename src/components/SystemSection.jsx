@@ -42,30 +42,30 @@ const STEPS = [
   {
     icon: Target,
     image: demandImg,
-    title: "Create demand",
+    title: "Create Demand",
     body: "Ads, search, AI answers and Google Maps, planned by treatment, location and urgency.",
-    tags: ["Treatment intent", "Location intent", "AI answers"],
+    tags: ["Treatment Intent", "Location Intent", "AI Answers"],
   },
   {
     icon: Zap,
     image: routingImg,
-    title: "Route instantly",
+    title: "Route Instantly",
     body: "Every enquiry enters your CRM with its source and routes to an agent against a 60-second target.",
     tags: ["Call", "Forms", "WhatsApp"],
   },
   {
     icon: TrendingUp,
     image: callsImg,
-    title: "Booked appointments",
+    title: "Booked Appointments",
     body: "Calls are scored, agents are coached, and follow-up rules stop enquiries going cold.",
-    tags: ["Consultation", "Reminder", "Follow-up"],
+    tags: ["Consultation", "Reminder", "Follow-Up"],
   },
   {
     icon: BadgeCheck,
     image: reportingImg,
-    title: "Measurable walk-ins",
+    title: "Measurable Walk-Ins",
     body: "Patients arrive, and visits are matched to the original search, so you know which channel brought them in.",
-    tags: ["Cost per booking", "Source matched", "Channel known"],
+    tags: ["Cost Per Booking", "Source Matched", "Channel Known"],
   },
 ];
 

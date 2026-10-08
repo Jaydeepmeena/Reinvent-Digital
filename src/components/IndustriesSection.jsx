@@ -45,11 +45,11 @@ export default function IndustriesSection() {
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
               <span className="h-2 w-2 rounded-full bg-lime" />
-              Designed for operational scale
+              Designed for Operational Scale
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
-              Best for healthcare groups{" "}
-              <span className="font-serif-italic font-medium text-ink-soft">with more than one front door.</span>
+              Best for Healthcare Groups{" "}
+              <span className="font-serif-italic font-medium text-ink-soft">With More Than One Front Door.</span>
             </h2>
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">
               The patient acquisition system pays off when patient demand, locations and call teams are too complex to
@@ -74,8 +74,8 @@ export default function IndustriesSection() {
         <div>
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="max-w-xl text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
-              Best for healthcare groups{" "}
-              <span className="font-serif-italic font-medium text-ink-soft">with more than one front door.</span>
+              Best for Healthcare Groups{" "}
+              <span className="font-serif-italic font-medium text-ink-soft">With More Than One Front Door.</span>
             </h2>
             <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-soft">
               [ {INDUSTRIES.length.toString().padStart(2, "0")} specialities ]

@@ -41,12 +41,12 @@ export default function ProofSection() {
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
               <span className="h-2 w-2 rounded-sm bg-lime" />
-              Proven results, not built-up numbers
+              Proven Results, Not Built-Up Numbers
             </span>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-balance text-[clamp(1.75rem,1.3rem+2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
-              More than double the monthly walk-ins, with the same 15-agent call team.
+              More Than Double the Monthly Walk-Ins, With the Same 15-Agent Call Team.
             </h2>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
               A 115+ location dental group didn't have a lead-volume problem. It had a response and conversion problem.
@@ -57,7 +57,7 @@ export default function ProofSection() {
               to="/contact"
               className="group mt-5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-ink transition-colors hover:text-green-deep"
             >
-              Discuss your conversion gaps
+              Discuss Your Conversion Gaps
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Reveal>

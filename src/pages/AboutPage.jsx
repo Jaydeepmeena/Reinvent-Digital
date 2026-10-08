@@ -14,7 +14,7 @@ import StickyChapters from "../components/fx/StickyChapters";
 import StatRows from "../components/fx/StatRows";
 import TextDrum from "../components/fx/TextDrum";
 
-const VALUES = ["Ownership", "Evidence", "Healthcare only", "Booked patients", "No hand-offs", "Accountability"];
+const VALUES = ["Ownership", "Evidence", "Healthcare only", "Booked Patients", "No hand-offs", "Accountability"];
 
 export default function AboutPage() {
   const { slug } = useParams();
@@ -72,7 +72,7 @@ export default function AboutPage() {
           <section className="section-y border-t border-ink/[0.06] bg-white">
             <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
               <div>
-                <Eyebrow>{stats?.length ? "By the numbers" : "What you get"}</Eyebrow>
+                <Eyebrow>{stats?.length ? "By the Numbers" : "What you get"}</Eyebrow>
                 <SplitReveal
                   as="h2"
                   type="blur"

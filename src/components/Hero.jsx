@@ -10,9 +10,9 @@ import useMediaQuery from "./motion/useMediaQuery";
 import { HOME_HERO_IMAGE } from "../data/heroImages";
 
 const STATS = [
-  ["2.1x", "avg. increase in booked patients"],
-  ["115+", "locations served"],
-  ["<60 sec", "avg. enquiry response time"],
+  ["2.1x", "Avg. Increase in Booked Patients"],
+  ["115+", "Locations Served"],
+  ["<60 sec", "Avg. Enquiry Response Time"],
 ];
 
 const fadeUp = {
@@ -20,7 +20,7 @@ const fadeUp = {
   show: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.1 + i * 0.09, ease: EASE } }),
 };
 
-const headline = ["Stop counting leads."];
+const headline = ["Stop Counting Leads."];
 
 export default function Hero() {
   const ref = useRef(null);
@@ -75,7 +75,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink-soft backdrop-blur sm:px-4 sm:text-xs"
           >
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-green animate-pulse-soft" />
-            Patient acquisition, engineered for healthcare
+            Patient Acquisition, Engineered for Healthcare
           </motion.div>
 
           <h1 className="mt-6 text-balance text-[clamp(2.4rem,1.6rem+4vw,4.35rem)] font-extrabold leading-[1.04] tracking-tight text-ink">
@@ -98,7 +98,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
               >
-                Start counting patient walk-ins.
+                Start Counting Patient Walk-Ins.
               </motion.span>
             </span>
           </h1>
@@ -126,7 +126,7 @@ export default function Hero() {
                 to="/contact"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[15px] font-semibold text-cream shadow-lg shadow-ink/15 transition-colors hover:bg-green-deep sm:w-auto"
               >
-                Discuss your acquisition system
+                Discuss Your Acquisition System
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             </motion.div>
@@ -134,7 +134,7 @@ export default function Hero() {
               href="#approach"
               className="group inline-flex items-center justify-center gap-2 py-2 text-[15px] font-semibold text-ink transition-colors hover:text-green-deep"
             >
-              See how the system works
+              See How the System Works
               <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             </a>
           </motion.div>
