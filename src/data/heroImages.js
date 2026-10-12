@@ -18,6 +18,16 @@ import aeoBanner from "../assets/heroes/aeo.jpg";
 import geoBanner from "../assets/heroes/geo.jpg";
 import businessProfileBanner from "../assets/heroes/business-profile.jpg";
 import homeBanner from "../assets/heroes/home.jpg";
+import localSeoBanner from "../assets/heroes/local-seo.jpg";
+import youtubeBanner from "../assets/heroes/youtube.jpg";
+import socialMediaBanner from "../assets/heroes/social-media.jpg";
+import automationBanner from "../assets/heroes/automation.jpg";
+import crmBanner from "../assets/heroes/crm.jpg";
+import telephonyBanner from "../assets/heroes/telephony.jpg";
+import attributionBanner from "../assets/heroes/attribution.jpg";
+import walkInBanner from "../assets/heroes/walk-in.jpg";
+import callCentreBanner from "../assets/heroes/call-centre.jpg";
+import messagingBanner from "../assets/heroes/messaging.jpg";
 
 const LEFT = "left center";
 const RIGHT = "right center";
@@ -33,12 +43,16 @@ export const SERVICE_HERO_IMAGES = {
   aeo: [aeoBanner, CENTER],
   geo: [geoBanner, CENTER],
   "business-profile-optimisation": [businessProfileBanner, CENTER],
-  "local-seo": [dental, RIGHT],
-  "youtube-marketing": [social, TOP],
-  "social-media-management": [social, BOTTOM],
-  "marketing-automation": [workspace, LEFT],
-  crm: [analytics, TOP],
-  "call-centre-management": [meeting, CENTER],
+  "local-seo": [localSeoBanner, CENTER],
+  "youtube-marketing": [youtubeBanner, CENTER],
+  "social-media-management": [socialMediaBanner, CENTER],
+  "marketing-automation": [automationBanner, CENTER],
+  crm: [crmBanner, CENTER],
+  telephony: [telephonyBanner, CENTER],
+  "booking-attribution": [attributionBanner, CENTER],
+  "walk-in-tracking": [walkInBanner, CENTER],
+  "call-centre-management": [callCentreBanner, CENTER],
+  "messaging-follow-up": [messagingBanner, CENTER],
 };
 
 export const INDUSTRY_HERO_IMAGES = {
