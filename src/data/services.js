@@ -719,7 +719,7 @@ export const SERVICES = [
     category: "Digital Marketing",
     icon: Navigation,
     eyebrow: "Healthcare Local SEO & Google Maps",
-    title: "Healthcare Local SEO",
+    title: "Google Maps & Local SEO",
     heading: "Every Neighbourhood You Serve,",
     accent: "Every Map Patients Use.",
     description:
