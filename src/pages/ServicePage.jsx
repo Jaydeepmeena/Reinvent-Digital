@@ -27,7 +27,7 @@ export default function ServicePage() {
   }
 
   const {
-    category, icon, eyebrow, title, accent, description,
+    category, icon, eyebrow, title, heading, accent, description,
     highlights, metric, heroStats, includes, process, proofStats,
     ctaLabel, includesTitle, includesIntro, processEyebrow, processTitle, processNote,
     faqs, faqTitle, closing,
@@ -49,6 +49,7 @@ export default function ServicePage() {
           ]}
           eyebrow={`${category} · ${eyebrow}`}
           title={title}
+          headline={heading}
           accent={accent}
           description={description}
           stats={heroStats}

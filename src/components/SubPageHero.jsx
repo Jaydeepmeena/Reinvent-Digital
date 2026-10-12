@@ -65,6 +65,7 @@ export default function SubPageHero({
   trail,
   eyebrow,
   title,
+  headline,
   accent,
   description,
   stats = [],
@@ -219,7 +220,7 @@ export default function SubPageHero({
                 banner ? "text-cream" : "text-ink"
               }`}>
               <SplitReveal as="span" type="words" onLoad delay={0.15}>
-                {title}
+                {headline ?? title}
               </SplitReveal>
               {accentNode}
             </h1>
@@ -233,7 +234,7 @@ export default function SubPageHero({
                 banner ? "text-cream" : "text-ink"
               }`}
             >
-              {title}
+              {headline ?? title}
               {accentNode}
             </SplitReveal>
           )}

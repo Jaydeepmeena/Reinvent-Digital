@@ -33,6 +33,7 @@ export const SERVICE_HERO_IMAGES = {
   aeo: [aeoBanner, CENTER],
   geo: [geoBanner, CENTER],
   "business-profile-optimisation": [businessProfileBanner, CENTER],
+  "local-seo": [dental, RIGHT],
   "youtube-marketing": [social, TOP],
   "social-media-management": [social, BOTTOM],
   "marketing-automation": [workspace, LEFT],
