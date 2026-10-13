@@ -3,7 +3,6 @@ import { Activity, Check } from "lucide-react";
 import { EASE } from "./motion/easing";
 import CountUp from "./motion/CountUp";
 import TiltCard from "./motion/TiltCard";
-import RobotDoctor from "./RobotDoctor";
 
 export default function HeroShowcase() {
   return (
@@ -25,8 +24,6 @@ export default function HeroShowcase() {
           <span aria-hidden="true" className="absolute left-[12%] top-[46%] h-2 w-2 rounded-full bg-white" />
           <span aria-hidden="true" className="absolute right-[16%] top-[14%] h-1.5 w-1.5 rounded-full bg-ink/30" />
 
-          <span aria-hidden="true" className="absolute bottom-[13%] left-1/2 h-8 w-[55%] -translate-x-1/2 rounded-[100%] bg-ink/20 blur-xl" />
-          <RobotDoctor className="absolute inset-x-0 bottom-[12%] top-[3%] mx-auto h-[85%] w-full" />
 
           <motion.div
             initial={{ y: 60, opacity: 0 }}
