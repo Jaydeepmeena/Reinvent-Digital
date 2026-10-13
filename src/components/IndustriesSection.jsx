@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { INDUSTRIES } from "../data/industries";
 // Free-licence photos from Unsplash, bundled rather than hotlinked.
-import dentalImg from "../assets/cards/industry-dental.jpg";
-import fertilityImg from "../assets/cards/industry-fertility.jpg";
-import eyeImg from "../assets/cards/industry-eye.jpg";
-import hospitalImg from "../assets/cards/industry-hospital.jpg";
+import dentalImg from "../assets/Specialities/Dental-Clinic.png";
+import fertilityImg from "../assets/Specialities/IVF-&-Fertility-Clinic.png";
+import eyeImg from "../assets/Specialities/Eye-Care-Clinic.png";
+import hospitalImg from "../assets/Specialities/Multi-Speciality-Hospital.png";
 import Reveal from "./motion/Reveal";
 import CountUp from "./motion/CountUp";
 import { EASE } from "./motion/easing";
