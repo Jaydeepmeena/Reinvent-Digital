@@ -5,6 +5,7 @@ import { useLenis } from "lenis/react";
 import { Menu, X, ArrowUpRight, ChevronDown, MapPin } from "lucide-react";
 import logo from "../assets/rd-logo.png";
 import { SERVICES } from "../data/services";
+import { LOCATIONS } from "../data/locations";
 import { INDUSTRIES } from "../data/industries";
 import { RESOURCE_PAGES } from "../data/resources";
 import { ABOUT_PAGES } from "../data/about";
@@ -14,10 +15,7 @@ const WHAT_WE_DO = ["Digital Marketing", "Tools & Measurement", "Response & Call
   items: SERVICES.filter((s) => s.category === category),
 }));
 
-const LOCATIONS = [
-  "Jaipur", "Hyderabad", "Delhi", "Noida", "Mumbai", "Calicut",
-  "Kochi", "Chennai", "Gurgaon", "Bangalore", "Thiruvananthapuram", "Vijaywada",
-];
+
 
 const MENU = [
   { key: "what-we-do", label: "What We Do", type: "mega", match: "/what-we-do" },
@@ -309,10 +307,10 @@ export default function Navbar() {
 
                   {menu.type === "locations" && (
                     <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                      {LOCATIONS.map((city) => (
-                        <motion.div key={city} variants={panelItem}>
+                      {LOCATIONS.map(({ slug, city }) => (
+                        <motion.div key={slug} variants={panelItem}>
                         <Link
-                          to="/contact"
+                          to={`/locations/${slug}`}
                           onClick={() => setOpenMenu(null)}
                           className="flex min-w-0 items-start gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium leading-tight text-ink-soft transition-colors hover:bg-lime-soft hover:text-green-deep"
                         >
@@ -403,10 +401,10 @@ export default function Navbar() {
 
                         {menu.type === "locations" && (
                           <div className="grid grid-cols-2 gap-x-2 py-1">
-                            {LOCATIONS.map((city) => (
+                            {LOCATIONS.map(({ slug, city }) => (
                               <Link
-                                key={city}
-                                to="/contact"
+                                key={slug}
+                                to={`/locations/${slug}`}
                                 onClick={() => setMobileOpen(false)}
                                 className="flex min-w-0 items-start gap-1.5 rounded-lg px-2 py-2 text-sm leading-tight text-ink-soft"
                               >

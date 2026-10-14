@@ -9,6 +9,7 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ResourcePage = lazy(() => import("./pages/ResourcePage"));
 const BlogsPage = lazy(() => import("./pages/BlogsPage"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
+const LocationPage = lazy(() => import("./pages/LocationPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="resources/blogs" element={<BlogsPage />} />
         <Route path="resources/blogs/:slug" element={<BlogPostPage />} />
         <Route path="resources/:slug" element={<ResourcePage />} />
+        <Route path="locations/:slug" element={<LocationPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
