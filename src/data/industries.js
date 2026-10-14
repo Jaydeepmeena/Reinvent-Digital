@@ -1,194 +1,665 @@
 import { Smile, HeartPulse, Eye, Building2 } from "lucide-react";
 
+// Industry pages, written from the industry tabs of the content doc.
+// Wording and capitalisation are the doc's own — do not retitle here.
 export const INDUSTRIES = [
   {
-    slug: "dental-clinic",
-    icon: Smile,
-    eyebrow: "Dental Groups & Clinics",
-    title: "Dental Clinic",
-    accent: "marketing built for booked chairs.",
-    description:
-      "From single-doctor practices to 100+ location dental groups, we connect implant, ortho and cosmetic dentistry campaigns to the call centre and CRM that turn enquiries into filled appointment slots.",
-    heroStats: [
-      { value: "115+", label: "dental locations scaled" },
-      { value: "2.1x", label: "avg increase in bookings" },
-      { value: "<60 sec", label: "avg response time" },
+    "slug": "dental-clinic",
+    "icon": Smile,
+    "eyebrow": "Digital Marketing Agency for Dental Clinics",
+    "title": "Dental Clinic",
+    "heading": "Only Leads Won’t Fill the Chairs.",
+    "accent": "Actual Patient Walk-Ins Will!",
+    "description": "At Reinvent Digital, we run Google Ads, optimise Google Maps and run SEO, AEO and GEO strategies. We also automate WhatsApp follow-up and train call teams for dental clinics and chains across India. Every enquiry is tracked to the patient in the chair, not just to leads and impressions.",
+    "ctaLabel": "Discuss Your Dental Growth",
+    "heroStats": [
+      {
+        "value": "2.1x",
+        "label": "Increased Monthly Walk-Ins for a Dental Group"
+      },
+      {
+        "value": "271%",
+        "label": "More Site Conversions in Just 6 Months"
+      },
+      {
+        "value": "₹120–500",
+        "label": "Avg. Dental CPL in Tier-2 Cities"
+      }
     ],
-    highlights: [
+    "highlights": [
       "Implant & cosmetic campaign targeting",
       "Multi-location call routing",
       "Chair-utilisation focused reporting",
-      "Review & reputation management",
+      "Review & reputation management"
     ],
-    metric: { value: "2.1x", label: "More Booked Appointments", sub: "across managed dental groups" },
-    challenges: [
-      { title: "High-value procedures, slow follow-up", body: "Implant and cosmetic enquiries are expensive to generate and easy to lose when follow-up takes hours instead of minutes.", tag: "Lost revenue" },
-      { title: "Chair time sits empty", body: "Marketing reports leads while the schedule shows gaps — nobody connects enquiry volume to actual chair utilisation.", tag: "Utilisation gap" },
-      { title: "Reviews decide the click", body: "Patients compare star ratings before they compare price, and most clinics have no system for generating them.", tag: "Trust gap" },
-    ],
-    approach: [
-      { title: "Target by procedure value", body: "Implant, ortho and cosmetic campaigns are budgeted separately from routine check-up demand, so spend matches procedure value." },
-      { title: "Route to the nearest chair", body: "Enquiries are routed by location and doctor availability, not a single shared queue." },
-      { title: "Score for booking, not just answer", body: "Call quality is judged on whether the patient actually got scheduled, not just whether the phone was picked up." },
-      { title: "Report on filled chairs", body: "Dashboards tie campaign spend to booked and completed appointments, not just leads." },
-    ],
-    proof: {
-      headline: "A 60-location dental group went from 3,400 to 7,600 monthly bookings in eight months — with the same front-desk team.",
-      body: "The group didn't have a lead problem — implant and ortho campaigns were already generating enquiries. It had a routing and follow-up problem. We rebuilt call coverage around actual enquiry patterns and connected every booking back to its source campaign.",
-      metrics: [
-        { value: "3,400", label: "monthly bookings before", sub: "BEFORE" },
-        { value: "7,600", label: "monthly bookings after 8 months", sub: "AFTER" },
-        { value: "2.2x", label: "increase in booked chairs" },
-        { value: "-34%", label: "cost per booked patient" },
-      ],
+    "metric": {
+      "value": "2.1x",
+      "label": "More Booked Appointments",
+      "sub": "across managed dental groups"
     },
-    testimonial: {
-      quote: "Reinvent Digital didn't just send us leads — they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
-      name: "Dr. Aakash Mehta",
-      role: "Clinical Director, multi-location dental group",
+    "problems": {
+      "eyebrow": "Where Dental Groups Lose Patients",
+      "headingA": "Demand Isn’t The Problem.",
+      "headingB": "Follow-Ups Are!",
+      "body": "Many dental clinics or multi-location dental chains get consistent patient enquiries, but only a few convert into the actual patients. The gap is what happens between the first call to the appointment booking stage.",
+      "points": [
+        {
+          "title": "A Competitor Shows First on Maps",
+          "body": "Patients searching “dentist near me” see the clinic down the road before yours, and call them instead."
+        },
+        {
+          "title": "Enquiries Go Cold Before Callback",
+          "body": "An implant or aligner enquiry waits hours for a call, and the patient books whoever answered first."
+        },
+        {
+          "title": "Price Calls Block Real Patients",
+          "body": "“How much does it cost?” calls tie up the phones while patients ready to book wait on hold."
+        },
+        {
+          "title": "Treatment Plans Stall After Consultation",
+          "body": "Patients get a quote, say they’ll think about it, and never come back to start treatment."
+        },
+        {
+          "title": "Booked Patients Don’t Turn Up",
+          "body": "Without timely reminders, confirmed appointments turn into empty chairs and lost dentist hours."
+        },
+        {
+          "title": "Recall Patients Never Come Back",
+          "body": "Six-month check-ups are forgotten, and regular patients slowly drift to other clinics."
+        },
+        {
+          "title": "One Clinic Leaks, Nobody Notices",
+          "body": "A chain-wide report hides the branch that quietly loses patients every week."
+        }
+      ]
     },
+    "help": {
+      "eyebrow": "How We Help",
+      "headingA": "Every Leak,",
+      "headingB": "Fixed In One System!",
+      "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, so marketing, your front desk and your appointment book work as one.",
+      "points": [
+        {
+          "title": "Treatment-Level Campaigns",
+          "body": "Separate Google Ads and Meta campaigns for implants, aligners and root canals, with 2,400+ negative keywords blocking wasted clicks."
+        },
+        {
+          "title": "Google Maps for Every Clinic",
+          "body": "Each clinic’s Business Profile kept complete and active, with review requests sent after every visit."
+        },
+        {
+          "title": "Callbacks Within 60 Seconds",
+          "body": "Routing, alerts and trained staff, so enquiries reach a person before the patient moves on."
+        },
+        {
+          "title": "Scripts for Cost Questions",
+          "body": "Your team learns to answer price questions clearly, then guide patients towards a consultation."
+        },
+        {
+          "title": "Follow-Up for Undecided Patients",
+          "body": "Planned calls and WhatsApp messages for patients who received a quote but haven’t started treatment."
+        },
+        {
+          "title": "Reminders Before Every Appointment",
+          "body": "Confirmation, 24-hour and 2-hour WhatsApp reminders that cut avoidable no-shows."
+        },
+        {
+          "title": "Six-Month Recall Journeys",
+          "body": "Check-up and cleaning reminders that bring regular patients back on schedule."
+        },
+        {
+          "title": "Clinic-Level Reporting",
+          "body": "Bookings and walk-ins tracked by clinic, treatment and channel, with alerts when one falls behind."
+        }
+      ]
+    },
+    "proof": {
+      "eyebrow": "Proof, Not a Vague Promise",
+      "heading": "5500 to 11,500 Walk-Ins, Without Hiring a Single Agent!",
+      "body": "Same 15 agents. Same CRM. Same 115+ clinics. Eight months later, this dental group was seeing 6,000 more walk-ins every month. What changed sits between the enquiry and the appointment.",
+      "stats": [
+        {
+          "value": "2.1X INCREASE",
+          "label": "AVG MONTHLY WALK-INS PER CLINIC"
+        },
+        {
+          "value": "~48",
+          "label": "BEFORE"
+        },
+        {
+          "value": "~100",
+          "label": "AFTER"
+        },
+        {
+          "value": "20-30%",
+          "label": "MISSED LEADS RECOVERED IN SAME SESSION"
+        },
+        {
+          "value": "232%",
+          "label": "ORGANIC GROWTH IN A YEAR"
+        }
+      ]
+    },
+    "closing": {
+      "eyebrow": "DENTAL CLINICS & CHAINS",
+      "heading": "Ready to Build a Patient Acquisition System for Your Dental Clinics?",
+      "body": "Share your clinics and enquiry data. We’ll show how the Reinvent Digital Patient Acquisition System can fill your chairs, starting with the gaps costing you most."
+    },
+    "faqs": [
+      {
+        "q": "Is Google Ads Worth It for Dental Clinics?",
+        "a": "Yes, if every click is tracked to a booking. Patients searching “dental implants near me” or “root canal cost” are ready to act. Google Ads fails when campaigns attract job seekers or free-camp searches, or when calls go unanswered. Negative keywords, call tracking and fast callbacks decide whether the spend returns patients."
+      },
+      {
+        "q": "How Much Should a Dental Clinic Spend on Marketing Each Month?",
+        "a": "Work backwards from the patients you want, not a fixed figure. For example, 60 new patients a month at a 25% booking rate needs 240 leads. At ₹200 per lead, that’s about ₹48,000 in ad spend. Your real numbers depend on city, treatment mix and conversion rate."
+      },
+      {
+        "q": "How Long Does Dental SEO Take to Show Results?",
+        "a": "Google Business Profile improvements usually show within 60 to 90 days. Organic rankings for treatment and locality searches typically move from months four to six. Returns compound from months nine to twelve, and competitive cities such as Mumbai and Bangalore can take longer."
+      },
+      {
+        "q": "Which Keywords Should a Dental Clinic Target on Google?",
+        "a": "Target searches that show booking intent: “dentist near me,” “dental clinic in [locality],” “dental implants cost in [city],” “root canal treatment near me,” “clear aligners price” and “emergency dentist open now.” Avoid broad terms like “teeth” or “dental care,” which attract students and researchers rather than patients."
+      },
+      {
+        "q": "Can Dentists Advertise in India?",
+        "a": "Yes, within limits. India’s dental code of ethics allows dentists to advertise if they maintain decorum, but it treats false promises and paying agents to bring in patients as unethical. Websites with factual information are permitted. So clinic marketing should stay educational and accurate, without discounts or outcome guarantees."
+      },
+      {
+        "q": "Does Instagram Marketing Work for Dental Clinics?",
+        "a": "It works best for treatments patients think about before booking, such as aligners, whitening and smile makeovers. Short videos of dentists explaining treatment, cost and recovery build trust. Urgent visits, like toothache appointments, come mostly from Google search and Maps rather than Instagram."
+      }
+    ],
+    "testimonial": {
+      "quote": "Reinvent Digital didn't just send us leads — they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
+      "name": "Dr. Aakash Mehta",
+      "role": "Clinical Director, multi-location dental group"
+    }
   },
   {
-    slug: "ivf-clinic",
-    icon: HeartPulse,
-    eyebrow: "Fertility & IVF Networks",
-    title: "IVF & Fertility Clinic",
-    accent: "marketing built on trust, not volume.",
-    description:
-      "Fertility patients research for weeks before they call. We build the SEO, content and nurture systems that earn trust early — and the call centre discipline that treats every enquiry with the sensitivity it needs.",
-    heroStats: [
-      { value: "2.4x", label: "avg consultation bookings" },
-      { value: "18 pts", label: "avg consult-to-cycle conversion lift" },
-      { value: "90 days", label: "avg patient research window" },
+    "slug": "ivf-clinic",
+    "icon": HeartPulse,
+    "eyebrow": "Digital Marketing Agency for IVF & Fertility Clinics",
+    "title": "IVF & Fertility Clinic",
+    "heading": "Be The Decision-Making Partner",
+    "accent": "For Your IVF Leads or Fertility Patients!",
+    "description": "At Reinvent Digital, we run policy-safe Google Ads and Meta campaigns, build doctor-reviewed fertility content, and train your team to handle sensitive first calls. Every enquiry is tracked from first search to consultation and treatment cycle.",
+    "ctaLabel": "Discuss Your Fertility Centre’s Growth",
+    "heroStats": [
+      {
+        "value": "15-25%",
+        "label": "Better Show-Up Rate in 60 Days"
+      },
+      {
+        "value": "20-30%",
+        "label": "Missed Leads Recovered in 30 Days"
+      },
+      {
+        "value": "185+",
+        "label": "Healthcare Accounts Managed"
+      }
     ],
-    highlights: [
+    "highlights": [
       "Trust-first content & SEO",
       "Sensitive-handling call scripts",
       "Long-cycle nurture automation",
-      "Consultation-to-cycle attribution",
+      "Consultation-to-cycle attribution"
     ],
-    metric: { value: "2.4x", label: "More Consultation Bookings", sub: "across managed fertility networks" },
-    challenges: [
-      { title: "Long, emotional decision cycles", body: "Patients research for weeks or months — generic follow-up cadences either annoy them or lose them entirely.", tag: "Long cycle" },
-      { title: "One wrong call ends the relationship", body: "Fertility enquiries need a different tone than a routine booking call, and most call centres aren't trained for it.", tag: "Sensitivity risk" },
-      { title: "Consultation isn't the real outcome", body: "Marketing stops measuring at 'consultation booked', but the clinic's real outcome is a started cycle.", tag: "Wrong metric" },
-    ],
-    approach: [
-      { title: "Build trust before the call", body: "Content and SEO are built around the actual questions fertility patients research, not generic keywords." },
-      { title: "Nurture over months, not days", body: "Automation sequences are paced for a decision that takes weeks, with tone calibrated for sensitivity." },
-      { title: "Train for the conversation", body: "Call scripts and agent coaching are built specifically around fertility enquiries, not adapted from a generic script." },
-      { title: "Track to cycle start", body: "Attribution follows the patient from first click through consultation to started cycle, not just the first booking." },
-    ],
-    proof: {
-      headline: "A fertility network doubled consultation-to-cycle conversion by fixing follow-up tone and timing, not ad spend.",
-      body: "Enquiry volume was already healthy. The gap was in follow-up: generic cadences and scripts were losing patients who needed a slower, more careful nurture. We rebuilt the sequence and call approach around the real decision timeline.",
-      metrics: [
-        { value: "210", label: "monthly consultations before", sub: "BEFORE" },
-        { value: "480", label: "monthly consultations after 6 months", sub: "AFTER" },
-        { value: "+18 pts", label: "consult-to-cycle conversion" },
-        { value: "-22%", label: "cost per started cycle" },
-      ],
+    "metric": {
+      "value": "2.4x",
+      "label": "More Consultation Bookings",
+      "sub": "across managed fertility networks"
     },
-    testimonial: {
-      quote: "They understood that our patients aren't comparing prices, they're building trust. The nurture sequences and call training changed how many consultations actually became cycles.",
-      name: "Dr. Sunita Rao",
-      role: "Medical Director, fertility & IVF network",
+    "problems": {
+      "eyebrow": "Where Fertility Centres Lose Patients",
+      "headingA": "IVF Demand Is Real.",
+      "headingB": "Trust Is Where It Breaks!",
+      "body": "Fertility patients don’t book on impulse. They research, compare and talk it through as a couple, and centres lose them at every step that feels rushed or impersonal.",
+      "points": [
+        {
+          "title": "Months of Research, No Answers",
+          "body": "Patients search for IVF steps, costs and success factors for weeks, and find another centre’s content first."
+        },
+        {
+          "title": "First Calls Feel Like Sales Calls",
+          "body": "A sensitive first enquiry is handled like a sales lead, and the patient doesn’t call back."
+        },
+        {
+          "title": "Cost Questions Go Unanswered",
+          "body": "Patients ask about IVF packages and EMI options, get no clear answer, and compare other centres on price."
+        },
+        {
+          "title": "Couples Decide Together, Follow-Up Doesn’t",
+          "body": "Follow-up reaches only one partner, so the decision stalls without either noticing."
+        },
+        {
+          "title": "Second-Opinion Patients Are Missed",
+          "body": "Couples after an unsuccessful cycle need a different conversation, but are treated like first-time enquiries."
+        },
+        {
+          "title": "Ads Get Restricted or Rejected",
+          "body": "Wording that implies a patient’s condition breaks Google and Meta health policies, and campaigns stop delivering."
+        },
+        {
+          "title": "Consultations Don’t Become Cycles",
+          "body": "Nobody tracks which consultations lead to treatment, so marketing is judged on enquiries alone."
+        }
+      ]
     },
+    "help": {
+      "eyebrow": "How We Help",
+      "headingA": "Every Decision Step,",
+      "headingB": "Handled In One System!",
+      "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, so your campaigns, counsellors and clinical team work from the same patient journey.",
+      "points": [
+        {
+          "title": "Policy-Safe Fertility Campaigns",
+          "body": "Google Ads and Meta campaigns built within health and personalised-advertising rules, with no wording that implies a condition."
+        },
+        {
+          "title": "Content for Long Decisions",
+          "body": "Doctor-reviewed pages on the IVF process, costs and next steps that patients can find throughout their research."
+        },
+        {
+          "title": "Private, Trained First Response",
+          "body": "Counsellor-style call scripts and callbacks within 60 seconds, handled with sensitivity and privacy."
+        },
+        {
+          "title": "Clear Cost and EMI Conversations",
+          "body": "Pages and scripts that explain packages and payment options honestly, then guide patients to a consultation."
+        },
+        {
+          "title": "Follow-Up for Both Partners",
+          "body": "Consent-based WhatsApp and call follow-up timed for couples deciding together."
+        },
+        {
+          "title": "Second-Opinion Pathways",
+          "body": "Dedicated pages and call handling for couples returning after an unsuccessful cycle elsewhere."
+        },
+        {
+          "title": "Consent and Privacy by Default",
+          "body": "No patient identities in creative, opt-in messaging only, and data handled in line with India’s DPDP Act."
+        },
+        {
+          "title": "Consultation-to-Cycle Reporting",
+          "body": "Enquiries tracked from first call to consultation to treatment start, where your systems allow."
+        }
+      ]
+    },
+    "proof": {
+      "eyebrow": "Proof, Not a Vague Promise",
+      "heading": "Same System. 2X Walk-Ins. With CPL Decreasing Consistently!",
+      "body": "Couples research IVF for months and often decide together, so most centres lose them between enquiry and consultation. Our system has already doubled walk-ins and lowered cost per lead for other healthcare groups. For fertility, it’s adapted to that slower, more personal decision.",
+      "stats": [
+        {
+          "value": "120% INCREASE",
+          "label": "BETTER LEAD QUALITY"
+        },
+        {
+          "value": "43%",
+          "label": "HIGHER CLICK-THROUGH RATE"
+        },
+        {
+          "value": "300%",
+          "label": "MORE LEADS DURING ENGAGEMENT"
+        }
+      ]
+    },
+    "closing": {
+      "eyebrow": "IVF & Fertility Centres",
+      "heading": "Ready to Build a Patient Acquisition System For Your Fertility Centre?",
+      "body": "Share your centres and enquiry data. We’ll show how the Reinvent Digital Patient Acquisition System can turn months of research into booked consultations, without losing the trust fertility patients need."
+    },
+    "faqs": [
+      {
+        "q": "Can IVF Clinics Advertise Success Rates in India?",
+        "a": "It’s best avoided. Success rates vary with age, diagnosis and treatment, so one headline figure can mislead patients and invite complaints under advertising standards. Sex selection must never be advertised, as Indian law prohibits it. Explaining what affects outcomes is the safer, more trusted approach."
+      },
+      {
+        "q": "Which Keywords Should IVF Clinics Target on Google?",
+        "a": "Target searches that show readiness to consult: “IVF centre near me,” “IVF cost in [city],” “fertility specialist in [city],” “IUI treatment cost” and “IVF second opinion.” Broad terms like “infertility causes” bring early researchers, so use them for content, not paid ads."
+      },
+      {
+        "q": "How Much Should an IVF Centre Spend on Marketing?",
+        "a": "Work backwards from consultations, not a fixed budget. Decide how many consultations each centre can handle monthly, check what share of enquiries usually book, and fund enough enquiries to fill those slots. Review cost per consultation monthly and move spend to the channels that deliver it."
+      },
+      {
+        "q": "How Long Does SEO Take to Work for a Fertility Centre?",
+        "a": "Google Business Profile and page improvements usually show within 60 to 90 days. Rankings for competitive terms like “IVF centre in [city]” typically move from months four to six. Doctor-reviewed content builds trust over time, with stronger returns from months nine to twelve."
+      },
+      {
+        "q": "Should IVF Clinics Use Instagram and YouTube?",
+        "a": "Yes, for education. Short videos of doctors explaining IVF steps, timelines and costs build trust during long research. Instagram and YouTube work best for awareness, not urgent bookings. Never show identifiable patients without written consent, and avoid wording that implies the viewer has a fertility problem."
+      },
+      {
+        "q": "How Can IVF Clinics Get Reviews Without Risking Patient Privacy?",
+        "a": "Ask every patient for a review through a private, opt-in message after their visit, never in public. When replying, thank them without confirming any treatment or personal detail. Even a kind reply that mentions IVF can expose a patient’s private health information."
+      }
+    ]
   },
   {
-    slug: "eye-clinics",
-    icon: Eye,
-    eyebrow: "Eye Care & LASIK Networks",
-    title: "Eye Care Clinic",
-    accent: "marketing that fills LASIK and cataract calendars.",
-    description:
-      "From routine check-ups to LASIK and cataract surgery, we run the paid, local and content campaigns that fill both walk-in eye tests and high-value surgical consultations.",
-    heroStats: [
-      { value: "2.6x", label: "avg surgical consult increase" },
-      { value: "55%", label: "of leads from local & maps" },
-      { value: "40+", label: "eye care locations managed" },
+    "slug": "eye-clinics",
+    "icon": Eye,
+    "eyebrow": "Digital Marketing Agency for Eye Hospitals & Centres",
+    "title": "Eye Care Clinic",
+    "heading": "Eye Patients Compare Before Committing.",
+    "accent": "Be The Centre They Choose!",
+    "description": "At Reinvent Digital, we run procedure-level Google Ads, optimise Google Maps and build SEO, AEO and GEO content for cataract, LASIK and retina care. We also train call teams and track every enquiry from first search to surgery.",
+    "ctaLabel": "Discuss Your Eye Centre’s Growth",
+    "heroStats": [
+      {
+        "value": "15-25%",
+        "label": "Better Show-Up Rate in 60 Days"
+      },
+      {
+        "value": "2400+",
+        "label": "Negative Keywords Blocking Wasted Clicks"
+      },
+      {
+        "value": "185+",
+        "label": "Healthcare Accounts Managed"
+      }
     ],
-    highlights: [
+    "highlights": [
       "LASIK & cataract campaign targeting",
       "Local & Maps-first visibility",
       "Free-screening funnel design",
-      "Surgical consult attribution",
+      "Surgical consult attribution"
     ],
-    metric: { value: "2.6x", label: "More Surgical Consultations", sub: "across managed eye care networks" },
-    challenges: [
-      { title: "Two very different patients, one campaign", body: "Routine eye-test demand and high-value LASIK/cataract demand get lumped into the same generic campaign, wasting budget on both.", tag: "Mixed intent" },
-      { title: "Local search decides the click", body: "Most eye-care searches are hyper-local — 'near me' — and Maps visibility often loses to bigger chains with better profiles.", tag: "Local visibility" },
-      { title: "Free screenings don't convert themselves", body: "Screening campaigns generate footfall but no system exists to convert screenings into booked surgical consultations.", tag: "Funnel gap" },
-    ],
-    approach: [
-      { title: "Split the funnel by intent", body: "Routine and surgical demand get separate campaigns, budgets and landing pages so spend matches actual value." },
-      { title: "Win the map pack", body: "Business profile and local SEO are optimised location by location to win 'near me' searches from bigger competitors." },
-      { title: "Design the screening funnel", body: "Free-screening campaigns are built with a clear next step, so footfall converts into surgical consultations." },
-      { title: "Attribute to the consult", body: "Every screening and enquiry is tracked through to whether it became a booked surgical consultation." },
-    ],
-    proof: {
-      headline: "A 40-location eye care chain grew surgical consultations 2.6x by splitting routine and surgical campaigns.",
-      body: "Routine check-up demand was drowning out LASIK and cataract campaigns in a shared budget. Once we split intent, rebuilt local visibility and designed a proper screening-to-consult funnel, surgical consultations grew without increasing overall spend.",
-      metrics: [
-        { value: "640", label: "monthly surgical consults before", sub: "BEFORE" },
-        { value: "1,670", label: "monthly surgical consults after 7 months", sub: "AFTER" },
-        { value: "2.6x", label: "increase in surgical consults" },
-        { value: "-29%", label: "cost per surgical consult" },
-      ],
+    "metric": {
+      "value": "2.6x",
+      "label": "More Surgical Consultations",
+      "sub": "across managed eye care networks"
     },
-    testimonial: {
-      quote: "Splitting our routine and surgical campaigns sounds simple, but nobody had done it before Reinvent Digital. Our LASIK consultations nearly tripled.",
-      name: "Dr. Rohan Kapadia",
-      role: "Chief Operating Officer, eye care hospital network",
+    "problems": {
+      "eyebrow": "Where Eye Centres Lose Patients",
+      "headingA": "The Enquiry Comes In.",
+      "headingB": "The Surgery Date Doesn’t!",
+      "body": "Eye centres rarely lack enquiries. Patients are lost while families discuss, LASIK candidates compare prices, and screened patients wait for a follow-up that never comes.",
+      "points": [
+        {
+          "title": "Cataract Decisions Sit With Family",
+          "body": "Adult children research surgery for their parents, but follow-up reaches the wrong person."
+        },
+        {
+          "title": "LASIK Enquiries Shop on Price",
+          "body": "Patients call several centres for a quote, then choose the cheapest answer they hear first."
+        },
+        {
+          "title": "Suitability Questions Stall LASIK",
+          "body": "Patients unsure whether they qualify for LASIK hesitate to book the test that would tell them."
+        },
+        {
+          "title": "Screened Patients Never Return",
+          "body": "Patients told they need surgery during a check-up or camp go home and don’t come back.."
+        },
+        {
+          "title": "Cashless and Insurance Confusion",
+          "body": "Unanswered questions about insurance cover and cashless claims delay cataract bookings for weeks."
+        },
+        {
+          "title": "Health Ad Rules Limit Targeting",
+          "body": "Platform health policies restrict audiences and tracking, so poorly built campaigns waste budget."
+        },
+        {
+          "title": "Consultations Don’t Lead to Surgery",
+          "body": "Nobody tracks which consultations become procedures, so marketing is judged on enquiries alone."
+        }
+      ]
     },
+    "help": {
+      "eyebrow": "How We Help",
+      "headingA": "From 1st Search to Surgery,",
+      "headingB": "Everything Handled In One System!",
+      "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, so your campaigns, counsellors and surgeons work from the same patient journey.",
+      "points": [
+        {
+          "title": "Procedure-Level Campaigns",
+          "body": "Separate Google Ads campaigns for cataract, LASIK, retina and glaucoma, each with its own budget."
+        },
+        {
+          "title": "Family-Friendly Follow-Up",
+          "body": "Consent-based WhatsApp and call follow-up for patients and the family members helping them decide."
+        },
+        {
+          "title": "LASIK Suitability Pathways",
+          "body": "Pages and scripts that explain who qualifies, then book the suitability test with confidence."
+        },
+        {
+          "title": "Cost and Cashless Scripts",
+          "body": "Call teams trained to explain package ranges, insurance cover and cashless claims clearly."
+        },
+        {
+          "title": "Follow-Up for Both Partners",
+          "body": "Consent-based WhatsApp and call follow-up timed for couples deciding together."
+        },
+        {
+          "title": "Google Maps for Every Eye Centre",
+          "body": "Each centre’s Business Profile kept complete and active, with review requests after every visit."
+        },
+        {
+          "title": "Doctor and Procedure Pages",
+          "body": "Surgeon profiles and procedure pages that answer patient questions and rank in search and AI answers."
+        },
+        {
+          "title": "Consultation-to-Surgery Reporting",
+          "body": "Enquiries tracked from first call to consultation to procedure, where your systems allow."
+        }
+      ]
+    },
+    "proof": {
+      "eyebrow": "Proof, Not a Vague Promise",
+      "heading": "Same System. Double Walk-Ins. Now Built for Eye Care!",
+      "body": "Eye centres lose patients while families take weeks to decide and LASIK enquiries shop on price. The same Patient Acquisition System that doubled walk-ins for a dental group and lowered cost per lead for a hospital is now built for that journey.",
+      "stats": [
+        {
+          "value": "120% INCREASE",
+          "label": "BETTER LEAD QUALITY"
+        },
+        {
+          "value": "43%",
+          "label": "HIGHER CLICK-THROUGH RATE"
+        },
+        {
+          "value": "300%",
+          "label": "MORE LEADS DURING ENGAGEMENT"
+        }
+      ]
+    },
+    "closing": {
+      "eyebrow": "Eye Hospitals & Centres",
+      "heading": "Ready to Build a Patient Acquisition System For Your Eye Centres?",
+      "body": "Share your centres and enquiry data. We’ll show how the Reinvent Digital Patient Acquisition System can turn more enquiries into surgery dates, starting with the gaps costing you most."
+    },
+    "faqs": [
+      {
+        "q": "Can Eye Hospitals Advertise LASIK Prices?",
+        "a": "Yes, if the price is accurate and complete. A “starting from” price must be genuinely available, with conditions stated clearly. Avoid promising freedom from glasses, because results depend on each patient’s eyes. Honest pricing and suitability information build more trust than the lowest headline number."
+      },
+      {
+        "q": "Which Keywords Should Eye Centres Target on Google?",
+        "a": "Target searches that show intent to book: “eye hospital near me,” “cataract surgery cost in [city],” “LASIK surgery cost,” “retina specialist in [city]” and “best eye doctor near me.” Broad terms like “eye problems” attract researchers, so use them for content, not paid ads."
+      },
+      {
+        "q": "Does Google Ads Work for Cataract Surgery?",
+        "a": "Yes, but the searcher is often not the patient. Many cataract searches come from adult children researching for a parent. Ads and landing pages should speak to both, explain cost and recovery clearly, and make booking easy over a phone call."
+      },
+      {
+        "q": "How Long Does SEO Take for an Eye Hospital?",
+        "a": "Google Business Profile improvements usually show within 60 to 90 days. Rankings for procedure searches like “cataract surgery in [city]” typically move from months four to six. Surgeon profiles and procedure pages keep building trust and visibility through the first year."
+      },
+      {
+        "q": "Should Eye Centres Market Optical Stores and Surgery Together?",
+        "a": "Keep them separate. Spectacles and lenses are lower-value, quick purchases, while surgery involves research and consultation. Combining them in one campaign lets cheaper optical clicks absorb the budget. Separate campaigns and reports show what each actually brings in."
+      },
+      {
+        "q": "How Can Eye Hospitals Reach Patients From Nearby Towns?",
+        "a": "Run location-based campaigns for surrounding towns and districts, and build pages that answer travel questions: surgery duration, same-day discharge and follow-up visits. Fast WhatsApp replies and a coordinator for out-of-town patients help turn enquiries into confirmed surgery dates."
+      }
+    ]
   },
   {
-    slug: "multi-speciality-hospital",
-    icon: Building2,
-    eyebrow: "Hospitals & Multi-Speciality Groups",
-    title: "Multi-Speciality Hospital",
-    accent: "marketing that scales across departments.",
-    description:
-      "Cardiology, orthopaedics, oncology and a dozen other departments each need their own demand strategy — connected to one call centre and one attribution system so leadership sees the whole picture.",
-    heroStats: [
-      { value: "12+", label: "departments managed per hospital" },
-      { value: "1.9x", label: "avg increase in OPD bookings" },
-      { value: "1 dashboard", label: "across every department" },
+    "slug": "multi-speciality-hospital",
+    "icon": Building2,
+    "eyebrow": "Digital Marketing Agency for Multi-Speciality Hospitals",
+    "title": "Multi-Speciality Hospital",
+    "heading": "Every Department Gets Enquiries.",
+    "accent": "Only a Few Convert to Patients!",
+    "description": "At Reinvent Digital, we run department-level Google Ads and SEO, build doctor and speciality pages, and route patient calls to the right desk. We also train your call teams and track every enquiry from first search to OPD visit.",
+    "ctaLabel": "Discuss Your Hospital Growth",
+    "heroStats": [
+      {
+        "value": "94%",
+        "label": "More Site Conversions in 6 Months"
+      },
+      {
+        "value": "223%",
+        "label": "More Organic Clinics in 3 Months"
+      },
+      {
+        "value": "185+",
+        "label": "Healthcare Accounts Managed"
+      }
     ],
-    highlights: [
+    "highlights": [
       "Department-level campaign strategy",
       "Unified call centre across specialties",
       "Emergency vs elective demand separation",
-      "Board-ready attribution reporting",
+      "Board-ready attribution reporting"
     ],
-    metric: { value: "1.9x", label: "More OPD Bookings", sub: "across managed hospital groups" },
-    challenges: [
-      { title: "Every department markets differently, badly", body: "Cardiology, orthopaedics and oncology each need distinct messaging and urgency, but often share one generic hospital campaign.", tag: "Department silos" },
-      { title: "One call centre, a dozen specialties", body: "Front-desk and call teams struggle to route high-urgency emergency enquiries differently from elective OPD bookings.", tag: "Routing complexity" },
-      { title: "Leadership can't see the whole picture", body: "Each department reports its own numbers differently, so hospital leadership has no single view of marketing performance.", tag: "Reporting gap" },
-    ],
-    approach: [
-      { title: "Strategise by department", body: "Each specialty gets its own campaign strategy, keywords and messaging — built around how that department actually gets chosen." },
-      { title: "Separate urgency from elective demand", body: "Emergency and time-sensitive enquiries are routed differently from elective OPD bookings from the first call." },
-      { title: "Unify the call centre", body: "One trained team handles routing across departments, escalating urgent cases and scheduling elective ones." },
-      { title: "Report to the board", body: "A single dashboard rolls every department up into one view leadership can actually use to make decisions." },
-    ],
-    proof: {
-      headline: "A multi-speciality hospital group grew OPD bookings 1.9x while giving leadership one dashboard across 14 departments.",
-      body: "Each department had been marketing independently with no shared reporting. We built department-specific campaigns on a shared attribution backbone, so spend could be compared and shifted across specialties for the first time.",
-      metrics: [
-        { value: "8,200", label: "monthly OPD bookings before", sub: "BEFORE" },
-        { value: "15,600", label: "monthly OPD bookings after 9 months", sub: "AFTER" },
-        { value: "1.9x", label: "increase in OPD bookings" },
-        { value: "14", label: "departments on one dashboard" },
-      ],
+    "metric": {
+      "value": "1.9x",
+      "label": "More OPD Bookings",
+      "sub": "across managed hospital groups"
     },
-    testimonial: {
-      quote: "For the first time, our board sees one number for marketing performance across every department — not fourteen different spreadsheets.",
-      name: "Ms. Kavitha Iyer",
-      role: "VP Growth & Marketing, multi-speciality hospital group",
+    "problems": {
+      "eyebrow": "Where Hospitals Lose Patients",
+      "headingA": "People Fill In the Enquiry.",
+      "headingB": "But Don’t Book the Appointment!",
+      "body": "Multi-speciality hospitals rarely lack enquiries. Patients are lost between the switchboard, the department and the follow-up nobody owns.",
+      "points": [
+        {
+          "title": "Departments Fight for One Budget",
+          "body": "Large departments take most of the spend, while specialities with high-value procedures go under-promoted."
+        },
+        {
+          "title": "Calls Land at the Wrong Desk",
+          "body": "Patients get transferred between the switchboard and departments, and many hang up before reaching the right person."
+        },
+        {
+          "title": "Specialist Enquiries Wait for Days",
+          "body": "Complex cases need a doctor or coordinator to call back, and the patient chooses another hospital first."
+        },
+        {
+          "title": "Cost and Insurance Questions Stall Bookings",
+          "body": "Package costs, cashless cover and TPA questions go unanswered, so patients don’t book the consultation."
+        },
+        {
+          "title": "Out-of-City Patients Drift Away",
+          "body": "Patients planning surgery from other cities need coordinated follow-up, but their enquiries go quiet after the first call."
+        },
+        {
+          "title": "Doctor Pages Don’t Build Trust",
+          "body": "Thin profiles with no qualifications or experience make patients compare doctors elsewhere before deciding."
+        },
+        {
+          "title": "OPD Visits Never Link to Admissions",
+          "body": "Marketing is judged on leads, because nobody can see which campaigns bring surgeries and admissions."
+        }
+      ]
     },
-  },
+    "help": {
+      "eyebrow": "How We Help",
+      "headingA": "Every Department,",
+      "headingB": "Connected In One System!",
+      "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, so marketing, your call centre and your departments work from the same data.",
+      "points": [
+        {
+          "title": "Department-Level Campaigns",
+          "body": "Separate Google Ads and Meta campaigns for each speciality, with budgets set by department value."
+        },
+        {
+          "title": "Calls Routed to the Right Desk",
+          "body": "Call routing by speciality and language, so patients reach the right department the first time."
+        },
+        {
+          "title": "Specialist Callback Workflows",
+          "body": "Complex enquiries assigned to coordinators, with response targets and escalation to doctors when needed."
+        },
+        {
+          "title": "Cost and Insurance Scripts",
+          "body": "Call teams trained to answer package, cashless and TPA questions, then book the consultation."
+        },
+        {
+          "title": "Follow-Up for Planned Procedures",
+          "body": "Coordinated WhatsApp and call follow-up for patients planning surgery or travelling from other cities."
+        },
+        {
+          "title": "Doctor and Speciality Pages",
+          "body": "NMC-aligned doctor profiles and department pages that answer real patient questions and rank in search."
+        },
+        {
+          "title": "Google Maps for the Hospital and OPDs",
+          "body": "Business Profiles for the hospital and eligible departments, managed within Google’s guidelines."
+        },
+        {
+          "title": "OPD-to-Admission Reporting",
+          "body": "Enquiries tracked through OPD visits and admissions where your HIS allows, by department and channel."
+        }
+      ]
+    },
+    "proof": {
+      "eyebrow": "Proof, Not a Vague Promise",
+      "heading": "1000+ Leads in 90 Days, With CPL Decreasing Consistently!",
+      "body": "A Delhi multi-speciality hospital needed more patient enquiries across departments without paying more for each one. In the first three months, it crossed 1,000 leads as cost per lead fell 20% month on month. What changed sits in how each department’s demand was handled.",
+      "stats": [
+        {
+          "value": "120% INCREASE",
+          "label": "BETTER LEAD QUALITY"
+        },
+        {
+          "value": "43%",
+          "label": "HIGHER CLICK-THROUGH RATE"
+        },
+        {
+          "value": "300%",
+          "label": "MORE LEADS DURING ENGAGEMENT"
+        }
+      ]
+    },
+    "closing": {
+      "eyebrow": "MULTI-SPECIALITY HOSPITALS",
+      "heading": "Ready to Build a Patient Acquisition For Every Department?",
+      "body": "Share your departments and enquiry data. We’ll show how the Reinvent Digital Patient Acquisition System can turn more enquiries into OPD visits and admissions, starting where you lose most."
+    },
+    "faqs": [
+      {
+        "q": "Is Google Ads Effective for Multi-Speciality Hospitals?",
+        "a": "Yes, when campaigns are split by speciality. Patients search for “knee replacement surgery” or “cardiologist near me,” not a hospital’s name. One combined campaign lets broad departments absorb the budget. Speciality-level campaigns, call tracking and fast callbacks decide whether ad spend turns into consultations."
+      },
+      {
+        "q": "How Should a Hospital Split Its Marketing Budget Across Departments?",
+        "a": "Split it by patient value and capacity, not by department size. Give more budget to specialities with high-value procedures and available OPD slots. Review the split monthly, moving spend towards departments where enquiries actually turn into consultations and admissions."
+      },
+      {
+        "q": "Can Hospitals Advertise Under NMC Rules?",
+        "a": "Yes, with care. NMC rules restrict self-promotion by individual doctors, so marketing should come from the hospital, not the doctor. Content should stay educational and factual, without outcome guarantees, comparisons with other hospitals or misleading testimonials."
+      },
+      {
+        "q": "Which Hospital Departments Benefit Most From Digital Marketing?",
+        "a": "Departments with planned, high-value procedures usually benefit most. These include orthopaedics, cardiology, oncology, bariatric surgery, IVF and cosmetic procedures. Patients research these options online for weeks before choosing, so search, doctor pages and follow-up have more time to influence the decision."
+      },
+      {
+        "q": "How Can Hospitals Attract Patients From Other Cities?",
+        "a": "Build treatment pages that answer travel questions: cost estimates, stay duration, accommodation help and how to send reports in advance. Then reply quickly on WhatsApp and assign a coordinator. Out-of-city patients decide based on how easy the hospital makes the journey."
+      },
+      {
+        "q": "Does a Hospital Need a CRM for Patient Enquiries?",
+        "a": "Yes, once enquiries come through several departments and channels. A CRM gives every enquiry a source, an owner and an outcome. Without one, calls, forms and WhatsApp messages get lost between desks, and nobody can see which campaigns lead to admissions."
+      }
+    ]
+  }
 ];
 
 export const getIndustryBySlug = (slug) => INDUSTRIES.find((i) => i.slug === slug);

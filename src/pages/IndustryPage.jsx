@@ -11,7 +11,6 @@ import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
 import HorizontalScroll from "../components/fx/HorizontalScroll";
 import ScrollTimeline from "../components/fx/ScrollTimeline";
-import BeforeAfter from "../components/fx/BeforeAfter";
 import { gsap, MOTION_OK, useGSAP } from "../components/fx/gsap";
 
 // The chips ring the cross at every width — they used to stack under it below xl.
@@ -124,10 +123,9 @@ export default function IndustryPage() {
   if (!industry) return <Navigate to="/" replace />;
 
   const {
-    icon, eyebrow, title, accent, description,
-    heroStats, highlights, metric, challenges, approach, proof, testimonial,
+    icon, eyebrow, title, heading, accent, description, ctaLabel,
+    heroStats, highlights, metric, problems, help, proof, closing, faqs, testimonial,
   } = industry;
-  const [before, after, ...extra] = proof.metrics;
 
   return (
     <InnerPage>
@@ -138,9 +136,11 @@ export default function IndustryPage() {
           trail={[{ label: "Industries", href: "/#industries" }, { label: title }]}
           eyebrow={eyebrow}
           title={title}
+          headline={heading}
           accent={accent}
           description={description}
           stats={heroStats}
+          ctaLabel={ctaLabel}
           ctaHref="/contact"
           icon={icon}
           visual={<IndustryVisual highlights={highlights} metric={metric} />}
@@ -152,22 +152,22 @@ export default function IndustryPage() {
               header={
                 <div className="mb-10 grid gap-6 lg:mb-14 lg:grid-cols-2 lg:items-end">
                   <div>
-                    <Eyebrow>Where growth gets lost</Eyebrow>
+                    <Eyebrow>{problems.eyebrow}</Eyebrow>
                     <SplitReveal
                       as="h2"
                       type="skewLines"
                       className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink"
                     >
-                      The challenges specific to {title} marketing.
+                      {`${problems.headingA} ${problems.headingB}`}
                     </SplitReveal>
                   </div>
                   <p className="max-w-md text-[16px] leading-relaxed text-ink-soft lg:justify-self-end">
-                    {title} groups rarely have a lead problem. They have a response, conversion and attribution problem.
+                    {problems.body}
                   </p>
                 </div>
               }
             >
-              {challenges.map(({ title: cTitle, body, tag }, i) => (
+              {problems.points.map(({ title: cTitle, body }, i) => (
                 <article
                   key={cTitle}
                   className={`flex min-h-[16rem] w-full shrink-0 flex-col rounded-3xl p-6 sm:min-h-[18rem] sm:p-9 pin:min-h-[min(24rem,calc(100vh-22rem))] pin:w-[34rem] pin:xl:w-[38rem] ${
@@ -181,9 +181,6 @@ export default function IndustryPage() {
                     {cTitle}
                   </h3>
                   <p className="mt-3 text-[15px] leading-relaxed opacity-70">{body}</p>
-                  <span className="mt-6 w-fit rounded-full border border-current/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide">
-                    {tag}
-                  </span>
                 </article>
               ))}
             </HorizontalScroll>
@@ -193,29 +190,30 @@ export default function IndustryPage() {
         <section className="section-y bg-ink text-cream">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <div className="mb-12 max-w-2xl sm:mb-16 lg:mx-auto lg:text-center">
-              <Eyebrow tone="dark">How we help</Eyebrow>
+              <Eyebrow tone="dark">{help.eyebrow}</Eyebrow>
               <SplitReveal
                 as="h2"
                 type="skewLines"
                 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight"
               >
-                Our approach for {title} groups.
+                {`${help.headingA} ${help.headingB}`}
               </SplitReveal>
+              <p className="mt-5 text-[16px] leading-relaxed text-cream/70">{help.body}</p>
             </div>
-            <ScrollTimeline steps={approach} />
+            <ScrollTimeline steps={help.points} />
           </div>
         </section>
 
         <section className="section-y">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
             <div>
-              <Eyebrow>Proof, not a promise</Eyebrow>
+              <Eyebrow>{proof.eyebrow}</Eyebrow>
               <SplitReveal
                 as="h2"
                 type="skewLines"
                 className="mt-4 text-balance text-[clamp(1.5rem,1.2rem+1.4vw,2.25rem)] font-extrabold leading-tight tracking-tight text-ink"
               >
-                {proof.headline}
+                {proof.heading}
               </SplitReveal>
               <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">{proof.body}</p>
               <p className="mt-6 text-xs leading-relaxed text-ink-soft/70">
@@ -223,18 +221,20 @@ export default function IndustryPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-8">
-              <BeforeAfter before={before} after={after} />
-              <div className="grid grid-cols-2 gap-4">
-                {extra.map(({ value, label }, i) => (
-                  <div key={label} className={`rounded-2xl p-5 sm:p-6 ${i ? "bg-lime text-ink" : "bg-ink text-cream"}`}>
-                    <div className="text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-extrabold leading-none">
-                      <CountUp value={value} />
-                    </div>
-                    <div className="mt-2 text-[13px] leading-snug opacity-70">{label}</div>
+            <div className="grid gap-4 self-start sm:grid-cols-2">
+              {proof.stats.map(({ value, label }, i) => (
+                <div
+                  key={label}
+                  className={`rounded-2xl p-5 sm:p-6 ${
+                    i % 2 ? "bg-lime text-ink" : "bg-ink text-cream"
+                  }`}
+                >
+                  <div className="text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-extrabold leading-none">
+                    <CountUp value={value} />
                   </div>
-                ))}
-              </div>
+                  <div className="mt-2 text-[13px] leading-snug opacity-70">{label}</div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -254,7 +254,21 @@ export default function IndustryPage() {
           )}
         </section>
 
-        <section className="pb-16 sm:pb-24">
+        <section className="section-y border-t border-ink/[0.06] bg-white">
+          <div className="mx-auto max-w-4xl px-5 sm:px-8">
+            <Eyebrow>Frequently Asked Questions</Eyebrow>
+            <dl className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
+              {faqs.map(({ q, a }) => (
+                <div key={q} className="py-6">
+                  <dt className="text-[16px] font-bold leading-snug text-ink">{q}</dt>
+                  <dd className="mt-2.5 text-[15px] leading-relaxed text-ink-soft">{a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section className="pb-16 sm:pb-24 pt-16 sm:pt-24">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">Other industries we serve</p>
             <OtherIndustries current={slug} />
@@ -263,9 +277,9 @@ export default function IndustryPage() {
 
         <CTASection
           monochrome
-          eyebrow={eyebrow}
-          heading={`Build a patient acquisition system for your ${title}.`}
-          body="Tell us how enquiries reach you today — we'll show you exactly where they're getting lost."
+          eyebrow={closing.eyebrow}
+          heading={closing.heading}
+          body={closing.body}
         />
       </Fragment>
     </InnerPage>
