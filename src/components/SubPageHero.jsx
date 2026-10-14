@@ -143,8 +143,8 @@ export default function SubPageHero({
           />
           {/* Phones read top to bottom, so the scrim deepens and ends on the
               section colour. Desktop holds the left column dark instead. */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/70 via-55% to-ink lg:bg-gradient-to-r lg:from-ink lg:via-ink/55 lg:to-ink/10" />
-          <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-ink/90 lg:via-ink/10 lg:to-ink/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/15 via-ink/65 via-52% to-ink lg:bg-gradient-to-r lg:from-ink lg:via-ink/60 lg:via-50% lg:to-ink/0" />
+          <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-ink/75 lg:via-transparent lg:to-ink/35" />
         </div>
       )}
 

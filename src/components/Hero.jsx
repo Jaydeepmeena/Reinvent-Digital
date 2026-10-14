@@ -46,8 +46,8 @@ export default function Hero() {
           decoding="async"
           className="h-full w-full object-cover object-[82%_center] lg:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 via-lime-mist/62 via-38% to-lime-mist lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/88 lg:via-lime-mist/62 lg:via-40% lg:to-lime-mist/5" />
-        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/62 lg:via-lime-mist/25 lg:via-55% lg:to-lime-mist/0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 via-lime-mist/52 via-42% to-lime-mist lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/85 lg:via-lime-mist/52 lg:via-42% lg:to-lime-mist/0" />
+        <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/50 lg:via-lime-mist/15 lg:via-55% lg:to-lime-mist/0" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
