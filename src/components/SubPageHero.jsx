@@ -108,8 +108,6 @@ export default function SubPageHero({
         }
 
         if (variant === "industries") {
-          intro.from("[data-disc]", { scale: 0, duration: 1.6, ease: "expo.out" }, 0.1);
-          gsap.to("[data-disc]", { scale: 1.25, ease: "none", scrollTrigger: scrub });
           gsap.to("[data-hero-visual]", { scale: 0.88, yPercent: 8, ease: "none", scrollTrigger: scrub });
         }
       });
@@ -297,11 +295,6 @@ export default function SubPageHero({
         </div>
 
         <div data-hero-visual className="relative mx-auto w-full max-w-md [perspective:1400px] lg:max-w-none">
-          {variant === "industries" && (
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-              <div data-disc className="aspect-square w-[92%] rounded-full bg-lime/30" />
-            </div>
-          )}
           {visual ?? <ServiceCard icon={icon} highlights={highlights} metric={metric} banner={banner} />}
         </div>
       </div>
