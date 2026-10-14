@@ -141,10 +141,9 @@ export default function SubPageHero({
             style={{ objectPosition: crop }}
             className="h-full w-full object-cover"
           />
-          {/* Phones read top to bottom, so the scrim deepens and ends on the
-              section colour. Desktop holds the left column dark instead. */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/15 via-ink/65 via-52% to-ink lg:bg-gradient-to-r lg:from-ink lg:via-ink/60 lg:via-50% lg:to-ink/0" />
-          <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-ink/75 lg:via-transparent lg:to-ink/35" />
+          {/* The photograph runs at full strength; this only shields the copy
+              and joins the band to the section colour on phones. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/0 via-ink/60 via-46% to-ink lg:bg-gradient-to-r lg:from-ink/92 lg:via-ink/55 lg:via-46% lg:to-ink/0" />
         </div>
       )}
 
@@ -198,7 +197,12 @@ export default function SubPageHero({
       )}
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12">
-        <div data-hero-copy className="relative min-w-0">
+        <div
+          data-hero-copy
+          className={`relative min-w-0 ${
+            banner ? "[text-shadow:0_2px_18px_rgba(14,14,12,0.55)]" : ""
+          }`}
+        >
           <div data-hero-fade>
             <Breadcrumb trail={trail} tone={banner ? "dark" : "light"} />
           </div>
