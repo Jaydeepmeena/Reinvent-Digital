@@ -80,8 +80,8 @@ export default function CTASection({
                 decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/70 to-ink" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/50" />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink/20 via-ink/45 to-ink" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-ink/25" />
             </div>
 
             <div className="px-6 py-14 sm:px-10 sm:py-16 lg:py-20 lg:pl-4 lg:pr-14">
