@@ -44,7 +44,7 @@ export default function Hero() {
           src={HOME_HERO_IMAGE}
           alt=""
           decoding="async"
-          className="h-full w-full object-cover object-[38%_center] lg:object-center"
+          className="h-full w-full object-cover object-[82%_center] lg:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-lime-mist/0 via-lime-mist/62 via-38% to-lime-mist lg:bg-gradient-to-r lg:from-0% lg:from-lime-mist/88 lg:via-lime-mist/62 lg:via-40% lg:to-lime-mist/5" />
         <div className="absolute inset-0 hidden lg:block lg:bg-gradient-to-b lg:from-lime-mist/62 lg:via-lime-mist/25 lg:via-55% lg:to-lime-mist/0" />

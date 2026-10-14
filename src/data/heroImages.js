@@ -39,32 +39,35 @@ const RIGHT = "right center";
 const TOP = "center top";
 const BOTTOM = "center bottom";
 const CENTER = "center";
+// The client banners put their subject right of centre, so they are cropped
+// from the right edge — on a phone that keeps the subject, not the backdrop.
+const BANNER = "right center";
 
 export const SERVICE_HERO_IMAGES = {
-  "google-ads": [googleAdsBanner, CENTER],
-  "meta-ads": [metaAdsBanner, CENTER],
-  "chatgpt-ads": [chatgptAdsBanner, CENTER],
-  seo: [seoBanner, CENTER],
-  aeo: [aeoBanner, CENTER],
-  geo: [geoBanner, CENTER],
-  "business-profile-optimisation": [businessProfileBanner, CENTER],
-  "local-seo": [localSeoBanner, CENTER],
-  "youtube-marketing": [youtubeBanner, CENTER],
-  "social-media-management": [socialMediaBanner, CENTER],
-  "marketing-automation": [automationBanner, CENTER],
-  crm: [crmBanner, CENTER],
-  telephony: [telephonyBanner, CENTER],
-  "booking-attribution": [attributionBanner, CENTER],
-  "walk-in-tracking": [walkInBanner, CENTER],
-  "call-centre-management": [callCentreBanner, CENTER],
-  "messaging-follow-up": [messagingBanner, CENTER],
+  "google-ads": [googleAdsBanner, BANNER],
+  "meta-ads": [metaAdsBanner, BANNER],
+  "chatgpt-ads": [chatgptAdsBanner, BANNER],
+  seo: [seoBanner, BANNER],
+  aeo: [aeoBanner, BANNER],
+  geo: [geoBanner, BANNER],
+  "business-profile-optimisation": [businessProfileBanner, BANNER],
+  "local-seo": [localSeoBanner, BANNER],
+  "youtube-marketing": [youtubeBanner, BANNER],
+  "social-media-management": [socialMediaBanner, BANNER],
+  "marketing-automation": [automationBanner, BANNER],
+  crm: [crmBanner, BANNER],
+  telephony: [telephonyBanner, BANNER],
+  "booking-attribution": [attributionBanner, BANNER],
+  "walk-in-tracking": [walkInBanner, BANNER],
+  "call-centre-management": [callCentreBanner, BANNER],
+  "messaging-follow-up": [messagingBanner, BANNER],
 };
 
 export const INDUSTRY_HERO_IMAGES = {
-  "dental-clinic": [dentalBanner, CENTER],
-  "ivf-clinic": [ivfBanner, CENTER],
-  "eye-clinics": [eyeBanner, CENTER],
-  "multi-speciality-hospital": [hospitalBanner, CENTER],
+  "dental-clinic": [dentalBanner, BANNER],
+  "ivf-clinic": [ivfBanner, BANNER],
+  "eye-clinics": [eyeBanner, BANNER],
+  "multi-speciality-hospital": [hospitalBanner, BANNER],
 };
 
 // No client banners for these yet, so they stay on the card photography.
@@ -76,7 +79,7 @@ export const ABOUT_HERO_IMAGES = {
 };
 
 export const RESOURCE_HERO_IMAGES = {
-  "case-study": [caseStudyBanner, CENTER],
+  "case-study": [caseStudyBanner, BANNER],
   "research-reports": [analytics, BOTTOM],
   blogs: [fertility, RIGHT],
 };
