@@ -42,7 +42,9 @@ function IndustryVisual({ highlights, metric }) {
   );
 
   return (
-    <div ref={ref} className="relative">
+    // With the cross gone the chips had nothing to ring, so they are a
+    // desktop-only flourish now.
+    <div ref={ref} className="relative hidden lg:block">
       {/* The chips and the metric are placed against this box. */}
       <div aria-hidden="true" className="mx-auto h-[24rem] w-full sm:h-[26rem] lg:h-[24rem] xl:h-[30rem]" />
       <ul className="pointer-events-none absolute inset-0 block">
