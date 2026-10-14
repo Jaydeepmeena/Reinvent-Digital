@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { MapPin, Phone, Check } from "lucide-react";
 import { findLocation, LOCATIONS } from "../data/locations";
 import SubPageHero from "../components/SubPageHero";
+import { LOCATION_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
@@ -66,6 +67,7 @@ export default function LocationPage() {
     <InnerPage>
       <Fragment key={slug}>
         <SubPageHero
+          image={LOCATION_HERO_IMAGES[slug]}
           trail={[{ label: "Locations" }, { label: city }]}
           eyebrow={eyebrow}
           title={city}

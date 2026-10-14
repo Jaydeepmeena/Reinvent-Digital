@@ -34,6 +34,20 @@ import hospitalBanner from "../assets/heroes/Multi-Speciality-Hospital.jpg";
 import caseStudyBanner from "../assets/heroes/Case-Studies.jpg";
 import homeBanner from "../assets/heroes/RD-home-baner1.jpg";
 
+// City landmarks, one per location page.
+import cityJaipur from "../assets/heroes/city-jaipur.jpg";
+import cityDelhi from "../assets/heroes/city-delhi.jpg";
+import cityHyderabad from "../assets/heroes/city-hyderabad.jpg";
+import cityNoida from "../assets/heroes/city-noida.jpg";
+import cityGurgaon from "../assets/heroes/city-gurgaon.jpg";
+import cityMumbai from "../assets/heroes/city-mumbai.jpg";
+import cityBangalore from "../assets/heroes/city-bangalore.jpg";
+import cityKochi from "../assets/heroes/city-kochi.jpg";
+import cityChennai from "../assets/heroes/city-chennai.jpg";
+import cityCalicut from "../assets/heroes/city-calicut.jpg";
+import cityThiruvananthapuram from "../assets/heroes/city-thiruvananthapuram.jpg";
+import cityVijayawada from "../assets/heroes/city-vijayawada.jpg";
+
 const LEFT = "left center";
 const RIGHT = "right center";
 const TOP = "center top";
@@ -82,6 +96,21 @@ export const RESOURCE_HERO_IMAGES = {
   "case-study": [caseStudyBanner, BANNER],
   "research-reports": [analytics, BOTTOM],
   blogs: [fertility, RIGHT],
+};
+
+export const LOCATION_HERO_IMAGES = {
+  jaipur: [cityJaipur, CENTER],
+  delhi: [cityDelhi, CENTER],
+  hyderabad: [cityHyderabad, CENTER],
+  noida: [cityNoida, CENTER],
+  gurgaon: [cityGurgaon, CENTER],
+  mumbai: [cityMumbai, CENTER],
+  bangalore: [cityBangalore, CENTER],
+  kochi: [cityKochi, CENTER],
+  chennai: [cityChennai, CENTER],
+  calicut: [cityCalicut, CENTER],
+  thiruvananthapuram: [cityThiruvananthapuram, CENTER],
+  vijayawada: [cityVijayawada, CENTER],
 };
 
 export const CONTACT_HERO_IMAGE = [meeting, TOP];
