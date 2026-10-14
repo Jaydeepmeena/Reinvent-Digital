@@ -36,7 +36,9 @@ function PointsSection({ heading, body, points, tone = "light" }) {
             <Reveal key={title ?? point} delay={0.06 * i}>
               <div
                 className={`h-full rounded-2xl border p-6 ${
-                  dark ? "border-cream/12 bg-cream/[0.04]" : "border-ink/10 bg-white"
+                  dark
+                    ? "border-cream/12 bg-cream/[0.04] transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-cream/25 hover:bg-cream/[0.08]"
+                    : "border-ink/10 bg-white transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10"
                 }`}
               >
                 {title && (
@@ -107,7 +109,7 @@ export default function LocationPage() {
             <ul className="grid gap-3 self-start">
               {trust.points.map((point, i) => (
                 <Reveal as="li" key={point} delay={0.04 * i}>
-                  <div className="flex items-start gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4">
+                  <div className="flex items-start gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10">
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime text-ink">
                       <Check className="h-3.5 w-3.5" />
                     </span>
@@ -132,7 +134,7 @@ export default function LocationPage() {
 
             {office.visit ? (
               <Reveal delay={0.05}>
-                <div className="mt-6 max-w-3xl rounded-2xl border border-cream/12 bg-cream/[0.04] p-6">
+                <div className="mt-6 max-w-3xl rounded-2xl border border-cream/12 bg-cream/[0.04] p-6 transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-cream/25 hover:bg-cream/[0.08]">
                   <p className="text-[16px] leading-relaxed text-cream">{office.address}</p>
                   <p className="mt-2 text-[14px] text-cream/60">Landmark: {office.landmark}</p>
                 </div>
@@ -146,7 +148,7 @@ export default function LocationPage() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {office.directions.map(({ title, body }, i) => (
                 <Reveal key={title ?? body} delay={0.05 * i}>
-                  <div className="h-full rounded-2xl border border-cream/12 bg-cream/[0.04] p-5">
+                  <div className="h-full rounded-2xl border border-cream/12 bg-cream/[0.04] p-5 transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-cream/25 hover:bg-cream/[0.08]">
                     {title && <h3 className="text-[14px] font-bold text-lime">{title}</h3>}
                     <p className={`${title ? "mt-1.5" : ""} text-[15px] leading-relaxed text-cream/70`}>{body}</p>
                   </div>
@@ -184,7 +186,7 @@ export default function LocationPage() {
             <ol className="mt-10 grid gap-4 md:grid-cols-3">
               {plan.steps.map(({ title, body }, i) => (
                 <Reveal as="li" key={title} delay={0.07 * i}>
-                  <div className="h-full rounded-2xl border border-ink/10 bg-white p-6">
+                  <div className="h-full rounded-2xl border border-ink/10 bg-white p-6 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10">
                     <span className="text-[13px] font-extrabold tracking-[0.12em] text-green-deep">
                       {String(i + 1).padStart(2, "0")}
                     </span>
