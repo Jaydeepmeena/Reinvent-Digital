@@ -5,8 +5,8 @@ import callsImg from "../assets/cards/calls.jpg";
 import reportingImg from "../assets/cards/reporting.jpg";
 import routingImg from "../assets/cards/routing.jpg";
 import googleAdsImg from "../assets/heroes/google-ads.jpg";
-import seoImg from "../assets/heroes/seo.jpg";
-import mapsImg from "../assets/heroes/business-profile.jpg";
+import seoImg from "../assets/heroes/Healthcare-SEO.jpg";
+import mapsImg from "../assets/heroes/Google-Business-Profile.jpg";
 
 export const SAMPLE_POSTS = [
   {

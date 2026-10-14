@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Reveal from "./motion/Reveal";
 import { EASE } from "./motion/easing";
-import contactImg from "../assets/cards/industry-hospital.jpg";
+import contactImg from "../assets/heroes/Want-a-Patient-Acquisition-System-for-Your-Group.png";
 
 const CHANNELS = [
   { label: "WhatsApp", href: "https://wa.me/919876543210", icon: MessageCircle },
