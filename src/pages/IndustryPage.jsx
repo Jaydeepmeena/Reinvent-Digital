@@ -6,7 +6,6 @@ import SubPageHero from "../components/SubPageHero";
 import { INDUSTRY_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import CountUp from "../components/motion/CountUp";
-import Scene3D from "../components/three/Scene3D";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
@@ -44,7 +43,8 @@ function IndustryVisual({ highlights, metric }) {
 
   return (
     <div ref={ref} className="relative">
-      <Scene3D scene="healthCross" className="mx-auto h-[24rem] w-full sm:h-[26rem] lg:h-[24rem] xl:h-[30rem]" />
+      {/* The chips and the metric are placed against this box. */}
+      <div aria-hidden="true" className="mx-auto h-[24rem] w-full sm:h-[26rem] lg:h-[24rem] xl:h-[30rem]" />
       <ul className="pointer-events-none absolute inset-0 block">
         {highlights.map((item, i) => (
           <li
