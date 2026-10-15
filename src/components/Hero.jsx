@@ -74,7 +74,6 @@ export default function Hero() {
             custom={0}
             className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/80 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink-soft backdrop-blur sm:px-4 sm:text-xs"
           >
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-green animate-pulse-soft" />
             Patient Acquisition, Engineered for Healthcare
           </motion.div>
 

@@ -93,7 +93,6 @@ export default function BlogPostPage() {
                 <>
                   {post.category && (
                     <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-cream/80">
-                      <span className="h-1.5 w-1.5 rounded-full bg-lime" />
                       {post.category}
                     </span>
                   )}

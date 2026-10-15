@@ -86,7 +86,6 @@ export default function CTASection({
 
             <div className="px-6 py-14 sm:px-10 sm:py-16 lg:py-20 lg:pl-4 lg:pr-14">
               <span className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-lime">
-                <span className="h-2 w-2 rounded-full bg-lime" />
                 {eyebrow}
                 <span className="h-px flex-1 bg-cream/15" />
               </span>

@@ -44,7 +44,6 @@ export default function IndustriesSection() {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
-              <span className="h-2 w-2 rounded-full bg-lime" />
               Designed for Operational Scale
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink">

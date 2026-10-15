@@ -236,7 +236,6 @@ export default function FAQSection() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="text-center">
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-lime">
-            <span className="h-2 w-2 rounded-full bg-lime" />
             Frequently Asked Questions
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-cream">

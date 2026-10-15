@@ -213,7 +213,6 @@ export default function SubPageHero({
               banner ? "border-cream/15 bg-cream/10 text-cream/80" : "border-ink/10 bg-paper/80 text-ink-soft"
             }`}
           >
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-lime ring-4 ring-lime/25" />
             <span className="truncate">{eyebrow}</span>
           </div>
 

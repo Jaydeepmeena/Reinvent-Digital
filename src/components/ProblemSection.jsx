@@ -37,7 +37,6 @@ export default function ProblemSection() {
         <div className="self-start lg:sticky lg:top-28">
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
-              <span className="h-2 w-2 rounded-full bg-lime" />
               Where you're actually missing out
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink">

@@ -70,7 +70,6 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-deep">
-            <span className="h-2 w-2 rounded-full bg-lime" />
             Client Testimonials
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
