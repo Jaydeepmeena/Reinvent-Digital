@@ -103,7 +103,7 @@ export default function buildPulseLine({ scene, small }) {
       root.rotation.x = damp(root.rotation.x, 0.12 - pointer.y * 0.14, 2, dt);
       root.position.y = Math.sin(t * 0.45) * 0.1;
 
-      // Sweep left to right, then start over — one pass every eight seconds.
+      // Sweep left to right, then start over, one pass every eight seconds.
       const progress = (t % 8) / 8;
       curve.getPointAt(progress, point);
       head.position.copy(point);

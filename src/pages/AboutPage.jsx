@@ -78,7 +78,7 @@ export default function AboutPage() {
                   type="blur"
                   className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink"
                 >
-                  {stats?.length ? "The numbers behind the story." : "Life at RD, in practice."}
+                  {stats?.length ? "The numbers behind the story" : "Life at RD, in practice"}
                 </SplitReveal>
               </div>
               <StatRows stats={stats} highlights={highlights} />

@@ -42,7 +42,7 @@ export default function ProblemSection() {
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink">
               Agencies Aim for the Leads.{" "}
-              <span className="font-serif-italic font-medium text-ink-soft">We Work on What Happens Next.</span>
+              <span className="font-serif-italic font-medium text-ink-soft">We Work on What Happens Next</span>
             </h2>
             <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink-soft sm:text-[17px]">
               Report says leads are up. But your front desk says numbers haven't changed.

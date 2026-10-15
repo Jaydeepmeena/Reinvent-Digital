@@ -1,7 +1,7 @@
 import { Smile, HeartPulse, Eye, Building2 } from "lucide-react";
 
 // Industry pages, written from the industry tabs of the content doc.
-// Wording and capitalisation are the doc's own — do not retitle here.
+// Wording and capitalisation are the doc's own; do not retitle here.
 export const INDUSTRIES = [
   {
     "slug": "dental-clinic",
@@ -172,7 +172,7 @@ export const INDUSTRIES = [
       }
     ],
     "testimonial": {
-      "quote": "Reinvent Digital didn't just send us leads — they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
+      "quote": "Reinvent Digital didn't just send us leads, they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
       "name": "Dr. Aakash Mehta",
       "role": "Clinical Director, multi-location dental group"
     }

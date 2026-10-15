@@ -87,7 +87,7 @@ export default function LocationPage() {
         <PointsSection heading={search.heading} body={search.body} points={search.points} />
         <PointsSection heading={system.heading} body={system.body} points={system.points} tone="dark" />
 
-        {/* Why they trust us — a plain list, so it reads as proof rather than features. */}
+        {/* Why they trust us: a plain list, so it reads as proof rather than features. */}
         <section className="section-y bg-paper">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_1fr] lg:gap-14">
             <div>

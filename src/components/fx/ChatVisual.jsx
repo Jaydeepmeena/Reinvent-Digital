@@ -3,7 +3,7 @@ import TiltCard from "../motion/TiltCard";
 import { gsap, MOTION_OK, useGSAP } from "./gsap";
 
 const MESSAGES = [
-  { from: "clinic", text: "Hi — we run 12 dental clinics and evening enquiries keep going unanswered." },
+  { from: "clinic", text: "Hi, we run 12 dental clinics and evening enquiries keep going unanswered." },
   { from: "rd", text: "That's usually a coverage gap, not a lead gap. Want a free funnel review this week?" },
   { from: "clinic", text: "Yes please. Tuesday works for our team." },
   { from: "rd", text: "Booked ✓ We'll bring your call data mapped hour by hour." },

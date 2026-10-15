@@ -156,7 +156,7 @@ export default function BlogsPage() {
               type="words"
               className="mt-4 max-w-3xl text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink"
             >
-              Fresh writing from the accounts we run.
+              Fresh writing from the accounts we run
             </SplitReveal>
 
             {status === "loading" && (

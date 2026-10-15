@@ -60,7 +60,7 @@ export default function Footer() {
               <img src={logo} alt="Reinvent Digital" className="h-12 w-auto brightness-0 invert" />
             </Link>
             <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/55">
-              Patient acquisition systems for healthcare groups — marketing, CRM and call centre on
+              Patient acquisition systems for healthcare groups: marketing, CRM and call centre on
               one measurable path to booked patients.
             </p>
 

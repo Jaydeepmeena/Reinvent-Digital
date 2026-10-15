@@ -7,7 +7,7 @@ import meeting from "../assets/cards/calls.jpg";
 import analytics from "../assets/cards/reporting.jpg";
 import fertility from "../assets/cards/industry-fertility.jpg";
 
-// Client banners — service pages.
+// Client banners: service pages.
 import googleAdsBanner from "../assets/heroes/google-ads.jpg";
 import metaAdsBanner from "../assets/heroes/Meta-Ads.jpg";
 import chatgptAdsBanner from "../assets/heroes/ChatGPT-Ads.jpg";
@@ -26,7 +26,7 @@ import walkInBanner from "../assets/heroes/Healthcare-Walk-In-Tracking.jpg";
 import callCentreBanner from "../assets/heroes/Healthcare-Call-Centre-Optimisation.jpg";
 import messagingBanner from "../assets/heroes/Healthcare-Messaging-and-Follow-Up.jpg";
 
-// Client banners — industry, resource and home.
+// Client banners: industry, resource and home.
 import dentalBanner from "../assets/heroes/dental-clinic.jpg";
 import ivfBanner from "../assets/heroes/IVF-&-Fertility-Clinic.jpg";
 import eyeBanner from "../assets/heroes/Eye-Care-Clinic.jpg";
@@ -54,7 +54,7 @@ const TOP = "center top";
 const BOTTOM = "center bottom";
 const CENTER = "center";
 // The client banners put their subject right of centre, so they are cropped
-// from the right edge — on a phone that keeps the subject, not the backdrop.
+// from the right edge, on a phone that keeps the subject, not the backdrop.
 const BANNER = "right center";
 
 export const SERVICE_HERO_IMAGES = {

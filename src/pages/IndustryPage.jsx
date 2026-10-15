@@ -13,7 +13,7 @@ import HorizontalScroll from "../components/fx/HorizontalScroll";
 import ScrollTimeline from "../components/fx/ScrollTimeline";
 import { gsap, MOTION_OK, useGSAP } from "../components/fx/gsap";
 
-// The chips ring the cross at every width — they used to stack under it below xl.
+// The chips ring the cross at every width; they used to stack under it below xl.
 const CHIP_POSITIONS = [
   "left-0 top-0 xl:top-2",
   "right-0 top-[19%] xl:top-16",

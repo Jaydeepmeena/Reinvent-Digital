@@ -164,7 +164,7 @@ export default function ServicePage() {
                 type="chars3d"
                 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink"
               >
-                {faqTitle ?? `Common Queries About ${title}, Answered.`}
+                {faqTitle ?? `Common Queries About ${title}, Answered`}
               </SplitReveal>
 
               <dl className="section-head-gap divide-y divide-ink/10 border-y border-ink/10">
@@ -188,7 +188,7 @@ export default function ServicePage() {
           heading={closing?.heading ?? `Ready to put ${title} to work for your clinic?`}
           body={
             closing?.body ??
-            "Tell us about your current setup — we'll show you exactly where the gaps are and what it would take to close them."
+            "Tell us about your current setup and we'll show you exactly where the gaps are and what it would take to close them."
           }
           ctaLabel={closing?.ctaLabel}
         />

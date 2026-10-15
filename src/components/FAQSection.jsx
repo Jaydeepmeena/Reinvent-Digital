@@ -62,7 +62,7 @@ const FIELDS = [
 function EnquiryCard() {
   const [sent, setSent] = useState(false);
 
-  // No backend yet — this collects the details and confirms locally.
+  // No backend yet, this collects the details and confirms locally.
   const onSubmit = (e) => {
     e.preventDefault();
     setSent(true);
@@ -158,7 +158,7 @@ function EnquiryCard() {
       </div>
 
       <p aria-live="polite" className="relative mt-3 text-[13px] text-lime">
-        {sent ? "Got it — we'll come back to you within the hour." : ""}
+        {sent ? "Got it, we'll come back to you within the hour." : ""}
       </p>
     </form>
   );
@@ -240,7 +240,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.14] tracking-tight text-cream">
-            Common Queries About the Acquisition System From Healthcare Leaders, Answered.
+            Common Queries About the Acquisition System From Healthcare Leaders, Answered
           </h2>
         </Reveal>
 

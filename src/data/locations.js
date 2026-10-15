@@ -1,5 +1,5 @@
 // City pages, written from the location tabs of the content doc.
-// Wording and capitalisation are the doc's own — do not retitle here.
+// Wording and capitalisation are the doc's own; do not retitle here.
 export const LOCATIONS = [
   {
     "slug": "jaipur",
@@ -565,7 +565,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Centre.",
+      "heading": "No Office Visit Needed. We Come to Your Centre",
       "body": "We work with Noida hospitals and clinics remotely day to day, and in person whenever it matters most.",
       "directions": [
         {
@@ -717,7 +717,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Centre.",
+      "heading": "No Office Visit Needed. We Come to Your Centre",
       "body": "Day-to-day work runs remotely. The moments that shape results happen in person, at your hospital or clinic.",
       "directions": [
         {
@@ -869,7 +869,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Centre.",
+      "heading": "No Office Visit Needed. We Come to Your Centre",
       "body": "We keep daily work remote and bring our team to you for the decisions that matter.",
       "directions": [
         {
@@ -1021,7 +1021,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Centre.",
+      "heading": "No Office Visit Needed. We Come to Your Centre",
       "body": "Routine work runs remotely, while kick-offs, training and reviews happen face to face at your centres.",
       "directions": [
         {
@@ -1173,7 +1173,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital",
       "body": "Routine tasks run remotely, and the conversations that matter happen with your team on site.",
       "directions": [
         {
@@ -1325,7 +1325,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital",
       "body": "We work remotely day to day and sit down with your team in person for kick-offs and reviews.",
       "directions": [
         {
@@ -1481,7 +1481,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital",
       "body": "We manage everyday work remotely and come in person for kick-offs, call-team coaching and reviews.",
       "directions": [
         {
@@ -1633,7 +1633,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital",
       "body": "Daily work runs online. Training and monthly reviews happen face to face at your clinic or hospital.",
       "directions": [
         {
@@ -1785,7 +1785,7 @@ export const LOCATIONS = [
     },
     "office": {
       "visit": false,
-      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+      "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital",
       "body": "We work remotely day to day and meet your staff in person when it matters most.",
       "directions": [
         {

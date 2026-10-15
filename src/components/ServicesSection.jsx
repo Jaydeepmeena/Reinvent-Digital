@@ -79,7 +79,7 @@ export default function ServicesSection() {
         <SectionHeader
           eyebrow="How Reinvent Digital Stands Out"
           title="Patient Acquisition,"
-          accent="Connected End to End."
+          accent="Connected End to End"
           action={
             <Link
               to="/contact"

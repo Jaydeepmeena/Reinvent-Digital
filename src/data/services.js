@@ -10,7 +10,7 @@ export const SERVICES = [
     icon: Search,
     eyebrow: "Paid Search for Healthcare",
     title: "Google Ads",
-    accent: "Judged on Who Walks In.",
+    accent: "Judged on Who Walks In",
     description:
       "Keywords show intent. Negatives cut browsers. Call tracking shows who booked. Search and Performance Max budget moves towards walk-ins, instead of just leads.",
     ctaLabel: "Talk to a Google Ads Specialist",
@@ -26,7 +26,7 @@ export const SERVICES = [
       { value: "38%", label: "Lower Cost Per Booking" },
       { value: "<60 sec", label: "1st Response Target for Every Enquiry" },
     ],
-    includesTitle: "Everything That Turns a Click Into a Patient.",
+    includesTitle: "Everything That Turns a Click Into a Patient",
     includesIntro:
       "Campaigns, controls, tracking and reporting for hospitals, dental chains, IVF and eye-care groups, run as the demand stage of the Patient Acquisition System.",
     includes: [
@@ -56,7 +56,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Approach It",
-    processTitle: "From Audit to Scale, a Repeatable 6-step Cycle.",
+    processTitle: "From Audit to Scale, a Repeatable 6-step Cycle",
     processNote: "Reviewed every week. Meaningful data in 30 to 45 days. Budget decisions from day 60.",
     process: [
       { title: "Audit the Account", body: "Search terms, tracking, landing pages and policy flags reviewed before anything changes." },
@@ -71,7 +71,7 @@ export const SERVICES = [
       { value: "185+", label: "Healthcare Google Ads Accounts Managed" },
       { value: "<48 hours", label: "Campaign Launch Time" },
     ],
-    faqTitle: "Common Queries About Healthcare Google Ads, Answered.",
+    faqTitle: "Common Queries About Healthcare Google Ads, Answered",
     faqs: [
       {
         q: "What does a healthcare Google Ads agency do?",
@@ -111,7 +111,7 @@ export const SERVICES = [
     icon: Share2,
     eyebrow: "Facebook & Instagram for Healthcare",
     title: "Meta Ads",
-    accent: "That Turn Scrolling into Walk-Ins.",
+    accent: "That Turn Scrolling into Walk-Ins",
     description:
       "Reels, carousels and lead forms built around why patients hesitate, with WhatsApp replies while interest is fresh. Every Facebook and Instagram lead is tracked to the booking Meta cannot see.",
     ctaLabel: "Discuss Your Meta Ads",
@@ -127,7 +127,7 @@ export const SERVICES = [
       { value: "9K+", label: "Leads Generated Monthly" },
       { value: "41%", label: "Avg. Lead Form Conversion" },
     ],
-    includesTitle: "Turning Social Interest into Booked Patients.",
+    includesTitle: "Turning Social Interest into Booked Patients",
     includesIntro:
       "Facebook and Instagram campaigns for hospitals, dental chains, IVF and eye-care groups, run as the demand creation stage of the patient acquisition system.",
     includes: [
@@ -157,7 +157,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Approach It",
-    processTitle: "Test, Qualify, Refresh: a Repeatable 6-step Cycle.",
+    processTitle: "Test, Qualify, Refresh: a Repeatable 6-step Cycle",
     processNote: "Creative tested in rounds. Winners scaled, tired ads replaced before results drop.",
     process: [
       { title: "Audit the Account", body: "Pixel, Events Manager category, audiences and past creative reviewed for policy risk." },
@@ -172,7 +172,7 @@ export const SERVICES = [
       { value: "20-30%", label: "Missed Leads Recovered with WhatsApp" },
       { value: "2.1x", label: "Monthly Walk-Ins Recorded" },
     ],
-    faqTitle: "Common Queries About Healthcare Meta Ads, Answered.",
+    faqTitle: "Common Queries About Healthcare Meta Ads, Answered",
     faqs: [
       {
         q: "What does a healthcare Meta Ads agency do?",
@@ -212,7 +212,7 @@ export const SERVICES = [
     icon: Sparkles,
     eyebrow: "Conversational Ads for Healthcare",
     title: "ChatGPT Ads",
-    accent: "From a Patient's Question to a Clinic Visit.",
+    accent: "From a Patient's Question to a Clinic Visit",
     description:
       "Patients now ask ChatGPT which clinic to choose. Where OpenAI approves healthcare advertisers, we place labelled ads below those answers and track every enquiry to a booking.",
     ctaLabel: "See If You're Eligible",
@@ -228,7 +228,7 @@ export const SERVICES = [
       { value: "0", label: "Patient Chats Shared with Advertisers" },
       { value: "<48 hours", label: "Campaign Launch Time" },
     ],
-    includesTitle: "From Eligibility Check to Booked Enquiry.",
+    includesTitle: "From Eligibility Check to Booked Enquiry",
     includesIntro:
       "Conversational ads for hospitals, dental chains, IVF and eye-care groups, run alongside healthcare GEO as part of the patient acquisition system.",
     includes: [
@@ -258,7 +258,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Approach It",
-    processTitle: "Eligibility Tested First, Then a Controlled Test.",
+    processTitle: "Eligibility Tested First, Then a Controlled Test",
     processNote: "Campaigns start from as low as \u20b9725 a day. Every test has agreed pause criteria.",
     process: [
       { title: "Confirm Eligibility", body: "Services, licences and landing pages checked against OpenAI's healthcare advertiser criteria first." },
@@ -273,7 +273,7 @@ export const SERVICES = [
       { value: "0", label: "Patient Chats Shared with Advertisers" },
       { value: "<48 hours", label: "Campaign Launch Time" },
     ],
-    faqTitle: "Common Queries About ChatGPT Ads, Answered.",
+    faqTitle: "Common Queries About ChatGPT Ads, Answered",
     faqs: [
       {
         q: "Can hospitals and clinics advertise on ChatGPT in India?",
@@ -313,7 +313,7 @@ export const SERVICES = [
     icon: TrendingUp,
     eyebrow: "Healthcare Search Engine Optimisation",
     title: "Healthcare SEO",
-    accent: "From Top Rankings to Booked Appointments.",
+    accent: "From Top Rankings to Booked Appointments",
     description:
       "We audit your site, fix what Google blocks, build the treatment and doctor pages patients compare, and connect Search Console to your CRM, so every ranking is judged on bookings.",
     ctaLabel: "Discuss Your Organic Growth",
@@ -329,7 +329,7 @@ export const SERVICES = [
       { value: "180+", label: "Procedure Pages Ranked" },
       { value: "2.1x", label: "Organic Enquiry Growth" },
     ],
-    includesTitle: "6 Fixes on Your Website, and a Full Calendar.",
+    includesTitle: "6 Fixes on Your Website, and a Full Calendar",
     includesIntro:
       "A slow page, a missing doctor profile, no page for their treatment or their nearest centre: each SEO fix removes one reason patients choose another hospital instead of yours.",
     includes: [
@@ -359,7 +359,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How SEO Compounds",
-    processTitle: "Prioritised. Published. Measured. Improved Every Month.",
+    processTitle: "Prioritised. Published. Measured. Improved Every Month",
     processNote:
       "Technical SEO and Google Business Profile improvements show in 60 to 90 days. From months 9 to 12, organic rankings build on each other, without extra ad spend.",
     process: [
@@ -375,7 +375,7 @@ export const SERVICES = [
       { value: "11+", label: "Years of Healthcare Marketing Experience" },
       { value: "120%", label: "Ranking Improvement for Healthcare Groups" },
     ],
-    faqTitle: "What Healthcare Leaders Ask Before Choosing an SEO Partner.",
+    faqTitle: "What Healthcare Leaders Ask Before Choosing an SEO Partner",
     faqs: [
       {
         q: "What does a healthcare SEO agency do?",
@@ -415,7 +415,7 @@ export const SERVICES = [
     icon: Bot,
     eyebrow: "Healthcare Answer Engine Optimisation",
     title: "Healthcare AEO",
-    accent: "Be the Answer Patients Read Before They Book.",
+    accent: "Be the Answer Patients Read Before They Book",
     description:
       "Patients now read the AI answer before any link. We build clinically reviewed answers so your hospital is the source those answers draw from.",
     ctaLabel: "Discuss Your AEO Visibility",
@@ -431,7 +431,7 @@ export const SERVICES = [
       { value: "200+", label: "Pages Cited in Google AI Overviews" },
       { value: "214+", label: "Pages Cited in Google AI Mode" },
     ],
-    includesTitle: "From the Question Patients Ask to The Answer They Trust.",
+    includesTitle: "From the Question Patients Ask to The Answer They Trust",
     includesIntro:
       "One question at a time, from the patient's words to a reviewed answer Google, voice search and AI Overviews can trust.",
     includes: [
@@ -461,7 +461,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How Healthcare AEO Benefits",
-    processTitle: "Win the AI Generative Answers Your Competitors Own Today.",
+    processTitle: "Win the AI Generative Answers Your Competitors Own Today",
     processNote:
       "Progress starts with the pages you already have. Each approved answer then works across Google, WhatsApp and your call team.",
     process: [
@@ -477,7 +477,7 @@ export const SERVICES = [
       { value: "11+", label: "Years of Marketing Leadership" },
       { value: "8+", label: "Healthcare Verticals Covered" },
     ],
-    faqTitle: "What Healthcare Leaders Ask About AEO.",
+    faqTitle: "What Healthcare Leaders Ask About AEO",
     faqs: [
       {
         q: "What is healthcare AEO?",
@@ -517,7 +517,7 @@ export const SERVICES = [
     icon: Globe,
     eyebrow: "Healthcare Generative Engine Optimisation",
     title: "Healthcare GEO",
-    accent: "Be the Name Patients Hear When They Ask AI.",
+    accent: "Be the Name Patients Hear When They Ask AI",
     description:
       "AI tools now shortlist hospitals before patients search further. We align your listings, profiles and pages so ChatGPT, Gemini and Perplexity describe you correctly.",
     ctaLabel: "Talk to a GEO Specialist",
@@ -533,7 +533,7 @@ export const SERVICES = [
       { value: "300+", label: "Pages Cited by AI Platforms" },
       { value: "100+", label: "Citations in Gemini" },
     ],
-    includesTitle: "What AI Tools Check Before They Name Your Hospital.",
+    includesTitle: "What AI Tools Check Before They Name Your Hospital",
     includesIntro:
       "ChatGPT and Perplexity don't take your website's word for it. They cross-check directories, reviews and news. We make every source say the same thing, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -563,7 +563,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How GEO Works",
-    processTitle: "From What AI Says Today to What It Says Next Month.",
+    processTitle: "From What AI Says Today to What It Says Next Month",
     processNote: "Wrong facts cost patients. Missing proof costs mentions. Each step fixes one, then tests again to prove it worked.",
     process: [
       { title: "Hear What AI Says", body: "A baseline of who's named for your treatments, and how AI describes you." },
@@ -578,7 +578,7 @@ export const SERVICES = [
       { value: "11+", label: "Years of Marketing Leadership" },
       { value: "8+", label: "Healthcare Verticals Covered" },
     ],
-    faqTitle: "What Healthcare Leaders Ask About GEO.",
+    faqTitle: "What Healthcare Leaders Ask About GEO",
     faqs: [
       {
         q: "What is healthcare GEO?",
@@ -619,7 +619,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Google Business Profile Optimisation",
     title: "Google Business Profile",
     heading: "From \u201cDentist Near Me\u201d to",
-    accent: "Directions to Your Door.",
+    accent: "Directions to Your Door",
     description:
       "We manage every centre's Google Business Profile, from categories and photos to reviews and Ask Maps readiness, then track calls, directions and bookings location by location.",
     ctaLabel: "Discuss Your Local Visibility",
@@ -635,7 +635,7 @@ export const SERVICES = [
       { value: "<24 hrs", label: "Review Replies Approved & Published" },
       { value: "185+", label: "Healthcare Accounts Managed" },
     ],
-    includesTitle: "Everything Google Checks Before It Shows Your Centre.",
+    includesTitle: "Everything Google Checks Before It Shows Your Centre",
     includesIntro:
       "You can't move your centre closer to the patient. You can make it the most complete, trusted and active profile they see, and that's what our Google Business Profile optimisation does.",
     includes: [
@@ -665,7 +665,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Approach It",
-    processTitle: "One Tested and Proven System for Every Centre on the Map.",
+    processTitle: "One Tested and Proven System for Every Centre on the Map",
     processNote: "Forty centres means forty separate maps. Each one gets its own audit, its own tracking and its own fixes.",
     process: [
       { title: "Audit Every Location", body: "Ownership, verification, categories, duplicates and current map visibility checked for each centre." },
@@ -680,7 +680,7 @@ export const SERVICES = [
       { value: "11+", label: "Years of Marketing Leadership" },
       { value: "8+", label: "Healthcare Verticals Covered" },
     ],
-    faqTitle: "What Healthcare Leaders Ask About Google Maps.",
+    faqTitle: "What Healthcare Leaders Ask About Google Maps",
     faqs: [
       {
         q: "What is Google Business Profile optimisation for healthcare?",
@@ -721,7 +721,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Local SEO & Google Maps",
     title: "Google Maps & Local SEO",
     heading: "Every Neighbourhood You Serve,",
-    accent: "Every Map Patients Use.",
+    accent: "Every Map Patients Use",
     description:
       "Reinvent Digital builds the local signals Google Maps trusts beyond your profile: neighbourhood pages, directory listings, local links & reviews on Practo and Justdial, tracked to walk-ins centre by centre.",
     ctaLabel: "Discuss Your Local SEO",
@@ -737,7 +737,7 @@ export const SERVICES = [
       { value: "120+", label: "Google Profiles Managed" },
       { value: "185+", label: "Healthcare Accounts Managed" },
     ],
-    includesTitle: "The Local Signals That Decide Who Ranks Nearby.",
+    includesTitle: "The Local Signals That Decide Who Ranks Nearby",
     includesIntro:
       "Your Google profile is only one signal. Google also checks your website, directories, local mentions & reviews elsewhere. These six pieces cover the rest, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -767,7 +767,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Grow Local Visibility",
-    processTitle: "From One City Pin Code to Every Neighbourhood Nearby.",
+    processTitle: "From One City Pin Code to Every Neighbourhood Nearby",
     processNote:
       "Local rankings are won street by street, so every centre gets its own map of where patients search & where it's missing.",
     process: [
@@ -824,7 +824,7 @@ export const SERVICES = [
     eyebrow: "Healthcare YouTube Marketing",
     title: "YouTube Marketing",
     heading: "Let Patients Meet Your Doctors",
-    accent: "Before They Book.",
+    accent: "Before They Book",
     description:
       "Doctor-led explainers, Shorts and YouTube Ads that answer the questions patients hesitate to ask, built within NMC rules and tracked from view to booking.",
     ctaLabel: "Discuss Your YouTube Strategy",
@@ -840,7 +840,7 @@ export const SERVICES = [
       { value: "11+", label: "Healthcare Marketing Experience" },
       { value: "185+", label: "Healthcare Accounts Managed" },
     ],
-    includesTitle: "Everything a Healthcare Channel Needs to Build Trust on Screen.",
+    includesTitle: "Everything a Healthcare Channel Needs to Build Trust on Screen",
     includesIntro:
       "Patients choosing IVF, implants or eye surgery often watch before they decide. These six pieces turn that viewing into trust and bookings, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -870,7 +870,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Run Your YT Channel",
-    processTitle: "From Script to Screen to Booked Consultation.",
+    processTitle: "From Script to Screen to Booked Consultation",
     processNote:
       "Your doctors give a few hours on camera. Scripting, production, publishing, ads and reporting are handled for you.",
     process: [
@@ -923,7 +923,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Social Media Management",
     title: "Social Media Management",
     heading: "The Feed Patients Check",
-    accent: "Before They Book.",
+    accent: "Before They Book",
     description:
       "Doctor-led Reels, patient education and fast replies to every comment and DM, managed within NMC rules so your profile earns trust before the first call.",
     ctaLabel: "Discuss Your SM Strategy",
@@ -939,7 +939,7 @@ export const SERVICES = [
       { value: "11+", label: "Healthcare Marketing Experience" },
       { value: "185+", label: "Healthcare Accounts Managed" },
     ],
-    includesTitle: "Everything Your Profile Needs to Earn Your Patients' Trust.",
+    includesTitle: "Everything Your Profile Needs to Earn Your Patients' Trust",
     includesIntro:
       "Patients check your social profiles to see if you're real, active and trusted. These six pieces help them find all three, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -969,7 +969,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Run Your Social Media Channel",
-    processTitle: "Planned Monthly. Posted Regularly. Answered Daily.",
+    processTitle: "Planned Monthly. Posted Regularly. Answered Daily",
     processNote:
       "You approve the plan once a month. We handle design, posting, replies and reporting every day in between.",
     process: [
@@ -1022,7 +1022,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Marketing Automation",
     title: "Marketing Automation",
     heading: "Patients You Almost Lost,",
-    accent: "Brought Back Automatically.",
+    accent: "Brought Back Automatically",
     description:
       "Missed-call replies, appointment reminders, recall journeys and review requests run on WhatsApp, SMS and email, so fewer enquiries go cold and more booked patients arrive.",
     ctaLabel: "Discuss Your Automation Strategy",
@@ -1038,7 +1038,7 @@ export const SERVICES = [
       { value: "15-25%", label: "Show-Up Rate Improvement" },
       { value: "2", label: "Weeks Typical Setup Time" },
     ],
-    includesTitle: "The Follow-Up Your Front Desk Never Has Time For.",
+    includesTitle: "The Follow-Up Your Front Desk Never Has Time For",
     includesIntro:
       "Front desks get busy, patients hesitate and recall slips. These six automations cover each gap, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1068,7 +1068,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Approach It",
-    processTitle: "Live in 2 Weeks, Improving Every Month.",
+    processTitle: "Live in 2 Weeks, Improving Every Month",
     processNote: "Show-up improvements typically appear within 60 days of going live.",
     process: [
       { title: "Map Where Patients Drop", body: "Missed calls, unanswered enquiries and no-shows measured before any journey is built." },
@@ -1124,7 +1124,7 @@ export const SERVICES = [
     eyebrow: "Healthcare CRM",
     title: "Healthcare CRM",
     heading: "One Patient Record,",
-    accent: "From 1st Enquiry to Walk-In.",
+    accent: "From 1st Enquiry to Walk-In",
     description:
       "Forms, WhatsApp and calls land in one patient record, saved before anything else, with the source attached and follow-up running even when nobody remembers.",
     ctaLabel: "Discuss Your CRM Setup",
@@ -1140,7 +1140,7 @@ export const SERVICES = [
       { value: "115+", label: "Locations Managed" },
       { value: "2.1x", label: "Monthly Walk-Ins Increase" },
     ],
-    includesTitle: "1 Screen for Your Front Desk, Not Five Different Apps.",
+    includesTitle: "1 Screen for Your Front Desk, Not Five Different Apps",
     includesIntro:
       "Whether you keep your current CRM or move to ours, the same six pieces stop enquiries slipping between channels, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1170,7 +1170,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Setup CRM",
-    processTitle: "Your CRM or Ours, Setup Around Clinic.",
+    processTitle: "Your CRM or Ours, Setup Around Clinic",
     processNote: "Show-up improvements typically appear within 60 days of going live.",
     process: [
       { title: "Audit Your Current Flow", body: "Missed calls, unanswered enquiries and no-shows measured before any journey is built." },
@@ -1226,7 +1226,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Call Centre Optimisation",
     title: "Call Centre Optimisation",
     heading: "60 Seconds Is a System,",
-    accent: "Not a Reminder.",
+    accent: "Not a Reminder",
     description:
       "We redesign rosters, routing, scripts and coaching so your team, or ours, can answer patient enquiries in under 60 seconds and turn more conversations into booked visits.",
     ctaLabel: "Discuss Your Call Operations",
@@ -1242,7 +1242,7 @@ export const SERVICES = [
       { value: "15", label: "Agents Unchanged While Walk-Ins" },
       { value: "2.1x", label: "Monthly Walks for a Location Group" },
     ],
-    includesTitle: "Everything Between a Ringing Phone and a Booked Visit.",
+    includesTitle: "Everything Between a Ringing Phone and a Booked Visit",
     includesIntro:
       "Software alone can't fix weak coverage or inconsistent calls. These six pieces fix the process and the people, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1272,7 +1272,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Fix Call Operation",
-    processTitle: "From Missed Call to Measured Conversations.",
+    processTitle: "From Missed Call to Measured Conversations",
     processNote:
       "Your agents stay. The system around them changes, and every week you see response time, contact rate and booking rate.",
     process: [
@@ -1329,7 +1329,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Telephony & Call Tracking",
     title: "Telephony",
     heading: "Your Busiest Booking Channel",
-    accent: "Is the One You Can't See.",
+    accent: "Is the One You Can't See",
     description:
       "Tracked numbers, smart routing, call recording and missed-call recovery connect every phone enquiry to its campaign, its centre and your CRM.",
     ctaLabel: "Discuss Your Telephony Setup",
@@ -1345,7 +1345,7 @@ export const SERVICES = [
       { value: "<60 Sec", label: "First Response Time Achieved" },
       { value: "185+", label: "Healthcare Accounts Managed" },
     ],
-    includesTitle: "Everything Behind a Phone Call That Turns Into Booking.",
+    includesTitle: "Everything Behind a Phone Call That Turns Into Booking",
     includesIntro:
       "Telephony is the infrastructure under your call team. These six pieces make every call reachable, routed and measurable, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1375,7 +1375,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How We Setup Your Telephony",
-    processTitle: "Mapped. Numbered. Routed. Then Tested on Live Calls.",
+    processTitle: "Mapped. Numbered. Routed. Then Tested on Live Calls",
     processNote:
       "We work with your existing telephony provider where it fits, and set up tracked numbers where it doesn't.",
     process: [
@@ -1432,7 +1432,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Booking Attribution",
     title: "Booking Attribution",
     heading: "Google Counts Conversions,",
-    accent: "Your Clinic Counts Patients.",
+    accent: "Your Clinic Counts Patients",
     description:
       "We connect every enquiry's source to its booking and cost, crediting every touchpoint, in Looker Studio on your CRM or our own dashboard, so budgets follow bookings, not last-click conversions.",
     ctaLabel: "Discuss Your Attribution",
@@ -1448,7 +1448,7 @@ export const SERVICES = [
       { value: "2x+", label: "Chain Average CPL" },
       { value: "185+", label: "Healthcare Accounts Managed" },
     ],
-    includesTitle: "Everything Between a Click and a Cost Per Booking.",
+    includesTitle: "Everything Between a Click and a Cost Per Booking",
     includesIntro:
       "Attribution is only as reliable as the data underneath it. These six pieces make that data trustworthy, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1478,7 +1478,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How Attribution Is Built",
-    processTitle: "From Messy Data to One Number You Can Act On.",
+    processTitle: "From Messy Data to One Number You Can Act On",
     processNote:
       "We start by measuring how much of your demand is traceable today, then close the gaps week by week.",
     process: [
@@ -1535,7 +1535,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Walk-In Tracking",
     title: "Walk-In Tracking",
     heading: "Booking Is a Promise,",
-    accent: "Walk-In Is a Patient.",
+    accent: "Walk-In Is a Patient",
     description:
       "We match your bookings to clinic attendance in your PMS or HIS, so every walk-in traces back to its campaign, and every unmatched visit is shown honestly.",
     ctaLabel: "Discuss Walk-In Measurement",
@@ -1551,7 +1551,7 @@ export const SERVICES = [
       { value: "8", label: "Months from Setup to Result" },
       { value: "15", label: "Agents. Same Team. Same CRM" },
     ],
-    includesTitle: "The Matching Rules Behind Every Walk-In You Count.",
+    includesTitle: "The Matching Rules Behind Every Walk-In You Count",
     includesIntro:
       "Walk-in tracking is a data-governance job as much as a reporting one. These six pieces keep it accurate and private, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1581,7 +1581,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How Walk-Ins Are Matched",
-    processTitle: "Booked. Arrived. Matched to Source.",
+    processTitle: "Booked. Arrived. Matched to Source",
     processNote:
       "We start by measuring how much of your demand is traceable today, then close the gaps week by week.",
     process: [
@@ -1638,7 +1638,7 @@ export const SERVICES = [
     eyebrow: "Healthcare Messaging and Follow-Up",
     title: "Messaging & Follow-Up",
     heading: "Every Undecided Patient",
-    accent: "Gets a Second Opinion.",
+    accent: "Gets a Second Opinion",
     description:
       "We give every enquiry an owner, a follow-up plan and the right message on WhatsApp, calls and email, so undecided patients hear back before they choose another clinic.",
     ctaLabel: "Discuss Your Follow-Up",
@@ -1654,7 +1654,7 @@ export const SERVICES = [
       { value: "115+", label: "Locations Served" },
       { value: "2.1x", label: "Monthly Walks for a Location Group" },
     ],
-    includesTitle: "Every Conversation Owned, Until It Ends.",
+    includesTitle: "Every Conversation Owned, Until It Ends",
     includesIntro:
       "More messages don't create better follow-up. Timing, relevance, consent and a named owner do. These six pieces build that in, inside the Reinvent Digital Patient Acquisition System.",
     includes: [
@@ -1684,7 +1684,7 @@ export const SERVICES = [
       },
     ],
     processEyebrow: "How Follow-Up Is Designed",
-    processTitle: "Purpose, Owner & Stop-Rule for Every Message.",
+    processTitle: "Purpose, Owner & Stop-Rule for Every Message",
     processNote:
       "Follow-up should feel helpful to the patient and simple for your team, never like spam.",
     process: [

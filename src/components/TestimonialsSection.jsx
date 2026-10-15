@@ -8,7 +8,7 @@ import { EASE } from "./motion/easing";
 const TESTIMONIALS = [
   {
     quote:
-      "Reinvent Digital didn't just send us leads — they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
+      "Reinvent Digital didn't just send us leads, they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
     name: "Dr. Aakash Mehta",
     role: "Clinical Director, multi-location dental group",
     rating: 5,
@@ -22,7 +22,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "For the first time, our board sees one number for marketing performance across every department — not fourteen different spreadsheets.",
+      "For the first time, our board sees one number for marketing performance across every department, not fourteen different spreadsheets.",
     name: "Ms. Kavitha Iyer",
     role: "VP Growth & Marketing, multi-speciality hospital group",
     rating: 4.8,
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
           </span>
           <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
             What Healthcare Leaders Say,{" "}
-            <span className="font-serif-italic font-medium text-ink-soft">In Their Own Words.</span>
+            <span className="font-serif-italic font-medium text-ink-soft">In Their Own Words</span>
           </h2>
         </Reveal>
 

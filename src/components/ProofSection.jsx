@@ -46,7 +46,7 @@ export default function ProofSection() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-balance text-[clamp(1.75rem,1.3rem+2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
-              More Than Double the Monthly Walk-Ins, With the Same 15-Agent Call Team.
+              More Than Double the Monthly Walk-Ins, With the Same 15-Agent Call Team
             </h2>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
               A 115+ location dental group didn't have a lead-volume problem. It had a response and conversion problem.

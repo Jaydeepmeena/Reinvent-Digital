@@ -3,7 +3,7 @@
 // The site reads posts straight from WordPress's own REST API, so publishing a
 // post in WordPress is all that's needed for it to appear here. A custom
 // backend can be used instead as long as it returns the simplified shape
-// documented in docs/blog-api.md — both are normalised to the same Post below.
+// documented in docs/blog-api.md, both are normalised to the same Post below.
 import DOMPurify from "dompurify";
 import { SAMPLE_POSTS } from "../data/sampleBlogs";
 

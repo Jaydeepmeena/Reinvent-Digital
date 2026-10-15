@@ -98,7 +98,7 @@ export default function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
               >
-                Start Counting Patient Walk-Ins.
+                Start Counting Patient Walk-Ins
               </motion.span>
             </span>
           </h1>

@@ -41,8 +41,8 @@ const DETAILS = [
 export default function CTASection({
   id = "contact",
   eyebrow = "Contact Us",
-  heading = "Want a Patient Acquisition System for Your Group? Let's Talk.",
-  body = "Talk to us about the gaps between your channels, CRM, call centre and clinic data — and what it would take to connect them.",
+  heading = "Want a Patient Acquisition System for Your Group? Let's Talk",
+  body = "Talk to us about the gaps between your channels, CRM, call centre and clinic data, and what it would take to connect them.",
   ctaLabel = "Discuss Your Growth Plan",
   ctaHref = "mailto:hello@reinventdigital.com",
   footnote = "Google Ads · Meta Ads · SEO · AEO & GEO · CRM · Call Centre",
@@ -70,7 +70,7 @@ export default function CTASection({
           />
 
           <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            {/* Photo column — fades into the panel rather than ending on a hard edge */}
+            {/* Photo column, fades into the panel rather than ending on a hard edge */}
             <div className="relative hidden min-h-[22rem] lg:block">
               <img
                 src={contactImg}

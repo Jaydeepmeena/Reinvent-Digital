@@ -16,7 +16,7 @@ const CITIES = [
 
 const STEPS = [
   { tag: "Day 1", title: "Tell Us About Your Clinic", body: "Share your current channels, locations and where enquiries seem to be getting lost." },
-  { tag: "Week 1", title: "We map the gaps", body: "We review your funnel — from first click to walk-in — and show you exactly where the system is leaking." },
+  { tag: "Week 1", title: "We map the gaps", body: "We review your funnel, from first click to walk-in, and show you exactly where the system is leaking." },
   { tag: "Week 2", title: "We propose a plan", body: "A scoped plan across the channels, CRM and call centre work that will move the needle fastest." },
 ];
 
@@ -29,8 +29,8 @@ export default function ContactPage() {
         trail={[{ label: "Contact Us" }]}
         eyebrow="Let's Talk"
         title="Contact Us"
-        accent="Let's Map Your Patient Acquisition System."
-        description="Tell us about your clinics, your current channels and where enquiries seem to go quiet. We'll come back with a clear view of where the gaps are — no generic pitch deck."
+        accent="Let's Map Your Patient Acquisition System"
+        description="Tell us about your clinics, your current channels and where enquiries seem to go quiet. We'll come back with a clear view of where the gaps are, no generic pitch deck."
         ctaLabel="Email Us Directly"
         ctaHref="mailto:hello@reinventdigital.com"
         visual={<ChatVisual />}
@@ -135,7 +135,7 @@ export default function ContactPage() {
               type="wave"
               className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight"
             >
-              Three steps from first email to a scoped plan.
+              Three steps from first email to a scoped plan
             </SplitReveal>
           </div>
           <PathSteps steps={STEPS} />

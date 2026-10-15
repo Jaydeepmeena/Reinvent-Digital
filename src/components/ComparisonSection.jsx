@@ -46,7 +46,7 @@ export default function ComparisonSection() {
             </span>
             <h2 className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.6rem)] font-extrabold leading-[1.12] tracking-tight text-cream">
               We Don't Price Our Value Around a{" "}
-              <span className="font-serif-italic font-medium text-lime">Percentage of Media Spend.</span>
+              <span className="font-serif-italic font-medium text-lime">Percentage of Media Spend</span>
             </h2>
           </Reveal>
 

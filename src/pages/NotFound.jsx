@@ -24,7 +24,7 @@ export default function NotFound() {
           delay={0.3}
           className="relative mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink sm:text-4xl"
         >
-          This page hasn't been built yet.
+          This page hasn't been built yet
         </SplitReveal>
         <p className="relative mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
           The page you're looking for doesn't exist or hasn't been published. Head back home or get in touch directly.
