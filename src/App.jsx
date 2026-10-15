@@ -13,6 +13,7 @@ const CaseStudiesPage = lazy(() => import("./pages/CaseStudiesPage"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
 const LocationPage = lazy(() => import("./pages/LocationPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+const LandingPage = lazy(() => import("./pages/LandingPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
@@ -32,6 +33,11 @@ export default function App() {
         <Route path="resources/:slug" element={<ResourcePage />} />
         <Route path="locations/:slug" element={<LocationPage />} />
         <Route path="contact" element={<ContactPage />} />
+        {/* API-driven landing pages, published in bulk and linked from
+            nowhere on the site. This is a single root-level segment, so it
+            ranks below every static route above and catches what is left:
+            a slug with no page behind it renders the 404 itself. */}
+        <Route path=":slug" element={<LandingPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
