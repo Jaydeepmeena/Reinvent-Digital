@@ -26,7 +26,26 @@ import walkInBanner from "../assets/heroes/Healthcare-Walk-In-Tracking.jpg";
 import callCentreBanner from "../assets/heroes/Healthcare-Call-Centre-Optimisation.jpg";
 import messagingBanner from "../assets/heroes/Healthcare-Messaging-and-Follow-Up.jpg";
 
-// Client banners: industry, resource and home.
+// Faint backdrop art for the service page's ROAS metric tile.
+import googleAdsMetricArt from "../assets/images/avg-google-ads-img.png";
+import metaAdsMetricArt from "../assets/images/meta-ads-img.png";
+import chatgptAdsMetricArt from "../assets/images/chatgpt-ad-img.jpg";
+import seoMetricArt from "../assets/images/heathcare-seo-img.png";
+import aeoMetricArt from "../assets/images/heathcare-aeo-img.png";
+import geoMetricArt from "../assets/images/heathcare-geo-img.jpg";
+import businessProfileMetricArt from "../assets/images/business-profile-optimisation-img.png";
+import localSeoMetricArt from "../assets/images/local-seo-img.png";
+import youtubeMarketingMetricArt from "../assets/images/youtube-marketing.png";
+import socialMediaManagementMetricArt from "../assets/images/social-media-management-img.png";
+import marketingAutomationMetricArt from "../assets/images/marketing-automation-img.jpg";
+import crmMetricArt from "../assets/images/crm-marketing-img.jpg";
+import telephonyMetricArt from "../assets/images/telephony-img.jpg";
+import bookingAttributionMetricArt from "../assets/images/booking-attribution-img.jpg";
+import walkInTrackingMetricArt from "../assets/images/walk-in-tracking-img.png";
+import callCentreManagementMetricArt from "../assets/images/call-centre-management-img.jpg";
+import messagingFollowUpMetricArt from "../assets/images/messaging-follow-up-img.jpg";
+
+// Client banners — industry, resource and home.
 import dentalBanner from "../assets/heroes/dental-clinic.jpg";
 import ivfBanner from "../assets/heroes/IVF-&-Fertility-Clinic.jpg";
 import eyeBanner from "../assets/heroes/Eye-Care-Clinic.jpg";
@@ -75,6 +94,27 @@ export const SERVICE_HERO_IMAGES = {
   "walk-in-tracking": [walkInBanner, BANNER],
   "call-centre-management": [callCentreBanner, BANNER],
   "messaging-follow-up": [messagingBanner, BANNER],
+};
+
+// Keyed by service slug; pages without an entry render the metric tile plain.
+export const SERVICE_METRIC_IMAGES = {
+  "google-ads": googleAdsMetricArt,
+  "meta-ads": metaAdsMetricArt,
+  "chatgpt-ads": chatgptAdsMetricArt,
+  seo: seoMetricArt,
+  aeo: aeoMetricArt,
+  geo: geoMetricArt,
+  "business-profile-optimisation": businessProfileMetricArt,
+  "local-seo": localSeoMetricArt,
+  "youtube-marketing": youtubeMarketingMetricArt,
+  "social-media-management": socialMediaManagementMetricArt,
+  "marketing-automation": marketingAutomationMetricArt,
+  crm: crmMetricArt,
+  telephony: telephonyMetricArt,
+  "booking-attribution": bookingAttributionMetricArt,
+  "walk-in-tracking": walkInTrackingMetricArt,
+  "call-centre-management": callCentreManagementMetricArt,
+  "messaging-follow-up": messagingFollowUpMetricArt,
 };
 
 export const INDUSTRY_HERO_IMAGES = {
