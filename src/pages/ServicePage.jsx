@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { Check } from "lucide-react";
 import { getServiceBySlug } from "../data/services";
+import { usePageContent } from "../lib/pageContent";
+import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { SERVICE_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
@@ -19,7 +21,9 @@ const RENAMED = { "aeo-geo": "aeo" };
 
 export default function ServicePage() {
   const { slug } = useParams();
-  const service = getServiceBySlug(slug);
+  const { entry: service, status } = usePageContent("services", slug, getServiceBySlug(slug));
+
+  if (status === "loading") return <PageLoading />;
 
   if (!service) {
     const renamed = RENAMED[slug];

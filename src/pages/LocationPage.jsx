@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { MapPin, Phone, Check } from "lucide-react";
 import { findLocation, LOCATIONS } from "../data/locations";
+import { usePageContent } from "../lib/pageContent";
+import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { LOCATION_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
@@ -58,8 +60,9 @@ function PointsSection({ heading, body, points, tone = "light" }) {
 
 export default function LocationPage() {
   const { slug } = useParams();
-  const page = findLocation(slug);
+  const { entry: page, status } = usePageContent("locations", slug, findLocation(slug));
 
+  if (status === "loading") return <PageLoading />;
   if (!page) return <Navigate to="/" replace />;
 
   const { city, eyebrow, headingA, headingB, intro, ctaLabel, stats, search, system, trust, office, plan, faqs } = page;

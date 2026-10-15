@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { Quote } from "lucide-react";
 import { getAboutBySlug } from "../data/about";
+import { usePageContent } from "../lib/pageContent";
+import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { ABOUT_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
@@ -18,8 +20,9 @@ const VALUES = ["Ownership", "Evidence", "Healthcare only", "Booked Patients", "
 
 export default function AboutPage() {
   const { slug } = useParams();
-  const page = getAboutBySlug(slug);
+  const { entry: page, status } = usePageContent("about", slug, getAboutBySlug(slug));
 
+  if (status === "loading") return <PageLoading />;
   if (!page) return <Navigate to="/" replace />;
 
   const { icon, eyebrow, title, accent, description, sections, stats, highlights, quote } = page;

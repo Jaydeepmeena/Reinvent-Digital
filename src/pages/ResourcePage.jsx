@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { getResourceBySlug, RESOURCE_PAGES } from "../data/resources";
+import { usePageContent } from "../lib/pageContent";
+import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { RESOURCE_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
@@ -13,8 +15,9 @@ import FlipLinkCard from "../components/fx/FlipLinkCard";
 
 export default function ResourcePage() {
   const { slug } = useParams();
-  const page = getResourceBySlug(slug);
+  const { entry: page, status } = usePageContent("resources", slug, getResourceBySlug(slug));
 
+  if (status === "loading") return <PageLoading />;
   if (!page) return <Navigate to="/" replace />;
 
   const { eyebrow, title, accent, description, items } = page;

@@ -2,6 +2,8 @@ import { Fragment, useRef } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
 import { getIndustryBySlug, INDUSTRIES } from "../data/industries";
+import { usePageContent } from "../lib/pageContent";
+import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { INDUSTRY_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
@@ -118,8 +120,9 @@ function OtherIndustries({ current }) {
 
 export default function IndustryPage() {
   const { slug } = useParams();
-  const industry = getIndustryBySlug(slug);
+  const { entry: industry, status } = usePageContent("industries", slug, getIndustryBySlug(slug));
 
+  if (status === "loading") return <PageLoading />;
   if (!industry) return <Navigate to="/" replace />;
 
   const {
