@@ -72,6 +72,83 @@ function IndustryVisual({ highlights, metric }) {
   );
 }
 
+/** One labelled bar of a before-and-after. */
+function BarRow({ name, figure, caption, width, tone }) {
+  return (
+    <div className="mt-5 first:mt-0">
+      <div className="flex items-baseline justify-between gap-4">
+        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink">{name}</span>
+        {caption && <span className="text-[12px] text-ink-soft">{caption}</span>}
+      </div>
+      <div className="mt-2 h-12 w-full overflow-hidden rounded-xl bg-ink/[0.07] sm:h-14">
+        <div
+          data-bar
+          style={{ width }}
+          className={`flex h-full items-center justify-end rounded-xl px-4 ${tone}`}
+        >
+          <span className="text-[clamp(1.1rem,0.9rem+0.8vw,1.6rem)] font-extrabold tabular-nums leading-none">
+            {figure}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * A before and after, read as two bars against each other.
+ *
+ * The bars are drawn to scale: the larger figure fills the track and the
+ * smaller one takes its share of it, so the gap between them is the point
+ * rather than the two numbers being read and compared in the head. Shown only
+ * when the entry carries a comparison; a page with plain figures keeps them as
+ * cards.
+ */
+function BeforeAfter({ label, growth, growthLabel = "growth", before, after }) {
+  const ref = useRef(null);
+
+  // "~48", "3,400", "7,600" all come back as a number to size the bar with.
+  const size = (v) => Number(String(v ?? "").replace(/[^0-9.]/g, "")) || 0;
+  const peak = Math.max(size(before?.value), size(after?.value)) || 1;
+  const width = (v) => `${Math.max(12, Math.round((size(v) / peak) * 100))}%`;
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(MOTION_OK, () => {
+        gsap.from(ref.current.querySelectorAll("[data-bar]"), {
+          scaleX: 0,
+          transformOrigin: "left center",
+          duration: 1,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
+        });
+      });
+    },
+    { scope: ref }
+  );
+
+  return (
+    <div ref={ref} className="rounded-2xl border border-ink/10 bg-white p-5 sm:p-7">
+      <div className="flex items-center justify-between gap-4">
+        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-soft">{label}</span>
+        {growth && (
+          <span className="inline-flex items-baseline gap-1.5 rounded-full bg-lime px-3 py-1">
+            <span className="text-sm font-extrabold leading-none text-ink">{growth}</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-ink/70">{growthLabel}</span>
+          </span>
+        )}
+      </div>
+
+      <div className="mt-5">
+        <BarRow name="Before" figure={before?.value} caption={before?.label} width={width(before?.value)} tone="bg-ink text-cream" />
+        <BarRow name="After" figure={after?.value} caption={after?.label} width={width(after?.value)} tone="bg-lime text-ink" />
+      </div>
+    </div>
+  );
+}
+
 function OtherIndustries({ current }) {
   const ref = useRef(null);
   const { navEntries } = usePageCollection("industries", INDUSTRIES);
@@ -229,20 +306,24 @@ export default function IndustryPage({ slug: given }) {
               </p>
             </div>
 
-            <div className="grid gap-4 self-start sm:grid-cols-2">
-              {(proof.stats ?? []).map(({ value, label }, i) => (
-                <div
-                  key={label}
-                  className={`rounded-2xl p-5 sm:p-6 ${
-                    i % 2 ? "bg-lime text-ink" : "bg-ink text-cream"
-                  }`}
-                >
-                  <div className="text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-extrabold leading-none">
-                    <CountUp value={value} />
+            <div className="self-start">
+              {proof.comparison && <BeforeAfter {...proof.comparison} />}
+
+              <div className={`grid gap-4 sm:grid-cols-2 ${proof.comparison ? "mt-4" : ""}`}>
+                {(proof.stats ?? []).map(({ value, label }, i) => (
+                  <div
+                    key={label}
+                    className={`rounded-2xl p-5 sm:p-6 ${
+                      i % 2 ? "bg-lime text-ink" : "bg-ink text-cream"
+                    }`}
+                  >
+                    <div className="text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-extrabold leading-none">
+                      <CountUp value={value} />
+                    </div>
+                    <div className="mt-2 text-[13px] leading-snug opacity-70">{label}</div>
                   </div>
-                  <div className="mt-2 text-[13px] leading-snug opacity-70">{label}</div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 

@@ -117,19 +117,20 @@ export const INDUSTRIES = [
       "eyebrow": "Proof, Not a Vague Promise",
       "heading": "5500 to 11,500 Walk-Ins, Without Hiring a Single Agent!",
       "body": "Same 15 agents. Same CRM. Same 115+ clinics. Eight months later, this dental group was seeing 6,000 more walk-ins every month. What changed sits between the enquiry and the appointment.",
-      "stats": [
-        {
-          "value": "2.1X INCREASE",
-          "label": "AVG MONTHLY WALK-INS PER CLINIC"
-        },
-        {
+      "comparison": {
+        "label": "Before → After",
+        "growth": "2.1x",
+        "growthLabel": "growth",
+        "before": {
           "value": "~48",
-          "label": "BEFORE"
+          "label": "avg monthly walk-ins per clinic"
         },
-        {
+        "after": {
           "value": "~100",
-          "label": "AFTER"
-        },
+          "label": "after eight months"
+        }
+      },
+      "stats": [
         {
           "value": "20-30%",
           "label": "MISSED LEADS RECOVERED IN SAME SESSION"
