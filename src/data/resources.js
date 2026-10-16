@@ -2,7 +2,7 @@ import { FileText, BarChart3, Newspaper } from "lucide-react";
 
 export const RESOURCE_PAGES = [
   {
-    slug: "case-study",
+    slug: "resources/case-study",
     icon: FileText,
     eyebrow: "Proof of Work",
     title: "Case Studies",
@@ -31,7 +31,7 @@ export const RESOURCE_PAGES = [
     ],
   },
   {
-    slug: "blogs",
+    slug: "resources/blogs",
     icon: Newspaper,
     eyebrow: "Insights",
     title: "Blog",
@@ -46,4 +46,7 @@ export const RESOURCE_PAGES = [
   },
 ];
 
-export const getResourceBySlug = (slug) => RESOURCE_PAGES.find((r) => r.slug === slug);
+// Matched on the last segment, because a slug is a path now and these two name
+// the section they point at.
+export const getResourceBySlug = (slug) =>
+  RESOURCE_PAGES.find((r) => r.slug === slug || r.slug.split("/").pop() === slug);

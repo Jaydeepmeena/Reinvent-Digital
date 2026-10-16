@@ -10,6 +10,7 @@ import hospitalImg from "../assets/Specialities/Multi-Speciality-Hospital.png";
 import Reveal from "./motion/Reveal";
 import CountUp from "./motion/CountUp";
 import { EASE } from "./motion/easing";
+import { usePageCollection } from "../lib/pageContent";
 
 const IMAGES = {
   "dental-clinic": dentalImg,
@@ -37,6 +38,7 @@ const COUNTERS = [
 ];
 
 export default function IndustriesSection() {
+  const { navEntries: industries } = usePageCollection("industries", INDUSTRIES);
   return (
     <section id="industries" className="section-y-tight bg-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.75fr_2fr] lg:gap-16">
@@ -77,12 +79,12 @@ export default function IndustriesSection() {
               <span className="font-serif-italic font-medium text-ink-soft">With More Than One Front Door</span>
             </h2>
             <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink-soft">
-              [ {INDUSTRIES.length.toString().padStart(2, "0")} specialities ]
+              [ {industries.length.toString().padStart(2, "0")} specialities ]
             </span>
           </Reveal>
 
           <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8">
-            {INDUSTRIES.map(({ slug, title, eyebrow, metric }, i) => {
+            {industries.map(({ slug, path, title, eyebrow, metric }, i) => {
               // Cards 1 and 4 sit dark, so the two columns read as a checkerboard.
               const dark = i === 0 || i === 3;
               return (
@@ -95,7 +97,7 @@ export default function IndustriesSection() {
                   // Offset the second column so the grid staggers down the page.
                   className={i % 2 === 1 ? "sm:mt-16" : ""}
                 >
-                  <Link to={`/industries/${slug}`} className="group block">
+                  <Link to={path} className="group block">
                     <div
                       className={`relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[1.5rem] border-4 border-white p-6 shadow-lg shadow-ink/10 transition-[background-color,color,box-shadow] duration-300 group-hover:shadow-xl group-hover:shadow-ink/15 sm:p-7 ${
                         dark ? "bg-ink text-cream" : "bg-lime-soft text-ink"

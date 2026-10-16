@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
@@ -9,21 +9,22 @@ import { LOCATIONS } from "../data/locations";
 import { INDUSTRIES } from "../data/industries";
 import { RESOURCE_PAGES } from "../data/resources";
 import { ABOUT_PAGES } from "../data/about";
+import { usePageCollection } from "../lib/pageContent";
 
-const WHAT_WE_DO = ["Digital Marketing", "Tools & Measurement", "Response & Call Centre"].map((category) => ({
-  title: category,
-  items: SERVICES.filter((s) => s.category === category),
-}));
+// The order the mega menu reads in. A service the CMS files under a category
+// that is not listed here still appears, in a column of its own at the end, so
+// a new category does not need a deploy.
+const CATEGORIES = ["Digital Marketing", "Tools & Measurement", "Response & Call Centre"];
 
-
-
-const MENU = [
-  { key: "what-we-do", label: "What We Do", type: "mega", match: "/what-we-do" },
-  { key: "industries", label: "Industries", type: "list", items: INDUSTRIES, base: "/industries", match: "/industries" },
-  { key: "resources", label: "Resources", type: "list", items: RESOURCE_PAGES, base: "/resources", match: "/resources" },
-  { key: "locations", label: "Locations", type: "locations" },
-  { key: "about", label: "About Us", type: "list", items: ABOUT_PAGES, base: "/about", match: "/about" },
-];
+const groupByCategory = (services) => {
+  const titles = [...CATEGORIES];
+  for (const service of services) {
+    if (service.category && !titles.includes(service.category)) titles.push(service.category);
+  }
+  return titles
+    .map((title) => ({ title, items: services.filter((s) => s.category === title) }))
+    .filter((group) => group.items.length > 0);
+};
 
 const PILL = { type: "spring", stiffness: 380, damping: 32 };
 
@@ -55,9 +56,41 @@ export default function Navbar() {
   const lenis = useLenis();
   const { pathname } = useLocation();
 
-  // The sliding pill follows the pointer, falls back to the open menu, then to the current page.
-  const activeKey =
-    pathname === "/" ? "home" : (MENU.find((m) => m.match && pathname.startsWith(m.match))?.key ?? null);
+  // The menus list whatever the CMS says exists: a page it has published, under
+  // the name and slug it gave that page, in the order it asked for, minus the
+  // ones it has taken down. Until it answers, these are the bundled lists.
+  const { navEntries: services } = usePageCollection("services", SERVICES);
+  const { navEntries: industries } = usePageCollection("industries", INDUSTRIES);
+  const { navEntries: locations } = usePageCollection("locations", LOCATIONS);
+  const { navEntries: resources } = usePageCollection("resources", RESOURCE_PAGES);
+  const { navEntries: about } = usePageCollection("about", ABOUT_PAGES);
+
+  const whatWeDo = useMemo(() => groupByCategory(services), [services]);
+  const menus = useMemo(
+    () => [
+      { key: "what-we-do", label: "What We Do", type: "mega", items: services },
+      { key: "industries", label: "Industries", type: "list", items: industries },
+      { key: "resources", label: "Resources", type: "list", items: resources },
+      { key: "locations", label: "Locations", type: "locations", items: locations },
+      { key: "about", label: "About Us", type: "list", items: about },
+    ],
+    [services, industries, locations, resources, about]
+  );
+
+  // Which menu the current page belongs to. A page's path is its own now, so
+  // this asks the pages rather than matching a prefix: an exact hit, or the
+  // section a deeper page sits under, which is what keeps the blog lighting up
+  // Resources.
+  const activeKey = useMemo(() => {
+    if (pathname === "/") return "home";
+    for (const menu of menus) {
+      for (const item of menu.items ?? []) {
+        if (!item.path) continue;
+        if (pathname === item.path || pathname.startsWith(`${item.path}/`)) return menu.key;
+      }
+    }
+    return null;
+  }, [menus, pathname]);
   const pillKey = hovered ?? openMenu ?? activeKey;
 
   const clearHoverTimer = () => {
@@ -163,7 +196,7 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center lg:flex">
-            {MENU.map((menu) => (
+            {menus.map((menu) => (
               <button
                 key={menu.key}
                 type="button"
@@ -246,7 +279,7 @@ export default function Navbar() {
             className="absolute inset-x-0 top-full hidden pt-3 lg:block"
           >
             {(() => {
-              const menu = MENU.find((m) => m.key === openMenu);
+              const menu = menus.find((m) => m.key === openMenu);
               if (!menu) return null;
               const width = menu.type === "mega" ? 640 : menu.type === "locations" ? 320 : 256;
               // Sit under the trigger, but never past the right edge.
@@ -264,16 +297,16 @@ export default function Navbar() {
                 >
                   {menu.type === "mega" && (
                     <div className="grid grid-cols-3 gap-6">
-                      {WHAT_WE_DO.map((group) => (
+                      {whatWeDo.map((group) => (
                         <motion.div key={group.title} variants={panelItem}>
                           <h4 className="text-xs font-semibold uppercase tracking-wide text-green-deep">
                             {group.title}
                           </h4>
                           <ul className="mt-3 space-y-1">
-                            {group.items.map(({ slug, title, icon: Icon }) => (
+                            {group.items.map(({ slug, path, title, icon: Icon }) => (
                               <li key={slug}>
                                 <Link
-                                  to={`/what-we-do/${slug}`}
+                                  to={path}
                                   onClick={() => setOpenMenu(null)}
                                   className="flex items-start gap-2 rounded-lg px-2 py-1.5 text-[13px] leading-snug text-ink-soft transition-colors hover:bg-lime-soft hover:text-green-deep"
                                 >
@@ -290,10 +323,10 @@ export default function Navbar() {
 
                   {menu.type === "list" && (
                     <ul className="space-y-1">
-                      {menu.items.map(({ slug, title, icon: Icon }) => (
+                      {menu.items.map(({ slug, path, title, icon: Icon }) => (
                         <motion.li key={slug} variants={panelItem}>
                           <Link
-                            to={`${menu.base}/${slug}`}
+                            to={path}
                             onClick={() => setOpenMenu(null)}
                             className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-lime-soft hover:text-green-deep"
                           >
@@ -307,10 +340,10 @@ export default function Navbar() {
 
                   {menu.type === "locations" && (
                     <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                      {LOCATIONS.map(({ slug, city }) => (
+                      {locations.map(({ slug, path, city }) => (
                         <motion.div key={slug} variants={panelItem}>
                         <Link
-                          to={`/locations/${slug}`}
+                          to={path}
                           onClick={() => setOpenMenu(null)}
                           className="flex min-w-0 items-start gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium leading-tight text-ink-soft transition-colors hover:bg-lime-soft hover:text-green-deep"
                         >
@@ -338,7 +371,7 @@ export default function Navbar() {
             className="mx-3 mt-3 overflow-hidden rounded-[1.75rem] border border-ink/[0.07] bg-white shadow-[0_30px_60px_-30px_rgba(27,27,23,0.5)] sm:mx-5 lg:hidden"
           >
             <div data-lenis-prevent className="flex h-[calc(100dvh-7rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-4 py-4">
-              {MENU.map((menu) => (
+              {menus.map((menu) => (
                 <div key={menu.key} className="border-t border-ink/5 pt-1 first:border-t-0 first:pt-0">
                   <button
                     type="button"
@@ -365,16 +398,16 @@ export default function Navbar() {
                         className="overflow-hidden pl-3"
                       >
                         {menu.type === "mega" &&
-                          WHAT_WE_DO.map((group) => (
+                          whatWeDo.map((group) => (
                             <div key={group.title} className="py-2">
                               <span className="text-xs font-semibold uppercase tracking-wide text-green-deep">
                                 {group.title}
                               </span>
                               <div className="mt-1 flex flex-col">
-                                {group.items.map(({ slug, title, icon: Icon }) => (
+                                {group.items.map(({ slug, path, title, icon: Icon }) => (
                                   <Link
                                     key={slug}
-                                    to={`/what-we-do/${slug}`}
+                                    to={path}
                                     onClick={() => setMobileOpen(false)}
                                     className="flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm text-ink-soft"
                                   >
@@ -387,10 +420,10 @@ export default function Navbar() {
                           ))}
 
                         {menu.type === "list" &&
-                          menu.items.map(({ slug, title, icon: Icon }) => (
+                          menu.items.map(({ slug, path, title, icon: Icon }) => (
                             <Link
                               key={slug}
-                              to={`${menu.base}/${slug}`}
+                              to={path}
                               onClick={() => setMobileOpen(false)}
                               className="flex items-center gap-2.5 rounded-lg px-2 py-2 text-sm text-ink-soft"
                             >
@@ -401,10 +434,10 @@ export default function Navbar() {
 
                         {menu.type === "locations" && (
                           <div className="grid grid-cols-2 gap-x-2 py-1">
-                            {LOCATIONS.map(({ slug, city }) => (
+                            {locations.map(({ slug, path, city }) => (
                               <Link
                                 key={slug}
-                                to={`/locations/${slug}`}
+                                to={path}
                                 onClick={() => setMobileOpen(false)}
                                 className="flex min-w-0 items-start gap-1.5 rounded-lg px-2 py-2 text-sm leading-tight text-ink-soft"
                               >

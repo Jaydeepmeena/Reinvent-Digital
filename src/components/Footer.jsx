@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
 import logo from "../assets/rd-logo.png";
@@ -5,26 +6,7 @@ import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
 import { ABOUT_PAGES } from "../data/about";
 import { RESOURCE_PAGES } from "../data/resources";
-
-const DIGITAL_MARKETING = SERVICES.filter((s) => s.category === "Digital Marketing").slice(0, 6);
-
-const COLUMNS = [
-  {
-    title: "What We Do",
-    links: DIGITAL_MARKETING.map((s) => ({ label: s.title, to: `/what-we-do/${s.slug}` })),
-  },
-  {
-    title: "Industries",
-    links: [
-      ...INDUSTRIES.map((i) => ({ label: i.title, to: `/industries/${i.slug}` })),
-      ...RESOURCE_PAGES.map((r) => ({ label: r.title, to: `/resources/${r.slug}` })),
-    ],
-  },
-  {
-    title: "Company",
-    links: ABOUT_PAGES.map((a) => ({ label: a.title, to: `/about/${a.slug}` })),
-  },
-];
+import { usePageCollection } from "../lib/pageContent";
 
 // lucide dropped its brand glyphs, so the social marks are inline.
 const SOCIALS = [
@@ -46,6 +28,37 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  // Same lists the navbar reads, so the footer cannot fall out of step with a
+  // slug the CMS has changed.
+  const { navEntries: services } = usePageCollection("services", SERVICES);
+  const { navEntries: industries } = usePageCollection("industries", INDUSTRIES);
+  const { navEntries: resources } = usePageCollection("resources", RESOURCE_PAGES);
+  const { navEntries: about } = usePageCollection("about", ABOUT_PAGES);
+
+  const columns = useMemo(
+    () => [
+      {
+        title: "What We Do",
+        links: services
+          .filter((s) => s.category === "Digital Marketing")
+          .slice(0, 6)
+          .map((s) => ({ label: s.title, to: s.path })),
+      },
+      {
+        title: "Industries",
+        links: [
+          ...industries.map((i) => ({ label: i.title, to: i.path })),
+          ...resources.map((r) => ({ label: r.title, to: r.path })),
+        ],
+      },
+      {
+        title: "Company",
+        links: about.map((a) => ({ label: a.title, to: a.path })),
+      },
+    ],
+    [services, industries, resources, about]
+  );
+
   return (
     <footer className="relative isolate overflow-hidden bg-ink text-cream">
       {/* Lime light spilling in from the two top corners */}
@@ -90,7 +103,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {COLUMNS.map(({ title, links }) => (
+          {columns.map(({ title, links }) => (
             <div key={title}>
               <h4 className="text-lg font-bold text-cream">{title}</h4>
               <ul className="mt-5 space-y-3">

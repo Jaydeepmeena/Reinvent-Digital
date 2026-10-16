@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { MapPin, Phone, Check } from "lucide-react";
-import { findLocation, LOCATIONS } from "../data/locations";
-import { usePageContent } from "../lib/pageContent";
+import { LOCATIONS } from "../data/locations";
+import { usePageCollection, usePageEntry } from "../lib/pageContent";
 import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { LOCATION_HERO_IMAGES } from "../data/heroImages";
@@ -13,7 +13,7 @@ import SplitReveal from "../components/fx/SplitReveal";
 import Reveal from "../components/motion/Reveal";
 
 /** A heading, its lead paragraph and a grid of titled points. */
-function PointsSection({ heading, body, points, tone = "light" }) {
+function PointsSection({ heading, body, points = [], tone = "light" }) {
   const dark = tone === "dark";
   return (
     <section className={`section-y ${dark ? "bg-ink text-cream" : "bg-paper"}`}>
@@ -58,15 +58,22 @@ function PointsSection({ heading, body, points, tone = "light" }) {
   );
 }
 
-export default function LocationPage() {
-  const { slug } = useParams();
-  const { entry: page, status } = usePageContent("locations", slug, findLocation(slug));
+export default function LocationPage({ slug: given }) {
+  const { slug: fromUrl } = useParams();
+  const slug = given ?? fromUrl;
+  const { entry: page, status } = usePageEntry("locations", slug, LOCATIONS);
+  // Read before the early returns: the city list is a hook now, and a hook
+  // cannot sit behind one.
+  const { navEntries } = usePageCollection("locations", LOCATIONS);
 
   if (status === "loading") return <PageLoading />;
   if (!page) return <Navigate to="/" replace />;
 
-  const { city, eyebrow, headingA, headingB, intro, ctaLabel, stats, search, system, trust, office, plan, faqs } = page;
-  const others = LOCATIONS.filter((l) => l.slug !== slug);
+  const {
+    city, eyebrow, headingA, headingB, intro, ctaLabel, stats = [],
+    search = {}, system = {}, trust = {}, office = {}, plan = {}, faqs = [],
+  } = page;
+  const others = navEntries.filter((l) => l.slug !== slug);
 
   return (
     <InnerPage>
@@ -83,7 +90,7 @@ export default function LocationPage() {
           ctaLabel={ctaLabel}
           ctaHref="/contact"
           icon={MapPin}
-          highlights={system.points.map((point) => point.title)}
+          highlights={(system.points ?? []).map((point) => point.title)}
           metric={{ value: stats[0].value, label: stats[0].label }}
         />
 
@@ -110,7 +117,7 @@ export default function LocationPage() {
             </div>
 
             <ul className="grid gap-3 self-start">
-              {trust.points.map((point, i) => (
+              {(trust.points ?? []).map((point, i) => (
                 <Reveal as="li" key={point} delay={0.04 * i}>
                   <div className="flex items-start gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10">
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime text-ink">
@@ -149,7 +156,7 @@ export default function LocationPage() {
             )}
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {office.directions.map(({ title, body }, i) => (
+              {(office.directions ?? []).map(({ title, body }, i) => (
                 <Reveal key={title ?? body} delay={0.05 * i}>
                   <div className="h-full rounded-2xl border border-cream/12 bg-cream/[0.04] p-5 transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-cream/25 hover:bg-cream/[0.08]">
                     {title && <h3 className="text-[14px] font-bold text-lime">{title}</h3>}
@@ -187,7 +194,7 @@ export default function LocationPage() {
             </Reveal>
 
             <ol className="mt-10 grid gap-4 md:grid-cols-3">
-              {plan.steps.map(({ title, body }, i) => (
+              {(plan.steps ?? []).map(({ title, body }, i) => (
                 <Reveal as="li" key={title} delay={0.07 * i}>
                   <div className="h-full rounded-2xl border border-ink/10 bg-white p-6 transition-[border-color,box-shadow,translate] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10">
                     <span className="text-[13px] font-extrabold tracking-[0.12em] text-green-deep">
@@ -225,7 +232,7 @@ export default function LocationPage() {
               {others.map((other) => (
                 <Link
                   key={other.slug}
-                  to={`/locations/${other.slug}`}
+                  to={other.path}
                   className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:border-ink hover:bg-ink hover:text-cream"
                 >
                   <MapPin className="h-3.5 w-3.5" />

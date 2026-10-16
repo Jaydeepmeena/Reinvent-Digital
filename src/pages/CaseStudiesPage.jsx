@@ -11,9 +11,9 @@ import FannedDocs from "../components/fx/FannedDocs";
 import FlipLinkCard from "../components/fx/FlipLinkCard";
 import { getResourceBySlug, RESOURCE_PAGES } from "../data/resources";
 import { fetchCaseStudies, formatDate } from "../lib/caseStudies";
+import { usePageCollection } from "../lib/pageContent";
 
 const page = getResourceBySlug("case-study");
-const others = RESOURCE_PAGES.filter((r) => r.slug !== "case-study");
 
 /** The headline numbers, when the CMS sends them. */
 function Results({ results, tone = "light" }) {
@@ -116,6 +116,9 @@ function CardSkeleton() {
 }
 
 export default function CaseStudiesPage() {
+  // The sibling resource links follow a page the CMS has moved or renamed.
+  const { navEntries: resources } = usePageCollection("resources", RESOURCE_PAGES);
+  const others = resources.filter((r) => r.id !== "case-study");
   const [studies, setStudies] = useState([]);
   const [status, setStatus] = useState("loading");
   const [pageNo, setPageNo] = useState(1);
@@ -248,7 +251,7 @@ export default function CaseStudiesPage() {
               {others.map((r) => (
                 <FlipLinkCard
                   key={r.slug}
-                  to={`/resources/${r.slug}`}
+                  to={r.path}
                   eyebrow={r.eyebrow}
                   title={r.title}
                   back={r.description}

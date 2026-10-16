@@ -2,7 +2,6 @@
 // pages that share a photo still show a different part of it.
 // The client's own banners live in ../assets/heroes, one per page. Pages with
 // no banner of their own fall back to the shared card photography.
-import workspace from "../assets/cards/routing.jpg";
 import meeting from "../assets/cards/calls.jpg";
 import analytics from "../assets/cards/reporting.jpg";
 import fertility from "../assets/cards/industry-fertility.jpg";
@@ -87,9 +86,7 @@ export const INDUSTRY_HERO_IMAGES = {
 // No client banners for these yet, so they stay on the card photography.
 export const ABOUT_HERO_IMAGES = {
   "our-story": [meeting, LEFT],
-  "life-at-rd": [workspace, TOP],
   "our-team": [meeting, RIGHT],
-  "founders-message": [workspace, BOTTOM],
 };
 
 export const RESOURCE_HERO_IMAGES = {

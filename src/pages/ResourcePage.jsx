@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useParams, Navigate } from "react-router-dom";
-import { getResourceBySlug, RESOURCE_PAGES } from "../data/resources";
-import { usePageContent } from "../lib/pageContent";
+import { RESOURCE_PAGES } from "../data/resources";
+import { usePageCollection, usePageEntry } from "../lib/pageContent";
 import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { RESOURCE_HERO_IMAGES } from "../data/heroImages";
@@ -13,15 +13,19 @@ import HoverPreviewList from "../components/fx/HoverPreviewList";
 import FannedDocs from "../components/fx/FannedDocs";
 import FlipLinkCard from "../components/fx/FlipLinkCard";
 
-export default function ResourcePage() {
-  const { slug } = useParams();
-  const { entry: page, status } = usePageContent("resources", slug, getResourceBySlug(slug));
+export default function ResourcePage({ slug: given }) {
+  const { slug: fromUrl } = useParams();
+  const slug = given ?? fromUrl;
+  const { entry: page, status } = usePageEntry("resources", slug, RESOURCE_PAGES);
+  // Read before the early returns: the sibling list is a hook now, and a hook
+  // cannot sit behind one.
+  const { navEntries } = usePageCollection("resources", RESOURCE_PAGES);
 
   if (status === "loading") return <PageLoading />;
   if (!page) return <Navigate to="/" replace />;
 
-  const { eyebrow, title, accent, description, items } = page;
-  const others = RESOURCE_PAGES.filter((r) => r.slug !== slug);
+  const { eyebrow, title, accent, description, items = [] } = page;
+  const others = navEntries.filter((r) => r.slug !== slug);
 
   return (
     <InnerPage>
@@ -66,7 +70,7 @@ export default function ResourcePage() {
               {others.map((r) => (
                 <FlipLinkCard
                   key={r.slug}
-                  to={`/resources/${r.slug}`}
+                  to={r.path}
                   eyebrow={r.eyebrow}
                   title={r.title}
                   back={r.description}

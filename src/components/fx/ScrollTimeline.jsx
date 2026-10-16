@@ -1,6 +1,14 @@
 import { useRef } from "react";
 import { gsap, MOTION_OK, useGSAP } from "./gsap";
 
+/**
+ * A run of steps on a rail that fills as you scroll, cards alternating left and
+ * right on a wide screen.
+ *
+ * A step may carry its own `label` for the kicker above its title — a year, a
+ * phase — and falls back to "Step 01" when it does not, which is what the
+ * process timelines use.
+ */
 export default function ScrollTimeline({ steps }) {
   const ref = useRef(null);
 
@@ -41,7 +49,7 @@ export default function ScrollTimeline({ steps }) {
         <div data-progress className="h-full w-full origin-top bg-lime" />
       </div>
 
-      {steps.map(({ title, body }, i) => (
+      {steps.map(({ label, title, body }, i) => (
         <li
           key={title}
           data-step
@@ -62,7 +70,7 @@ export default function ScrollTimeline({ steps }) {
             }`}
           >
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-lime">
-              Step {String(i + 1).padStart(2, "0")}
+              {label ?? `Step ${String(i + 1).padStart(2, "0")}`}
             </span>
             <h3 className="mt-2 text-xl font-extrabold tracking-tight text-cream sm:text-2xl">{title}</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-cream/60">{body}</p>

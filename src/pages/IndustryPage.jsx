@@ -1,8 +1,8 @@
 import { Fragment, useRef } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
-import { getIndustryBySlug, INDUSTRIES } from "../data/industries";
-import { usePageContent } from "../lib/pageContent";
+import { INDUSTRIES } from "../data/industries";
+import { usePageCollection, usePageEntry } from "../lib/pageContent";
 import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { INDUSTRY_HERO_IMAGES } from "../data/heroImages";
@@ -11,8 +11,8 @@ import CountUp from "../components/motion/CountUp";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
-import HorizontalScroll from "../components/fx/HorizontalScroll";
 import ScrollTimeline from "../components/fx/ScrollTimeline";
+import Reveal from "../components/motion/Reveal";
 import { gsap, MOTION_OK, useGSAP } from "../components/fx/gsap";
 
 // The chips ring the cross at every width; they used to stack under it below xl.
@@ -22,8 +22,6 @@ const CHIP_POSITIONS = [
   "left-0 top-[46%] xl:top-[40%]",
   "right-0 top-[56%] xl:top-[55%]",
 ];
-const PANEL_TONES = ["bg-ink text-cream", "bg-lime text-ink", "bg-white text-ink border border-ink/10"];
-
 function IndustryVisual({ highlights, metric }) {
   const ref = useRef(null);
 
@@ -76,7 +74,8 @@ function IndustryVisual({ highlights, metric }) {
 
 function OtherIndustries({ current }) {
   const ref = useRef(null);
-  const others = INDUSTRIES.filter((i) => i.slug !== current);
+  const { navEntries } = usePageCollection("industries", INDUSTRIES);
+  const others = navEntries.filter((i) => i.id !== current);
 
   useGSAP(
     () => {
@@ -97,11 +96,11 @@ function OtherIndustries({ current }) {
 
   return (
     <div ref={ref} className="grid gap-3 overflow-x-clip sm:grid-cols-3 sm:gap-4">
-      {others.map(({ slug, title, icon: Icon }) => (
+      {others.map(({ id, path, title, icon: Icon }) => (
         <Link
-          key={slug}
+          key={id}
           data-other
-          to={`/industries/${slug}`}
+          to={path}
           className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl border border-ink/10 bg-white p-5 sm:p-6"
         >
           <span className="absolute inset-0 origin-left scale-x-0 bg-lime transition-transform duration-500 ease-out group-hover:scale-x-100" />
@@ -118,16 +117,18 @@ function OtherIndustries({ current }) {
   );
 }
 
-export default function IndustryPage() {
-  const { slug } = useParams();
-  const { entry: industry, status } = usePageContent("industries", slug, getIndustryBySlug(slug));
+export default function IndustryPage({ slug: given }) {
+  const { slug: fromUrl } = useParams();
+  const slug = given ?? fromUrl;
+  const { entry: industry, status } = usePageEntry("industries", slug, INDUSTRIES);
 
   if (status === "loading") return <PageLoading />;
   if (!industry) return <Navigate to="/" replace />;
 
   const {
     icon, eyebrow, title, heading, accent, description, ctaLabel,
-    heroStats, highlights, metric, problems, help, proof, closing, faqs, testimonial,
+    heroStats = [], highlights = [], metric, problems = {}, help = {}, proof = {},
+    closing = {}, faqs = [], testimonial,
   } = industry;
 
   return (
@@ -149,44 +150,48 @@ export default function IndustryPage() {
           visual={<IndustryVisual highlights={highlights} metric={metric} />}
         />
 
-        <section className="section-y overflow-x-clip border-t border-ink/[0.06] bg-white">
+        {/* The gaps this industry keeps hitting. Seven filled panels in a
+            pinned horizontal scroll made a loud wall four thousand pixels tall;
+            as a numbered list the same seven read in one pass, and the outlined
+            figures keep the character the panels had. */}
+        <section className="section-y border-t border-ink/[0.06] bg-white">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <HorizontalScroll
-              header={
-                <div className="mb-10 grid gap-6 lg:mb-14 lg:grid-cols-2 lg:items-end">
-                  <div>
-                    <Eyebrow>{problems.eyebrow}</Eyebrow>
-                    <SplitReveal
-                      as="h2"
-                      type="skewLines"
-                      className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink"
-                    >
-                      {`${problems.headingA} ${problems.headingB}`}
-                    </SplitReveal>
-                  </div>
-                  <p className="max-w-md text-[16px] leading-relaxed text-ink-soft lg:justify-self-end">
-                    {problems.body}
-                  </p>
-                </div>
-              }
-            >
-              {problems.points.map(({ title: cTitle, body }, i) => (
-                <article
-                  key={cTitle}
-                  className={`flex min-h-[16rem] w-full shrink-0 flex-col rounded-3xl p-6 sm:min-h-[18rem] sm:p-9 pin:min-h-[min(24rem,calc(100vh-22rem))] pin:w-[34rem] pin:xl:w-[38rem] ${
-                    PANEL_TONES[i % PANEL_TONES.length]
-                  }`}
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
+              <div>
+                <Eyebrow>{problems.eyebrow}</Eyebrow>
+                <SplitReveal
+                  as="h2"
+                  type="skewLines"
+                  className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink"
                 >
-                  <span className="text-[clamp(4rem,3rem+4vw,6.5rem)] font-extrabold leading-none tracking-tighter [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_currentColor]">
+                  {`${problems.headingA} ${problems.headingB}`}
+                </SplitReveal>
+              </div>
+              <p className="max-w-md text-[16px] leading-relaxed text-ink-soft lg:justify-self-end">
+                {problems.body}
+              </p>
+            </div>
+
+            <ol className="section-head-gap grid border-t border-ink/10 sm:grid-cols-2 sm:gap-x-12">
+              {(problems.points ?? []).map(({ title: cTitle, body }, i) => (
+                <Reveal
+                  as="li"
+                  key={cTitle}
+                  delay={0.04 * i}
+                  className="group flex gap-5 border-b border-ink/10 py-7"
+                >
+                  <span className="shrink-0 text-[clamp(1.75rem,1.4rem+1vw,2.5rem)] font-extrabold leading-none tracking-tighter tabular-nums text-transparent [-webkit-text-stroke:1.5px_rgba(27,27,23,0.25)] transition-[--tw-text-stroke-color] duration-300 group-hover:[-webkit-text-stroke:1.5px_#a7cf3b]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-auto pt-8 text-[clamp(1.4rem,1.1rem+1vw,1.9rem)] font-extrabold leading-tight tracking-tight">
-                    {cTitle}
-                  </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed opacity-70">{body}</p>
-                </article>
+                  <div className="min-w-0">
+                    <h3 className="text-[clamp(1.05rem,1rem+0.35vw,1.3rem)] font-bold leading-snug text-ink">
+                      {cTitle}
+                    </h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{body}</p>
+                  </div>
+                </Reveal>
               ))}
-            </HorizontalScroll>
+            </ol>
           </div>
         </section>
 
@@ -203,7 +208,7 @@ export default function IndustryPage() {
               </SplitReveal>
               <p className="mt-5 text-[16px] leading-relaxed text-cream/70">{help.body}</p>
             </div>
-            <ScrollTimeline steps={help.points} />
+            <ScrollTimeline steps={help.points ?? []} />
           </div>
         </section>
 
@@ -225,7 +230,7 @@ export default function IndustryPage() {
             </div>
 
             <div className="grid gap-4 self-start sm:grid-cols-2">
-              {proof.stats.map(({ value, label }, i) => (
+              {(proof.stats ?? []).map(({ value, label }, i) => (
                 <div
                   key={label}
                   className={`rounded-2xl p-5 sm:p-6 ${

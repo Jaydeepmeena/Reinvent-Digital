@@ -11,6 +11,7 @@ import SectionHeader from "./motion/SectionHeader";
 import useMediaQuery from "./motion/useMediaQuery";
 import { EASE } from "./motion/easing";
 import { gsap, ScrollTrigger, useGSAP } from "./fx/gsap";
+import { usePageCollection } from "../lib/pageContent";
 
 const CATEGORIES = [
   {
@@ -46,6 +47,7 @@ const FADE_IN = { duration: 0.35, ease: EASE, delay: 0.22 };
 const FADE_OUT = { duration: 0.15, ease: EASE };
 
 export default function ServicesSection() {
+  const { navEntries: services } = usePageCollection("services", SERVICES);
   const wrapRef = useRef(null);
   const [active, setActive] = useState(0);
   const wide = useMediaQuery(WIDE_QUERY);
@@ -99,7 +101,7 @@ export default function ServicesSection() {
             }`}
           >
             {CATEGORIES.map(({ key, icon: Icon, image, body }, i) => {
-              const items = SERVICES.filter((s) => s.category === key);
+              const items = services.filter((s) => s.category === key);
               const isActive = wide ? i === active : i === 0;
               const expanded = !wide || isActive;
               const rank = (i - active + CATEGORIES.length) % CATEGORIES.length;
@@ -181,7 +183,7 @@ export default function ServicesSection() {
                       {items.map((item) => (
                         <li key={item.slug}>
                           <Link
-                            to={`/what-we-do/${item.slug}`}
+                            to={item.path}
                             className={`group/link flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[14px] leading-snug transition-colors ${
                               isActive
                                 ? "text-cream/80 hover:bg-white/5 hover:text-lime"

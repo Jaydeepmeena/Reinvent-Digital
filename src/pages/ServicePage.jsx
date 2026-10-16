@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { Check } from "lucide-react";
-import { getServiceBySlug } from "../data/services";
-import { usePageContent } from "../lib/pageContent";
+import { SERVICES } from "../data/services";
+import { usePageEntry } from "../lib/pageContent";
 import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
 import { SERVICE_HERO_IMAGES } from "../data/heroImages";
@@ -16,25 +16,22 @@ import VelocityMarquee from "../components/fx/VelocityMarquee";
 import IncludesCarousel from "../components/fx/IncludesCarousel";
 import { BentoGrid, BentoTile, GrowthBars } from "../components/fx/Bento";
 
-// AEO and GEO used to share one page; keep the old link working.
-const RENAMED = { "aeo-geo": "aeo" };
-
-export default function ServicePage() {
-  const { slug } = useParams();
-  const { entry: service, status } = usePageContent("services", slug, getServiceBySlug(slug));
+export default function ServicePage({ slug: given }) {
+  // The router hands the page its identity, because the URL no longer has a
+  // fixed shape to read it out of.
+  const { slug: fromUrl } = useParams();
+  const slug = given ?? fromUrl;
+  const { entry: service, status } = usePageEntry("services", slug, SERVICES);
 
   if (status === "loading") return <PageLoading />;
 
-  if (!service) {
-    const renamed = RENAMED[slug];
-    return <Navigate to={renamed ? `/what-we-do/${renamed}` : "/"} replace />;
-  }
+  if (!service) return <Navigate to="/" replace />;
 
   const {
     category, icon, eyebrow, title, heading, accent, description,
-    highlights, metric, heroStats, includes, process, proofStats,
+    highlights = [], metric, heroStats = [], includes = [], process = [], proofStats = [],
     ctaLabel, includesTitle, includesIntro, processEyebrow, processTitle, processNote,
-    faqs, faqTitle, closing,
+    faqs = [], faqTitle, closing,
   } = service;
 
   // Older entries list deliverables as plain strings; newer ones carry a body too.

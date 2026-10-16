@@ -1,3 +1,220 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/what-we-do/google-ads",
+      "destination": "/google-ads",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/meta-ads",
+      "destination": "/meta-ads",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/chatgpt-ads",
+      "destination": "/chatgpt-ads",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/seo",
+      "destination": "/seo",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/aeo",
+      "destination": "/aeo",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/geo",
+      "destination": "/geo",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/business-profile-optimisation",
+      "destination": "/business-profile-optimisation",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/local-seo",
+      "destination": "/local-seo",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/youtube-marketing",
+      "destination": "/youtube-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/social-media-management",
+      "destination": "/social-media-management",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/marketing-automation",
+      "destination": "/marketing-automation",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/crm",
+      "destination": "/crm",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/call-centre-management",
+      "destination": "/call-centre-management",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/telephony",
+      "destination": "/telephony",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/booking-attribution",
+      "destination": "/booking-attribution",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/walk-in-tracking",
+      "destination": "/walk-in-tracking",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/messaging-follow-up",
+      "destination": "/messaging-follow-up",
+      "permanent": true
+    },
+    {
+      "source": "/aeo-geo",
+      "destination": "/aeo",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/aeo-geo",
+      "destination": "/aeo",
+      "permanent": true
+    },
+    {
+      "source": "/industries/dental-clinic",
+      "destination": "/dental-clinic",
+      "permanent": true
+    },
+    {
+      "source": "/industries/ivf-clinic",
+      "destination": "/ivf-clinic",
+      "permanent": true
+    },
+    {
+      "source": "/industries/eye-clinics",
+      "destination": "/eye-clinics",
+      "permanent": true
+    },
+    {
+      "source": "/industries/multi-speciality-hospital",
+      "destination": "/multi-speciality-hospital",
+      "permanent": true
+    },
+    {
+      "source": "/locations/jaipur",
+      "destination": "/jaipur",
+      "permanent": true
+    },
+    {
+      "source": "/locations/delhi",
+      "destination": "/delhi",
+      "permanent": true
+    },
+    {
+      "source": "/locations/hyderabad",
+      "destination": "/hyderabad",
+      "permanent": true
+    },
+    {
+      "source": "/locations/noida",
+      "destination": "/noida",
+      "permanent": true
+    },
+    {
+      "source": "/locations/gurgaon",
+      "destination": "/gurgaon",
+      "permanent": true
+    },
+    {
+      "source": "/locations/mumbai",
+      "destination": "/mumbai",
+      "permanent": true
+    },
+    {
+      "source": "/locations/bangalore",
+      "destination": "/bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/locations/kochi",
+      "destination": "/kochi",
+      "permanent": true
+    },
+    {
+      "source": "/locations/chennai",
+      "destination": "/chennai",
+      "permanent": true
+    },
+    {
+      "source": "/locations/calicut",
+      "destination": "/calicut",
+      "permanent": true
+    },
+    {
+      "source": "/locations/thiruvananthapuram",
+      "destination": "/thiruvananthapuram",
+      "permanent": true
+    },
+    {
+      "source": "/locations/vijayawada",
+      "destination": "/vijayawada",
+      "permanent": true
+    },
+    {
+      "source": "/about/our-story",
+      "destination": "/our-story",
+      "permanent": true
+    },
+    {
+      "source": "/about/our-team",
+      "destination": "/our-team",
+      "permanent": true
+    },
+    {
+      "source": "/life-at-rd",
+      "destination": "/our-story",
+      "permanent": true
+    },
+    {
+      "source": "/about/life-at-rd",
+      "destination": "/our-story",
+      "permanent": true
+    },
+    {
+      "source": "/founders-message",
+      "destination": "/our-story",
+      "permanent": true
+    },
+    {
+      "source": "/about/founders-message",
+      "destination": "/our-story",
+      "permanent": true
+    },
+    {
+      "source": "/resources/research-reports",
+      "destination": "/research-reports",
+      "permanent": true
+    }
+  ]
 }
