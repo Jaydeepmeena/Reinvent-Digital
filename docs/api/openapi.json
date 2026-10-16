@@ -1,0 +1,626 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Reinvent Digital — Site Pages API",
+    "version": "1.0.0",
+    "description": "Read-only endpoints the website reads its page content from. Every page except the home page takes its words, its URL and its place in the menus from these. The site ships bundled content for every page, and an answer here is MERGED over that: a field you omit keeps its current value, so an endpoint that is missing, broken or returns [] changes nothing. The frontend never writes; the write side is yours to design."
+  },
+  "servers": [
+    { "url": "https://reinventmedia.in/staging-reinventdigital", "description": "Staging" }
+  ],
+  "tags": [
+    { "name": "collections", "description": "One endpoint per kind of page." }
+  ],
+  "paths": {
+    "/services/": {
+      "get": {
+        "tags": ["collections"],
+        "summary": "Service pages (17 today)",
+        "parameters": [{ "$ref": "#/components/parameters/perPage" }],
+        "responses": {
+          "200": {
+            "description": "The services that differ from what the site ships.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ServicesResponse" },
+                "examples": {
+                  "empty": { "$ref": "#/components/examples/EmptyCollection" },
+                  "oneFieldChanged": {
+                    "summary": "Minimal, and valid: changes one field on one page",
+                    "value": { "services": [{ "slug": "google-ads", "title": "Google Ads Management" }] }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/industries/": {
+      "get": {
+        "tags": ["collections"],
+        "summary": "Industry pages (4 today)",
+        "parameters": [{ "$ref": "#/components/parameters/perPage" }],
+        "responses": {
+          "200": {
+            "description": "The industries that differ from what the site ships.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/IndustriesResponse" } }
+            }
+          }
+        }
+      }
+    },
+    "/locations/": {
+      "get": {
+        "tags": ["collections"],
+        "summary": "City pages (15 today)",
+        "parameters": [{ "$ref": "#/components/parameters/perPage" }],
+        "responses": {
+          "200": {
+            "description": "The locations that differ from what the site ships.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/LocationsResponse" } }
+            }
+          }
+        }
+      }
+    },
+    "/about/": {
+      "get": {
+        "tags": ["collections"],
+        "summary": "About pages (Our Story, Our Team)",
+        "parameters": [{ "$ref": "#/components/parameters/perPage" }],
+        "responses": {
+          "200": {
+            "description": "Two pages from one template. They differ by which optional blocks each entry carries.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/AboutResponse" } }
+            }
+          }
+        }
+      }
+    },
+    "/resources/": {
+      "get": {
+        "tags": ["collections"],
+        "summary": "Resource pages (3 today)",
+        "parameters": [{ "$ref": "#/components/parameters/perPage" }],
+        "responses": {
+          "200": {
+            "description": "The resource pages that differ from what the site ships.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ResourcesResponse" } }
+            }
+          }
+        }
+      }
+    },
+    "/contact/": {
+      "get": {
+        "tags": ["collections"],
+        "summary": "The contact page (always exactly one entry)",
+        "parameters": [{ "$ref": "#/components/parameters/perPage" }],
+        "responses": {
+          "200": {
+            "description": "One entry, always slug 'contact'. Its words are editable; its URL is fixed.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ContactResponse" } }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "perPage": {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "schema": { "type": "integer", "default": 100 },
+        "description": "The site sends 100. No paging is needed at these sizes."
+      }
+    },
+    "examples": {
+      "EmptyCollection": {
+        "summary": "Valid, and changes nothing on the site",
+        "value": []
+      }
+    },
+    "schemas": {
+      "PageControls": {
+        "type": "object",
+        "description": "Fields every entry in every collection may carry. They control the page rather than its words.",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "The page's whole URL, not just its last part. 'google-ads' puts the page at /google-ads; 'services/google-ads' at /services/google-ads; a leading slash is allowed and stripped. The page's IDENTITY is the LAST SEGMENT, so changing only the folder moves the page and keeps its content, while changing the last segment is a rename and requires `replaces`. Lowercase letters, digits, hyphens and forward slashes only. Required: an entry without one is ignored.",
+            "pattern": "^/?[a-z0-9]+(?:[a-z0-9-]*[a-z0-9])?(?:/[a-z0-9-]+)*$",
+            "examples": ["google-ads", "services/google-ads", "/google-ads"]
+          },
+          "replaces": {
+            "type": "string",
+            "description": "REQUIRED when the last segment of the slug changes. Names the slug this entry takes over from: the page keeps its content, icon, image and menu position, and the old URL redirects. Without it a changed last segment creates a SECOND page and leaves the old one live.",
+            "examples": ["google-ads"]
+          },
+          "renamedFrom": { "type": "string", "description": "Alias of `replaces`." },
+          "previousSlug": { "type": "string", "description": "Alias of `replaces`." },
+          "hidden": {
+            "type": "boolean",
+            "description": "true takes the page off its URL and out of every menu. Must be a real JSON boolean, not the string \"true\".",
+            "default": false
+          },
+          "published": { "type": "boolean", "description": "false behaves as hidden: true." },
+          "status": {
+            "type": "string",
+            "description": "A WordPress-style status. draft, pending, private, future, unpublished or trash all hide the page; anything else (publish) leaves it live.",
+            "examples": ["publish", "draft"]
+          },
+          "order": {
+            "type": ["integer", "string"],
+            "description": "Sorts the menus, lowest first. Entries without one keep the shipped order behind those that have one. Send a number or omit it: an empty string converts to 0 and sorts to the top."
+          },
+          "menuOrder": { "type": ["integer", "string"], "description": "Alias of `order`." },
+          "nav": {
+            "type": "boolean",
+            "description": "false keeps the page live at its URL but out of the menus.",
+            "default": true
+          },
+          "inNav": { "type": "boolean", "description": "Alias of `nav`." }
+        },
+        "required": ["slug"]
+      },
+      "Stat": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "string", "examples": ["5.2x"] },
+          "label": { "type": "string", "examples": ["Avg. ROAS"] }
+        }
+      },
+      "Faq": {
+        "type": "object",
+        "properties": {
+          "q": { "type": "string" },
+          "a": { "type": "string" }
+        }
+      },
+      "Closing": {
+        "type": "object",
+        "description": "The closing call to action at the foot of the page.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" }
+        }
+      },
+      "TitledPoint": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "body": { "type": "string" }
+        }
+      },
+      "Service": {
+        "allOf": [
+          { "$ref": "#/components/schemas/PageControls" },
+          {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string",
+                "description": "Groups the page in the What We Do menu. A category not already in the menu gets a column of its own.",
+                "examples": ["Digital Marketing", "Tools & Measurement", "Response & Call Centre"]
+              },
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string", "description": "The short name, used in the menus and the breadcrumb." },
+              "heading": { "type": "string" },
+              "accent": { "type": "string", "description": "The second half of the hero heading, set in the highlight style." },
+              "description": { "type": "string" },
+              "ctaLabel": { "type": "string" },
+              "highlights": { "type": "array", "items": { "type": "string" } },
+              "metric": {
+                "type": "object",
+                "properties": {
+                  "value": { "type": "string" },
+                  "label": { "type": "string" },
+                  "sub": { "type": "string" }
+                }
+              },
+              "heroStats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } },
+              "includesTitle": { "type": "string" },
+              "includesIntro": { "type": "string" },
+              "includes": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } },
+              "processEyebrow": { "type": "string" },
+              "processTitle": { "type": "string" },
+              "processNote": { "type": "string" },
+              "process": { "type": "array", "items": { "type": "string" } },
+              "proofStats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } },
+              "faqTitle": { "type": "string" },
+              "faqs": { "type": "array", "items": { "$ref": "#/components/schemas/Faq" } },
+              "closing": { "$ref": "#/components/schemas/Closing" }
+            }
+          }
+        ]
+      },
+      "Industry": {
+        "allOf": [
+          { "$ref": "#/components/schemas/PageControls" },
+          {
+            "type": "object",
+            "properties": {
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string" },
+              "heading": { "type": "string" },
+              "accent": { "type": "string" },
+              "description": { "type": "string" },
+              "ctaLabel": { "type": "string" },
+              "heroStats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } },
+              "highlights": { "type": "array", "items": { "type": "string" } },
+              "metric": { "type": "object", "properties": { "value": { "type": "string" }, "label": { "type": "string" } } },
+              "problems": {
+                "type": "object",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "headingA": { "type": "string" },
+                  "headingB": { "type": "string" },
+                  "body": { "type": "string" },
+                  "points": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } }
+                }
+              },
+              "help": {
+                "type": "object",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "headingA": { "type": "string" },
+                  "headingB": { "type": "string" },
+                  "body": { "type": "string" },
+                  "points": { "type": "array", "items": { "type": "string" } }
+                }
+              },
+              "proof": {
+                "type": "object",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "heading": { "type": "string" },
+                  "body": { "type": "string" },
+                  "stats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } }
+                }
+              },
+              "testimonial": {
+                "type": "object",
+                "properties": {
+                  "quote": { "type": "string" },
+                  "name": { "type": "string" },
+                  "role": { "type": "string" }
+                }
+              },
+              "faqs": { "type": "array", "items": { "$ref": "#/components/schemas/Faq" } },
+              "closing": { "$ref": "#/components/schemas/Closing" }
+            }
+          }
+        ]
+      },
+      "Location": {
+        "allOf": [
+          { "$ref": "#/components/schemas/PageControls" },
+          {
+            "type": "object",
+            "properties": {
+              "city": { "type": "string", "description": "This collection uses `city`, not `title`." },
+              "eyebrow": { "type": "string" },
+              "headingA": { "type": "string" },
+              "headingB": { "type": "string" },
+              "intro": { "type": "string" },
+              "ctaLabel": { "type": "string" },
+              "stats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } },
+              "search": { "$ref": "#/components/schemas/PointsBlock" },
+              "system": { "$ref": "#/components/schemas/PointsBlock" },
+              "trust": {
+                "type": "object",
+                "properties": {
+                  "heading": { "type": "string" },
+                  "body": { "type": "string" },
+                  "note": { "type": "string" },
+                  "points": { "type": "array", "items": { "type": "string" } }
+                }
+              },
+              "office": {
+                "type": "object",
+                "properties": {
+                  "heading": { "type": "string" },
+                  "visit": { "type": "boolean" },
+                  "address": { "type": "string" },
+                  "landmark": { "type": "string" },
+                  "body": { "type": "string" },
+                  "directions": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } },
+                  "booking": { "type": "string" },
+                  "note": { "type": "string" }
+                }
+              },
+              "plan": {
+                "type": "object",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "headingA": { "type": "string" },
+                  "headingB": { "type": "string" },
+                  "note": { "type": "string" },
+                  "steps": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } }
+                }
+              },
+              "faqs": { "type": "array", "items": { "$ref": "#/components/schemas/Faq" } }
+            }
+          }
+        ]
+      },
+      "PointsBlock": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "points": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } }
+        }
+      },
+      "AboutSection": {
+        "type": "object",
+        "description": "The narrative. A `body` sent as an array is set as one paragraph per item; a section carrying an `image` is laid out beside it rather than full width.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" } }
+            ]
+          },
+          "highlight": { "type": "string", "description": "A pull line set under the paragraphs." },
+          "image": { "type": "string", "format": "uri" },
+          "imageAlt": { "type": "string" }
+        }
+      },
+      "About": {
+        "allOf": [
+          { "$ref": "#/components/schemas/PageControls" },
+          {
+            "type": "object",
+            "description": "Our Story and Our Team render from one template. Each optional block below renders a whole section and is left out entirely when the entry does not carry it.",
+            "properties": {
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string", "description": "The short name for the menus and breadcrumb." },
+              "headline": { "type": "string", "description": "The long hero heading. Distinct from `title`." },
+              "accent": { "type": "string" },
+              "description": { "type": "string" },
+              "ctaLabel": { "type": "string" },
+              "stats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } },
+              "sections": { "type": "array", "items": { "$ref": "#/components/schemas/AboutSection" } },
+              "departments": {
+                "type": "object",
+                "description": "The grouped team rows (Our Team today).",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "heading": { "type": "string" },
+                  "groups": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": { "type": "string" },
+                        "teams": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": { "type": "string" },
+                              "size": { "type": "string", "description": "Headcount, shown as a figure. A string, so '4+' works." },
+                              "experience": { "type": "string" },
+                              "body": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "journey": {
+                "type": "object",
+                "description": "The roadmap (Our Story today).",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "heading": { "type": "string" },
+                  "milestones": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "year": { "type": "string", "description": "A year, or a word such as 'Today'." },
+                        "title": { "type": "string" },
+                        "body": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              },
+              "founder": {
+                "type": "object",
+                "description": "Portrait beside the founder's words.",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "heading": { "type": "string" },
+                  "body": { "type": "string" },
+                  "name": { "type": "string" },
+                  "role": { "type": "string" },
+                  "note": { "type": "string" },
+                  "image": { "type": "string", "format": "uri" },
+                  "imageAlt": { "type": "string" }
+                }
+              },
+              "drivers": {
+                "type": "object",
+                "description": "Vision and mission, side by side.",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "heading": { "type": "string" },
+                  "items": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } }
+                }
+              },
+              "faqTitle": { "type": "string" },
+              "faqs": { "type": "array", "items": { "$ref": "#/components/schemas/Faq" } },
+              "closing": { "$ref": "#/components/schemas/Closing" }
+            }
+          }
+        ]
+      },
+      "Resource": {
+        "allOf": [
+          { "$ref": "#/components/schemas/PageControls" },
+          {
+            "type": "object",
+            "properties": {
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string" },
+              "accent": { "type": "string" },
+              "description": { "type": "string" },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": { "type": "string" },
+                    "tag": { "type": "string" },
+                    "summary": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Contact": {
+        "allOf": [
+          { "$ref": "#/components/schemas/PageControls" },
+          {
+            "type": "object",
+            "properties": {
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string" },
+              "accent": { "type": "string" },
+              "description": { "type": "string" },
+              "ctaLabel": { "type": "string" },
+              "email": { "type": "string", "format": "email" },
+              "phone": { "type": "string" },
+              "responseTime": { "type": "string" },
+              "citiesLabel": { "type": "string" },
+              "cities": { "type": "array", "items": { "type": "string" } },
+              "next": {
+                "type": "object",
+                "properties": {
+                  "eyebrow": { "type": "string" },
+                  "heading": { "type": "string" },
+                  "steps": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "tag": { "type": "string" },
+                        "title": { "type": "string" },
+                        "body": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ServicesResponse": {
+        "description": "A bare array, or wrapped under 'services', 'pages', 'items' or 'data'. All four are accepted.",
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/Service" } },
+          {
+            "type": "object",
+            "properties": {
+              "services": { "type": "array", "items": { "$ref": "#/components/schemas/Service" } },
+              "pages": { "type": "array", "items": { "$ref": "#/components/schemas/Service" } },
+              "items": { "type": "array", "items": { "$ref": "#/components/schemas/Service" } },
+              "data": { "type": "array", "items": { "$ref": "#/components/schemas/Service" } },
+              "total": { "type": "integer", "description": "Optional and ignored." },
+              "total_pages": { "type": "integer", "description": "Optional and ignored." }
+            }
+          }
+        ]
+      },
+      "IndustriesResponse": {
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/Industry" } },
+          {
+            "type": "object",
+            "properties": {
+              "industries": { "type": "array", "items": { "$ref": "#/components/schemas/Industry" } },
+              "pages": { "type": "array", "items": { "$ref": "#/components/schemas/Industry" } },
+              "items": { "type": "array", "items": { "$ref": "#/components/schemas/Industry" } },
+              "data": { "type": "array", "items": { "$ref": "#/components/schemas/Industry" } }
+            }
+          }
+        ]
+      },
+      "LocationsResponse": {
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/Location" } },
+          {
+            "type": "object",
+            "properties": {
+              "locations": { "type": "array", "items": { "$ref": "#/components/schemas/Location" } },
+              "pages": { "type": "array", "items": { "$ref": "#/components/schemas/Location" } },
+              "items": { "type": "array", "items": { "$ref": "#/components/schemas/Location" } },
+              "data": { "type": "array", "items": { "$ref": "#/components/schemas/Location" } }
+            }
+          }
+        ]
+      },
+      "AboutResponse": {
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/About" } },
+          {
+            "type": "object",
+            "properties": {
+              "about": { "type": "array", "items": { "$ref": "#/components/schemas/About" } },
+              "pages": { "type": "array", "items": { "$ref": "#/components/schemas/About" } },
+              "items": { "type": "array", "items": { "$ref": "#/components/schemas/About" } },
+              "data": { "type": "array", "items": { "$ref": "#/components/schemas/About" } }
+            }
+          }
+        ]
+      },
+      "ResourcesResponse": {
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/Resource" } },
+          {
+            "type": "object",
+            "properties": {
+              "resources": { "type": "array", "items": { "$ref": "#/components/schemas/Resource" } },
+              "pages": { "type": "array", "items": { "$ref": "#/components/schemas/Resource" } },
+              "items": { "type": "array", "items": { "$ref": "#/components/schemas/Resource" } },
+              "data": { "type": "array", "items": { "$ref": "#/components/schemas/Resource" } }
+            }
+          }
+        ]
+      },
+      "ContactResponse": {
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+          {
+            "type": "object",
+            "properties": {
+              "contact": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+              "pages": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+              "items": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+              "data": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

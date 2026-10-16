@@ -1,0 +1,44 @@
+{
+  "contact": [
+    {
+      "slug": "contact",
+      "eyebrow": "Contact Us",
+      "title": "Contact Us",
+      "accent": "Let's Map Your Patient Acquisition System",
+      "description": "Tell us about your clinics, your current channels and where enquiries seem to go quiet.",
+      "ctaLabel": "Send Enquiry",
+      "email": "hello@reinventdigital.com",
+      "phone": "+91 99505 08668",
+      "responseTime": "Typically replies within a day",
+      "citiesLabel": "Where we work",
+      "cities": [
+        "Delhi NCR",
+        "Jaipur",
+        "Hyderabad",
+        "Mumbai",
+        "Bangalore"
+      ],
+      "next": {
+        "eyebrow": "What happens next",
+        "heading": "Three steps, no pitch deck",
+        "steps": [
+          {
+            "tag": "01",
+            "title": "We review",
+            "body": "Your current marketing, call handling and reporting."
+          },
+          {
+            "tag": "02",
+            "title": "We show the gaps",
+            "body": "Where enquiries are lost before anything changes."
+          },
+          {
+            "tag": "03",
+            "title": "We build",
+            "body": "Demand, call handling and reporting as one system."
+          }
+        ]
+      }
+    }
+  ]
+}

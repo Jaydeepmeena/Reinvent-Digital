@@ -1,0 +1,18 @@
+{
+  "resources": [
+    {
+      "slug": "research-reports",
+      "eyebrow": "Research",
+      "title": "Research Reports",
+      "accent": "what the data says about patient acquisition",
+      "description": "Original research on how patients find and choose clinics in India.",
+      "items": [
+        {
+          "title": "The 2026 Patient Journey Report",
+          "tag": "Report",
+          "summary": "How 4,000 patients chose a clinic."
+        }
+      ]
+    }
+  ]
+}

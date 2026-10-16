@@ -1,0 +1,55 @@
+{
+  "services": [
+    {
+      "slug": "google-ads",
+      "category": "Digital Marketing",
+      "eyebrow": "Google Ads for Healthcare",
+      "title": "Google Ads",
+      "heading": "Google Ads That Fill Chairs",
+      "accent": "Judged on Who Walks In",
+      "description": "Search and Performance Max built per department, with call tracking on every number.",
+      "ctaLabel": "Discuss Your Growth Plan",
+      "highlights": ["Per-department budgets", "Call tracking", "CRM attribution"],
+      "metric": { "value": "5.2x", "label": "Avg. ROAS", "sub": "across 40 clinics" },
+      "heroStats": [
+        { "value": "5.2x", "label": "Avg. ROAS" },
+        { "value": "41%", "label": "Lower cost per booking" },
+        { "value": "<60 sec", "label": "First response target" }
+      ],
+      "includesTitle": "What the engagement includes",
+      "includesIntro": "Nine deliverables, one accountable team.",
+      "includes": [
+        { "title": "Campaign build", "body": "Search and PMax structured by treatment and location." },
+        { "title": "Call tracking", "body": "A tracked number per campaign, scored weekly." }
+      ],
+      "processEyebrow": "How it runs",
+      "processTitle": "From first search to booked patient",
+      "processNote": "Week one is audit and tracking, not spend.",
+      "process": ["Audit and tracking", "Campaign build", "Call scoring", "Monthly review"],
+      "proofStats": [
+        { "value": "2.4x", "label": "Qualified enquiries" },
+        { "value": "-38%", "label": "Cost per admission" }
+      ],
+      "faqTitle": "Common Queries About Google Ads, Answered",
+      "faqs": [
+        { "q": "How fast do you launch?", "a": "Two weeks from kickoff." },
+        { "q": "Do you work with our call team?", "a": "Yes, call handling is part of the engagement." }
+      ],
+      "closing": {
+        "eyebrow": "Contact Us",
+        "heading": "Want This Running for Your Group?",
+        "body": "Tell us which departments are underfilled and what your call centre does with an enquiry today."
+      },
+      "order": 1,
+      "nav": true,
+      "hidden": false
+    },
+    {
+      "slug": "seo",
+      "title": "Healthcare SEO",
+      "accent": "From Top Rankings to Booked Patients"
+    }
+  ],
+  "total": 17,
+  "total_pages": 1
+}

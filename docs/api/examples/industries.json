@@ -1,0 +1,82 @@
+{
+  "industries": [
+    {
+      "slug": "dental-clinic",
+      "eyebrow": "Dental Marketing",
+      "title": "Dental Clinics",
+      "heading": "Only Leads Won't Fill the Chairs",
+      "accent": "Actual Patients Will",
+      "description": "Patient acquisition for single clinics and multi-location dental groups.",
+      "ctaLabel": "Discuss Your Growth Plan",
+      "heroStats": [
+        {
+          "value": "3.1x",
+          "label": "Booked consults"
+        }
+      ],
+      "highlights": [
+        "Implant and aligner demand",
+        "Call answering",
+        "Per-clinic reporting"
+      ],
+      "metric": {
+        "value": "3.1x",
+        "label": "Booked consults"
+      },
+      "problems": {
+        "eyebrow": "The gap",
+        "headingA": "Enquiries Arrive.",
+        "headingB": "Chairs Stay Empty.",
+        "body": "Most dental groups lose patients between the enquiry and the appointment.",
+        "points": [
+          {
+            "title": "Calls go unanswered",
+            "body": "Evening and weekend enquiries wait until Monday."
+          },
+          {
+            "title": "No per-clinic view",
+            "body": "Spend is reported for the group, not the location."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "What we do",
+        "headingA": "One Team Across",
+        "headingB": "Every Clinic",
+        "body": "Demand, call handling and reporting run together.",
+        "points": [
+          "Treatment-level campaigns",
+          "Call scoring",
+          "Walk-in attribution"
+        ]
+      },
+      "proof": {
+        "eyebrow": "Proof",
+        "heading": "What changed for a 60-clinic group",
+        "body": "Bookings more than doubled without adding agents.",
+        "stats": [
+          {
+            "value": "2.2x",
+            "label": "Monthly bookings"
+          }
+        ]
+      },
+      "testimonial": {
+        "quote": "They report on patients, not clicks.",
+        "name": "Operations Director",
+        "role": "National dental group"
+      },
+      "faqs": [
+        {
+          "q": "Do you work per clinic?",
+          "a": "Yes, budgets and reporting are per location."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Contact Us",
+        "heading": "Fill the Chairs",
+        "body": "Tell us where enquiries are going quiet."
+      }
+    }
+  ]
+}

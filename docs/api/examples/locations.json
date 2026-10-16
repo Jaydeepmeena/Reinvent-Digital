@@ -1,0 +1,81 @@
+{
+  "locations": [
+    {
+      "slug": "delhi",
+      "city": "Delhi NCR",
+      "eyebrow": "Healthcare Marketing in Delhi NCR",
+      "headingA": "Patients Compare Fast.",
+      "headingB": "Be The Clinic They Pick.",
+      "intro": "Demand, call handling and walk-in tracking for clinics across Delhi NCR.",
+      "ctaLabel": "Discuss Your Growth Plan",
+      "stats": [
+        {
+          "value": "40+",
+          "label": "Clinics served"
+        }
+      ],
+      "search": {
+        "heading": "Being found in Delhi NCR",
+        "body": "Maps, search and AI answers for every locality you serve.",
+        "points": [
+          {
+            "title": "Locality pages",
+            "body": "One page per catchment, not one for the city."
+          }
+        ]
+      },
+      "system": {
+        "heading": "The system behind it",
+        "body": "Campaigns, CRM and calls on one path.",
+        "points": [
+          {
+            "title": "Call routing",
+            "body": "Enquiries reach the nearest clinic."
+          }
+        ]
+      },
+      "trust": {
+        "heading": "Why groups here work with us",
+        "body": "We report on walk-ins, not clicks.",
+        "note": "Healthcare only.",
+        "points": [
+          "Per-clinic reporting",
+          "Call scoring"
+        ]
+      },
+      "office": {
+        "heading": "Our Delhi office",
+        "visit": true,
+        "address": "Ground floor, Okhla Phase III, New Delhi",
+        "landmark": "Opposite the metro station",
+        "body": "Drop in for a working session with the team.",
+        "directions": [
+          {
+            "title": "By metro",
+            "body": "Violet line to Okhla NSIC, five minutes on foot."
+          }
+        ],
+        "booking": "Book a slot before visiting.",
+        "note": "Parking available on site."
+      },
+      "plan": {
+        "eyebrow": "Getting started",
+        "headingA": "Three Weeks",
+        "headingB": "To First Walk-In",
+        "note": "No spend in week one.",
+        "steps": [
+          {
+            "title": "Audit",
+            "body": "Current marketing, call handling and reporting."
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Do you serve all of NCR?",
+          "a": "Yes, including Noida and Gurgaon."
+        }
+      ]
+    }
+  ]
+}
