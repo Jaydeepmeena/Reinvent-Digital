@@ -5,7 +5,7 @@ import { SERVICES } from "../data/services";
 import { usePageEntry } from "../lib/pageContent";
 import PageLoading from "../components/fx/PageLoading";
 import SubPageHero from "../components/SubPageHero";
-import { SERVICE_HERO_IMAGES } from "../data/heroImages";
+import { SERVICE_HERO_IMAGES, SERVICE_METRIC_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import CountUp from "../components/motion/CountUp";
 import InnerPage from "../components/fx/InnerPage";
@@ -15,6 +15,22 @@ import StackCards from "../components/fx/StackCards";
 import VelocityMarquee from "../components/fx/VelocityMarquee";
 import IncludesCarousel from "../components/fx/IncludesCarousel";
 import { BentoGrid, BentoTile, GrowthBars } from "../components/fx/Bento";
+
+// How each service's metric-tile backdrop art is framed; pages without an
+// entry use the default crop.
+const METRIC_IMAGE_STYLE = {
+  default: { backgroundSize: "88% auto", backgroundPosition: "right" },
+  "chatgpt-ads": { backgroundSize: "120%", backgroundPosition: "0% 0%" },
+  seo: { backgroundSize: "70%", backgroundPosition: "90% 30%" },
+  aeo: { backgroundSize: "80%", backgroundPosition: "right" },
+  "marketing-automation": { backgroundSize: "130%", backgroundPosition: "0% 80%" },
+  crm: { backgroundSize: "120%", backgroundPosition: "50% 0%" },
+  telephony: { backgroundSize: "100%", backgroundPosition: "right center" },
+  "booking-attribution": { backgroundSize: "125%", backgroundPosition: "50% 50%" },
+  "walk-in-tracking": { backgroundSize: "80% auto", backgroundPosition: "right center" },
+  "call-centre-management": { backgroundSize: "120%", backgroundPosition: "30% 50%" },
+  "messaging-follow-up": { backgroundSize: "160%", backgroundPosition: "60% 50%" },
+};
 
 export default function ServicePage({ slug: given }) {
   // The router hands the page its identity, because the URL no longer has a
@@ -36,6 +52,8 @@ export default function ServicePage({ slug: given }) {
 
   // Older entries list deliverables as plain strings; newer ones carry a body too.
   const deliverables = includes.map((item) => (typeof item === "string" ? { title: item } : item));
+  const metricImage = SERVICE_METRIC_IMAGES[slug];
+  const metricImageStyle = METRIC_IMAGE_STYLE[slug] ?? METRIC_IMAGE_STYLE.default;
 
   return (
     <InnerPage>
@@ -81,16 +99,33 @@ export default function ServicePage({ slug: given }) {
               </BentoTile>
 
               <BentoTile className="flex flex-col bg-ink text-cream md:col-span-2 lg:row-span-2">
+                {metricImage && (
+                  <>
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-no-repeat"
+                      style={{ backgroundImage: `url(${metricImage})`, ...metricImageStyle }}
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/60 to-transparent"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent"
+                    />
+                  </>
+                )}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 animate-spin-slow rounded-full border border-dashed border-lime/30"
                 />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-lime">{metric.label}</span>
-                <div className="mt-4 text-[clamp(3rem,2rem+5vw,5.5rem)] font-extrabold leading-none tracking-tight">
+                <span className="relative text-xs font-semibold uppercase tracking-[0.2em] text-lime">{metric.label}</span>
+                <div className="relative mt-4 text-[clamp(3rem,2rem+5vw,5.5rem)] font-extrabold leading-none tracking-tight">
                   <CountUp value={metric.value} duration={2} />
                 </div>
-                {metric.sub && <p className="mt-3 max-w-xs text-sm text-cream/60">{metric.sub}</p>}
-                <GrowthBars className="mt-auto pt-10" />
+                {metric.sub && <p className="relative mt-3 max-w-xs text-sm text-cream/60">{metric.sub}</p>}
+                <GrowthBars className="relative mt-auto pt-10" />
               </BentoTile>
 
               {deliverables.map(({ title: name, body }, i) => (
