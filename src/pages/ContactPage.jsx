@@ -10,6 +10,7 @@ import Magnetic from "../components/fx/Magnetic";
 import ChatVisual from "../components/fx/ChatVisual";
 import DealCards from "../components/fx/DealCards";
 import PathSteps from "../components/fx/PathSteps";
+import LeadForm from "../components/fx/LeadForm";
 
 export default function ContactPage() {
   const { entry: page } = usePageContent("contact", "contact", CONTACT_PAGE);
@@ -118,6 +119,24 @@ export default function ContactPage() {
               </div>
             </div>
           </DealCards>
+        </div>
+      </section>
+
+      <section className="section-y-tight border-t border-ink/[0.06] bg-paper">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
+          <div className="mb-8 text-center sm:mb-10">
+            <Eyebrow>Request a Quote</Eyebrow>
+            <SplitReveal
+              as="h2"
+              type="blur"
+              className="mt-4 text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight text-ink"
+            >
+              Tell Us About Your Clinics
+            </SplitReveal>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-ink/10 bg-white">
+            <LeadForm />
+          </div>
         </div>
       </section>
 
