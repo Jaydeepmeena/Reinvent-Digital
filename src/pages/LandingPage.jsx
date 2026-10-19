@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { fetchLandingPage } from "../lib/landingPages";
 import { useDocumentHead } from "../lib/head";
-import SubPageHero from "../components/SubPageHero";
+import LandingHero from "../components/fx/LandingHero";
 import TrustedBy from "../components/TrustedBy";
 import CTASection from "../components/CTASection";
 import NotFound from "./NotFound";
@@ -112,18 +112,12 @@ export default function LandingPage() {
 
         {status === "ready" && page && (
           <>
-            <SubPageHero
-              variant="services"
-              image={page.hero.image}
-              trail={[{ label: page.title }]}
-              eyebrow={page.hero.eyebrow ?? "Patient acquisition, engineered for healthcare"}
-              title={page.title}
-              headline={page.hero.headline}
-              accent={page.hero.accent}
-              description={page.hero.description}
-              stats={page.hero.stats}
-              ctaLabel={page.hero.cta.label}
-              ctaHref={page.hero.cta.href}
+            <LandingHero
+              hero={{
+                ...page.hero,
+                eyebrow: page.hero.eyebrow ?? "Patient acquisition, engineered for healthcare",
+                headline: page.hero.headline ?? page.title,
+              }}
             />
 
             <TrustedBy />
