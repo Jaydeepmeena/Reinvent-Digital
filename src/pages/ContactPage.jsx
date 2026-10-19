@@ -32,7 +32,7 @@ export default function ContactPage() {
         visual={<ChatVisual />}
       />
 
-      <section className="pt-16 pb-16 sm:pt-24 sm:pb-24">
+      <section className="pt-10 pb-16 sm:pt-14 sm:pb-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <DealCards className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             <div
