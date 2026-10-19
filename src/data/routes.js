@@ -57,4 +57,11 @@ export const RETIRED_PAGES = {
     "life-at-rd": "our-story",
     "founders-message": "our-story",
   },
+  // The research reports page is gone; its URL sends visitors to the blog, the
+  // nearest surviving resources content, rather than a dead end. A value that
+  // begins with "/" is an absolute path, since the blog is not an ordinary
+  // resources entry.
+  resources: {
+    "research-reports": "/resources/blogs",
+  },
 };

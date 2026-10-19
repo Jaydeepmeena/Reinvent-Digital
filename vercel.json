@@ -212,8 +212,13 @@
       "permanent": true
     },
     {
+      "source": "/research-reports",
+      "destination": "/resources/blogs",
+      "permanent": true
+    },
+    {
       "source": "/resources/research-reports",
-      "destination": "/research-reports",
+      "destination": "/resources/blogs",
       "permanent": true
     }
   ]

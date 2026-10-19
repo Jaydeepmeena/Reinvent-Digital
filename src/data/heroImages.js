@@ -3,7 +3,6 @@
 // The client's own banners live in ../assets/heroes, one per page. Pages with
 // no banner of their own fall back to the shared card photography.
 import meeting from "../assets/cards/calls.jpg";
-import analytics from "../assets/cards/reporting.jpg";
 import fertility from "../assets/cards/industry-fertility.jpg";
 
 // Client banners: service pages.
@@ -69,7 +68,6 @@ import cityVijayawada from "../assets/heroes/city-vijayawada.jpg";
 const LEFT = "left center";
 const RIGHT = "right center";
 const TOP = "center top";
-const BOTTOM = "center bottom";
 const CENTER = "center";
 // The client banners put their subject right of centre, so they are cropped
 // from the right edge, on a phone that keeps the subject, not the backdrop.
@@ -131,7 +129,6 @@ export const ABOUT_HERO_IMAGES = {
 
 export const RESOURCE_HERO_IMAGES = {
   "case-study": [caseStudyBanner, BANNER],
-  "research-reports": [analytics, BOTTOM],
   blogs: [fertility, RIGHT],
 };
 

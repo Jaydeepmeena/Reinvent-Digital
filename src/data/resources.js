@@ -1,4 +1,4 @@
-import { FileText, BarChart3, Newspaper } from "lucide-react";
+import { FileText, Newspaper } from "lucide-react";
 
 export const RESOURCE_PAGES = [
   {
@@ -14,20 +14,6 @@ export const RESOURCE_PAGES = [
       { title: "Fertility network: doubling consult-to-cycle conversion", tag: "IVF & Fertility", summary: "Why slowing down the nurture sequence increased conversions instead of hurting them." },
       { title: "40-location eye care chain: 2.6x surgical consultations", tag: "Eye Care", summary: "Splitting routine and surgical campaigns unlocked growth without new budget." },
       { title: "14-department hospital group: one dashboard, 1.9x OPD growth", tag: "Hospital", summary: "Building department-specific campaigns on one shared attribution backbone." },
-    ],
-  },
-  {
-    slug: "research-reports",
-    icon: BarChart3,
-    eyebrow: "Original Research",
-    title: "Research Reports",
-    accent: "data on how patients actually search and book",
-    description:
-      "Original research from across our managed accounts: response-time benchmarks, channel mix data and what's changing as AI search reshapes patient discovery.",
-    items: [
-      { title: "The 60-Second Response Benchmark", tag: "Call Centre", summary: "How response time correlates with booking rate across 120+ managed accounts." },
-      { title: "Where Patients Actually Start Searching", tag: "Channel Mix", summary: "A breakdown of Search, Maps, Social and AI-assistant discovery across specialties." },
-      { title: "AI Search & Healthcare: The First Signals", tag: "AEO & GEO", summary: "Early data on how often ChatGPT and AI Overviews mention healthcare providers." },
     ],
   },
   {

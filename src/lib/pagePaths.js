@@ -145,8 +145,12 @@ export function buildPageRoutes(collections) {
     // longer has a page, and the page to send it to instead.
     const handwritten = { ...SHIPPED_RENAMES[collection], ...RETIRED_PAGES[collection] };
     for (const [from, to] of Object.entries(handwritten)) {
+      // `to` is a slug within the collection, or — for a page retired to
+      // somewhere outside it, like the blog — an absolute path written in full.
       const current = pages.find((page) => page.collection === collection && page.id === to);
-      const target = current?.path ?? (taken.has(pathOf(collection, to)) ? pathOf(collection, to) : null);
+      const target = to.startsWith("/")
+        ? to
+        : (current?.path ?? (taken.has(pathOf(collection, to)) ? pathOf(collection, to) : null));
       if (!target) continue;
       const froms = [pathOf(collection, from)];
       for (const folder of PREVIOUS_FOLDERS[collection] ?? []) froms.push(`/${folder}/${from}`);
