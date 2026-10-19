@@ -112,7 +112,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "A few nearby cafes and restaurants that may further help you as landmarks are Chairish Cafe, Rustic by OTH, Town Coffee Malviya Nagar, Coffee Sutra Malviya Nagar, Cafe Nola, Jacobs’ Brew House, Slate Coffee and Taffetta Coffee. If you’re near any of these cafes in Malviya Nagar, just call us, and we’ll help you with the directions.",
-      "booking": "Book Your Healthcare Group Audit At Our Office. Call Us At +91 99505 08668."
+      "booking": "Book Your Healthcare Group Audit At Our Office. Call Us At +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -273,7 +273,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "A few nearby cafés and restaurants that can help you find us: Chai Vaai Cafe and Akya Cafe Nook on 100 Feet Road, Bhukkad Cafe and Routine Affare on MG Road, White Oak Cafe in Anand Gram, Cafe Sheroes Hangout in Sultanpur, and Tonino Ristorante on MG Road. If you’re near any of them, call us and we’ll guide you in.",
-      "booking": "Book Your Healthcare Group Audit at Our Delhi Office. Call Us at +91 99505 08668."
+      "booking": "Book Your Healthcare Group Audit at Our Delhi Office. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -434,7 +434,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "A few nearby cafés and restaurants that can help you find us: Mrs Mage at Hyatt Gachibowli, Tabula Rasa and Asembli in the Financial District, Motown Stories Cafe on ISB Road, The Big Star Café on Consulate Road, and Mamalola Penthouse at The District. If you’re near any of them, call us and we’ll guide you in.",
-      "booking": "Book Your Healthcare Group Audit at Our Hyderabad Office. Call Us at +91 99505 08668."
+      "booking": "Book Your Healthcare Group Audit at Our Hyderabad Office. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -590,7 +590,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with hospitals and clinics across Sector 18, Sector 62, Sector 137, Noida Extension, Greater Noida and the Noida Expressway corridor.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Centre for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Centre for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -742,7 +742,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with hospitals and clinics across Golf Course Road, Sohna Road, DLF Phases 1 to 5, Sushant Lok, South City, New Gurgaon and the Dwarka Expressway.",
-      "booking": "Book a Call With Our Team, and We’ll Visit Your Centre for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Visit Your Centre for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -894,7 +894,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with hospitals and clinics across Andheri, Bandra, Powai, Ghatkopar, Chembur, Borivali, Malad, Thane and Navi Mumbai.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Centre for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Centre for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -1046,7 +1046,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with hospitals and clinics across HSR Layout, Whitefield, Sarjapur Road, Koramangala, Indiranagar, Jayanagar, Electronic City and Hebbal.",
-      "booking": "Book a Call With Our Team, and We’ll Visit Your Centre for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Visit Your Centre for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -1198,7 +1198,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with clinics and hospitals across Ernakulam, from Panampilly Nagar and Fort Kochi to Infopark and the Seaport–Airport Road.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -1350,7 +1350,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with clinics and hospitals along OMR, GST Road and across central Chennai, including Adyar, T. Nagar and Porur.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -1506,7 +1506,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with clinics and hospitals across Kozhikode city, from Beach Road and Palayam to the growing suburbs along the national highway.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -1658,7 +1658,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with clinics and hospitals across the city, from the Medical College area and Vellayambalam to Peroorkada and the Technopark belt.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",
@@ -1810,7 +1810,7 @@ export const LOCATIONS = [
         }
       ],
       "note": "We work with clinics and hospitals across Vijayawada, Poranki, Gollapudi and the Guntur–Amaravati corridor.",
-      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 99505 08668."
+      "booking": "Book a Call With Our Team, and We’ll Come to Your Clinic or Hospital for the Kick-Off. Call Us at +91 9950508668."
     },
     "plan": {
       "eyebrow": "HOW WE PLAN",

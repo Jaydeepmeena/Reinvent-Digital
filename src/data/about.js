@@ -74,7 +74,7 @@ export const ABOUT_PAGES = [
       { q: "Where are Reinvent Digital's offices?", a: "Reinvent Digital is headquartered in Delhi, with offices in Jaipur and Hyderabad. The team also serves healthcare clients in cities including Bangalore, Mumbai, Chennai, Noida, Gurgaon and Kochi." },
       { q: "How is Reinvent Digital different from a typical healthcare marketing agency?", a: "Most agencies stop at leads. Reinvent Digital works with your call team and CRM as well, and reports cost per patient by channel. Walk-ins are tracked wherever your attendance data is connected." },
       { q: "Which healthcare businesses does Reinvent Digital work with?", a: "Reinvent Digital works with dental chains, multi-speciality hospitals, IVF and fertility clinics, and eye hospitals. It serves both single clinics and multi-location groups across India." },
-      { q: "How do I get started with Reinvent Digital?", a: "Start with a conversation with our team on +91 99505 08668. We begin by reviewing your current marketing, call handling and reporting. That shows where enquiries are being lost before anything changes." },
+      { q: "How do I get started with Reinvent Digital?", a: "Start with a conversation with our team on +91 9950508668. We begin by reviewing your current marketing, call handling and reporting. That shows where enquiries are being lost before anything changes." },
     ],
   },
   {

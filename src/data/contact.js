@@ -11,8 +11,8 @@ export const CONTACT_PAGE = {
   description:
     "Tell us about your clinics, your current channels and where enquiries seem to go quiet. We'll come back with a clear view of where the gaps are, no generic pitch deck.",
   ctaLabel: "Email Us Directly",
-  email: "hello@reinventdigital.com",
-  phone: "+91 98765 43210",
+  email: "sales@reinventdigital.com",
+  phone: "+91 9950508668",
   responseTime: "Within 1 business day",
   citiesLabel: "Clinics we serve across India",
   cities: [

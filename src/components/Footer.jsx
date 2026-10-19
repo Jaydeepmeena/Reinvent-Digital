@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Briefcase } from "lucide-react";
 import logo from "../assets/rd-logo.png";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
@@ -79,18 +79,25 @@ export default function Footer() {
 
             <div className="mt-8 space-y-3">
               <a
-                href="mailto:hello@reinventdigital.com"
+                href="mailto:sales@reinventdigital.com"
                 className="flex items-center gap-3 text-[15px] text-cream/80 transition-colors hover:text-lime"
               >
                 <Mail className="h-4 w-4 text-cream/45" />
-                hello@reinventdigital.com
+                sales@reinventdigital.com
               </a>
               <a
-                href="tel:+919876543210"
+                href="mailto:career@reinventdigital.com"
+                className="flex items-center gap-3 text-[15px] text-cream/80 transition-colors hover:text-lime"
+              >
+                <Briefcase className="h-4 w-4 text-cream/45" />
+                career@reinventdigital.com
+              </a>
+              <a
+                href="tel:+919950508668"
                 className="flex items-center gap-3 text-[15px] text-cream/80 transition-colors hover:text-lime"
               >
                 <Phone className="h-4 w-4 text-cream/45" />
-                +91 98765 43210
+                +91 9950508668
               </a>
             </div>
 

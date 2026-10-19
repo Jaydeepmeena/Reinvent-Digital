@@ -5,9 +5,9 @@ import { EASE } from "./motion/easing";
 import contactImg from "../assets/heroes/Want-a-Patient-Acquisition-System-for-Your-Group.png";
 
 const CHANNELS = [
-  { label: "WhatsApp", href: "https://wa.me/919876543210", icon: MessageCircle },
-  { label: "Call us", href: "tel:+919876543210", icon: Phone },
-  { label: "Email", href: "mailto:hello@reinventdigital.com", icon: Mail },
+  { label: "WhatsApp", href: "https://wa.me/919950508668", icon: MessageCircle },
+  { label: "Call us", href: "tel:+919950508668", icon: Phone },
+  { label: "Email", href: "mailto:sales@reinventdigital.com", icon: Mail },
 ];
 
 const DETAILS = [
@@ -20,11 +20,11 @@ const DETAILS = [
     icon: Phone,
     title: "Talk to us",
     lines: [
-      { label: "Call", value: "+91 98765 43210", href: "tel:+919876543210" },
+      { label: "Call", value: "+91 9950508668", href: "tel:+919950508668" },
       {
         label: "Mail",
-        value: "hello@reinventdigital.com",
-        href: "mailto:hello@reinventdigital.com",
+        value: "sales@reinventdigital.com",
+        href: "mailto:sales@reinventdigital.com",
       },
     ],
   },
@@ -44,7 +44,7 @@ export default function CTASection({
   heading = "Want a Patient Acquisition System for Your Group? Let's Talk",
   body = "Talk to us about the gaps between your channels, CRM, call centre and clinic data, and what it would take to connect them.",
   ctaLabel = "Discuss Your Growth Plan",
-  ctaHref = "mailto:hello@reinventdigital.com",
+  ctaHref = "mailto:sales@reinventdigital.com",
   footnote = "Google Ads · Meta Ads · SEO · AEO & GEO · CRM · Call Centre",
   monochrome = false,
 }) {
