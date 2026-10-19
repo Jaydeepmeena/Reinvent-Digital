@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import DemoExpiry from "./fx/DemoExpiry";
 
 const NAV_OFFSET = -88;
 
@@ -55,6 +56,7 @@ export default function Layout() {
         </Suspense>
       </main>
       <Footer />
+      <DemoExpiry />
     </div>
   );
 
