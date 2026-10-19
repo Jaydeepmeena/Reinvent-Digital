@@ -75,6 +75,18 @@ export function normaliseLandingPage(raw) {
     .map((item) => ({ q: text(item?.q ?? item?.question), a: text(item?.a ?? item?.answer) }))
     .filter((item) => item.q && item.a);
 
+  // Blog posts to feature, named by slug. The posts themselves come from the
+  // blog, so only the slugs travel here; the template fetches and lays them out.
+  const blogSlugs = (Array.isArray(raw.blogs?.slugs) ? raw.blogs.slugs : []).map(text).filter(Boolean);
+  const blogs = blogSlugs.length
+    ? {
+        eyebrow: text(raw.blogs.eyebrow),
+        heading: text(raw.blogs.heading),
+        body: text(raw.blogs.body),
+        slugs: blogSlugs,
+      }
+    : null;
+
   return {
     slug,
     title,
@@ -101,6 +113,7 @@ export function normaliseLandingPage(raw) {
     intro: sanitise(raw.intro ?? ""),
     reasons: block(raw.reasons, "points", lines(raw.reasons?.points)),
     services: block(raw.services, "items", cards(raw.services?.items)),
+    blogs,
     faqs,
     closing: raw.closing
       ? {

@@ -126,6 +126,17 @@ A single-object response also works for the `?slug=` read.
         "cta": { "label": "See how the system works", "href": "/what-we-do/google-ads" }
       },
 
+      "blogs": {
+        "eyebrow": "Related reading",
+        "heading": "Blogs on Getting Dental Ads to Pay",
+        "body": "The thinking behind how we run paid search for clinics.",
+        "slugs": [
+          "cost-per-lead-is-the-wrong-metric",
+          "the-60-second-response-benchmark",
+          "booking-attribution-without-a-data-team"
+        ]
+      },
+
       "faqs": [
         {
           "q": "How is this different from a general digital marketing agency?",
@@ -168,6 +179,8 @@ A single-object response also works for the `?slug=` read.
 | `services.eyebrow` / `.heading` / `.body` | string | no | Section header. |
 | `services.items` | array of `{title, body}` | no | Numbered cards on the dark band, 2 per row. Four works best. |
 | `services.cta` | `{label, href}` | no | Button under the cards. |
+| `blogs.eyebrow` / `.heading` / `.body` | string | no | Header for a "related reading" section. |
+| `blogs.slugs` | array of strings | no | Slugs of blog posts to feature, in order. The posts come from `/posts/`; a slug that matches no post is skipped, and the whole section is hidden when none match. Links go to `/resources/blogs/<slug>`. |
 | `faqs` | array of `{q, a}` | no | Rendered as a list **and** emitted as `FAQPage` JSON-LD for rich results. |
 | `closing.eyebrow` / `.heading` / `.body` | string | no | Final contact band. Has a sensible default. |
 
@@ -224,7 +237,7 @@ register_post_type('landing_page', [
 ]);
 ```
 
-Register the blocks (`seo`, `hero`, `reasons`, `services`, `faqs`, `closing`) as
+Register the blocks (`seo`, `hero`, `reasons`, `services`, `blogs`, `faqs`, `closing`) as
 meta with `show_in_rest => true`, and either shape the REST response with
 `rest_prepare_landing_page` to match the JSON above, or expose them under a
 `meta` key and tell us, and we will read them from there.

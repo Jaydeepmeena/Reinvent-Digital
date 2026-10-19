@@ -12,6 +12,7 @@ import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
 import Magnetic from "../components/fx/Magnetic";
 import Reveal from "../components/motion/Reveal";
+import RelatedBlogs from "../components/fx/RelatedBlogs";
 
 // The services grid alternates the way the rest of the site does: ink, lime,
 // white, so four cards read as two pairs rather than a wall.
@@ -236,6 +237,8 @@ export default function LandingPage() {
                 </div>
               </section>
             )}
+
+            {page.blogs && <RelatedBlogs blogs={page.blogs} />}
 
             <CTASection
               monochrome
