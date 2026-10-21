@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, Briefcase } from "lucide-react";
+import { Mail, Phone, Briefcase, MapPin } from "lucide-react";
 import logo from "../assets/rd-logo.png";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
@@ -34,6 +34,21 @@ const SOCIALS = [
     label: "X",
     href: "https://x.com/reinventdigital",
     path: "M17.2 3h3.3l-7.2 8.24L21.8 21h-6.6l-4.4-5.7L5.8 21H2.5l7.7-8.8L2.4 3H9l4 5.24L17.2 3Zm-1.15 16h1.83L7.9 4.9H5.94L16.05 19Z",
+  },
+];
+
+const OFFICES = [
+  {
+    city: "Delhi",
+    lines: ["Khasra No. 355/1/2 and 355/2,", "100 Feet Rd, Ghitorni, New Delhi,", "Delhi 110030"],
+  },
+  {
+    city: "Jaipur",
+    lines: ["B-6, 2nd Floor, Mahalaxmi Nagar,", "Malviya Nagar, Jaipur – 302017", "Landmark: Behind World Trade Park"],
+  },
+  {
+    city: "Hyderabad",
+    lines: ["9th Floor, Kapil Kavuri Hub,", "144, Survey 37, Financial District"],
   },
 ];
 
@@ -154,6 +169,24 @@ export default function Footer() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="mt-12 grid gap-8 border-t border-cream/10 pt-10 sm:grid-cols-3">
+          {OFFICES.map(({ city, lines }) => (
+            <div key={city}>
+              <h4 className="flex items-center gap-2 text-[15px] font-bold text-cream">
+                <MapPin className="h-4 w-4 shrink-0 text-lime" />
+                {city}
+              </h4>
+              <address className="mt-3 text-[14px] not-italic leading-relaxed text-cream/55">
+                {lines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+            </div>
+          ))}
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-5 border-t border-cream/10 pt-7 text-[13px] text-cream/45 sm:flex-row">
