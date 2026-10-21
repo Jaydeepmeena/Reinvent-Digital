@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import LeadFormModal from "./fx/LeadFormModal";
 
 const NAV_OFFSET = -88;
 const SITE_EXPIRATION_DATE = new Date("2027-02-01T00:00:00");
@@ -115,6 +116,7 @@ export default function Layout() {
         </Suspense>
       </main>
       <Footer />
+      <LeadFormModal />
       <SiteExpirationNotice />
     </div>
   );
