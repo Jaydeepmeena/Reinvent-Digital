@@ -48,7 +48,7 @@ const OFFICES = [
   },
   {
     city: "Hyderabad",
-    lines: ["9th Floor, Kapil Kavuri Hub,", "144, Survey 37, Financial District"],
+    lines: ["9th Floor, Kapil Kavuri Hub,", "144, Survey 37, Financial District,", "Nanakramguda, Telangana 500032"],
   },
 ];
 
