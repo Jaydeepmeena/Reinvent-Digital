@@ -31,6 +31,8 @@ export const SAMPLE_LANDING_PAGES = [
     },
     intro:
       "<p>Every hospital is different. The departments that carry the revenue, the catchment each one draws from, the consultants patients come back for. A digital marketing agency for multi-specialty hospitals has to work department by department, not run one campaign for the whole building, because cardiology and orthopaedics are not competing for the same patient on the same day.</p>",
+    overview:
+      "<p>Most hospital marketing is bought in pieces: an SEO vendor, a separate ads agency, a call centre that reports to no one. The gaps between them are where admissions leak. We run the whole chain as one accountable team, so a patient who searches on Tuesday, calls on Wednesday and is admitted the following month can be traced back to the campaign that started it.</p><p>That single thread — from first search to confirmed admission — is what lets the board fund the departments that actually convert, instead of spreading budget evenly across a building where half the departments carry the revenue.</p>",
     reasons: {
       eyebrow: "Why work with us",
       heading: "Reasons Hospitals Should Work with Reinvent Digital",
@@ -122,6 +124,8 @@ export const SAMPLE_LANDING_PAGES = [
     },
     intro:
       "<p>A dental clinic does not need more clicks. It needs more chairs filled, and it needs to know which campaign filled them. Google Ads for dental clinics works when the campaign is built around the treatment a patient searched for, the call that follows is answered, and the booking is traced back to its source.</p>",
+    overview:
+      "<p>The clinics that win with Google Ads are not the ones spending the most. They are the ones who know, for every rupee, which treatment it filled and what that chair was worth. That takes three things working together: campaigns split by treatment, a tracked number on every ad, and a front desk that turns the call into an appointment.</p><p>Get those three aligned and the account stops being a cost line and becomes a forecast — you can say how many implant consultations next month's budget will book, because last month's already told you.</p>",
     reasons: {
       eyebrow: "Why work with us",
       heading: "Why Dental Clinics Work with Reinvent Digital",

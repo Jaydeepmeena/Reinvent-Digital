@@ -1,25 +1,30 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { fetchLandingPage } from "../lib/landingPages";
 import { useDocumentHead } from "../lib/head";
-import LandingHero from "../components/fx/LandingHero";
-import TrustedBy from "../components/TrustedBy";
-import CTASection from "../components/CTASection";
-import NotFound from "./NotFound";
-import InnerPage from "../components/fx/InnerPage";
+import SubPageHero from "../components/SubPageHero";
+import VelocityMarquee from "../components/fx/VelocityMarquee";
+import { BentoGrid, BentoTile, GrowthBars } from "../components/fx/Bento";
+import StackCards from "../components/fx/StackCards";
+import IncludesCarousel from "../components/fx/IncludesCarousel";
 import Eyebrow from "../components/fx/Eyebrow";
 import SplitReveal from "../components/fx/SplitReveal";
-import Magnetic from "../components/fx/Magnetic";
-import Reveal from "../components/motion/Reveal";
+import CountUp from "../components/motion/CountUp";
+import CTASection from "../components/CTASection";
 import RelatedBlogs from "../components/fx/RelatedBlogs";
+import InnerPage from "../components/fx/InnerPage";
+import Reveal from "../components/motion/Reveal";
+import NotFound from "./NotFound";
 
-// The services grid alternates the way the rest of the site does: ink, lime,
-// white, so four cards read as two pairs rather than a wall.
-const CARD_TONES = ["bg-ink text-cream", "bg-lime text-ink", "bg-white text-ink border border-ink/10"];
-
-const HEADING =
+// Landing pages borrow the service page's layout, but they carry different
+// content blocks, so each service-page section is fed from the nearest landing
+// field: reasons fill the "what's included" grid, services fill the process
+// cards, and the hero's first stat stands in for the service metric.
+const SECTION_HEADING =
   "text-balance text-[clamp(1.875rem,1.4rem+2.2vw,2.85rem)] font-extrabold leading-[1.1] tracking-tight";
+const PROSE =
+  "text-[17px] leading-relaxed text-ink-soft [&_a]:font-semibold [&_a]:text-green-deep [&_a]:underline [&_p+p]:mt-5 [&_strong]:text-ink";
 
 const CLOSING_FALLBACK = {
   heading: "Want This Running for Your Practice?",
@@ -104,6 +109,14 @@ export default function LandingPage() {
   // on the root path, so it catches every mistyped URL on the site.
   if (status === "missing") return <NotFound />;
 
+  // Map the landing fields onto the pieces the service-page sections expect.
+  const hero = page?.hero;
+  const heroStats = hero?.stats ?? [];
+  const heroMetric = heroStats[0] ? { label: heroStats[0].label, value: heroStats[0].value } : null;
+  const serviceItems = page?.services?.items ?? [];
+  const serviceTitles = serviceItems.map((item) => item.title).filter(Boolean);
+  const deliverables = (page?.reasons?.points ?? []).map((point) => ({ title: point }));
+
   return (
     <InnerPage>
       <Fragment key={slug}>
@@ -112,106 +125,138 @@ export default function LandingPage() {
 
         {status === "ready" && page && (
           <>
-            <LandingHero
-              hero={{
-                ...page.hero,
-                eyebrow: page.hero.eyebrow ?? "Patient acquisition, engineered for healthcare",
-                headline: page.hero.headline ?? page.title,
-              }}
+            <SubPageHero
+              variant="services"
+              image={hero.image}
+              trail={[{ label: "Home", href: "/" }, { label: page.title }]}
+              eyebrow={hero.eyebrow ?? "Patient acquisition, engineered for healthcare"}
+              title={page.title}
+              headline={hero.headline ?? page.title}
+              accent={hero.accent}
+              description={hero.description}
+              stats={heroStats}
+              ctaLabel={hero.cta?.label ?? "Let's Connect"}
+              ctaHref={hero.cta?.href ?? "/contact"}
+              highlights={serviceTitles.slice(0, 4)}
+              metric={heroMetric}
             />
 
-            <TrustedBy />
+            <VelocityMarquee items={[page.title, ...serviceTitles]} className="border-y border-ink/10 bg-white" />
 
             {page.intro && (
               <section className="section-y-tight">
                 <div className="mx-auto max-w-3xl px-5 sm:px-8">
                   <Reveal>
-                    <div
-                      className="text-[17px] leading-relaxed text-ink-soft [&_a]:font-semibold [&_a]:text-green-deep [&_a]:underline [&_p+p]:mt-5 [&_strong]:text-ink"
-                      dangerouslySetInnerHTML={{ __html: page.intro }}
-                    />
+                    <div className={PROSE} dangerouslySetInnerHTML={{ __html: page.intro }} />
                   </Reveal>
                 </div>
               </section>
             )}
 
-            {page.reasons && (
-              <section className="section-y border-t border-ink/[0.06] bg-white">
+            {deliverables.length > 0 && (
+              <section className="section-y">
                 <div className="mx-auto max-w-7xl px-5 sm:px-8">
-                  <div className="max-w-3xl">
-                    {page.reasons.eyebrow && <Eyebrow>{page.reasons.eyebrow}</Eyebrow>}
-                    {page.reasons.heading && (
-                      <SplitReveal as="h2" type="skewLines" className={`mt-4 ${HEADING} text-ink`}>
-                        {page.reasons.heading}
+                  <BentoGrid className="md:grid-cols-2 lg:grid-cols-4">
+                    <BentoTile className="flex flex-col justify-between border border-ink/10 bg-white md:col-span-2">
+                      <Eyebrow>{page.reasons?.eyebrow ?? "Why work with us"}</Eyebrow>
+                      <SplitReveal
+                        as="h2"
+                        type="chars3d"
+                        className="mt-4 text-balance text-[clamp(1.6rem,1.2rem+1.6vw,2.4rem)] font-extrabold leading-tight tracking-tight text-ink"
+                      >
+                        {page.reasons?.heading ?? `Why practices choose us for ${page.title}.`}
                       </SplitReveal>
-                    )}
-                    {page.reasons.body && (
-                      <p className="mt-5 text-[16px] leading-relaxed text-ink-soft">{page.reasons.body}</p>
-                    )}
-                  </div>
+                      {page.reasons?.body && <p className="mt-4 text-sm text-ink-soft">{page.reasons.body}</p>}
+                    </BentoTile>
 
-                  <ul className="section-head-gap grid gap-px overflow-hidden rounded-3xl bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
-                    {page.reasons.points.map((point, i) => (
-                      <li key={point} className="bg-paper p-6 sm:p-8">
-                        <span className="text-[13px] font-extrabold tracking-[0.18em] text-lime-deep">
-                          {String(i + 1).padStart(2, "0")}
+                    {heroMetric && (
+                      <BentoTile className="flex flex-col bg-ink text-cream md:col-span-2 lg:row-span-2">
+                        <div
+                          aria-hidden="true"
+                          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 animate-spin-slow rounded-full border border-dashed border-lime/30"
+                        />
+                        <span className="relative text-xs font-semibold uppercase tracking-[0.2em] text-lime">
+                          {heroMetric.label}
                         </span>
-                        <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{point}</p>
-                      </li>
+                        <div className="relative mt-4 text-[clamp(3rem,2rem+5vw,5.5rem)] font-extrabold leading-none tracking-tight">
+                          <CountUp value={heroMetric.value} duration={2} />
+                        </div>
+                        <GrowthBars className="relative mt-auto pt-10" />
+                      </BentoTile>
+                    )}
+
+                    {deliverables.map(({ title: name }, i) => (
+                      <BentoTile
+                        key={name}
+                        className={`hidden flex-col gap-6 border md:flex ${
+                          i === 2 ? "border-lime bg-lime text-ink" : "border-ink/10 bg-white text-ink hover:border-ink/30"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-bold tabular-nums opacity-40">{String(i + 1).padStart(2, "0")}</span>
+                          <span
+                            className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-500 group-hover:rotate-[360deg] ${
+                              i === 2 ? "bg-ink text-lime" : "bg-lime text-ink"
+                            }`}
+                          >
+                            <Check className="h-4 w-4" />
+                          </span>
+                        </div>
+                        <p className="mt-auto text-[15px] font-semibold leading-snug">{name}</p>
+                      </BentoTile>
                     ))}
-                  </ul>
+                  </BentoGrid>
+                </div>
+
+                <IncludesCarousel items={deliverables} className="mt-5 md:hidden" />
+              </section>
+            )}
+
+            {serviceItems.length > 0 && (
+              <section className="section-y border-t border-ink/[0.06] bg-white">
+                <div className="mx-auto max-w-5xl px-5 sm:px-8">
+                  <Eyebrow>{page.services?.eyebrow ?? "What we run"}</Eyebrow>
+                  <SplitReveal
+                    as="h2"
+                    type="chars3d"
+                    className={`mt-4 max-w-3xl ${SECTION_HEADING} text-ink`}
+                  >
+                    {page.services?.heading ?? "A repeatable system, not a one-off campaign."}
+                  </SplitReveal>
+                  {page.services?.body && (
+                    <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">{page.services.body}</p>
+                  )}
+                  <div className="mb-10 sm:mb-14" />
+                  <StackCards steps={serviceItems} />
                 </div>
               </section>
             )}
 
-            {page.services && (
-              <section className="section-y bg-ink text-cream">
+            {heroStats.length > 0 && (
+              <section className="section-y">
                 <div className="mx-auto max-w-7xl px-5 sm:px-8">
-                  <div className="max-w-3xl">
-                    {page.services.eyebrow && <Eyebrow tone="dark">{page.services.eyebrow}</Eyebrow>}
-                    {page.services.heading && (
-                      <SplitReveal as="h2" type="skewLines" className={`mt-4 ${HEADING}`}>
-                        {page.services.heading}
-                      </SplitReveal>
-                    )}
-                    {page.services.body && (
-                      <p className="mt-5 text-[16px] leading-relaxed text-cream/70">{page.services.body}</p>
-                    )}
-                  </div>
-
-                  <div className="section-head-gap grid gap-4 sm:grid-cols-2">
-                    {page.services.items.map((item, i) => (
-                      <Reveal
-                        key={item.title ?? i}
-                        delay={i * 0.06}
-                        className={`flex flex-col rounded-3xl p-6 sm:p-9 ${CARD_TONES[i % CARD_TONES.length]}`}
-                      >
-                        <span className="text-[clamp(3rem,2.4rem+2.4vw,4.5rem)] font-extrabold leading-none tracking-tighter [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_currentColor]">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        {item.title && (
-                          <h3 className="mt-auto pt-8 text-[clamp(1.25rem,1.05rem+0.8vw,1.6rem)] font-extrabold leading-tight tracking-tight">
-                            {item.title}
-                          </h3>
-                        )}
-                        {item.body && <p className="mt-3 text-[15px] leading-relaxed opacity-75">{item.body}</p>}
-                      </Reveal>
+                  <BentoGrid className="sm:grid-cols-3">
+                    {heroStats.map(({ value, label }, i) => (
+                      <BentoTile key={label} className={`text-center ${i === 1 ? "bg-lime text-ink" : "bg-ink text-cream"}`}>
+                        <div className="text-[clamp(2.25rem,1.6rem+2.4vw,3.25rem)] font-extrabold leading-none">
+                          <CountUp value={value} />
+                        </div>
+                        <div className="mt-3 text-[13px] opacity-70">{label}</div>
+                      </BentoTile>
                     ))}
-                  </div>
+                  </BentoGrid>
+                </div>
+              </section>
+            )}
 
-                  {page.services.cta && (
-                    <div className="mt-10 sm:mt-12">
-                      <Magnetic className="w-full sm:w-auto">
-                        <a
-                          href={page.services.cta.href}
-                          className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-lime px-6 py-3.5 text-[15px] font-semibold text-ink transition-colors hover:bg-cream sm:w-auto"
-                        >
-                          {page.services.cta.label}
-                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                        </a>
-                      </Magnetic>
-                    </div>
-                  )}
+            {page.blogs && <RelatedBlogs blogs={page.blogs} />}
+
+            {page.overview && (
+              <section className="section-y border-t border-ink/[0.06]">
+                <div className="mx-auto max-w-3xl px-5 sm:px-8">
+                  <Reveal>
+                    <div className={PROSE} dangerouslySetInnerHTML={{ __html: page.overview }} />
+                  </Reveal>
                 </div>
               </section>
             )}
@@ -219,20 +264,29 @@ export default function LandingPage() {
             {page.faqs.length > 0 && (
               <section className="section-y border-t border-ink/[0.06] bg-white">
                 <div className="mx-auto max-w-4xl px-5 sm:px-8">
-                  <Eyebrow>Frequently Asked Questions</Eyebrow>
-                  <dl className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
-                    {page.faqs.map(({ q, a }) => (
-                      <div key={q} className="py-6">
-                        <dt className="text-[16px] font-bold leading-snug text-ink">{q}</dt>
-                        <dd className="mt-2.5 text-[15px] leading-relaxed text-ink-soft">{a}</dd>
+                  <Eyebrow>Frequently asked questions</Eyebrow>
+                  <SplitReveal
+                    as="h2"
+                    type="chars3d"
+                    className="mt-4 text-balance text-[clamp(1.75rem,1.3rem+2vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink"
+                  >
+                    Common Questions, Answered
+                  </SplitReveal>
+
+                  <dl className="section-head-gap divide-y divide-ink/10 border-y border-ink/10">
+                    {page.faqs.map(({ q, a }, i) => (
+                      <div key={q} className="grid gap-2 py-6 sm:grid-cols-[auto_1fr] sm:gap-6">
+                        <dt className="flex gap-3 text-[15px] font-bold text-ink sm:text-base">
+                          <span className="tabular-nums text-ink-soft/50">{String(i + 1).padStart(2, "0")}</span>
+                          <span className="sm:w-72">{q}</span>
+                        </dt>
+                        <dd className="pl-8 text-[15px] leading-relaxed text-ink-soft sm:pl-0">{a}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
               </section>
             )}
-
-            {page.blogs && <RelatedBlogs blogs={page.blogs} />}
 
             <CTASection
               monochrome

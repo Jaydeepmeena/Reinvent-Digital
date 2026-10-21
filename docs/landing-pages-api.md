@@ -97,6 +97,8 @@ A single-object response also works for the `?slug=` read.
 
       "intro": "<p>Every hospital is different. The departments that carry the revenue, the catchment each one draws from, the consultants patients come back for.</p>",
 
+      "overview": "<p>Most hospital marketing is bought in pieces, and the gaps between them are where admissions leak. We run the whole chain as one accountable team.</p>",
+
       "reasons": {
         "eyebrow": "Why work with us",
         "heading": "Reasons Hospitals Should Work with Reinvent Digital",
@@ -172,12 +174,13 @@ A single-object response also works for the `?slug=` read.
 | `hero.description` | string | no | Paragraph under the headline. Two or three lines. |
 | `hero.image` | string | no | Absolute image URL, used as the hero banner. Landscape, 1600x900 or wider. Without it the hero renders light instead of dark. |
 | `hero.cta` | `{label, href}` | no | Defaults to `Let's Connect` → `/contact`. |
-| `hero.stats` | array of `{value, label}` | no | At most 3 are shown, in the order sent. Keep `value` to 2-5 characters. |
-| `intro` | HTML string | no | Short opening paragraph. Sanitised: `<p> <strong> <em> <a> <ul> <ol> <li>` and headings survive, scripts and styles do not. |
-| `reasons.eyebrow` / `.heading` / `.body` | string | no | Section header. |
-| `reasons.points` | array of strings | no | Numbered cards, 3 per row. Six works best. The block is hidden if empty. |
-| `services.eyebrow` / `.heading` / `.body` | string | no | Section header. |
-| `services.items` | array of `{title, body}` | no | Numbered cards on the dark band, 2 per row. Four works best. |
+| `hero.stats` | array of `{value, label}` | no | At most 3 shown in the hero, in the order sent. Keep `value` to 2-5 characters. The first stat also becomes the hero card's metric, and all of them reappear lower down as a proof band. |
+| `intro` | HTML string | no | Short lead paragraph under the hero. Sanitised: `<p> <strong> <em> <a> <ul> <ol> <li>` and headings survive, scripts and styles do not. |
+| `overview` | HTML string | no | Free-text section rendered just before the FAQ. Same sanitising as `intro`. Use it for a couple of plain paragraphs; hidden when empty. |
+| `reasons.eyebrow` / `.heading` / `.body` | string | no | Header for the "what's included" grid. |
+| `reasons.points` | array of strings | no | Each point becomes a tile in the bento grid. Six works best. The block is hidden if empty. |
+| `services.eyebrow` / `.heading` / `.body` | string | no | Header for the process section. |
+| `services.items` | array of `{title, body}` | no | Each item becomes a stacking process card. Four works best; `title` and `body` are both shown. |
 | `services.cta` | `{label, href}` | no | Button under the cards. |
 | `blogs.eyebrow` / `.heading` / `.body` | string | no | Header for a "related reading" section. |
 | `blogs.slugs` | array of strings | no | Slugs of blog posts to feature, in order. The posts come from `/posts/`; a slug that matches no post is skipped, and the whole section is hidden when none match. Links go to `/resources/blogs/<slug>`. |

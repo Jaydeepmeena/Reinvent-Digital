@@ -111,6 +111,9 @@ export function normaliseLandingPage(raw) {
         .slice(0, 3),
     },
     intro: sanitise(raw.intro ?? ""),
+    // A free-text section rendered just before the FAQ. Like `intro` it is
+    // HTML, so the CMS can send paragraphs; the template shows it only when set.
+    overview: sanitise(raw.overview ?? ""),
     reasons: block(raw.reasons, "points", lines(raw.reasons?.points)),
     services: block(raw.services, "items", cards(raw.services?.items)),
     blogs,
