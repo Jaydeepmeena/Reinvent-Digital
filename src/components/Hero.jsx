@@ -60,7 +60,7 @@ export default function Hero() {
         initial={{ scale: 0.7, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
-        className="absolute right-0 top-[17%] translate-x-1/2 sm:top-[20%] lg:bottom-auto lg:top-[40%]"
+        className="absolute right-0 top-[17%] z-20 translate-x-1/2 sm:top-[20%] lg:bottom-auto lg:top-[40%]"
       >
         <SocialRing />
       </motion.div>
