@@ -34,9 +34,10 @@ const CHANNELS = [
 
 export default function SocialRing() {
   return (
-    <div className="pointer-events-none relative h-44 w-44 sm:h-56 sm:w-56 lg:h-[19rem] lg:w-[19rem]">
+    // group: hovering any icon pauses both spins (see group-hover below).
+    <div className="group pointer-events-none relative h-44 w-44 sm:h-56 sm:w-56 lg:h-[19rem] lg:w-[19rem]">
       {/* Outer track with a single dot running round it */}
-      <div aria-hidden="true" className="animate-spin-slow absolute inset-0 rounded-full border border-ink/20">
+      <div aria-hidden="true" className="animate-spin-slow absolute inset-0 rounded-full border border-ink/20 group-hover:[animation-play-state:paused]">
         <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-lime shadow-[0_0_10px_3px_rgba(167,207,59,0.6)]" />
       </div>
 
@@ -47,7 +48,7 @@ export default function SocialRing() {
       />
 
       {/* Icons ride the middle of the band, turning the other way */}
-      <div className="animate-spin-slow absolute inset-[1.875rem] [animation-direction:reverse] sm:inset-[2.3rem] lg:inset-[2.75rem]">
+      <div className="animate-spin-slow absolute inset-[1.875rem] [animation-direction:reverse] group-hover:[animation-play-state:paused] sm:inset-[2.3rem] lg:inset-[2.75rem]">
         {CHANNELS.map(({ label, href, path }, i) => {
           const angle = (i / CHANNELS.length) * (Math.PI * 2);
           return (
