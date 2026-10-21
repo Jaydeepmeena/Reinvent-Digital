@@ -164,7 +164,7 @@ export default function Footer() {
           </span>
 
           <div className="flex gap-6">
-            <Link to="/" className="transition-colors hover:text-lime">
+            <Link to="/privacy-policy" className="transition-colors hover:text-lime">
               Privacy Policy
             </Link>
             <Link to="/" className="transition-colors hover:text-lime">

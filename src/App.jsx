@@ -14,6 +14,7 @@ const CaseStudiesPage = lazy(() => import("./pages/CaseStudiesPage"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
 const LocationPage = lazy(() => import("./pages/LocationPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="resources/case-study/:slug" element={<CaseStudyPage />} />
 
         <Route path="contact" element={<ContactPage />} />
+        <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
 
         {/* The site's own pages. The path is whatever the slug said, and the
             page is handed its identity directly rather than reading it back
