@@ -9,6 +9,7 @@ import { ABOUT_HERO_IMAGES } from "../data/heroImages";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import Eyebrow from "../components/fx/Eyebrow";
+import SmartImage from "../components/fx/SmartImage";
 import SplitReveal from "../components/fx/SplitReveal";
 import ScrubText from "../components/fx/ScrubText";
 import RotatingBadge from "../components/fx/RotatingBadge";
@@ -161,7 +162,7 @@ function Journey({ eyebrow, heading, milestones = [] }) {
  * swap. On a phone the heading comes first and the portrait follows, because a
  * section that opens with a face and no context reads as an advert.
  */
-function Founder({ eyebrow, heading, body, name, role, note, image, imageAlt }) {
+function Founder({ eyebrow, heading, body, name, role, note, image, imageFallback, imageAlt }) {
   const initials = (name ?? "")
     .split(" ")
     .filter(Boolean)
@@ -177,8 +178,9 @@ function Founder({ eyebrow, heading, body, name, role, note, image, imageAlt }) 
         <Reveal className="max-lg:order-2">
           <div className="overflow-hidden rounded-3xl border border-cream/15 bg-cream/[0.04]">
             {image ? (
-              <img
+              <SmartImage
                 src={image}
+                fallback={imageFallback}
                 alt={imageAlt ?? name}
                 loading="lazy"
                 className="aspect-[4/5] w-full object-cover"
@@ -253,7 +255,7 @@ function Drivers({ eyebrow, heading, items = [] }) {
  * picture stays with the copy while it scrolls on a wide screen, and drops
  * below it on a phone, where a half-width image would be a postage stamp.
  */
-function Story({ eyebrow, heading, body, highlight, image, imageAlt = "" }) {
+function Story({ eyebrow, heading, body, highlight, image, imageFallback, imageAlt = "" }) {
   const paragraphs = (Array.isArray(body) ? body : [body]).filter(Boolean);
 
   return (
@@ -282,8 +284,9 @@ function Story({ eyebrow, heading, body, highlight, image, imageAlt = "" }) {
 
         <Reveal className="lg:sticky lg:top-28">
           <div className="overflow-hidden rounded-3xl border border-ink/10">
-            <img
+            <SmartImage
               src={image}
+              fallback={imageFallback}
               alt={imageAlt}
               loading="lazy"
               /* Left at the photograph's own 4:3. A portrait crop would cut
