@@ -17,9 +17,16 @@
 // ship at all, rename one we do, reorder the menus or take a page down, and the
 // navigation follows. The contract is in docs/pages-api.md.
 import { useEffect, useMemo, useState } from "react";
+import { Circle } from "lucide-react";
 import { buildRedirects } from "./renameRules";
 import { identityOf, pathOf } from "./pagePaths";
 import { mergeContent } from "./contentRules";
+
+// Icons are bundled React components, not JSON, so an entry the CMS publishes on
+// its own carries none. The menus and cards render the icon unconditionally, so
+// every resolved entry gets one: its own where it has it, this neutral mark
+// otherwise.
+const FALLBACK_ICON = Circle;
 
 export { mergeContent };
 
@@ -31,6 +38,27 @@ export const isPagesCmsConfigured = Boolean(BASE);
 // page out of the menus and off its URL; the bundled copy stays in the bundle,
 // it just stops being reachable.
 const HIDDEN_STATUSES = new Set(["draft", "pending", "private", "unpublished", "trash", "future"]);
+
+// WordPress encodes special characters (&lt; &amp; &#8217; …) even in plain
+// text fields, so an entry arrives with "&lt;60 sec" where it means "<60 sec".
+// Decode entities as the CMS entries come in, across every string in the entry.
+// Entities only — any tags are left in place for the few fields that carry HTML.
+const decoder = typeof document !== "undefined" ? document.createElement("textarea") : null;
+
+function decodeEntities(value) {
+  if (typeof value === "string") {
+    if (!decoder || !value.includes("&")) return value;
+    decoder.innerHTML = value;
+    return decoder.value;
+  }
+  if (Array.isArray(value)) return value.map(decodeEntities);
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [key, inner] of Object.entries(value)) out[key] = decodeEntities(inner);
+    return out;
+  }
+  return value;
+}
 
 const isHidden = (entry) =>
   entry?.hidden === true ||
@@ -76,7 +104,12 @@ export function resolveCollection(collection, bundled = [], remote = new Map()) 
     if (!id || byId.has(id)) return;
     // Every entry carries where it lives, worked out once, so nothing has to
     // assemble a URL from a prefix and a slug ever again.
-    const placed = { ...merged, id, path: pathOf(collection, merged.slug) };
+    const placed = {
+      ...merged,
+      id,
+      path: pathOf(collection, merged.slug),
+      icon: typeof merged.icon === "function" ? merged.icon : FALLBACK_ICON,
+    };
     byId.set(id, placed);
     entries.push(placed);
   };
@@ -144,7 +177,8 @@ async function request(resource) {
     ? body
     : (body[resource.replace(/-/g, "_")] ?? body.pages ?? body.items ?? body.data ?? []);
   const byId = new Map();
-  for (const entry of Array.isArray(list) ? list : []) {
+  for (const raw of Array.isArray(list) ? list : []) {
+    const entry = decodeEntities(raw);
     const id = identityOf(entry?.slug);
     if (id) byId.set(id, entry);
   }

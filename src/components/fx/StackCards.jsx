@@ -64,7 +64,7 @@ export default function StackCards({ steps, tone = "light" }) {
     <ol ref={ref} className="relative">
       {steps.map(({ title, body, tag }, i) => (
         <li
-          key={title}
+          key={`${i}-${title ?? ""}`}
           data-stack-item
           className="pb-4 last:pb-0 sm:pb-10 [@media(min-height:460px)]:sticky"
           style={{ top: `calc(5rem + ${i}rem)` }}
