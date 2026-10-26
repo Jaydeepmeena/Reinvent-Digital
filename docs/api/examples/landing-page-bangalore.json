@@ -1,0 +1,104 @@
+{
+  "landing_pages": [
+    {
+      "slug": "digital-marketing-company-in-bangalore",
+      "title": "Digital Marketing Company in Bangalore for Clinics",
+      "seo": {
+        "title": "Digital Marketing Company in Bangalore for Clinics | Reinvent Digital",
+        "description": "A digital marketing company in Bangalore for clinics and hospitals, from Whitefield to Jayanagar. We measure every channel on the walk-ins it brings.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "Digital Marketing for Bangalore Clinics",
+        "headline": "Turn Website Traffic Into",
+        "accent": "Walk-Ins at Your Bangalore Clinic",
+        "description": "Reinvent Digital is a digital marketing company in Bangalore for clinics and hospitals, from Whitefield to Jayanagar. We measure every channel on the walk-ins it brings.",
+        "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss the Patient Acquisition System",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "6K+",
+            "label": "Monthly walk-ins for a dental group"
+          },
+          {
+            "value": "115+",
+            "label": "Locations served"
+          },
+          {
+            "value": "11+",
+            "label": "Years of healthcare marketing experience"
+          }
+        ]
+      },
+      "intro": "<p>Bangalore patients fit healthcare around work and traffic. That shapes where they search, which clinic they pick and whether they arrive.</p><ul><li><strong>Commute-based choice:</strong> patients often choose a clinic near the office or along their daily route, not only near home.</li><li><strong>Timings matter:</strong> evening and weekend availability on a Google Maps profile can decide which clinic gets the call.</li><li><strong>Close comparison:</strong> patients compare Maps profiles, doctor qualifications and clinic websites before making contact.</li><li><strong>Bookings that slip:</strong> traffic and busy schedules can turn a confirmed appointment into a no-show without a timely reminder.</li></ul>",
+      "reasons": {
+        "eyebrow": "Why work with us",
+        "heading": "What Do Bangalore Healthcare Groups Get With Reinvent Digital?",
+        "body": "Before shortlisting a digital marketing company in Bangalore, ask for proof you can check. Here is what Reinvent Digital can show.",
+        "points": [
+          "A 115+ clinic dental group grew walk-ins 2.1x in 8 months.",
+          "6,000 more walk-ins a month, with the same 15 agents.",
+          "185+ healthcare accounts managed.",
+          "Missed calls answered on WhatsApp, with 20–30% recovered.",
+          "Weekly coaching from 100-point call scores.",
+          "Doctor registration details on every client ad.",
+          "Founded in 2015, with a healthcare-only focus today."
+        ]
+      },
+      "services": {
+        "eyebrow": "What we run",
+        "heading": "How Does Reinvent Digital Support Bangalore Clinics and Hospitals?",
+        "body": "The Reinvent Digital Patient Acquisition System covers the full path in Bangalore, from the first search to the patient arriving.",
+        "items": [
+          {
+            "title": "Google Ads by Corridor",
+            "body": "Campaigns for Whitefield, Electronic City, Outer Ring Road and other hubs, tracked from click to walk-in."
+          },
+          {
+            "title": "Google Maps and Local SEO",
+            "body": "Accurate timings, services and doctor details on every profile, so patients can compare with confidence."
+          },
+          {
+            "title": "Appointment Reminders",
+            "body": "Confirmation and reminder messages before each visit, which typically lift show-up rates by 15–25% within 60 days."
+          },
+          {
+            "title": "Call-Centre Optimisation",
+            "body": "Enquiry calls routed, scored and coached, whether your front desk or our agents answer them."
+          }
+        ]
+      },
+      "overview": "<p><strong>How we plan: three steps from first audit to patient walk-ins.</strong> We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads. First you tell us about your clinic — your centres, treatments, targets and the problems you are facing. Then we map the gaps, reviewing your ads, Maps listings, calls and CRM to find where patients drop off. Finally you get a proven plan, scoped to start within 5 km of each centre, with monthly walk-in reviews built in.</p><p><strong>No office visit needed — we come to your clinic or hospital.</strong> At onboarding we watch how bookings, reminders and walk-ins are handled at your front desk on a normal day, then return on an agreed schedule to review no-shows, walk-ins and call quality in person. Form and WhatsApp enquiries are saved in one patient record with their source, reporting shows leads, appointments and walk-ins by channel, and we work in your CRM if it tracks source and outcome or set up MedLift. We cover Whitefield, Marathahalli, Bellandur, Sarjapur Road, Electronic City, Bannerghatta Road, Rajajinagar, Malleshwaram, Hebbal and Yelahanka. For an onboarding visit, call our team on +91 7428094567.</p>",
+      "faqs": [
+        {
+          "q": "How do you choose the best digital marketing company in Bangalore for a clinic?",
+          "a": "Look for proven performance, strong client relationships and real business impact in healthcare. Ask whether results are reported as walk-ins, not just leads, and how no-shows are handled. Check that every ad carries the doctor's registration details, as the NMC guidelines require."
+        },
+        {
+          "q": "Why do Bangalore clinics lose patients between booking and arrival?",
+          "a": "Busy schedules and traffic can make it easy to forget or drop an appointment. Without confirmation and reminder messages, a booked slot can become a no-show. Clinics running a reminder sequence typically see a 15–25% improvement in show-up rate within 60 days."
+        },
+        {
+          "q": "Should Bangalore clinics advertise near offices or near homes?",
+          "a": "Often both. Weekday visits may come from people working nearby, while weekend visits may come from residents. Separate campaigns for office hubs and residential areas show which patients actually arrive, so spend can follow walk-ins rather than clicks."
+        },
+        {
+          "q": "Can you work with our existing front desk team in Bangalore?",
+          "a": "Yes. Whether calls are answered by your front desk or by our agents, we measure and improve how enquiries become bookings. Calls are scored on a 100-point scale, and your team receives weekly coaching on what to change."
+        },
+        {
+          "q": "Can clinics in Bangalore offer free consultations in their ads?",
+          "a": "No. Since 6 October 2026, the NMC guidelines bar free consultation or check-up campaigns, discounts, packages and limited-time offers in medical advertising. Clinics can still advertise factual details such as facilities, timings, specialist qualifications and standard consultation charges."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Contact Us",
+        "heading": "Ready to Fill More Chairs Across Bangalore?",
+        "body": "Tell us about your centres, the corridors your patients commute from and where enquiries go quiet today. We will map the gaps and show you what it would take to turn Bangalore searches into walk-ins."
+      }
+    }
+  ]
+}

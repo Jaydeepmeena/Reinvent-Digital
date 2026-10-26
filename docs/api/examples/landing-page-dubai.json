@@ -1,0 +1,104 @@
+{
+  "landing_pages": [
+    {
+      "slug": "digital-marketing-company-in-dubai",
+      "title": "Digital Marketing Company in Dubai",
+      "seo": {
+        "title": "Digital Marketing Company in Dubai for Clinics | Reinvent Digital",
+        "description": "A digital marketing company in Dubai for clinics and hospitals, from Deira to Dubai Marina. Every campaign follows DHA rules and is measured on patient visits.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "Digital Marketing for Dubai Clinics",
+        "headline": "Take Your Clinic Online &",
+        "accent": "Fill More Appointments Across Dubai",
+        "description": "Reinvent Digital is a digital marketing company in Dubai for clinics and hospitals, from Deira to Dubai Marina. Every campaign follows DHA rules and is measured on patient visits.",
+        "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss the Patient Acquisition System",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "6K+",
+            "label": "Monthly walk-ins for a dental group"
+          },
+          {
+            "value": "115+",
+            "label": "Locations served"
+          },
+          {
+            "value": "11+",
+            "label": "Years of healthcare marketing experience"
+          }
+        ]
+      },
+      "intro": "<p>Dubai's patients come from many countries and carry different insurance plans. Both shape how they search and which clinic they choose.</p><ul><li><strong>Insurance first:</strong> many patients check whether a clinic accepts their insurance network before comparing doctors or locations.</li><li><strong>Many languages:</strong> searches happen in English and Arabic, and often in Hindi, Malayalam, Urdu or Tagalog too.</li><li><strong>Licence and credentials:</strong> patients look for DHA-licensed doctors, clear specialties and accurate titles on Maps and websites.</li><li><strong>Area and access:</strong> parking, metro access and the drive from home or office influence the final choice.</li></ul>",
+      "reasons": {
+        "eyebrow": "Why work with us",
+        "heading": "What Can Dubai Clinics Expect From Reinvent Digital?",
+        "body": "A digital marketing company in Dubai should show its results and its compliance process clearly. Here is ours, including where the results come from.",
+        "points": [
+          "5,500 to 11,500 monthly walk-ins for one group in India.",
+          "The same 15 agents and same CRM throughout that period.",
+          "Show-up rate typically up 15–25% within 60 days of reminders.",
+          "20–30% of missed leads recovered through WhatsApp follow-up.",
+          "Every ad checked against DHA wording rules before launch.",
+          "Medical director approval built into every content workflow.",
+          "Owner with 20+ years in healthcare marketing."
+        ]
+      },
+      "services": {
+        "eyebrow": "What we run",
+        "heading": "Which Services Do Dubai Clinics Get From Reinvent Digital?",
+        "body": "Every service runs inside the Reinvent Digital Patient Acquisition System, with DHA rules checked before anything goes live.",
+        "items": [
+          {
+            "title": "DHA-Checked Google Ads",
+            "body": "Treatment and area campaigns, with ad copy checked against DHA banned words and claims."
+          },
+          {
+            "title": "Multilingual Meta Ads",
+            "body": "Facebook and Instagram campaigns in the languages your patients use, approved by your medical director."
+          },
+          {
+            "title": "Google Maps and Local SEO",
+            "body": "Accurate DHA-licensed titles, specialties, timings and accepted insurance details on every profile."
+          },
+          {
+            "title": "Booking Attribution",
+            "body": "Leads, appointments and patient visits tracked by channel, in MedLift or your own CRM."
+          }
+        ]
+      },
+      "overview": "<p><strong>How we plan: three steps from first audit to patient walk-ins.</strong> We audit what you run today, launch channels by locality, then keep refining against patient visits, not clicks or leads. First you tell us about your clinic — your centres, treatments, targets and the problems you are facing. Then we map the gaps, reviewing your ads, Maps listings, calls and CRM to find where patients drop off. Finally you get a proven plan, with reviews built in.</p><p><strong>No office visit needed — we come to your clinic or hospital.</strong> Onboarding is compliance-first: we review your DHA licence details, existing ads and Maps profiles with your medical director, then return on an agreed schedule to review patient visits and front-desk handling. Every post and ad goes to your medical director for sign-off before publishing, unanswered calls trigger an automatic WhatsApp reply saved in one patient record, and we use your existing CRM if it tracks source and outcome or switch you to MedLift. We cover Deira, Bur Dubai, Downtown Dubai, Business Bay, Jumeirah, Al Barsha, Dubai Marina, JLT, Mirdif and Al Qusais. To arrange an onboarding visit, call our team on +91 7428094567.</p>",
+      "faqs": [
+        {
+          "q": "How do you choose the best digital marketing company in Dubai for a clinic?",
+          "a": "Do thorough research. Look at client testimonials, a healthcare portfolio and a track record you can verify. Then test its DHA knowledge: the company should know the banned words, title rules and medical director approval process. Ask whether it reports patient visits or stops at leads."
+        },
+        {
+          "q": "What DHA rules apply to clinic ads on social media?",
+          "a": "DHA standards cover posts and ads on platforms such as Instagram, Facebook, TikTok and WhatsApp. They ban words like \"the best\" and \"100 per cent\", require titles to match the DHA licence, and need medical director approval for every post naming a facility."
+        },
+        {
+          "q": "Can Dubai clinics use patient testimonials and before-and-after photos?",
+          "a": "Yes, with conditions. DHA rules require written patient consent, plus separate parental consent for under-18s. Before-and-after photos must show the same person, use the same lens, have no editing and carry a disclaimer that results vary. India's rules are stricter and ban both."
+        },
+        {
+          "q": "Do these rules apply to clinics in Dubai Healthcare City?",
+          "a": "Not in the same way. Facilities in Dubai Healthcare City and DIFC fall under their own regulators rather than the DHA. Their advertising rules differ, so campaigns for these clinics are checked against the framework that applies to their licence."
+        },
+        {
+          "q": "Should Dubai clinic ads be in Arabic, English or other languages?",
+          "a": "Match the languages your patients actually use. English and Arabic cover the base, while Hindi, Malayalam, Urdu or Tagalog ads may suit clinics serving those communities. Run versions side by side and compare patient visits by language, with DHA wording rules applied in each."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Contact Us",
+        "heading": "Ready to Fill More Appointments Across Dubai?",
+        "body": "Tell us about your clinics, the insurance networks you accept and where enquiries go quiet today. We will map the gaps and show you what it would take to turn Dubai searches into patient visits."
+      }
+    }
+  ]
+}
