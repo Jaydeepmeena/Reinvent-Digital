@@ -133,6 +133,17 @@ export function normaliseLandingPage(raw) {
         points: cards(section?.points),
       }))
       .filter((section) => section.heading),
+    // The "how we plan" steps, rendered as a wavy timeline. Each step is a
+    // kicker label, a title and a line of body; the section hides when empty.
+    plan: raw.plan
+      ? {
+          eyebrow: text(raw.plan.eyebrow),
+          heading: text(raw.plan.heading),
+          steps: (Array.isArray(raw.plan.steps) ? raw.plan.steps : [])
+            .map((step) => ({ label: text(step?.label), title: text(step?.title), body: text(step?.body) }))
+            .filter((step) => step.title),
+        }
+      : null,
     reasons: block(raw.reasons, "points", lines(raw.reasons?.points)),
     services: block(raw.services, "items", cards(raw.services?.items)),
     // Industry-layout blocks: the problems, the help timeline and the proof.

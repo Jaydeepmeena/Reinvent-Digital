@@ -271,18 +271,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To book an onboarding visit at your clinic or hospital in Mumbai, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Walk-Ins",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+      ],
+    },
     faqs: [
       {
         q: "How do you choose the best digital marketing company in Mumbai for a clinic?",
@@ -396,18 +394,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To arrange an onboarding visit at your clinic or hospital in Calicut, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Walk-Ins",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+      ],
+    },
     faqs: [
       { q: "How do you choose the best digital marketing company in Calicut for a clinic?", a: "Start with what the company measures. Ask for healthcare examples, client references and how it reports results: leads, appointments or walk-ins. Check that every ad it runs shows the doctor's registration details, as the NMC guidelines require. Strong answers here matter more than a long service list." },
       { q: "How should a clinic in Calicut set its digital marketing budget?", a: "Base it on your catchment, not just the city. A clinic drawing patients from nearby districts needs wider reach than one serving a few localities. Speciality and treatment mix matter too. We set spend per channel after an audit, then move it towards the channels producing walk-ins." },
@@ -503,18 +499,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To schedule an onboarding visit at your clinic or hospital in Kochi, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Walk-Ins",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+      ],
+    },
     faqs: [
       { q: "How do you choose the best digital marketing company in Kochi for a clinic or hospital?", a: "Look at three things: proven healthcare experience, client success stories you can verify, and transparent communication. Then add a fourth: whether the company reports walk-ins or stops at leads. Every ad it runs should also show the doctor's registration details, as the NMC guidelines require." },
       { q: "Is it worth hiring a digital marketing company in Kochi?", a: "It is worth it when your current marketing cannot show which channel brings patients. A specialist team brings call tracking, attribution and NMC-compliant execution that are hard to build alone. If your setup already tracks walk-ins by channel, the case for hiring is weaker." },
@@ -610,18 +604,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To plan an onboarding visit at your clinic or hospital in Chennai, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Walk-Ins",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+      ],
+    },
     faqs: [
       { q: "How do you choose the best digital marketing company in Chennai for a clinic?", a: "Look at proven results, client success stories, healthcare experience and a portfolio you can check. Then ask how results are reported, because a company that stops at leads cannot show which channel brought patients in. Confirm every ad will carry the doctor's registration details under NMC rules." },
       { q: "How much does a digital marketing company in Chennai charge for a clinic?", a: "Charges depend on the scope of work: how many locations, which channels, and whether call handling and CRM setup are included. Ad spend is a separate decision. Reinvent Digital shares a written scope after reviewing your current marketing, so the cost is clear before you start." },
@@ -717,18 +709,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "For an onboarding visit at your clinic or hospital in Bangalore, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Walk-Ins",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+      ],
+    },
     faqs: [
       { q: "How do you choose the best digital marketing company in Bangalore for a clinic?", a: "Look for proven performance, strong client relationships and real business impact in healthcare. Ask whether results are reported as walk-ins, not just leads, and how no-shows are handled. Check that every ad carries the doctor's registration details, as the NMC guidelines require." },
       { q: "Why do Bangalore clinics lose patients between booking and arrival?", a: "Busy schedules and traffic can make it easy to forget or drop an appointment. Without confirmation and reminder messages, a booked slot can become a no-show. Clinics running a reminder sequence typically see a 15–25% improvement in show-up rate within 60 days." },
@@ -823,18 +813,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To plan an onboarding visit at your clinic or hospital in Thiruvananthapuram, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Walk-Ins",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+      ],
+    },
     faqs: [
       { q: "How do you choose the best digital marketing company in Thiruvananthapuram?", a: "Do thorough research first. Weigh client testimonials about the company, its portfolio, healthcare expertise and a track record you can verify. Ask how it reports results and whether walk-ins are tracked. Every ad it runs should show the doctor's registration details, as NMC rules require." },
       { q: "Should a Thiruvananthapuram hospital advertise in Tamil?", a: "It can help if a meaningful share of patients come from Kanyakumari district or nearby Tamil Nadu towns. Run Tamil ads alongside Malayalam and English versions, then compare walk-ins by language. NMC rules, including doctor registration details, apply in every language." },
@@ -929,18 +917,16 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To arrange an onboarding visit at your clinic or hospital in Dubai, call our team on +91 7428094567." },
         ],
       },
-      {
-        eyebrow: "How we plan",
-        heading: "Three Steps From First Audit to Patient Walk-Ins",
-        body: "We audit what you run today, launch channels by locality, then keep refining against patient visits, not clicks or leads.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
-        points: [
-          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
-          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
-          { title: "03 · Get a proven plan", body: "A scoped plan with regular patient-visit reviews built in." },
-        ],
-      },
     ],
+    plan: {
+      eyebrow: "What happens next",
+      heading: "Three Steps From First Audit to Patient Visits",
+      steps: [
+        { label: "Day 1", title: "Tell Us About Your Clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+        { label: "Week 1", title: "We Map the Gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+        { label: "Week 2", title: "Get a Proven Plan", body: "A scoped plan with regular patient-visit reviews built in." },
+      ],
+    },
     faqs: [
       { q: "How do you choose the best digital marketing company in Dubai for a clinic?", a: "Do thorough research. Look at client testimonials, a healthcare portfolio and a track record you can verify. Then test its DHA knowledge: the company should know the banned words, title rules and medical director approval process. Ask whether it reports patient visits or stops at leads." },
       { q: "What DHA rules apply to clinic ads on social media?", a: "DHA standards cover posts and ads on platforms such as Instagram, Facebook, TikTok and WhatsApp. They ban words like \"the best\" and \"100 per cent\", require titles to match the DHA licence, and need medical director approval for every post naming a facility." },

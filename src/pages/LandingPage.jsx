@@ -8,6 +8,7 @@ import VelocityMarquee from "../components/fx/VelocityMarquee";
 import { BentoGrid, BentoTile, GrowthBars } from "../components/fx/Bento";
 import StackCards from "../components/fx/StackCards";
 import SplitSection from "../components/fx/SplitSection";
+import ProcessWave from "../components/fx/ProcessWave";
 import ScrollTimeline from "../components/fx/ScrollTimeline";
 import IndustryVisual from "../components/fx/IndustryVisual";
 import IncludesCarousel from "../components/fx/IncludesCarousel";
@@ -252,6 +253,8 @@ function ServiceLayout({ page }) {
       {splitSections.map((section, i) => (
         <SplitSection key={section.heading} {...section} flip={i % 2 === 1} shaded={i % 2 === 1} />
       ))}
+
+      {page.plan && <ProcessWave eyebrow={page.plan.eyebrow} heading={page.plan.heading} steps={page.plan.steps} />}
 
       {splitSections.length === 0 && page.intro && (
         <section className="section-y-tight">
