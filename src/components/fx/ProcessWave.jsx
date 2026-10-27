@@ -28,14 +28,22 @@ const WAVE =
 const DIM = { backgroundColor: "#211f1a", color: "#a7cf3b", boxShadow: "inset 0 0 0 1px rgba(167,207,59,0.4)", scale: 0.82 };
 const LIT = { backgroundColor: "#a7cf3b", color: "#1b1b17", boxShadow: "0 0 0 4px rgba(167,207,59,0.15)" };
 
+// The node, wrapped so hover scales the wrapper (GSAP owns the node's own
+// transform, so the two compose instead of fighting). A ring blooms on hover.
 function Node({ n, ...rest }) {
   return (
-    <span
-      {...rest}
-      className="relative flex h-12 w-12 items-center justify-center rounded-full bg-lime text-base font-extrabold tabular-nums text-ink ring-4 ring-lime/15"
-    >
-      {n}
-    </span>
+    <div className="group/node cursor-pointer transition-transform duration-300 hover:scale-110">
+      <span
+        {...rest}
+        className="relative flex h-12 w-12 items-center justify-center rounded-full bg-lime text-base font-extrabold tabular-nums text-ink ring-4 ring-lime/15"
+      >
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-lime/60 opacity-0 transition duration-300 group-hover/node:scale-[1.6] group-hover/node:opacity-100"
+        />
+        {n}
+      </span>
+    </div>
   );
 }
 
@@ -45,7 +53,9 @@ function Copy({ label, title, body }) {
       {label && (
         <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-lime">{label}</span>
       )}
-      <h3 className="mt-2 text-xl font-extrabold tracking-tight text-cream sm:text-2xl">{title}</h3>
+      <h3 className="mt-2 text-xl font-extrabold tracking-tight text-cream transition-colors duration-300 group-hover/copy:text-lime sm:text-2xl">
+        {title}
+      </h3>
       <p className="mt-2 text-[15px] leading-relaxed text-cream/60">{body}</p>
     </>
   );
@@ -167,7 +177,10 @@ export default function ProcessWave({ eyebrow, heading, steps = [] }) {
             </div>
             <ol className="mt-6 grid grid-cols-3 gap-8">
               {steps.map((step) => (
-                <li key={step.title} className="text-center">
+                <li
+                  key={step.title}
+                  className="group/copy text-center transition-transform duration-300 hover:-translate-y-1"
+                >
                   <Copy {...step} />
                 </li>
               ))}
@@ -178,7 +191,7 @@ export default function ProcessWave({ eyebrow, heading, steps = [] }) {
         {/* Narrow screens (and any step count): an upright timeline. */}
         <ol className={onWave ? "space-y-9 lg:hidden" : "mx-auto max-w-xl space-y-9"}>
           {steps.map((step, i) => (
-            <li key={step.title} className="flex gap-5">
+            <li key={step.title} className="group/copy flex gap-5">
               <div className="flex flex-col items-center">
                 <Node n={i + 1} data-list-node="" />
                 {i < steps.length - 1 && <span aria-hidden="true" className="mt-2 w-px flex-1 bg-lime/25" />}
