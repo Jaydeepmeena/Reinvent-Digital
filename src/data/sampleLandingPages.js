@@ -271,6 +271,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To book an onboarding visit at your clinic or hospital in Mumbai, call our team on +91 7428094567." },
         ],
       },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+        ],
+      },
     ],
     faqs: [
       {
@@ -385,6 +396,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To arrange an onboarding visit at your clinic or hospital in Calicut, call our team on +91 7428094567." },
         ],
       },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+        ],
+      },
     ],
     faqs: [
       { q: "How do you choose the best digital marketing company in Calicut for a clinic?", a: "Start with what the company measures. Ask for healthcare examples, client references and how it reports results: leads, appointments or walk-ins. Check that every ad it runs shows the doctor's registration details, as the NMC guidelines require. Strong answers here matter more than a long service list." },
@@ -479,6 +501,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "One record per enquiry", body: "Every form and WhatsApp enquiry is held in one patient record with its source." },
           { title: "Your CRM or ours", body: "We configure your existing CRM if it captures source and outcome, or set up MedLift." },
           { title: "Book a visit", body: "To schedule an onboarding visit at your clinic or hospital in Kochi, call our team on +91 7428094567." },
+        ],
+      },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
         ],
       },
     ],
@@ -577,6 +610,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To plan an onboarding visit at your clinic or hospital in Chennai, call our team on +91 7428094567." },
         ],
       },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+        ],
+      },
     ],
     faqs: [
       { q: "How do you choose the best digital marketing company in Chennai for a clinic?", a: "Look at proven results, client success stories, healthcare experience and a portfolio you can check. Then ask how results are reported, because a company that stops at leads cannot show which channel brought patients in. Confirm every ad will carry the doctor's registration details under NMC rules." },
@@ -671,6 +715,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Walk-ins by channel", body: "Reporting shows leads, appointments and walk-ins by channel." },
           { title: "Your CRM or ours", body: "We work in your CRM if it tracks source and outcome, or set up MedLift." },
           { title: "Book a visit", body: "For an onboarding visit at your clinic or hospital in Bangalore, call our team on +91 7428094567." },
+        ],
+      },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
         ],
       },
     ],
@@ -768,6 +823,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "Book a visit", body: "To plan an onboarding visit at your clinic or hospital in Thiruvananthapuram, call our team on +91 7428094567." },
         ],
       },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan that starts within 5 km of each centre, with monthly walk-in reviews built in." },
+        ],
+      },
     ],
     faqs: [
       { q: "How do you choose the best digital marketing company in Thiruvananthapuram?", a: "Do thorough research first. Weigh client testimonials about the company, its portfolio, healthcare expertise and a track record you can verify. Ask how it reports results and whether walk-ins are tracked. Every ad it runs should show the doctor's registration details, as NMC rules require." },
@@ -861,6 +927,17 @@ export const SAMPLE_LANDING_PAGES = [
           { title: "One record per enquiry", body: "Unanswered calls trigger an automatic WhatsApp reply, saved in one patient record." },
           { title: "Your CRM or ours", body: "We use your existing CRM if it tracks source and outcome, or switch you to MedLift." },
           { title: "Book a visit", body: "To arrange an onboarding visit at your clinic or hospital in Dubai, call our team on +91 7428094567." },
+        ],
+      },
+      {
+        eyebrow: "How we plan",
+        heading: "Three Steps From First Audit to Patient Walk-Ins",
+        body: "We audit what you run today, launch channels by locality, then keep refining against patient visits, not clicks or leads.",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=70",
+        points: [
+          { title: "01 · Tell us about your clinic", body: "Share your centres, treatments, targets and the problems you're facing right now." },
+          { title: "02 · We map the gaps", body: "We review your ads, Maps listings, calls and CRM to find where patients drop off." },
+          { title: "03 · Get a proven plan", body: "A scoped plan with regular patient-visit reviews built in." },
         ],
       },
     ],
