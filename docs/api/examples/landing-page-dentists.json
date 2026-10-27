@@ -1,0 +1,123 @@
+{
+  "landing_pages": [
+    {
+      "slug": "digital-marketing-for-dentists",
+      "title": "Digital Marketing for Dentists & Dental Clinics",
+      "seo": {
+        "title": "Digital Marketing for Dentists & Dental Clinics | Reinvent Digital",
+        "description": "A digital marketing agency for dental clinics: Google Ads, Google Maps, SEO and compliant dentist profiles, with every enquiry tracked to the patient in the chair.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "Digital Marketing for Dentists",
+        "headline": "Patients Choose the Dentist Before the Clinic.",
+        "accent": "Be the One They Trust!",
+        "description": "Reinvent Digital is a digital marketing agency for dental clinics and practices, helping dentists, orthodontists and implantologists grow with Google Ads, Google Maps, SEO, AEO and GEO. We build compliant dentist profiles, automate WhatsApp follow-up and track every enquiry to the patient in the chair.",
+        "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your Practice Growth",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "15-25%",
+            "label": "Better show-up rate in 60 days"
+          },
+          {
+            "value": "2400+",
+            "label": "Negative keywords blocking wasted clicks"
+          },
+          {
+            "value": "185+",
+            "label": "Healthcare accounts managed"
+          }
+        ]
+      },
+      "reasons": {
+        "eyebrow": "Where Dental Practices Lose Patients",
+        "heading": "Your Dentistry is Strong. But Your Visibility Isn’t",
+        "body": "Most dentists build their practice on skill and referrals. Without digital marketing for dentists that works, patients judge them online on profiles, reviews and response speed, often before meeting them.",
+        "points": [
+          "Patients can’t find you by name — searching your name shows a directory listing or a thin profile, not your practice.",
+          "Your expertise stays invisible — your implant or orthodontic training isn’t on your website, so patients choose a bigger-looking clinic.",
+          "Calls go unanswered mid-procedure — while you’re treating a patient, new enquiries ring out and book with someone else.",
+          "Directories control your bookings — Practo and Justdial bring enquiries, but show competing clinics right beside your listing.",
+          "High-value cases need more trust — implant and aligner patients want to hear from the dentist first, and find nothing to watch or read.",
+          "Advertising rules feel unclear — unsure what dental ethics rules allow, many dentists avoid marketing, or take risks without knowing.",
+          "No time to manage marketing — between treating patients and running the practice, marketing becomes irregular and hard to judge."
+        ]
+      },
+      "services": {
+        "eyebrow": "How we help",
+        "heading": "Your Focus on Dentistry. We Run the System",
+        "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, our approach to digital marketing for dentists. Your profile, phone and appointment book work together while you treat patients.",
+        "items": [
+          {
+            "title": "Dentist Profile and Practice Pages",
+            "body": "Qualification-led profiles and treatment pages that show your expertise factually, within dental ethics rules."
+          },
+          {
+            "title": "Google Maps and Name Searches",
+            "body": "Your Business Profile optimised so patients find you for your name and “dentist near me.”"
+          },
+          {
+            "title": "Missed-Call WhatsApp Replies",
+            "body": "An instant WhatsApp reply to every missed call while you’re with a patient."
+          },
+          {
+            "title": "Bookings You Own",
+            "body": "Website and WhatsApp booking routes that reduce your dependence on directory listings."
+          },
+          {
+            "title": "Dentist-Led Treatment Explainers",
+            "body": "Short videos and pages where you explain implants, aligners and root canals in plain language."
+          },
+          {
+            "title": "Compliance-Checked Marketing",
+            "body": "Every ad and post checked for dental ethics: no discounts, guarantees or unconsented before-after photos."
+          },
+          {
+            "title": "Treatment-Specific Google Ads",
+            "body": "Campaigns for implants, aligners and root canals, with 2,400+ negative keywords blocking wasted clicks."
+          },
+          {
+            "title": "A One-Page Monthly Report",
+            "body": "Bookings, patients seen and cost per patient on a single page, so you can judge results quickly."
+          }
+        ]
+      },
+      "overview": "<p><strong>Proof, not a vague promise — 54% higher conversion, same treatment, better answers.</strong> A dental aligner brand needed more people exploring treatment online, and more of them taking the next step. During our engagement, conversions rose 54% and new users grew 88.2%. What changed sits in how patients’ treatment questions were answered.</p><ul><li><strong>54% higher conversion rates.</strong></li><li><strong>73.9% more website traffic.</strong></li><li><strong>88.2% more new users.</strong></li></ul>",
+      "faqs": [
+        {
+          "q": "What is digital marketing for dentists?",
+          "a": "Digital marketing for dentists, also called dental digital marketing, uses Google Ads, Google Maps, SEO, social media and WhatsApp to help patients find, trust and book a dental practice. Done well, it is measured by patients seen and cost per patient, not by clicks."
+        },
+        {
+          "q": "Should dentists market themselves or their clinic?",
+          "a": "Market the practice, with the dentist as its trusted face. India’s dental ethics rules limit self-promotion, so profiles should share factual qualifications, experience and treatments. Educational videos and pages build personal trust without breaking the rules or relying on claims."
+        },
+        {
+          "q": "Is Practo enough, or do dentists need their own website?",
+          "a": "Practo and directories help patients discover you, but you don’t control the listing, the reviews or the competing clinics shown beside you. Your own website and Google Business Profile let patients book you directly, and keep your reputation in one place."
+        },
+        {
+          "q": "How should dentists respond to negative Google reviews?",
+          "a": "Reply calmly within a day, thank the reviewer and offer to discuss the issue privately. Never mention treatment details or confirm the person was your patient. A professional reply often reassures future patients more than the original complaint worries them."
+        },
+        {
+          "q": "What does digital marketing for dentists cost in India?",
+          "a": "Dental Google Ads leads typically cost ₹120 to ₹250 in Tier-2 cities, ₹180 to ₹320 in Hyderabad, ₹220 to ₹400 in Bangalore and ₹280 to ₹500 in Mumbai. Your total budget depends on treatments, competition and how many patients you can see."
+        },
+        {
+          "q": "How long before a new dental practice gets patients from Google?",
+          "a": "Google Ads can bring enquiries within weeks of launch, with useful data in 30 to 45 days. A new Google Business Profile usually gains visibility in 60 to 90 days, while organic rankings for treatment searches build from month four onwards."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Dentists & Dental Practices",
+        "heading": "Ready to Build a Patient Acquisition System for Your Dental Practice?",
+        "body": "We are a digital marketing agency for dentists that measures patients, not clicks. Share how patients reach you today, and we will show how the Reinvent Digital Patient Acquisition System can fill your appointment book."
+      }
+    }
+  ]
+}
