@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // An <img> that falls back to a bundled image when its source fails to load.
 //
@@ -8,19 +8,16 @@ import { useEffect, useState } from "react";
 // even if it is not the image you expected — is left as is, since the browser
 // cannot tell "wrong picture" from "right picture".
 export default function SmartImage({ src, fallback, ...props }) {
-  const [current, setCurrent] = useState(src || fallback);
+  const [failed, setFailed] = useState(false);
+  // Reset the failed flag when the source changes, using the render-time
+  // "previous prop" pattern rather than an effect.
+  const [prevSrc, setPrevSrc] = useState(src);
+  if (src !== prevSrc) {
+    setPrevSrc(src);
+    setFailed(false);
+  }
 
-  useEffect(() => {
-    setCurrent(src || fallback);
-  }, [src, fallback]);
+  const current = failed && fallback ? fallback : src || fallback;
 
-  return (
-    <img
-      src={current}
-      onError={() => {
-        if (fallback && current !== fallback) setCurrent(fallback);
-      }}
-      {...props}
-    />
-  );
+  return <img src={current} onError={() => failed || setFailed(true)} {...props} />;
 }

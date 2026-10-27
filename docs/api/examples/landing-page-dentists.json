@@ -2,6 +2,7 @@
   "landing_pages": [
     {
       "slug": "digital-marketing-for-dentists",
+      "design": "industry",
       "title": "Digital Marketing for Dentists & Dental Clinics",
       "seo": {
         "title": "Digital Marketing for Dentists & Dental Clinics | Reinvent Digital",
@@ -31,27 +32,58 @@
             "value": "185+",
             "label": "Healthcare accounts managed"
           }
-        ]
+        ],
+        "highlights": [
+          "Treatment-specific Google Ads",
+          "Google Maps & name search",
+          "Missed-call WhatsApp replies",
+          "Compliance-checked marketing"
+        ],
+        "metric": {
+          "value": "185+",
+          "label": "Healthcare accounts managed"
+        }
       },
-      "reasons": {
+      "problems": {
         "eyebrow": "Where Dental Practices Lose Patients",
         "heading": "Your Dentistry is Strong. But Your Visibility Isn’t",
         "body": "Most dentists build their practice on skill and referrals. Without digital marketing for dentists that works, patients judge them online on profiles, reviews and response speed, often before meeting them.",
         "points": [
-          "Patients can’t find you by name — searching your name shows a directory listing or a thin profile, not your practice.",
-          "Your expertise stays invisible — your implant or orthodontic training isn’t on your website, so patients choose a bigger-looking clinic.",
-          "Calls go unanswered mid-procedure — while you’re treating a patient, new enquiries ring out and book with someone else.",
-          "Directories control your bookings — Practo and Justdial bring enquiries, but show competing clinics right beside your listing.",
-          "High-value cases need more trust — implant and aligner patients want to hear from the dentist first, and find nothing to watch or read.",
-          "Advertising rules feel unclear — unsure what dental ethics rules allow, many dentists avoid marketing, or take risks without knowing.",
-          "No time to manage marketing — between treating patients and running the practice, marketing becomes irregular and hard to judge."
+          {
+            "title": "Patients can’t find you by name",
+            "body": "Searching your name shows a directory listing or a thin profile, not your practice."
+          },
+          {
+            "title": "Your expertise stays invisible",
+            "body": "Your implant or orthodontic training isn’t on your website, so patients choose a bigger-looking clinic."
+          },
+          {
+            "title": "Calls go unanswered mid-procedure",
+            "body": "While you’re treating a patient, new enquiries ring out and book with someone else."
+          },
+          {
+            "title": "Directories control your bookings",
+            "body": "Practo and Justdial bring enquiries, but show competing clinics right beside your listing."
+          },
+          {
+            "title": "High-value cases need more trust",
+            "body": "Implant and aligner patients want to hear from the dentist first, and find nothing to watch or read."
+          },
+          {
+            "title": "Advertising rules feel unclear",
+            "body": "Unsure what dental ethics rules allow, many dentists avoid marketing, or take risks without knowing."
+          },
+          {
+            "title": "No time to manage marketing",
+            "body": "Between treating patients and running the practice, marketing becomes irregular and hard to judge."
+          }
         ]
       },
-      "services": {
+      "help": {
         "eyebrow": "How we help",
         "heading": "Your Focus on Dentistry. We Run the System",
         "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, our approach to digital marketing for dentists. Your profile, phone and appointment book work together while you treat patients.",
-        "items": [
+        "points": [
           {
             "title": "Dentist Profile and Practice Pages",
             "body": "Qualification-led profiles and treatment pages that show your expertise factually, within dental ethics rules."
@@ -86,7 +118,25 @@
           }
         ]
       },
-      "overview": "<p><strong>Proof, not a vague promise — 54% higher conversion, same treatment, better answers.</strong> A dental aligner brand needed more people exploring treatment online, and more of them taking the next step. During our engagement, conversions rose 54% and new users grew 88.2%. What changed sits in how patients’ treatment questions were answered.</p><ul><li><strong>54% higher conversion rates.</strong></li><li><strong>73.9% more website traffic.</strong></li><li><strong>88.2% more new users.</strong></li></ul>",
+      "proof": {
+        "eyebrow": "Proof, not a vague promise",
+        "heading": "54% Higher Conversion. Same Treatment. Better Answers.",
+        "body": "A dental aligner brand needed more people exploring treatment online, and more of them taking the next step. During our engagement, conversions rose 54% and new users grew 88.2%. What changed sits in how patients’ treatment questions were answered.",
+        "stats": [
+          {
+            "value": "54%",
+            "label": "Higher conversion rates"
+          },
+          {
+            "value": "73.9%",
+            "label": "More website traffic"
+          },
+          {
+            "value": "88.2%",
+            "label": "More new users"
+          }
+        ]
+      },
       "faqs": [
         {
           "q": "What is digital marketing for dentists?",

@@ -698,6 +698,7 @@ export const SAMPLE_LANDING_PAGES = [
   // health brands. Lives at /digital-marketing-agency-for-pharmaceutical-industry.
   {
     slug: "digital-marketing-agency-for-pharmaceutical-industry",
+    design: "industry",
     title: "Digital Marketing Agency for Pharmaceutical Industry",
     seo: {
       title: "Digital Marketing Agency for Pharmaceutical Industry | Reinvent Digital",
@@ -718,26 +719,33 @@ export const SAMPLE_LANDING_PAGES = [
         { value: "2400+", label: "Negative keywords blocking wasted clicks" },
         { value: "185+", label: "Healthcare accounts managed" },
       ],
+      highlights: [
+        "Compliant pharmacy campaigns",
+        "Google Maps for every store",
+        "Fast WhatsApp order replies",
+        "Refill reminder journeys",
+      ],
+      metric: { value: "185+", label: "Healthcare accounts managed" },
     },
-    reasons: {
+    problems: {
       eyebrow: "Where Pharmacies Lose Customers",
       heading: "Customers Need Medicines. They Buy From Whoever Answers First",
       body: "Pharmacy customers rarely wait. They search nearby, ask about stock and buy from the first store that responds, while regular customers drift to delivery apps.",
       points: [
-        "Local searches find another store — customers searching “pharmacy near me” or “24-hour chemist” see a competitor first.",
-        "Stock enquiries go unanswered — calls and WhatsApp messages about availability wait, and the customer buys elsewhere.",
-        "Monthly refills slip away — customers on regular medicines forget to reorder, then buy from whichever store is closest that day.",
-        "Delivery apps win on convenience — app discounts and doorstep delivery pull regular customers away from local pharmacies.",
-        "Ads get rejected for medicine content — copy that mentions restricted medicines breaks platform policies, and campaigns stop running.",
-        "Unanswered reviews shape store choice — a few negative reviews with no reply make nearby customers choose another pharmacy.",
-        "Marketing can’t see store visits — nobody links campaigns to orders and footfall, so marketing is judged on clicks alone.",
+        { title: "Local searches find another store", body: "Customers searching “pharmacy near me” or “24-hour chemist” see a competitor’s store first." },
+        { title: "Stock enquiries go unanswered", body: "Calls and WhatsApp messages about medicine availability wait, and the customer buys elsewhere." },
+        { title: "Monthly refills slip away", body: "Customers on regular medicines forget to reorder, then buy from whichever store is closest that day." },
+        { title: "Delivery apps win on convenience", body: "App discounts and doorstep delivery pull regular customers away from local pharmacies." },
+        { title: "Ads get rejected for medicine content", body: "Ad copy that mentions restricted medicines breaks platform policies, and campaigns stop running." },
+        { title: "Unanswered reviews shape store choice", body: "A few negative reviews with no reply make nearby customers choose another pharmacy." },
+        { title: "Marketing can’t see store visits", body: "Nobody links campaigns to orders and footfall, so marketing is judged on clicks alone." },
       ],
     },
-    services: {
+    help: {
       eyebrow: "How we help",
       heading: "Every Store, Every Refill, Handled In One System",
       body: "Each fix runs inside the Reinvent Digital Patient Acquisition System, so your campaigns, stores and order desk work from the same customer data.",
-      items: [
+      points: [
         { title: "Compliant Pharmacy Campaigns", body: "Google Ads and Meta campaigns for stores, services and wellness ranges, never promoting prescription medicines." },
         { title: "Google Maps for Every Store", body: "Each store’s Business Profile kept accurate for hours, delivery and services, with review requests after purchases." },
         { title: "Fast Stock and Order Replies", body: "WhatsApp and call workflows that answer availability and order questions within 60 seconds." },
@@ -748,8 +756,16 @@ export const SAMPLE_LANDING_PAGES = [
         { title: "Store-Level Reporting", body: "Enquiries, orders and store visits tracked by store and channel, where your billing system allows." },
       ],
     },
-    overview:
-      "<p><strong>Proof, not a vague promise — one system, proven in healthcare, now built for pharmacies.</strong> Pharmacies win customers on speed, trust and convenience, and lose them when replies are slow. The same Patient Acquisition System has already doubled walk-ins and lowered cost per lead for other healthcare groups; for pharmacies, it is adapted to faster, repeat buying decisions.</p><ul><li><strong>2.1x monthly walk-ins</strong> in 8 months — dental group.</li><li><strong>94% more site conversions</strong> in 6 months — liver transplant practice.</li><li><strong>20% lower cost per lead every month</strong> in the first three months — multi-speciality hospital.</li></ul>",
+    proof: {
+      eyebrow: "Proof, not a vague promise",
+      heading: "One System. Proven in Healthcare. Now Built for Pharmacies.",
+      body: "Pharmacies win customers on speed, trust and convenience, and lose them when replies are slow. The same Patient Acquisition System has already doubled walk-ins and lowered cost per lead for other healthcare groups; for pharmacies, it is adapted to faster, repeat buying decisions.",
+      stats: [
+        { value: "2.1x", label: "Monthly walk-ins in 8 months — dental group" },
+        { value: "94%", label: "More site conversions in 6 months — liver transplant practice" },
+        { value: "20%", label: "Lower cost per lead every month — first three months" },
+      ],
+    },
     faqs: [
       { q: "What does a digital marketing agency for the pharmaceutical industry do?", a: "It helps pharmacies and consumer health brands reach people searching for medicines, stores and wellness products, while staying within advertising law. That covers Google Ads, Google Maps, SEO, social media and WhatsApp, with every enquiry tracked to an order or store visit." },
       { q: "Can pharmaceutical companies advertise medicines online in India?", a: "Only within strict limits. Indian law restricts advertising prescription medicines to the public and bans claims that a product cures listed diseases. Pharma companies can share approved health education, and promote over-the-counter and wellness products with accurate, non-misleading claims." },
@@ -769,6 +785,7 @@ export const SAMPLE_LANDING_PAGES = [
   // practices. Lives at /digital-marketing-for-dentists.
   {
     slug: "digital-marketing-for-dentists",
+    design: "industry",
     title: "Digital Marketing for Dentists & Dental Clinics",
     seo: {
       title: "Digital Marketing for Dentists & Dental Clinics | Reinvent Digital",
@@ -789,26 +806,33 @@ export const SAMPLE_LANDING_PAGES = [
         { value: "2400+", label: "Negative keywords blocking wasted clicks" },
         { value: "185+", label: "Healthcare accounts managed" },
       ],
+      highlights: [
+        "Treatment-specific Google Ads",
+        "Google Maps & name search",
+        "Missed-call WhatsApp replies",
+        "Compliance-checked marketing",
+      ],
+      metric: { value: "185+", label: "Healthcare accounts managed" },
     },
-    reasons: {
+    problems: {
       eyebrow: "Where Dental Practices Lose Patients",
       heading: "Your Dentistry is Strong. But Your Visibility Isn’t",
       body: "Most dentists build their practice on skill and referrals. Without digital marketing for dentists that works, patients judge them online on profiles, reviews and response speed, often before meeting them.",
       points: [
-        "Patients can’t find you by name — searching your name shows a directory listing or a thin profile, not your practice.",
-        "Your expertise stays invisible — your implant or orthodontic training isn’t on your website, so patients choose a bigger-looking clinic.",
-        "Calls go unanswered mid-procedure — while you’re treating a patient, new enquiries ring out and book with someone else.",
-        "Directories control your bookings — Practo and Justdial bring enquiries, but show competing clinics right beside your listing.",
-        "High-value cases need more trust — implant and aligner patients want to hear from the dentist first, and find nothing to watch or read.",
-        "Advertising rules feel unclear — unsure what dental ethics rules allow, many dentists avoid marketing, or take risks without knowing.",
-        "No time to manage marketing — between treating patients and running the practice, marketing becomes irregular and hard to judge.",
+        { title: "Patients can’t find you by name", body: "Searching your name shows a directory listing or a thin profile, not your practice." },
+        { title: "Your expertise stays invisible", body: "Your implant or orthodontic training isn’t on your website, so patients choose a bigger-looking clinic." },
+        { title: "Calls go unanswered mid-procedure", body: "While you’re treating a patient, new enquiries ring out and book with someone else." },
+        { title: "Directories control your bookings", body: "Practo and Justdial bring enquiries, but show competing clinics right beside your listing." },
+        { title: "High-value cases need more trust", body: "Implant and aligner patients want to hear from the dentist first, and find nothing to watch or read." },
+        { title: "Advertising rules feel unclear", body: "Unsure what dental ethics rules allow, many dentists avoid marketing, or take risks without knowing." },
+        { title: "No time to manage marketing", body: "Between treating patients and running the practice, marketing becomes irregular and hard to judge." },
       ],
     },
-    services: {
+    help: {
       eyebrow: "How we help",
       heading: "Your Focus on Dentistry. We Run the System",
       body: "Each fix runs inside the Reinvent Digital Patient Acquisition System, our approach to digital marketing for dentists. Your profile, phone and appointment book work together while you treat patients.",
-      items: [
+      points: [
         { title: "Dentist Profile and Practice Pages", body: "Qualification-led profiles and treatment pages that show your expertise factually, within dental ethics rules." },
         { title: "Google Maps and Name Searches", body: "Your Business Profile optimised so patients find you for your name and “dentist near me.”" },
         { title: "Missed-Call WhatsApp Replies", body: "An instant WhatsApp reply to every missed call while you’re with a patient." },
@@ -819,8 +843,16 @@ export const SAMPLE_LANDING_PAGES = [
         { title: "A One-Page Monthly Report", body: "Bookings, patients seen and cost per patient on a single page, so you can judge results quickly." },
       ],
     },
-    overview:
-      "<p><strong>Proof, not a vague promise — 54% higher conversion, same treatment, better answers.</strong> A dental aligner brand needed more people exploring treatment online, and more of them taking the next step. During our engagement, conversions rose 54% and new users grew 88.2%. What changed sits in how patients’ treatment questions were answered.</p><ul><li><strong>54% higher conversion rates.</strong></li><li><strong>73.9% more website traffic.</strong></li><li><strong>88.2% more new users.</strong></li></ul>",
+    proof: {
+      eyebrow: "Proof, not a vague promise",
+      heading: "54% Higher Conversion. Same Treatment. Better Answers.",
+      body: "A dental aligner brand needed more people exploring treatment online, and more of them taking the next step. During our engagement, conversions rose 54% and new users grew 88.2%. What changed sits in how patients’ treatment questions were answered.",
+      stats: [
+        { value: "54%", label: "Higher conversion rates" },
+        { value: "73.9%", label: "More website traffic" },
+        { value: "88.2%", label: "More new users" },
+      ],
+    },
     faqs: [
       { q: "What is digital marketing for dentists?", a: "Digital marketing for dentists, also called dental digital marketing, uses Google Ads, Google Maps, SEO, social media and WhatsApp to help patients find, trust and book a dental practice. Done well, it is measured by patients seen and cost per patient, not by clicks." },
       { q: "Should dentists market themselves or their clinic?", a: "Market the practice, with the dentist as its trusted face. India’s dental ethics rules limit self-promotion, so profiles should share factual qualifications, experience and treatments. Educational videos and pages build personal trust without breaking the rules or relying on claims." },

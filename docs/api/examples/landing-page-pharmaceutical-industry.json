@@ -2,6 +2,7 @@
   "landing_pages": [
     {
       "slug": "digital-marketing-agency-for-pharmaceutical-industry",
+      "design": "industry",
       "title": "Digital Marketing Agency for Pharmaceutical Industry",
       "seo": {
         "title": "Digital Marketing Agency for Pharmaceutical Industry | Reinvent Digital",
@@ -31,27 +32,58 @@
             "value": "185+",
             "label": "Healthcare accounts managed"
           }
-        ]
+        ],
+        "highlights": [
+          "Compliant pharmacy campaigns",
+          "Google Maps for every store",
+          "Fast WhatsApp order replies",
+          "Refill reminder journeys"
+        ],
+        "metric": {
+          "value": "185+",
+          "label": "Healthcare accounts managed"
+        }
       },
-      "reasons": {
+      "problems": {
         "eyebrow": "Where Pharmacies Lose Customers",
         "heading": "Customers Need Medicines. They Buy From Whoever Answers First",
         "body": "Pharmacy customers rarely wait. They search nearby, ask about stock and buy from the first store that responds, while regular customers drift to delivery apps.",
         "points": [
-          "Local searches find another store — customers searching “pharmacy near me” or “24-hour chemist” see a competitor first.",
-          "Stock enquiries go unanswered — calls and WhatsApp messages about availability wait, and the customer buys elsewhere.",
-          "Monthly refills slip away — customers on regular medicines forget to reorder, then buy from whichever store is closest that day.",
-          "Delivery apps win on convenience — app discounts and doorstep delivery pull regular customers away from local pharmacies.",
-          "Ads get rejected for medicine content — copy that mentions restricted medicines breaks platform policies, and campaigns stop running.",
-          "Unanswered reviews shape store choice — a few negative reviews with no reply make nearby customers choose another pharmacy.",
-          "Marketing can’t see store visits — nobody links campaigns to orders and footfall, so marketing is judged on clicks alone."
+          {
+            "title": "Local searches find another store",
+            "body": "Customers searching “pharmacy near me” or “24-hour chemist” see a competitor’s store first."
+          },
+          {
+            "title": "Stock enquiries go unanswered",
+            "body": "Calls and WhatsApp messages about medicine availability wait, and the customer buys elsewhere."
+          },
+          {
+            "title": "Monthly refills slip away",
+            "body": "Customers on regular medicines forget to reorder, then buy from whichever store is closest that day."
+          },
+          {
+            "title": "Delivery apps win on convenience",
+            "body": "App discounts and doorstep delivery pull regular customers away from local pharmacies."
+          },
+          {
+            "title": "Ads get rejected for medicine content",
+            "body": "Ad copy that mentions restricted medicines breaks platform policies, and campaigns stop running."
+          },
+          {
+            "title": "Unanswered reviews shape store choice",
+            "body": "A few negative reviews with no reply make nearby customers choose another pharmacy."
+          },
+          {
+            "title": "Marketing can’t see store visits",
+            "body": "Nobody links campaigns to orders and footfall, so marketing is judged on clicks alone."
+          }
         ]
       },
-      "services": {
+      "help": {
         "eyebrow": "How we help",
         "heading": "Every Store, Every Refill, Handled In One System",
         "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, so your campaigns, stores and order desk work from the same customer data.",
-        "items": [
+        "points": [
           {
             "title": "Compliant Pharmacy Campaigns",
             "body": "Google Ads and Meta campaigns for stores, services and wellness ranges, never promoting prescription medicines."
@@ -86,7 +118,25 @@
           }
         ]
       },
-      "overview": "<p><strong>Proof, not a vague promise — one system, proven in healthcare, now built for pharmacies.</strong> Pharmacies win customers on speed, trust and convenience, and lose them when replies are slow. The same Patient Acquisition System has already doubled walk-ins and lowered cost per lead for other healthcare groups; for pharmacies, it is adapted to faster, repeat buying decisions.</p><ul><li><strong>2.1x monthly walk-ins</strong> in 8 months — dental group.</li><li><strong>94% more site conversions</strong> in 6 months — liver transplant practice.</li><li><strong>20% lower cost per lead every month</strong> in the first three months — multi-speciality hospital.</li></ul>",
+      "proof": {
+        "eyebrow": "Proof, not a vague promise",
+        "heading": "One System. Proven in Healthcare. Now Built for Pharmacies.",
+        "body": "Pharmacies win customers on speed, trust and convenience, and lose them when replies are slow. The same Patient Acquisition System has already doubled walk-ins and lowered cost per lead for other healthcare groups; for pharmacies, it is adapted to faster, repeat buying decisions.",
+        "stats": [
+          {
+            "value": "2.1x",
+            "label": "Monthly walk-ins in 8 months — dental group"
+          },
+          {
+            "value": "94%",
+            "label": "More site conversions in 6 months — liver transplant practice"
+          },
+          {
+            "value": "20%",
+            "label": "Lower cost per lead every month — first three months"
+          }
+        ]
+      },
       "faqs": [
         {
           "q": "What does a digital marketing agency for the pharmaceutical industry do?",

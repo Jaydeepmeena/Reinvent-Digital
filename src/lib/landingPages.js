@@ -98,6 +98,10 @@ export function normaliseLandingPage(raw) {
       // found, they are just not linked from anywhere on the site.
       noindex: seo.noindex === true,
     },
+    // "industry" renders the page in the industry-page layout (numbered
+    // problems, a help timeline, before/after proof); anything else keeps the
+    // default service-style layout.
+    design: text(raw.design),
     hero: {
       eyebrow: text(hero.eyebrow),
       headline: text(hero.headline) ?? title,
@@ -109,6 +113,9 @@ export function normaliseLandingPage(raw) {
         .map((stat) => ({ value: text(stat?.value), label: text(stat?.label) }))
         .filter((stat) => stat.value && stat.label)
         .slice(0, 3),
+      // The industry hero rings a few short highlights and one metric chip.
+      highlights: lines(hero.highlights),
+      metric: hero.metric?.value ? { value: text(hero.metric.value), label: text(hero.metric.label) } : null,
     },
     intro: sanitise(raw.intro ?? ""),
     // A free-text section rendered just before the FAQ. Like `intro` it is
@@ -116,6 +123,19 @@ export function normaliseLandingPage(raw) {
     overview: sanitise(raw.overview ?? ""),
     reasons: block(raw.reasons, "points", lines(raw.reasons?.points)),
     services: block(raw.services, "items", cards(raw.services?.items)),
+    // Industry-layout blocks: the problems, the help timeline and the proof.
+    problems: block(raw.problems, "points", cards(raw.problems?.points)),
+    help: block(raw.help, "points", cards(raw.help?.points)),
+    proof: raw.proof
+      ? {
+          eyebrow: text(raw.proof.eyebrow),
+          heading: text(raw.proof.heading),
+          body: text(raw.proof.body),
+          stats: (Array.isArray(raw.proof.stats) ? raw.proof.stats : [])
+            .map((stat) => ({ value: text(stat?.value), label: text(stat?.label) }))
+            .filter((stat) => stat.value && stat.label),
+        }
+      : null,
     blogs,
     faqs,
     closing: raw.closing
