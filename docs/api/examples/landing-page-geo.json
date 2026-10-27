@@ -1,0 +1,161 @@
+{
+  "landing_pages": [
+    {
+      "slug": "generative-engine-optimization",
+      "design": "industry",
+      "title": "GEO Services in India",
+      "seo": {
+        "title": "GEO Services in India | Reinvent Digital",
+        "description": "Generative Engine Optimisation that helps ChatGPT, Gemini, Perplexity and Google AI Overviews understand, trust and recommend your brand.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "GEO Services in India",
+        "headline": "When ChatGPT Answers,",
+        "accent": "Be in the Answer!",
+        "description": "Reinvent Digital is a GEO agency in India. We help ChatGPT, Gemini, Perplexity and Google AI Overviews understand your brand, trust it and recommend it.",
+        "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your GEO Strategy",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "299+",
+            "label": "Pages cited by AI tools"
+          },
+          {
+            "value": "1.9K+",
+            "label": "AI citations across platforms"
+          },
+          {
+            "value": "81+",
+            "label": "Citations in Gemini"
+          }
+        ],
+        "highlights": [
+          "Entity clarity",
+          "AI crawler access",
+          "Citation-ready content",
+          "AI visibility tracking"
+        ],
+        "metric": {
+          "value": "1.9K+",
+          "label": "AI citations across platforms"
+        }
+      },
+      "problems": {
+        "eyebrow": "What’s included",
+        "heading": "Signals AI Use To Choose a Brand",
+        "body": "Our GEO service in India makes your brand easy for AI systems to read, verify and cite, working alongside your SEO and AEO.",
+        "points": [
+          {
+            "title": "Entity Clarity",
+            "body": "Brand name, services, people and locations kept identical across your site, profiles and listings."
+          },
+          {
+            "title": "AI Crawler Access",
+            "body": "Robots.txt and server rules checked so OAI-SearchBot, PerplexityBot and Google can read your pages."
+          },
+          {
+            "title": "Citation-Ready Content",
+            "body": "Summaries of 50 to 70 words, clear headings and fact tables that AI tools can quote accurately."
+          },
+          {
+            "title": "Schema & Knowledge Graph",
+            "body": "Organisation, Person and Service schema with sameAs links that confirm who your brand is."
+          },
+          {
+            "title": "Authority & Mentions",
+            "body": "Credible third-party mentions, expert bylines and author pages that help AI verify your claims."
+          },
+          {
+            "title": "AI Visibility Tracking",
+            "body": "Citations and brand mentions tracked monthly across ChatGPT, Gemini, Perplexity and AI Overviews."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How GEO works",
+        "heading": "Audit. Clarify. Get Cited. Repeat.",
+        "body": "AI visibility builds as signals compound, so we review citations monthly and refine every quarter.",
+        "points": [
+          {
+            "title": "Ask the AI Tools",
+            "body": "Check what ChatGPT, Gemini and Perplexity say about your brand today."
+          },
+          {
+            "title": "Fix Conflicting Facts",
+            "body": "Align your name, services and details across site, profiles and directories."
+          },
+          {
+            "title": "Open the Doors",
+            "body": "Make sure AI crawlers can access and read your key pages."
+          },
+          {
+            "title": "Restructure Key Pages",
+            "body": "Add summaries, schema and clear sections that AI systems can cite."
+          },
+          {
+            "title": "Build Trusted Mentions",
+            "body": "Earn credible references that confirm your expertise beyond your own site."
+          },
+          {
+            "title": "Track & Refine",
+            "body": "Measure citations monthly and update pages where AI answers fall short."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Ask the AI about you",
+        "heading": "What Does ChatGPT Say When Someone Asks About Your Brand?",
+        "body": "Comparing the best GEO company in India? Start with an audit of what AI tools say about your brand today, where they get it wrong and what to fix first.",
+        "stats": [
+          {
+            "value": "185+",
+            "label": "Healthcare accounts managed"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing leadership"
+          },
+          {
+            "value": "8+",
+            "label": "Healthcare verticals covered"
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What is Generative Engine Optimisation (GEO)?",
+          "a": "Generative Engine Optimisation (GEO) helps AI systems like ChatGPT, Gemini and Perplexity understand, trust and cite your brand when they generate answers to user questions."
+        },
+        {
+          "q": "How is GEO different from AEO?",
+          "a": "AEO helps your answers appear in Featured Snippets and People Also Ask. GEO helps AI tools mention and recommend your brand inside the answers they write."
+        },
+        {
+          "q": "Can GEO guarantee my brand appears in ChatGPT?",
+          "a": "No. Nobody controls what AI tools say. GEO improves the signals they rely on: clear entities, consistent facts, credible sources and content that’s easy to cite."
+        },
+        {
+          "q": "Could my website be blocking AI tools?",
+          "a": "Often, yes. Some sites block AI crawlers such as OAI-SearchBot or PerplexityBot without realising it. If crawlers can’t read your pages, AI tools can’t cite them."
+        },
+        {
+          "q": "How do you choose the best GEO agency in India?",
+          "a": "Ask how they track AI citations, which platforms they monitor and how they fix inconsistent brand facts. The best GEO service in India for you measures mentions, not promises."
+        },
+        {
+          "q": "Why choose Reinvent Digital as your GEO company in India?",
+          "a": "As a GEO company in India, Reinvent Digital fixes entity signals, structures content for AI and tracks citations across platforms, along with the enquiries they bring."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Generative Engine Optimisation",
+        "heading": "Get Your GEO Audit",
+        "body": "Start with an audit of what AI tools say about your brand today, where they get it wrong and what to fix first."
+      }
+    }
+  ]
+}

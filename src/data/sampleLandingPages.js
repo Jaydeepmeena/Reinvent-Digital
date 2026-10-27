@@ -867,4 +867,162 @@ export const SAMPLE_LANDING_PAGES = [
       body: "We are a digital marketing agency for dentists that measures patients, not clicks. Share how patients reach you today, and we will show how the Reinvent Digital Patient Acquisition System can fill your appointment book.",
     },
   },
+
+  // A service landing page: Answer Engine Optimisation, in the industry-page
+  // layout. Lives at /answer-engine-optimization.
+  {
+    slug: "answer-engine-optimization",
+    design: "industry",
+    title: "AEO Services in India",
+    seo: {
+      title: "AEO Services in India | Reinvent Digital",
+      description:
+        "Answer Engine Optimisation that structures your content for Featured Snippets, People Also Ask, voice search and AI Overviews, so buyers find you first.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "AEO Services in India",
+      headline: "When AI Answers,",
+      accent: "Be the Brand It Quotes!",
+      description:
+        "Rated among the most trusted AEO agencies in India, Reinvent Digital structures your content for Featured Snippets, People Also Ask, voice search and AI Overviews, so buyers find you first.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your AEO Strategy", href: "/contact" },
+      stats: [
+        { value: "600+", label: "Citations in Google AI Mode" },
+        { value: "1.1K+", label: "Pages cited in Google AI Overviews" },
+        { value: "214+", label: "Pages cited in Google AI Mode" },
+      ],
+      highlights: ["Direct-answer content", "Snippet-matched formats", "Schema & entity markup", "Answer visibility tracking"],
+      metric: { value: "1.1K+", label: "Responses cited across AI Overviews" },
+    },
+    problems: {
+      eyebrow: "What’s included",
+      heading: "Six Ways To Make Your Content the Answer",
+      body: "Our AEO service in India builds on your SEO, turning the questions your customers actually ask into answers that search engines and AI tools can extract.",
+      points: [
+        { title: "Question Research & Intent Mapping", body: "Real questions from People Also Ask, Search Console and sales calls, grouped by intent and mapped to pages." },
+        { title: "Direct-Answer Content", body: "Answers of 40 to 60 words at the top of each section, written to be quoted without editing." },
+        { title: "Snippet-Matched Formats", body: "Paragraphs for definitions, lists for steps and tables for comparisons, matched to how answers display." },
+        { title: "Schema & Entity Markup", body: "Article, FAQPage, HowTo and LocalBusiness schema that matches visible content, with consistent entity names." },
+        { title: "Voice & Conversational Answers", body: "Short answers that sound natural when read aloud, for voice assistants and conversational search." },
+        { title: "Answer Visibility Tracking", body: "Snippet share, People Also Ask coverage and AI citations tracked monthly, alongside the enquiries they bring." },
+      ],
+    },
+    help: {
+      eyebrow: "How AEO works",
+      heading: "Find the Question. Write the Answer. Track the Win.",
+      body: "Early answer wins often appear within weeks of publishing, with steadier gains over one to three months.",
+      points: [
+        { title: "Audit Who Answers Today", body: "See which competitors own your snippets, PAA results and AI citations." },
+        { title: "Build the Question Bank", body: "Collect real buyer questions and rank them by demand and value." },
+        { title: "Write Answer-First Content", body: "Add direct answers, lists and tables to new and existing pages." },
+        { title: "Add Schema & Fix Structure", body: "Mark up content and clean headings so engines extract answers easily." },
+        { title: "Track Answer Visibility", body: "Measure snippets, PAA coverage and AI citations against the baseline." },
+        { title: "Refresh & Expand", body: "Update answers that slip and add questions buyers start asking." },
+      ],
+    },
+    proof: {
+      eyebrow: "See who answers for you",
+      heading: "When Customers Ask About Your Service, Whose Answer Do They See?",
+      body: "Comparing the best AEO company in India for your brand? Start with an audit of who answers your top questions, where your pages fall short and what to fix first.",
+      stats: [
+        { value: "185+", label: "Healthcare accounts managed" },
+        { value: "11+", label: "Years of marketing leadership" },
+        { value: "8+", label: "Healthcare verticals covered" },
+      ],
+    },
+    faqs: [
+      { q: "What is Answer Engine Optimisation (AEO)?", a: "Answer Engine Optimisation (AEO) structures content so search engines and AI tools can pick it as the direct answer, in Featured Snippets, People Also Ask, voice results and AI Overviews." },
+      { q: "How is AEO different from SEO?", a: "SEO helps a page rank and earn clicks. AEO helps a specific answer on that page get selected and shown, even when the user never clicks through." },
+      { q: "Do FAQ rich results still matter for AEO?", a: "Not for rich results. Google stopped showing FAQ rich results in May 2026. FAQ content and schema still help search engines and AI tools understand and extract your answers." },
+      { q: "How long does AEO take to show results?", a: "Early wins often appear within weeks of publishing well-structured answers. Steadier gains usually build over one to three months, depending on competition and your site’s existing authority." },
+      { q: "How do you choose the best AEO agency in India?", a: "Ask for real snippets and AI citations they’ve won, and how they measure them. The best AEO service in India for you reports answer visibility, not just rankings." },
+      { q: "Why work with Reinvent Digital as your AEO company in India?", a: "As an AEO company in India, Reinvent Digital builds AEO into your SEO, writes answers AI tools can quote, and tracks snippets, citations and the enquiries they bring." },
+    ],
+    closing: {
+      eyebrow: "Answer Engine Optimisation",
+      heading: "Get Your AEO Audit",
+      body: "Start with an audit of who answers your top questions today, where your pages fall short and what to fix first.",
+    },
+  },
+
+  // A service landing page: Generative Engine Optimisation, in the industry-page
+  // layout. Lives at /generative-engine-optimization.
+  {
+    slug: "generative-engine-optimization",
+    design: "industry",
+    title: "GEO Services in India",
+    seo: {
+      title: "GEO Services in India | Reinvent Digital",
+      description:
+        "Generative Engine Optimisation that helps ChatGPT, Gemini, Perplexity and Google AI Overviews understand, trust and recommend your brand.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "GEO Services in India",
+      headline: "When ChatGPT Answers,",
+      accent: "Be in the Answer!",
+      description:
+        "Reinvent Digital is a GEO agency in India. We help ChatGPT, Gemini, Perplexity and Google AI Overviews understand your brand, trust it and recommend it.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your GEO Strategy", href: "/contact" },
+      stats: [
+        { value: "299+", label: "Pages cited by AI tools" },
+        { value: "1.9K+", label: "AI citations across platforms" },
+        { value: "81+", label: "Citations in Gemini" },
+      ],
+      highlights: ["Entity clarity", "AI crawler access", "Citation-ready content", "AI visibility tracking"],
+      metric: { value: "1.9K+", label: "AI citations across platforms" },
+    },
+    problems: {
+      eyebrow: "What’s included",
+      heading: "Signals AI Use To Choose a Brand",
+      body: "Our GEO service in India makes your brand easy for AI systems to read, verify and cite, working alongside your SEO and AEO.",
+      points: [
+        { title: "Entity Clarity", body: "Brand name, services, people and locations kept identical across your site, profiles and listings." },
+        { title: "AI Crawler Access", body: "Robots.txt and server rules checked so OAI-SearchBot, PerplexityBot and Google can read your pages." },
+        { title: "Citation-Ready Content", body: "Summaries of 50 to 70 words, clear headings and fact tables that AI tools can quote accurately." },
+        { title: "Schema & Knowledge Graph", body: "Organisation, Person and Service schema with sameAs links that confirm who your brand is." },
+        { title: "Authority & Mentions", body: "Credible third-party mentions, expert bylines and author pages that help AI verify your claims." },
+        { title: "AI Visibility Tracking", body: "Citations and brand mentions tracked monthly across ChatGPT, Gemini, Perplexity and AI Overviews." },
+      ],
+    },
+    help: {
+      eyebrow: "How GEO works",
+      heading: "Audit. Clarify. Get Cited. Repeat.",
+      body: "AI visibility builds as signals compound, so we review citations monthly and refine every quarter.",
+      points: [
+        { title: "Ask the AI Tools", body: "Check what ChatGPT, Gemini and Perplexity say about your brand today." },
+        { title: "Fix Conflicting Facts", body: "Align your name, services and details across site, profiles and directories." },
+        { title: "Open the Doors", body: "Make sure AI crawlers can access and read your key pages." },
+        { title: "Restructure Key Pages", body: "Add summaries, schema and clear sections that AI systems can cite." },
+        { title: "Build Trusted Mentions", body: "Earn credible references that confirm your expertise beyond your own site." },
+        { title: "Track & Refine", body: "Measure citations monthly and update pages where AI answers fall short." },
+      ],
+    },
+    proof: {
+      eyebrow: "Ask the AI about you",
+      heading: "What Does ChatGPT Say When Someone Asks About Your Brand?",
+      body: "Comparing the best GEO company in India? Start with an audit of what AI tools say about your brand today, where they get it wrong and what to fix first.",
+      stats: [
+        { value: "185+", label: "Healthcare accounts managed" },
+        { value: "11+", label: "Years of marketing leadership" },
+        { value: "8+", label: "Healthcare verticals covered" },
+      ],
+    },
+    faqs: [
+      { q: "What is Generative Engine Optimisation (GEO)?", a: "Generative Engine Optimisation (GEO) helps AI systems like ChatGPT, Gemini and Perplexity understand, trust and cite your brand when they generate answers to user questions." },
+      { q: "How is GEO different from AEO?", a: "AEO helps your answers appear in Featured Snippets and People Also Ask. GEO helps AI tools mention and recommend your brand inside the answers they write." },
+      { q: "Can GEO guarantee my brand appears in ChatGPT?", a: "No. Nobody controls what AI tools say. GEO improves the signals they rely on: clear entities, consistent facts, credible sources and content that’s easy to cite." },
+      { q: "Could my website be blocking AI tools?", a: "Often, yes. Some sites block AI crawlers such as OAI-SearchBot or PerplexityBot without realising it. If crawlers can’t read your pages, AI tools can’t cite them." },
+      { q: "How do you choose the best GEO agency in India?", a: "Ask how they track AI citations, which platforms they monitor and how they fix inconsistent brand facts. The best GEO service in India for you measures mentions, not promises." },
+      { q: "Why choose Reinvent Digital as your GEO company in India?", a: "As a GEO company in India, Reinvent Digital fixes entity signals, structures content for AI and tracks citations across platforms, along with the enquiries they bring." },
+    ],
+    closing: {
+      eyebrow: "Generative Engine Optimisation",
+      heading: "Get Your GEO Audit",
+      body: "Start with an audit of what AI tools say about your brand today, where they get it wrong and what to fix first.",
+    },
+  },
 ];
