@@ -1,0 +1,161 @@
+{
+  "landing_pages": [
+    {
+      "slug": "social-media-marketing-agency",
+      "design": "industry",
+      "title": "Social Media Marketing Agency in India",
+      "seo": {
+        "title": "Social Media Marketing Agency in India | Reinvent Digital",
+        "description": "A social media marketing agency in India that plans, creates and manages content to help people find, trust and contact your brand, tracked to enquiries.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "SMM Agency in India",
+        "headline": "Followers Are Nice.",
+        "accent": "Actual Enquiries Are Better!",
+        "description": "Reinvent Digital is a social media marketing agency in India. We plan, create and manage content that helps people find, trust and contact your brand.",
+        "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your Social Media Strategy",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "162%",
+            "label": "Increase in social media engagement"
+          },
+          {
+            "value": "185+",
+            "label": "Healthcare accounts managed"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing experience"
+          }
+        ],
+        "highlights": [
+          "Social strategy",
+          "Content & Reels",
+          "Community & DMs",
+          "Paid social"
+        ],
+        "metric": {
+          "value": "4+",
+          "label": "Platforms covered: Instagram, LinkedIn, YouTube, Facebook"
+        }
+      },
+      "problems": {
+        "eyebrow": "What's included",
+        "heading": "Everything Between a Scroll and an Enquiry",
+        "body": "Our social media marketing service in India covers strategy, creative, community and paid social, with every post planned around a business goal.",
+        "points": [
+          {
+            "title": "Social Media Strategy",
+            "body": "Audience research, platform choice and monthly goals set before a single post is designed."
+          },
+          {
+            "title": "Content Calendar & Creative",
+            "body": "Planned posts, carousels and Reels designed around what your audience saves and shares."
+          },
+          {
+            "title": "Reels & Short Video",
+            "body": "Short videos scripted to hook viewers in the first seconds and lead to a clear next step."
+          },
+          {
+            "title": "Social SEO",
+            "body": "Keyword-led captions and profiles, so posts appear in Instagram search and Google results."
+          },
+          {
+            "title": "Community & DM Management",
+            "body": "Comments and messages answered quickly, with enquiries passed straight to your sales team."
+          },
+          {
+            "title": "Paid Social Campaigns",
+            "body": "Meta and LinkedIn campaigns that turn engaged audiences into enquiries, tracked to results."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How we run social media",
+        "heading": "Monthly Plan. Reviewed Posts. Everyday Replies.",
+        "body": "Content is planned a month ahead, reviewed weekly and adjusted to what your audience actually responds to.",
+        "points": [
+          {
+            "title": "Audit Your Profiles",
+            "body": "Review bios, highlights, past posts and what competitors do better."
+          },
+          {
+            "title": "Define Audience & Goals",
+            "body": "Set who you're reaching and what each platform should achieve."
+          },
+          {
+            "title": "Plan the Calendar",
+            "body": "Map a month of posts, Reels and campaigns to those goals."
+          },
+          {
+            "title": "Create & Publish",
+            "body": "Design, write and schedule content in your brand's own voice."
+          },
+          {
+            "title": "Engage & Respond",
+            "body": "Reply to comments and messages, and route enquiries to your team."
+          },
+          {
+            "title": "Review & Improve",
+            "body": "Track saves, shares and enquiries, then refine next month's plan."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Find your social gaps",
+        "heading": "Are Your Followers Turning Into Enquiries?",
+        "body": "Comparing the best social media marketing company in India? Start with an audit of your profiles, what your audience responds to and where enquiries are lost.",
+        "stats": [
+          {
+            "value": "20-30%",
+            "label": "Missed leads recovered"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing leadership"
+          },
+          {
+            "value": "8+",
+            "label": "Healthcare verticals covered"
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What is social media marketing?",
+          "a": "Social media marketing uses platforms like Instagram, Facebook, LinkedIn and YouTube to build awareness, trust and enquiries through planned content, community management and paid campaigns."
+        },
+        {
+          "q": "Do Instagram posts show up on Google?",
+          "a": "Yes. Since July 2025, Google and Bing index public posts from Instagram professional accounts, so clear captions and keywords help your posts appear in search."
+        },
+        {
+          "q": "How often should a business post on social media?",
+          "a": "Consistency matters more than volume. Most brands do well with three to five planned posts a week, supported by Reels or short videos and timely replies."
+        },
+        {
+          "q": "How do you measure social media results?",
+          "a": "Track reach, saves, shares, profile visits, enquiries and the leads they create. Likes alone rarely show whether social media is helping the business grow."
+        },
+        {
+          "q": "How do you choose the best social media marketing agency in India?",
+          "a": "Look at their strategy, creative samples and reporting, not just follower growth. The best social media marketing service in India for you reports enquiries, not likes."
+        },
+        {
+          "q": "Why choose Reinvent Digital as your social media marketing company in India?",
+          "a": "As a social media marketing company in India, Reinvent Digital plans content around business goals, manages replies quickly and tracks the enquiries each platform brings."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Social Media Marketing",
+        "heading": "Get Your Social Media Audit",
+        "body": "Start with an audit of your profiles, what your audience responds to and where enquiries are lost today."
+      }
+    }
+  ]
+}

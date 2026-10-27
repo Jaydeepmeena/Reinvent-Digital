@@ -1,0 +1,161 @@
+{
+  "landing_pages": [
+    {
+      "slug": "website-development-company",
+      "design": "industry",
+      "title": "Website Development Company in India",
+      "seo": {
+        "title": "Website Development Company in India | Reinvent Digital",
+        "description": "A website development company in India building fast, mobile-first websites that rank, load quickly and turn visitors into enquiries.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "Website Development Company in India",
+        "headline": "Good-Looking Sites Get Visits.",
+        "accent": "Well-Built Ones Get Enquiries!",
+        "description": "Reinvent Digital is a website development agency in India. We build fast, mobile-first websites that rank, load quickly and turn visitors into enquiries.",
+        "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your Website Project",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "271%",
+            "label": "Increase in conversion in healthcare"
+          },
+          {
+            "value": "185+",
+            "label": "Healthcare accounts managed"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing experience"
+          }
+        ],
+        "highlights": [
+          "Site structure",
+          "UI/UX design",
+          "Mobile-first build",
+          "SEO-ready architecture"
+        ],
+        "metric": {
+          "value": "1K+",
+          "label": "Websites designed and tested"
+        }
+      },
+      "problems": {
+        "eyebrow": "What's included",
+        "heading": "Six Things Every Website Needs to Convert",
+        "body": "Our website development service in India covers planning, design, development, SEO structure and tracking, so your site works as a sales asset from launch.",
+        "points": [
+          {
+            "title": "Planning & Site Structure",
+            "body": "Sitemap, page goals and user journeys planned before design, so every page has a purpose."
+          },
+          {
+            "title": "UI/UX Design",
+            "body": "Clean, on-brand layouts that guide visitors towards calls, forms and WhatsApp."
+          },
+          {
+            "title": "Mobile-First Development",
+            "body": "Responsive builds tested on real devices, with fast loading on mobile networks."
+          },
+          {
+            "title": "SEO-Ready Architecture",
+            "body": "Clean code, schema, internal links and Core Web Vitals built in from day one."
+          },
+          {
+            "title": "Conversion Points & Tracking",
+            "body": "Forms, click-to-call and WhatsApp buttons, with analytics and call tracking set up at launch."
+          },
+          {
+            "title": "Ongoing Support & Updates",
+            "body": "Security updates, backups and content changes handled after launch, so the site stays fast and current."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How we build your website",
+        "heading": "Plan. Design. Build. Launch. Improve.",
+        "body": "Every project follows a clear path from discovery to launch, then improves monthly based on real visitor data.",
+        "points": [
+          {
+            "title": "Discovery & Goals",
+            "body": "Understand your audience, services and what the website must achieve."
+          },
+          {
+            "title": "Structure & Wireframes",
+            "body": "Plan pages, navigation and user journeys before visual design begins."
+          },
+          {
+            "title": "Design & Approval",
+            "body": "Create layouts and visuals, refined with your feedback at each stage."
+          },
+          {
+            "title": "Build & Test",
+            "body": "Develop the site, then test speed, forms and mobile layouts."
+          },
+          {
+            "title": "Launch & Track",
+            "body": "Go live with analytics, call tracking and SEO checks in place."
+          },
+          {
+            "title": "Review & Improve",
+            "body": "Use visitor and enquiry data to refine pages every month."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Check your current website",
+        "heading": "Is Your Website Bringing Enquiries, or Just Visitors?",
+        "body": "Comparing the best website development company in India? Start with an audit of your current site's speed, structure and conversion points, and what to fix first.",
+        "stats": [
+          {
+            "value": "20-30%",
+            "label": "Missed leads recovered"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing leadership"
+          },
+          {
+            "value": "8+",
+            "label": "Healthcare verticals covered"
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What does website development include?",
+          "a": "Website development is the planning, design, coding and launch of a website. A good build includes mobile responsiveness, fast loading, SEO structure and clear conversion points."
+        },
+        {
+          "q": "How long does it take to build a website?",
+          "a": "Most business websites take six to twelve weeks, depending on page count, features, content readiness and how quickly feedback is shared during design and testing."
+        },
+        {
+          "q": "How much does website development cost in India?",
+          "a": "Cost depends on page count, design complexity, integrations and content needs. A scoped plan after a short discovery call gives you a clear, fixed estimate upfront."
+        },
+        {
+          "q": "Should SEO be built into a new website?",
+          "a": "Yes. SEO-ready architecture, fast loading, clean code and schema should be built in from the start. Adding them after launch usually costs more time and money."
+        },
+        {
+          "q": "How do you choose the best website development agency in India?",
+          "a": "Review their live websites, page speed results and how those sites convert visitors. The best website development service in India for you builds for enquiries, not just looks."
+        },
+        {
+          "q": "Why choose Reinvent Digital as your website development company in India?",
+          "a": "As a website development company in India, Reinvent Digital builds sites with SEO, speed, tracking and conversion points planned together, then measures enquiries after launch."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Website Development",
+        "heading": "Get Your Website Audit",
+        "body": "Start with an audit of your site's speed, structure and conversion points, and what to fix first."
+      }
+    }
+  ]
+}

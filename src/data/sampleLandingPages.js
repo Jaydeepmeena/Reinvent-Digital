@@ -1272,4 +1272,481 @@ export const SAMPLE_LANDING_PAGES = [
       body: "Start with an audit of what AI tools say about your brand today, where they get it wrong and what to fix first.",
     },
   },
+
+  // A service landing page: Social Media Marketing, in the industry-page layout.
+  // Lives at /social-media-marketing-agency.
+  {
+    slug: "social-media-marketing-agency",
+    design: "industry",
+    title: "Social Media Marketing Agency in India",
+    seo: {
+      title: "Social Media Marketing Agency in India | Reinvent Digital",
+      description:
+        "A social media marketing agency in India that plans, creates and manages content to help people find, trust and contact your brand, tracked to enquiries.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "SMM Agency in India",
+      headline: "Followers Are Nice.",
+      accent: "Actual Enquiries Are Better!",
+      description:
+        "Reinvent Digital is a social media marketing agency in India. We plan, create and manage content that helps people find, trust and contact your brand.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your Social Media Strategy", href: "/contact" },
+      stats: [
+        { value: "162%", label: "Increase in social media engagement" },
+        { value: "185+", label: "Healthcare accounts managed" },
+        { value: "11+", label: "Years of marketing experience" },
+      ],
+      highlights: ["Social strategy", "Content & Reels", "Community & DMs", "Paid social"],
+      metric: { value: "4+", label: "Platforms covered: Instagram, LinkedIn, YouTube, Facebook" },
+    },
+    problems: {
+      eyebrow: "What's included",
+      heading: "Everything Between a Scroll and an Enquiry",
+      body: "Our social media marketing service in India covers strategy, creative, community and paid social, with every post planned around a business goal.",
+      points: [
+        { title: "Social Media Strategy", body: "Audience research, platform choice and monthly goals set before a single post is designed." },
+        { title: "Content Calendar & Creative", body: "Planned posts, carousels and Reels designed around what your audience saves and shares." },
+        { title: "Reels & Short Video", body: "Short videos scripted to hook viewers in the first seconds and lead to a clear next step." },
+        { title: "Social SEO", body: "Keyword-led captions and profiles, so posts appear in Instagram search and Google results." },
+        { title: "Community & DM Management", body: "Comments and messages answered quickly, with enquiries passed straight to your sales team." },
+        { title: "Paid Social Campaigns", body: "Meta and LinkedIn campaigns that turn engaged audiences into enquiries, tracked to results." },
+      ],
+    },
+    help: {
+      eyebrow: "How we run social media",
+      heading: "Monthly Plan. Reviewed Posts. Everyday Replies.",
+      body: "Content is planned a month ahead, reviewed weekly and adjusted to what your audience actually responds to.",
+      points: [
+        { title: "Audit Your Profiles", body: "Review bios, highlights, past posts and what competitors do better." },
+        { title: "Define Audience & Goals", body: "Set who you're reaching and what each platform should achieve." },
+        { title: "Plan the Calendar", body: "Map a month of posts, Reels and campaigns to those goals." },
+        { title: "Create & Publish", body: "Design, write and schedule content in your brand's own voice." },
+        { title: "Engage & Respond", body: "Reply to comments and messages, and route enquiries to your team." },
+        { title: "Review & Improve", body: "Track saves, shares and enquiries, then refine next month's plan." },
+      ],
+    },
+    proof: {
+      eyebrow: "Find your social gaps",
+      heading: "Are Your Followers Turning Into Enquiries?",
+      body: "Comparing the best social media marketing company in India? Start with an audit of your profiles, what your audience responds to and where enquiries are lost.",
+      stats: [
+        { value: "20-30%", label: "Missed leads recovered" },
+        { value: "11+", label: "Years of marketing leadership" },
+        { value: "8+", label: "Healthcare verticals covered" },
+      ],
+    },
+    faqs: [
+      { q: "What is social media marketing?", a: "Social media marketing uses platforms like Instagram, Facebook, LinkedIn and YouTube to build awareness, trust and enquiries through planned content, community management and paid campaigns." },
+      { q: "Do Instagram posts show up on Google?", a: "Yes. Since July 2025, Google and Bing index public posts from Instagram professional accounts, so clear captions and keywords help your posts appear in search." },
+      { q: "How often should a business post on social media?", a: "Consistency matters more than volume. Most brands do well with three to five planned posts a week, supported by Reels or short videos and timely replies." },
+      { q: "How do you measure social media results?", a: "Track reach, saves, shares, profile visits, enquiries and the leads they create. Likes alone rarely show whether social media is helping the business grow." },
+      { q: "How do you choose the best social media marketing agency in India?", a: "Look at their strategy, creative samples and reporting, not just follower growth. The best social media marketing service in India for you reports enquiries, not likes." },
+      { q: "Why choose Reinvent Digital as your social media marketing company in India?", a: "As a social media marketing company in India, Reinvent Digital plans content around business goals, manages replies quickly and tracks the enquiries each platform brings." },
+    ],
+    closing: {
+      eyebrow: "Social Media Marketing",
+      heading: "Get Your Social Media Audit",
+      body: "Start with an audit of your profiles, what your audience responds to and where enquiries are lost today.",
+    },
+  },
+
+  // A service landing page: Website Development, in the industry-page layout.
+  // Lives at /website-development-company.
+  {
+    slug: "website-development-company",
+    design: "industry",
+    title: "Website Development Company in India",
+    seo: {
+      title: "Website Development Company in India | Reinvent Digital",
+      description:
+        "A website development company in India building fast, mobile-first websites that rank, load quickly and turn visitors into enquiries.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "Website Development Company in India",
+      headline: "Good-Looking Sites Get Visits.",
+      accent: "Well-Built Ones Get Enquiries!",
+      description:
+        "Reinvent Digital is a website development agency in India. We build fast, mobile-first websites that rank, load quickly and turn visitors into enquiries.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your Website Project", href: "/contact" },
+      stats: [
+        { value: "271%", label: "Increase in conversion in healthcare" },
+        { value: "185+", label: "Healthcare accounts managed" },
+        { value: "11+", label: "Years of marketing experience" },
+      ],
+      highlights: ["Site structure", "UI/UX design", "Mobile-first build", "SEO-ready architecture"],
+      metric: { value: "1K+", label: "Websites designed and tested" },
+    },
+    problems: {
+      eyebrow: "What's included",
+      heading: "Six Things Every Website Needs to Convert",
+      body: "Our website development service in India covers planning, design, development, SEO structure and tracking, so your site works as a sales asset from launch.",
+      points: [
+        { title: "Planning & Site Structure", body: "Sitemap, page goals and user journeys planned before design, so every page has a purpose." },
+        { title: "UI/UX Design", body: "Clean, on-brand layouts that guide visitors towards calls, forms and WhatsApp." },
+        { title: "Mobile-First Development", body: "Responsive builds tested on real devices, with fast loading on mobile networks." },
+        { title: "SEO-Ready Architecture", body: "Clean code, schema, internal links and Core Web Vitals built in from day one." },
+        { title: "Conversion Points & Tracking", body: "Forms, click-to-call and WhatsApp buttons, with analytics and call tracking set up at launch." },
+        { title: "Ongoing Support & Updates", body: "Security updates, backups and content changes handled after launch, so the site stays fast and current." },
+      ],
+    },
+    help: {
+      eyebrow: "How we build your website",
+      heading: "Plan. Design. Build. Launch. Improve.",
+      body: "Every project follows a clear path from discovery to launch, then improves monthly based on real visitor data.",
+      points: [
+        { title: "Discovery & Goals", body: "Understand your audience, services and what the website must achieve." },
+        { title: "Structure & Wireframes", body: "Plan pages, navigation and user journeys before visual design begins." },
+        { title: "Design & Approval", body: "Create layouts and visuals, refined with your feedback at each stage." },
+        { title: "Build & Test", body: "Develop the site, then test speed, forms and mobile layouts." },
+        { title: "Launch & Track", body: "Go live with analytics, call tracking and SEO checks in place." },
+        { title: "Review & Improve", body: "Use visitor and enquiry data to refine pages every month." },
+      ],
+    },
+    proof: {
+      eyebrow: "Check your current website",
+      heading: "Is Your Website Bringing Enquiries, or Just Visitors?",
+      body: "Comparing the best website development company in India? Start with an audit of your current site's speed, structure and conversion points, and what to fix first.",
+      stats: [
+        { value: "20-30%", label: "Missed leads recovered" },
+        { value: "11+", label: "Years of marketing leadership" },
+        { value: "8+", label: "Healthcare verticals covered" },
+      ],
+    },
+    faqs: [
+      { q: "What does website development include?", a: "Website development is the planning, design, coding and launch of a website. A good build includes mobile responsiveness, fast loading, SEO structure and clear conversion points." },
+      { q: "How long does it take to build a website?", a: "Most business websites take six to twelve weeks, depending on page count, features, content readiness and how quickly feedback is shared during design and testing." },
+      { q: "How much does website development cost in India?", a: "Cost depends on page count, design complexity, integrations and content needs. A scoped plan after a short discovery call gives you a clear, fixed estimate upfront." },
+      { q: "Should SEO be built into a new website?", a: "Yes. SEO-ready architecture, fast loading, clean code and schema should be built in from the start. Adding them after launch usually costs more time and money." },
+      { q: "How do you choose the best website development agency in India?", a: "Review their live websites, page speed results and how those sites convert visitors. The best website development service in India for you builds for enquiries, not just looks." },
+      { q: "Why choose Reinvent Digital as your website development company in India?", a: "As a website development company in India, Reinvent Digital builds sites with SEO, speed, tracking and conversion points planned together, then measures enquiries after launch." },
+    ],
+    closing: {
+      eyebrow: "Website Development",
+      heading: "Get Your Website Audit",
+      body: "Start with an audit of your site's speed, structure and conversion points, and what to fix first.",
+    },
+  },
+
+  // A service landing page: Programmatic SEO, in the industry-page layout.
+  // Lives at /programmatic-seo-agency.
+  {
+    slug: "programmatic-seo-agency",
+    design: "industry",
+    title: "Programmatic SEO Agency in India",
+    seo: {
+      title: "Programmatic SEO Agency in India | Reinvent Digital",
+      description:
+        "A programmatic SEO agency in India that builds hundreds of useful, search-ready pages from structured data, so you rank for more of the variations buyers search.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "Programmatic SEO Agency in India",
+      headline: "One Template. Hundreds of Pages.",
+      accent: "Each One Worth Ranking!",
+      description:
+        "Reinvent Digital is a programmatic SEO agency in India. We build hundreds of useful, search-ready pages from structured data, so you rank for more of the variations buyers search.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your Programmatic SEO", href: "/contact" },
+      stats: [
+        { value: "299+", label: "Pages cited by AI tools" },
+        { value: "232%", label: "Organic growth for a dental chain" },
+        { value: "11+", label: "Years of marketing experience" },
+      ],
+      highlights: ["Keyword patterns", "Structured data", "Template design", "Indexing & tracking"],
+      metric: { value: "299+", label: "Pages cited by AI tools" },
+    },
+    problems: {
+      eyebrow: "What's included",
+      heading: "Scale Without the Thin-Content Risk",
+      body: "Our programmatic SEO service in India turns your data into scalable page templates, with every page written to add real value, not just match a keyword.",
+      points: [
+        { title: "Keyword Pattern Research", body: "Repeatable search patterns found, such as service plus city or product comparisons, with real demand." },
+        { title: "Data Sourcing & Structuring", body: "Your own data, plus verified public sources, cleaned and organised so every page has unique facts." },
+        { title: "Template Design", body: "Page templates built with direct answers, comparison tables and FAQs that change with each data row." },
+        { title: "Quality & Uniqueness Checks", body: "Every page set checked for thin or duplicate content before publishing, to stay within Google's spam policies." },
+        { title: "Internal Linking & Indexing", body: "Hub pages, breadcrumbs and XML sitemaps that help Google find, crawl and index every new page." },
+        { title: "Page Set Tracking", body: "Indexed pages, rankings, traffic and enquiries tracked per page set, so weak templates are fixed early." },
+      ],
+    },
+    help: {
+      eyebrow: "How pSEO works",
+      heading: "Find the Pattern. Build the Template. Scale With Care.",
+      body: "Most page sets start indexing within weeks, with rankings building over three to six months.",
+      points: [
+        { title: "Find Repeatable Searches", body: "Identify keyword patterns with demand that one template can serve." },
+        { title: "Prepare the Data", body: "Collect, clean and check the data that makes each page unique." },
+        { title: "Build & Test Templates", body: "Design templates, then test a small batch before scaling up." },
+        { title: "Publish in Batches", body: "Release pages in stages so Google can crawl and assess them." },
+        { title: "Track Every Page Set", body: "Monitor indexing, rankings and traffic for each set separately." },
+        { title: "Improve or Prune", body: "Strengthen pages that perform and remove those that add no value." },
+      ],
+    },
+    proof: {
+      eyebrow: "Find your missing searches",
+      heading: "How Many Searches Have No Page Built for Them?",
+      body: "Comparing the best programmatic SEO company in India? Start with an audit of the searches you're missing, the data you already have and which page sets to build first.",
+      stats: [
+        { value: "120%", label: "Better rankings for a multi-speciality hospital" },
+        { value: "11+", label: "Years of marketing leadership" },
+        { value: "8+", label: "Healthcare verticals covered" },
+      ],
+    },
+    faqs: [
+      { q: "What is programmatic SEO?", a: "Programmatic SEO creates many search-optimised pages from one template and a structured dataset, targeting keyword patterns like \"[service] in [city]\" or \"[product] vs [product]\" at scale." },
+      { q: "Can programmatic SEO get my site penalised?", a: "It can, if pages are thin or duplicated. Google treats mass-produced, low-value pages as scaled content abuse. Every page needs unique data and genuine usefulness." },
+      { q: "Which businesses need programmatic SEO?", a: "It suits businesses with many locations, products, services or comparisons, where the same question changes by one variable, such as city, model or category." },
+      { q: "How long does programmatic SEO take to work?", a: "Most sets show early indexing within weeks. Rankings usually build over three to six months, as Google crawls the pages and tests how useful they are." },
+      { q: "How do you choose the best programmatic SEO agency in India?", a: "Ask how they prevent thin pages, where their data comes from and how they track indexing. The best programmatic SEO service in India for you protects quality first." },
+      { q: "Why choose Reinvent Digital as your programmatic SEO company in India?", a: "As a programmatic SEO company in India, Reinvent Digital builds data-driven templates, adds unique value to every page and tracks indexing, rankings and the enquiries each set brings." },
+    ],
+    closing: {
+      eyebrow: "Programmatic SEO",
+      heading: "Get Your Programmatic SEO Audit",
+      body: "Start with an audit of the searches you're missing, the data you already have and which page sets to build first.",
+    },
+  },
+
+  // A service landing page: SEO, in the industry-page layout.
+  // Lives at /seo-agency.
+  {
+    slug: "seo-agency",
+    design: "industry",
+    title: "SEO Agency in India",
+    seo: {
+      title: "SEO Agency in India | Reinvent Digital",
+      description:
+        "An SEO agency in India that fixes technical issues, builds content matched to search intent and tracks rankings to the enquiries they bring.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "SEO Agency in India",
+      headline: "The Right Pages",
+      accent: "Bring the Right Enquiries!",
+      description:
+        "Reinvent Digital is an SEO agency in India. We fix technical issues, build content that matches search intent and track rankings to the enquiries they bring.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your SEO Strategy", href: "/contact" },
+      stats: [
+        { value: "223%", label: "More organic clicks" },
+        { value: "232%", label: "Organic growth for a dental chain" },
+        { value: "120%", label: "Better rankings for a healthcare brand" },
+      ],
+      highlights: ["Technical SEO", "Keyword & intent", "On-page & content", "Local SEO & authority"],
+      metric: { value: "4-6 mo", label: "When ranking movement typically becomes visible" },
+    },
+    problems: {
+      eyebrow: "What's included",
+      heading: "Everything Google Checks Before It Ranks You",
+      body: "Our SEO service in India covers technical health, content, local search and authority, planned together so rankings turn into traffic that converts.",
+      points: [
+        { title: "Technical SEO", body: "Site speed, crawlability, indexing, Core Web Vitals and schema fixed before content work begins." },
+        { title: "Keyword & Intent Research", body: "Searches mapped to buying intent, so each page targets people ready to act." },
+        { title: "On-Page Optimisation", body: "Titles, headings, internal links and content structured so Google understands every page clearly." },
+        { title: "Content That Ranks", body: "Service pages, guides and FAQs written to answer real questions better than competing pages." },
+        { title: "Local SEO", body: "Google Business Profile, local pages and citations, so nearby customers find you first." },
+        { title: "Authority & Reporting", body: "Quality backlinks and digital PR, with monthly reports on rankings, traffic and enquiries." },
+      ],
+    },
+    help: {
+      eyebrow: "How SEO works",
+      heading: "Fix. Build. Rank. Compound.",
+      body: "Fixes show in 60 to 90 days, rankings move in months four to six, and returns compound after that.",
+      points: [
+        { title: "Audit Your Site", body: "Find technical issues, content gaps and where competitors outrank you." },
+        { title: "Map Searches to Pages", body: "Match every valuable search to the page that should rank for it." },
+        { title: "Fix Technical Issues", body: "Resolve speed, crawl and indexing problems that hold rankings back." },
+        { title: "Publish & Optimise", body: "Improve existing pages and publish new ones built around search intent." },
+        { title: "Build Authority", body: "Earn relevant links and mentions that strengthen trust in your site." },
+        { title: "Track & Refresh", body: "Measure rankings and enquiries, then update pages that start slipping." },
+      ],
+    },
+    proof: {
+      eyebrow: "Check your search health",
+      heading: "Where Is Your Site Losing Rankings and Enquiries?",
+      body: "Comparing the best SEO company in India? Start with an audit of your technical health, the searches you're missing and which pages can rank fastest.",
+      stats: [
+        { value: "120%", label: "Better rankings for a multi-speciality hospital" },
+        { value: "11+", label: "Years of marketing leadership" },
+        { value: "8+", label: "Healthcare verticals covered" },
+      ],
+    },
+    faqs: [
+      { q: "What is Search Engine Optimisation (SEO)?", a: "Search Engine Optimisation (SEO) improves how a website ranks on Google and Bing through technical fixes, useful content, internal links, local signals and authority from other sites." },
+      { q: "How long does SEO take to show results?", a: "Technical and Google Business Profile fixes often show results in 60 to 90 days. Rankings usually move in months four to six, with compounding returns from months nine to twelve." },
+      { q: "Can an SEO agency guarantee first-page rankings?", a: "No honest agency can. Rankings depend on Google's algorithms, competition and your site's history. A good SEO partner improves your chances and shows measurable progress every month." },
+      { q: "Does SEO still matter with AI search?", a: "Yes. AI Overviews and AI tools still draw from well-ranked, well-structured pages. SEO is now the foundation for AEO and GEO, not a separate channel." },
+      { q: "How do you choose the best SEO agency in India?", a: "Check their case studies, reporting and how they connect rankings to enquiries. The best SEO service in India for you explains its process and never promises guaranteed rankings." },
+      { q: "Why choose Reinvent Digital as your SEO company in India?", a: "As an SEO company in India, Reinvent Digital combines technical SEO, content, AEO and GEO, and reports on rankings, traffic and the enquiries they generate every month." },
+    ],
+    closing: {
+      eyebrow: "Search Engine Optimisation",
+      heading: "Get Your SEO Audit",
+      body: "Start with an audit of your technical health, the searches you're missing and which pages can rank fastest.",
+    },
+  },
+
+  // A service landing page: PPC management, in the industry-page layout.
+  // Lives at /ppc-management-services.
+  {
+    slug: "ppc-management-services",
+    design: "industry",
+    title: "PPC Management Services in India",
+    seo: {
+      title: "PPC Management Services in India | Reinvent Digital",
+      description:
+        "A PPC agency in India that plans, builds and manages Google Ads and Meta campaigns to bring qualified enquiries, not just clicks, with every rupee tracked.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "PPC Management Services",
+      headline: "Clicks Cost Money.",
+      accent: "Enquiries Pay It Back!",
+      description:
+        "Reinvent Digital is a PPC agency in India. We plan, build and manage Google Ads and Meta campaigns that bring qualified enquiries, not just clicks.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your PPC Strategy", href: "/contact" },
+      stats: [
+        { value: "1K+", label: "Leads generated in 90 days" },
+        { value: "60%", label: "Low CPL recorded" },
+        { value: "2400+", label: "Negative keywords blocked" },
+      ],
+      highlights: ["Google & PMax", "Meta Ads", "Conversion tracking", "Budget optimisation"],
+      metric: { value: "Weekly", label: "Performance reviews and budget adjustments" },
+    },
+    problems: {
+      eyebrow: "What's included",
+      heading: "Every Rupee Tracked From Click to Enquiry",
+      body: "Our PPC service in India covers strategy, campaign builds, landing pages and tracking, with every rupee measured against the enquiries it brings.",
+      points: [
+        { title: "Google Search & Performance Max", body: "Campaigns built around buying-intent keywords, with Performance Max used only where it adds value." },
+        { title: "Meta Ads", body: "Facebook and Instagram campaigns that reach likely buyers and retarget engaged visitors." },
+        { title: "Negative Keywords & Wasted Spend", body: "Irrelevant searches blocked continuously, so budget goes to people who might actually buy." },
+        { title: "Landing Page Alignment", body: "Ad message, landing page and form matched, improving Quality Score and conversion rate." },
+        { title: "Call & Conversion Tracking", body: "Calls, forms and WhatsApp clicks tracked to the ad, keyword and campaign that drove them." },
+        { title: "Budget & Bid Optimisation", body: "Spend moved weekly towards campaigns with the lowest cost per qualified lead." },
+      ],
+    },
+    help: {
+      eyebrow: "How we manage PPC",
+      heading: "Launch. Learn. Cut Waste. Scale.",
+      body: "Meaningful data arrives in 30 to 45 days, and budget decisions become reliable at 60 to 90 days.",
+      points: [
+        { title: "Audit Current Spend", body: "Find wasted clicks, missing tracking and weak campaigns in your accounts." },
+        { title: "Set Up Tracking", body: "Track calls, forms and WhatsApp clicks before spending more budget." },
+        { title: "Build Focused Campaigns", body: "Create tight ad groups, strong ads and matching landing pages." },
+        { title: "Launch With Control", body: "Start with set budgets and clear targets for cost per lead." },
+        { title: "Cut Waste Weekly", body: "Add negative keywords and pause ads that don't bring enquiries." },
+        { title: "Scale What Works", body: "Move budget towards campaigns delivering the best cost per lead." },
+      ],
+    },
+    proof: {
+      eyebrow: "Find your wasted spend",
+      heading: "How Much of Your Ad Budget Went to Clicks That Never Enquired?",
+      body: "Comparing the best PPC company in India? Start with an audit of your current campaigns, wasted spend and where your cost per lead can come down.",
+      stats: [
+        { value: "20%", label: "Low CPL every month, over 90 days" },
+        { value: "42%", label: "Low CPL for a dental network" },
+        { value: "11+", label: "Years of marketing experience" },
+      ],
+    },
+    faqs: [
+      { q: "What is Pay-Per-Click (PPC) advertising?", a: "Pay-Per-Click (PPC) advertising shows your ads on Google, Meta and other platforms, and you pay only when someone clicks. It brings faster visibility than organic search." },
+      { q: "Google Ads or Meta Ads: which is better?", a: "Google Ads captures people already searching for what you offer. Meta Ads builds interest among people likely to need it. Most businesses get the best results using both." },
+      { q: "How long before PPC campaigns show results?", a: "Meaningful data usually appears within 30 to 45 days. Budget and bidding decisions become reliable at 60 to 90 days, once enough conversions have been tracked." },
+      { q: "Why is my cost per lead so high?", a: "Common causes are broad keywords, missing negative keywords, slow landing pages and untracked calls. Fixing tracking and targeting first usually lowers cost per lead." },
+      { q: "How do you choose the best PPC agency in India?", a: "Ask how they track calls and forms and cut wasted spend. The best PPC service in India for you reports cost per lead, not just clicks." },
+      { q: "Why choose Reinvent Digital as your PPC company in India?", a: "As a PPC company in India, Reinvent Digital builds campaigns around tracked enquiries, reviews performance weekly and moves budget to what brings qualified leads." },
+    ],
+    closing: {
+      eyebrow: "PPC Management",
+      heading: "Get Your PPC Audit",
+      body: "Start with an audit of your current campaigns, wasted spend and where your cost per lead can come down.",
+    },
+  },
+
+  // An industry landing page: digital marketing for dietary and supplement
+  // brands, in the industry-page layout. Lives at
+  // /digital-marketing-for-dietary-products.
+  {
+    slug: "digital-marketing-for-dietary-products",
+    design: "industry",
+    title: "Digital Marketing for Dietary Products in India",
+    seo: {
+      title: "Digital Marketing for Dietary Products in India | Reinvent Digital",
+      description:
+        "Compliant Google Ads and Meta campaigns, marketplace listings and SEO, AEO and GEO content for supplement and nutrition brands, tracked to orders and reorders.",
+      noindex: false,
+    },
+    hero: {
+      eyebrow: "Dietary & Supplement Brands",
+      headline: "Supplement Buyers Read the Label.",
+      accent: "Make Sure They Trust Yours!",
+      description:
+        "At Reinvent Digital, we run compliant Google Ads and Meta campaigns, optimise marketplace listings and build SEO, AEO and GEO content for supplement and nutrition brands. Every campaign is tracked to orders and repeat purchases.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+      cta: { label: "Discuss Your Brand's Growth", href: "/contact" },
+      stats: [
+        { value: "54%", label: "Higher conversion for a dental brand" },
+        { value: "162%", label: "More social engagement recorded" },
+        { value: "185+", label: "Healthcare accounts managed" },
+      ],
+      highlights: ["Compliant ads", "D2C & marketplaces", "Repeat-order journeys", "Cross-channel reporting"],
+      metric: { value: "54%", label: "Higher conversion rate" },
+    },
+    problems: {
+      eyebrow: "Where brands lose customers",
+      heading: "The First Order Is Easy. The Second Is Where Brands Win.",
+      body: "A good digital marketing service for dietary products in India has to solve more than visibility. Brands lose buyers to rejected ads, marketplace price wars and customers who never reorder.",
+      points: [
+        { title: "Health Claims Get Ads Rejected", body: "Wording that suggests a supplement treats a condition breaks advertising rules and stops campaigns." },
+        { title: "Marketplaces Own the Customer", body: "Most sales happen on marketplaces, where price wars rule and the brand never sees customer data." },
+        { title: "First Orders Never Repeat", body: "Customers finish one pack, forget to reorder and switch to whatever brand appears next." },
+        { title: "Influencer Posts Bring Reach, Not Trust", body: "Unqualified creators give health advice, and the brand inherits the compliance risk." },
+        { title: "Product Pages Leave Questions Unanswered", body: "Buyers want ingredients, dosage, certifications and licence details, and leave when they can't find them." },
+        { title: "Side-Effect Reviews Go Unanswered", body: "A few unanswered reviews about safety raise doubts for every buyer who reads them." },
+      ],
+    },
+    help: {
+      eyebrow: "How we help",
+      heading: "Every Order. Every Reorder. In One System.",
+      body: "As a digital marketing company for dietary products in India, Reinvent Digital connects your ads, listings, website and reorders, so every channel works from the same customer data.",
+      points: [
+        { title: "Compliance-Checked Claims", body: "Every ad, post and product page checked against food safety and advertising rules before it goes live." },
+        { title: "D2C Website and Product Pages", body: "Pages showing ingredients, dosage, certifications and licence numbers clearly, built to rank and convert." },
+        { title: "Marketplace Listing Optimisation", body: "Titles, images, A+ content and reviews improved on Amazon, Flipkart and other marketplaces." },
+        { title: "Repeat-Order Journeys", body: "Consent-based WhatsApp and email reminders timed to when each pack is likely to run out." },
+        { title: "Qualified Creator Partnerships", body: "Collaborations with qualified, clearly disclosed creators who explain products without making health claims." },
+        { title: "Search and Social Campaigns", body: "Google Shopping, Search and Meta campaigns built within supplement advertising policies." },
+        { title: "Review and Reputation Care", body: "Every review answered professionally, with safety concerns routed to your quality team." },
+        { title: "Cross-Channel Sales Reporting", body: "Website, marketplace and campaign sales combined, showing cost per order and repeat rate by channel." },
+      ],
+    },
+    proof: {
+      eyebrow: "Supplement & nutrition brands",
+      heading: "Ready to Turn First Orders Into Loyal Customers?",
+      body: "Comparing the best digital marketing company for dietary products in India? Share your channels and sales data, and we'll show where buyers drop off and what to fix first.",
+      stats: [
+        { value: "54%", label: "Higher conversion rate" },
+        { value: "73.9%", label: "More website traffic" },
+        { value: "162%", label: "More social media engagement" },
+      ],
+    },
+    faqs: [
+      { q: "How do you choose the best digital marketing agency for dietary products in India?", a: "Look for experience with health advertising rules, marketplace growth and repeat-purchase tracking. The best digital marketing service for dietary products in India checks every claim before publishing and reports cost per order, not just traffic or followers." },
+      { q: "What health claims can supplement brands make in India?", a: "Claims must be truthful, specific and backed by evidence. Food safety rules don't allow supplements to claim they prevent, treat or cure diseases. Describe ingredients and general wellbeing benefits carefully, and have claims reviewed before publishing." },
+      { q: "Can supplement brands run Google and Meta ads?", a: "Yes, within platform policies. Ads can't make unproven health claims or promote restricted ingredients, and some products need extra review. Campaigns perform best when ad copy, landing pages and product claims are checked together before launch." },
+      { q: "Should supplement brands sell on marketplaces or their own website?", a: "Both, for different jobs. Marketplaces bring ready buyers and volume. Your own website builds direct relationships, customer data and repeat orders. Most brands use marketplaces for reach and their website for loyalty and margin." },
+      { q: "Can supplement brands work with health influencers?", a: "Yes, carefully. Influencers giving health information should have relevant qualifications, and every paid post must be clearly disclosed. Product experience content is safer than health advice, and claims should match what the brand is legally allowed to say." },
+      { q: "How much should a supplement brand spend on digital marketing?", a: "Work backwards from cost per order and repeat rate, not a fixed budget. Spend more where customers reorder, because a buyer who orders three times justifies a higher first-order cost. Review channel performance monthly and adjust." },
+    ],
+    closing: {
+      eyebrow: "Dietary & Supplement Brands",
+      heading: "Get Your Growth Audit",
+      body: "Share your channels and sales data, and we'll show where buyers drop off and what to fix first.",
+    },
+  },
 ];

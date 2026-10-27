@@ -1,0 +1,161 @@
+{
+  "landing_pages": [
+    {
+      "slug": "programmatic-seo-agency",
+      "design": "industry",
+      "title": "Programmatic SEO Agency in India",
+      "seo": {
+        "title": "Programmatic SEO Agency in India | Reinvent Digital",
+        "description": "A programmatic SEO agency in India that builds hundreds of useful, search-ready pages from structured data, so you rank for more of the variations buyers search.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "Programmatic SEO Agency in India",
+        "headline": "One Template. Hundreds of Pages.",
+        "accent": "Each One Worth Ranking!",
+        "description": "Reinvent Digital is a programmatic SEO agency in India. We build hundreds of useful, search-ready pages from structured data, so you rank for more of the variations buyers search.",
+        "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your Programmatic SEO",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "299+",
+            "label": "Pages cited by AI tools"
+          },
+          {
+            "value": "232%",
+            "label": "Organic growth for a dental chain"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing experience"
+          }
+        ],
+        "highlights": [
+          "Keyword patterns",
+          "Structured data",
+          "Template design",
+          "Indexing & tracking"
+        ],
+        "metric": {
+          "value": "299+",
+          "label": "Pages cited by AI tools"
+        }
+      },
+      "problems": {
+        "eyebrow": "What's included",
+        "heading": "Scale Without the Thin-Content Risk",
+        "body": "Our programmatic SEO service in India turns your data into scalable page templates, with every page written to add real value, not just match a keyword.",
+        "points": [
+          {
+            "title": "Keyword Pattern Research",
+            "body": "Repeatable search patterns found, such as service plus city or product comparisons, with real demand."
+          },
+          {
+            "title": "Data Sourcing & Structuring",
+            "body": "Your own data, plus verified public sources, cleaned and organised so every page has unique facts."
+          },
+          {
+            "title": "Template Design",
+            "body": "Page templates built with direct answers, comparison tables and FAQs that change with each data row."
+          },
+          {
+            "title": "Quality & Uniqueness Checks",
+            "body": "Every page set checked for thin or duplicate content before publishing, to stay within Google's spam policies."
+          },
+          {
+            "title": "Internal Linking & Indexing",
+            "body": "Hub pages, breadcrumbs and XML sitemaps that help Google find, crawl and index every new page."
+          },
+          {
+            "title": "Page Set Tracking",
+            "body": "Indexed pages, rankings, traffic and enquiries tracked per page set, so weak templates are fixed early."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How pSEO works",
+        "heading": "Find the Pattern. Build the Template. Scale With Care.",
+        "body": "Most page sets start indexing within weeks, with rankings building over three to six months.",
+        "points": [
+          {
+            "title": "Find Repeatable Searches",
+            "body": "Identify keyword patterns with demand that one template can serve."
+          },
+          {
+            "title": "Prepare the Data",
+            "body": "Collect, clean and check the data that makes each page unique."
+          },
+          {
+            "title": "Build & Test Templates",
+            "body": "Design templates, then test a small batch before scaling up."
+          },
+          {
+            "title": "Publish in Batches",
+            "body": "Release pages in stages so Google can crawl and assess them."
+          },
+          {
+            "title": "Track Every Page Set",
+            "body": "Monitor indexing, rankings and traffic for each set separately."
+          },
+          {
+            "title": "Improve or Prune",
+            "body": "Strengthen pages that perform and remove those that add no value."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Find your missing searches",
+        "heading": "How Many Searches Have No Page Built for Them?",
+        "body": "Comparing the best programmatic SEO company in India? Start with an audit of the searches you're missing, the data you already have and which page sets to build first.",
+        "stats": [
+          {
+            "value": "120%",
+            "label": "Better rankings for a multi-speciality hospital"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing leadership"
+          },
+          {
+            "value": "8+",
+            "label": "Healthcare verticals covered"
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What is programmatic SEO?",
+          "a": "Programmatic SEO creates many search-optimised pages from one template and a structured dataset, targeting keyword patterns like \"[service] in [city]\" or \"[product] vs [product]\" at scale."
+        },
+        {
+          "q": "Can programmatic SEO get my site penalised?",
+          "a": "It can, if pages are thin or duplicated. Google treats mass-produced, low-value pages as scaled content abuse. Every page needs unique data and genuine usefulness."
+        },
+        {
+          "q": "Which businesses need programmatic SEO?",
+          "a": "It suits businesses with many locations, products, services or comparisons, where the same question changes by one variable, such as city, model or category."
+        },
+        {
+          "q": "How long does programmatic SEO take to work?",
+          "a": "Most sets show early indexing within weeks. Rankings usually build over three to six months, as Google crawls the pages and tests how useful they are."
+        },
+        {
+          "q": "How do you choose the best programmatic SEO agency in India?",
+          "a": "Ask how they prevent thin pages, where their data comes from and how they track indexing. The best programmatic SEO service in India for you protects quality first."
+        },
+        {
+          "q": "Why choose Reinvent Digital as your programmatic SEO company in India?",
+          "a": "As a programmatic SEO company in India, Reinvent Digital builds data-driven templates, adds unique value to every page and tracks indexing, rankings and the enquiries each set brings."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Programmatic SEO",
+        "heading": "Get Your Programmatic SEO Audit",
+        "body": "Start with an audit of the searches you're missing, the data you already have and which page sets to build first."
+      }
+    }
+  ]
+}

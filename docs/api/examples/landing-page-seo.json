@@ -1,0 +1,161 @@
+{
+  "landing_pages": [
+    {
+      "slug": "seo-agency",
+      "design": "industry",
+      "title": "SEO Agency in India",
+      "seo": {
+        "title": "SEO Agency in India | Reinvent Digital",
+        "description": "An SEO agency in India that fixes technical issues, builds content matched to search intent and tracks rankings to the enquiries they bring.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "SEO Agency in India",
+        "headline": "The Right Pages",
+        "accent": "Bring the Right Enquiries!",
+        "description": "Reinvent Digital is an SEO agency in India. We fix technical issues, build content that matches search intent and track rankings to the enquiries they bring.",
+        "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your SEO Strategy",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "223%",
+            "label": "More organic clicks"
+          },
+          {
+            "value": "232%",
+            "label": "Organic growth for a dental chain"
+          },
+          {
+            "value": "120%",
+            "label": "Better rankings for a healthcare brand"
+          }
+        ],
+        "highlights": [
+          "Technical SEO",
+          "Keyword & intent",
+          "On-page & content",
+          "Local SEO & authority"
+        ],
+        "metric": {
+          "value": "4-6 mo",
+          "label": "When ranking movement typically becomes visible"
+        }
+      },
+      "problems": {
+        "eyebrow": "What's included",
+        "heading": "Everything Google Checks Before It Ranks You",
+        "body": "Our SEO service in India covers technical health, content, local search and authority, planned together so rankings turn into traffic that converts.",
+        "points": [
+          {
+            "title": "Technical SEO",
+            "body": "Site speed, crawlability, indexing, Core Web Vitals and schema fixed before content work begins."
+          },
+          {
+            "title": "Keyword & Intent Research",
+            "body": "Searches mapped to buying intent, so each page targets people ready to act."
+          },
+          {
+            "title": "On-Page Optimisation",
+            "body": "Titles, headings, internal links and content structured so Google understands every page clearly."
+          },
+          {
+            "title": "Content That Ranks",
+            "body": "Service pages, guides and FAQs written to answer real questions better than competing pages."
+          },
+          {
+            "title": "Local SEO",
+            "body": "Google Business Profile, local pages and citations, so nearby customers find you first."
+          },
+          {
+            "title": "Authority & Reporting",
+            "body": "Quality backlinks and digital PR, with monthly reports on rankings, traffic and enquiries."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How SEO works",
+        "heading": "Fix. Build. Rank. Compound.",
+        "body": "Fixes show in 60 to 90 days, rankings move in months four to six, and returns compound after that.",
+        "points": [
+          {
+            "title": "Audit Your Site",
+            "body": "Find technical issues, content gaps and where competitors outrank you."
+          },
+          {
+            "title": "Map Searches to Pages",
+            "body": "Match every valuable search to the page that should rank for it."
+          },
+          {
+            "title": "Fix Technical Issues",
+            "body": "Resolve speed, crawl and indexing problems that hold rankings back."
+          },
+          {
+            "title": "Publish & Optimise",
+            "body": "Improve existing pages and publish new ones built around search intent."
+          },
+          {
+            "title": "Build Authority",
+            "body": "Earn relevant links and mentions that strengthen trust in your site."
+          },
+          {
+            "title": "Track & Refresh",
+            "body": "Measure rankings and enquiries, then update pages that start slipping."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Check your search health",
+        "heading": "Where Is Your Site Losing Rankings and Enquiries?",
+        "body": "Comparing the best SEO company in India? Start with an audit of your technical health, the searches you're missing and which pages can rank fastest.",
+        "stats": [
+          {
+            "value": "120%",
+            "label": "Better rankings for a multi-speciality hospital"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing leadership"
+          },
+          {
+            "value": "8+",
+            "label": "Healthcare verticals covered"
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What is Search Engine Optimisation (SEO)?",
+          "a": "Search Engine Optimisation (SEO) improves how a website ranks on Google and Bing through technical fixes, useful content, internal links, local signals and authority from other sites."
+        },
+        {
+          "q": "How long does SEO take to show results?",
+          "a": "Technical and Google Business Profile fixes often show results in 60 to 90 days. Rankings usually move in months four to six, with compounding returns from months nine to twelve."
+        },
+        {
+          "q": "Can an SEO agency guarantee first-page rankings?",
+          "a": "No honest agency can. Rankings depend on Google's algorithms, competition and your site's history. A good SEO partner improves your chances and shows measurable progress every month."
+        },
+        {
+          "q": "Does SEO still matter with AI search?",
+          "a": "Yes. AI Overviews and AI tools still draw from well-ranked, well-structured pages. SEO is now the foundation for AEO and GEO, not a separate channel."
+        },
+        {
+          "q": "How do you choose the best SEO agency in India?",
+          "a": "Check their case studies, reporting and how they connect rankings to enquiries. The best SEO service in India for you explains its process and never promises guaranteed rankings."
+        },
+        {
+          "q": "Why choose Reinvent Digital as your SEO company in India?",
+          "a": "As an SEO company in India, Reinvent Digital combines technical SEO, content, AEO and GEO, and reports on rankings, traffic and the enquiries they generate every month."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Search Engine Optimisation",
+        "heading": "Get Your SEO Audit",
+        "body": "Start with an audit of your technical health, the searches you're missing and which pages can rank fastest."
+      }
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "landing_pages": [
+    {
+      "slug": "ppc-management-services",
+      "design": "industry",
+      "title": "PPC Management Services in India",
+      "seo": {
+        "title": "PPC Management Services in India | Reinvent Digital",
+        "description": "A PPC agency in India that plans, builds and manages Google Ads and Meta campaigns to bring qualified enquiries, not just clicks, with every rupee tracked.",
+        "noindex": false
+      },
+      "hero": {
+        "eyebrow": "PPC Management Services",
+        "headline": "Clicks Cost Money.",
+        "accent": "Enquiries Pay It Back!",
+        "description": "Reinvent Digital is a PPC agency in India. We plan, build and manage Google Ads and Meta campaigns that bring qualified enquiries, not just clicks.",
+        "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=70",
+        "cta": {
+          "label": "Discuss Your PPC Strategy",
+          "href": "/contact"
+        },
+        "stats": [
+          {
+            "value": "1K+",
+            "label": "Leads generated in 90 days"
+          },
+          {
+            "value": "60%",
+            "label": "Low CPL recorded"
+          },
+          {
+            "value": "2400+",
+            "label": "Negative keywords blocked"
+          }
+        ],
+        "highlights": [
+          "Google & PMax",
+          "Meta Ads",
+          "Conversion tracking",
+          "Budget optimisation"
+        ],
+        "metric": {
+          "value": "Weekly",
+          "label": "Performance reviews and budget adjustments"
+        }
+      },
+      "problems": {
+        "eyebrow": "What's included",
+        "heading": "Every Rupee Tracked From Click to Enquiry",
+        "body": "Our PPC service in India covers strategy, campaign builds, landing pages and tracking, with every rupee measured against the enquiries it brings.",
+        "points": [
+          {
+            "title": "Google Search & Performance Max",
+            "body": "Campaigns built around buying-intent keywords, with Performance Max used only where it adds value."
+          },
+          {
+            "title": "Meta Ads",
+            "body": "Facebook and Instagram campaigns that reach likely buyers and retarget engaged visitors."
+          },
+          {
+            "title": "Negative Keywords & Wasted Spend",
+            "body": "Irrelevant searches blocked continuously, so budget goes to people who might actually buy."
+          },
+          {
+            "title": "Landing Page Alignment",
+            "body": "Ad message, landing page and form matched, improving Quality Score and conversion rate."
+          },
+          {
+            "title": "Call & Conversion Tracking",
+            "body": "Calls, forms and WhatsApp clicks tracked to the ad, keyword and campaign that drove them."
+          },
+          {
+            "title": "Budget & Bid Optimisation",
+            "body": "Spend moved weekly towards campaigns with the lowest cost per qualified lead."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How we manage PPC",
+        "heading": "Launch. Learn. Cut Waste. Scale.",
+        "body": "Meaningful data arrives in 30 to 45 days, and budget decisions become reliable at 60 to 90 days.",
+        "points": [
+          {
+            "title": "Audit Current Spend",
+            "body": "Find wasted clicks, missing tracking and weak campaigns in your accounts."
+          },
+          {
+            "title": "Set Up Tracking",
+            "body": "Track calls, forms and WhatsApp clicks before spending more budget."
+          },
+          {
+            "title": "Build Focused Campaigns",
+            "body": "Create tight ad groups, strong ads and matching landing pages."
+          },
+          {
+            "title": "Launch With Control",
+            "body": "Start with set budgets and clear targets for cost per lead."
+          },
+          {
+            "title": "Cut Waste Weekly",
+            "body": "Add negative keywords and pause ads that don't bring enquiries."
+          },
+          {
+            "title": "Scale What Works",
+            "body": "Move budget towards campaigns delivering the best cost per lead."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Find your wasted spend",
+        "heading": "How Much of Your Ad Budget Went to Clicks That Never Enquired?",
+        "body": "Comparing the best PPC company in India? Start with an audit of your current campaigns, wasted spend and where your cost per lead can come down.",
+        "stats": [
+          {
+            "value": "20%",
+            "label": "Low CPL every month, over 90 days"
+          },
+          {
+            "value": "42%",
+            "label": "Low CPL for a dental network"
+          },
+          {
+            "value": "11+",
+            "label": "Years of marketing experience"
+          }
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What is Pay-Per-Click (PPC) advertising?",
+          "a": "Pay-Per-Click (PPC) advertising shows your ads on Google, Meta and other platforms, and you pay only when someone clicks. It brings faster visibility than organic search."
+        },
+        {
+          "q": "Google Ads or Meta Ads: which is better?",
+          "a": "Google Ads captures people already searching for what you offer. Meta Ads builds interest among people likely to need it. Most businesses get the best results using both."
+        },
+        {
+          "q": "How long before PPC campaigns show results?",
+          "a": "Meaningful data usually appears within 30 to 45 days. Budget and bidding decisions become reliable at 60 to 90 days, once enough conversions have been tracked."
+        },
+        {
+          "q": "Why is my cost per lead so high?",
+          "a": "Common causes are broad keywords, missing negative keywords, slow landing pages and untracked calls. Fixing tracking and targeting first usually lowers cost per lead."
+        },
+        {
+          "q": "How do you choose the best PPC agency in India?",
+          "a": "Ask how they track calls and forms and cut wasted spend. The best PPC service in India for you reports cost per lead, not just clicks."
+        },
+        {
+          "q": "Why choose Reinvent Digital as your PPC company in India?",
+          "a": "As a PPC company in India, Reinvent Digital builds campaigns around tracked enquiries, reviews performance weekly and moves budget to what brings qualified leads."
+        }
+      ],
+      "closing": {
+        "eyebrow": "PPC Management",
+        "heading": "Get Your PPC Audit",
+        "body": "Start with an audit of your current campaigns, wasted spend and where your cost per lead can come down."
+      }
+    }
+  ]
+}
