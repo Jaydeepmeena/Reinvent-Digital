@@ -5,6 +5,12 @@
 const isPlainObject = (value) =>
   value !== null && typeof value === "object" && !Array.isArray(value) && !(value instanceof Date);
 
+// Fields the bundle is authoritative over: where a bundled value exists it
+// wins and the CMS value is ignored (the CMS still fills a field the bundle
+// leaves out). `image`, because the staging images are placeholders; `eyebrow`,
+// a short design label kept consistent in code.
+const BUNDLED_WINS = new Set(["image", "eyebrow"]);
+
 /**
  * Merges a CMS entry over a bundled one.
  *
@@ -46,10 +52,9 @@ export function mergeContent(base, patch) {
   const out = { ...base };
   for (const [key, value] of Object.entries(patch)) {
     if (value === undefined || value === null) continue;
-    // A bundled image wins. The CMS staging images are placeholders, so where a
-    // page ships its own photo we keep it and ignore the CMS image URL. The CMS
-    // image is still used where there is no bundled one, i.e. a CMS-only page.
-    if (key === "image" && base[key] != null) {
+    // A bundled-authoritative field keeps its bundled value and ignores the CMS
+    // one; the CMS still fills it on a CMS-only entry that has no bundled value.
+    if (BUNDLED_WINS.has(key) && base[key] != null) {
       out[key] = base[key];
       continue;
     }
