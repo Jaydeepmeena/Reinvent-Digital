@@ -7,6 +7,7 @@ import SubPageHero from "../components/SubPageHero";
 import VelocityMarquee from "../components/fx/VelocityMarquee";
 import { BentoGrid, BentoTile, GrowthBars } from "../components/fx/Bento";
 import StackCards from "../components/fx/StackCards";
+import SplitSection from "../components/fx/SplitSection";
 import ScrollTimeline from "../components/fx/ScrollTimeline";
 import IndustryVisual from "../components/fx/IndustryVisual";
 import IncludesCarousel from "../components/fx/IncludesCarousel";
@@ -220,6 +221,11 @@ function ServiceLayout({ page }) {
   const serviceItems = page.services?.items ?? [];
   const serviceTitles = serviceItems.map((item) => item.title).filter(Boolean);
   const deliverables = (page.reasons?.points ?? []).map((point) => ({ title: point }));
+  const splitSections = page.splitSections ?? [];
+  // A page built from split sections carries no `services`, so its hero chips
+  // and marquee read from the hero's own highlights instead.
+  const highlights = hero.highlights?.length ? hero.highlights : serviceTitles.slice(0, 4);
+  const marqueeItems = hero.highlights?.length ? hero.highlights : serviceTitles;
 
   return (
     <>
@@ -235,13 +241,19 @@ function ServiceLayout({ page }) {
         stats={heroStats}
         ctaLabel={hero.cta?.label ?? "Let's Connect"}
         ctaHref={hero.cta?.href ?? "/contact"}
-        highlights={serviceTitles.slice(0, 4)}
+        highlights={highlights}
         metric={heroMetric}
       />
 
-      <VelocityMarquee items={[page.title, ...serviceTitles]} className="border-y border-ink/10 bg-white" />
+      <VelocityMarquee items={[page.title, ...marqueeItems]} className="border-y border-ink/10 bg-white" />
 
-      {page.intro && (
+      {/* Split sections replace the bento / process / overview stack when a page
+          provides them. */}
+      {splitSections.map((section, i) => (
+        <SplitSection key={section.heading} {...section} flip={i % 2 === 1} shaded={i % 2 === 1} />
+      ))}
+
+      {splitSections.length === 0 && page.intro && (
         <section className="section-y-tight">
           <div className="mx-auto max-w-3xl px-5 sm:px-8">
             <Reveal>
@@ -251,7 +263,7 @@ function ServiceLayout({ page }) {
         </section>
       )}
 
-      {deliverables.length > 0 && (
+      {splitSections.length === 0 && deliverables.length > 0 && (
         <section className="section-y">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <BentoGrid className="md:grid-cols-2 lg:grid-cols-4">
@@ -308,7 +320,7 @@ function ServiceLayout({ page }) {
         </section>
       )}
 
-      {serviceItems.length > 0 && (
+      {splitSections.length === 0 && serviceItems.length > 0 && (
         <section className="section-y border-t border-ink/[0.06] bg-white">
           <div className="mx-auto max-w-5xl px-5 sm:px-8">
             <Eyebrow>{page.services?.eyebrow ?? "What we run"}</Eyebrow>
@@ -343,7 +355,7 @@ function ServiceLayout({ page }) {
 
       {page.blogs && <RelatedBlogs blogs={page.blogs} />}
 
-      {page.overview && (
+      {splitSections.length === 0 && page.overview && (
         <section className="section-y border-t border-ink/[0.06]">
           <div className="mx-auto max-w-3xl px-5 sm:px-8">
             <Reveal>

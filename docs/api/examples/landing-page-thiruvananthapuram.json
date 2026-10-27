@@ -31,47 +31,112 @@
             "value": "11+",
             "label": "Years of healthcare marketing experience"
           }
+        ],
+        "highlights": [
+          "Healthcare Google Ads",
+          "SEO & AEO",
+          "Doctor directory & Maps",
+          "Messaging & follow-up"
         ]
       },
-      "intro": "<p>Thiruvananthapuram draws patients from the city, southern Kerala and across the Tamil Nadu border. Each group compares clinics in its own way before booking.</p><ul><li><strong>Private vs government care:</strong> many patients weigh private clinics against government hospitals, so clear facility and doctor information matters.</li><li><strong>Cross-border search:</strong> families from Kanyakumari district may search in Tamil as well as English before travelling.</li><li><strong>Technopark professionals:</strong> people working around Kazhakoottam often look for care near work, with timings that fit the day.</li><li><strong>Specialist credentials:</strong> for IVF, eye care and hospital treatment, patients look closely at specialist qualifications and accreditation.</li></ul>",
-      "reasons": {
-        "eyebrow": "Why work with us",
-        "heading": "Why Do Thiruvananthapuram Healthcare Groups Choose Reinvent Digital?",
-        "body": "A digital marketing company in Thiruvananthapuram should show results, process and compliance in one place. Here is the record behind ours.",
-        "points": [
-          "Walk-ins up from 5,500 to 11,500 a month for one dental group.",
-          "185+ healthcare accounts managed.",
-          "Owner with 20+ years in healthcare marketing.",
-          "20–30% of missed leads recovered through WhatsApp.",
-          "Show-up rate typically up 15–25% within 60 days.",
-          "Call scoring and weekly coaching for front desks.",
-          "Registration numbers on every client ad, as NMC rules require."
-        ]
-      },
-      "services": {
-        "eyebrow": "What we run",
-        "heading": "What Does Reinvent Digital Handle for Thiruvananthapuram Clinics and Hospitals?",
-        "body": "The Reinvent Digital Patient Acquisition System links four services, so every Thiruvananthapuram enquiry is tracked to the walk-in.",
-        "items": [
-          {
-            "title": "Healthcare Google Ads",
-            "body": "Campaigns by treatment and area, including Kazhakoottam and the Kanyakumari border belt, with call tracking."
-          },
-          {
-            "title": "Healthcare SEO and AEO",
-            "body": "Service pages that answer patient questions directly, written for search results and Featured Snippets."
-          },
-          {
-            "title": "Doctor Directory and Maps Details",
-            "body": "Doctor names, qualifications and registration numbers shown accurately on Maps profiles and websites."
-          },
-          {
-            "title": "Messaging and Follow-Up",
-            "body": "Missed calls and WhatsApp enquiries answered quickly, with reminders before each appointment."
-          }
-        ]
-      },
-      "overview": "<p><strong>How we plan: three steps from first audit to patient walk-ins.</strong> We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads. First you tell us about your clinic — your centres, treatments, targets and the problems you are facing. Then we map the gaps, reviewing your ads, Maps listings, calls and CRM to find where patients drop off. Finally you get a proven plan, scoped to start within 5 km of each centre, with monthly walk-in reviews built in.</p><p><strong>No office visit needed — we come to your clinic or hospital.</strong> On the first visit we meet your team, review enquiry handling and note how patients currently find you, then return on an agreed schedule to review walk-ins and front-desk handling. Every website form and WhatsApp enquiry is saved in one record with its source, a dashboard shows leads, appointments and walk-ins by channel, and we keep your CRM if it captures source and outcome or move you to MedLift. We cover Thiruvananthapuram city and suburbs, including Thampanoor, East Fort, Peroorkada, Vellayambalam, Kesavadasapuram, Kazhakoottam, Technopark and Neyyattinkara. To plan an onboarding visit, call our team on +91 7428094567.</p>",
+      "splitSections": [
+        {
+          "eyebrow": "Channels",
+          "heading": "How Do Patients Around Thiruvananthapuram Choose Care?",
+          "body": "Thiruvananthapuram draws patients from the city, southern Kerala and across the Tamil Nadu border. Each group compares clinics in its own way before booking.",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Private vs government care",
+              "body": "Many patients weigh private clinics against government hospitals, so clear facility and doctor information matters."
+            },
+            {
+              "title": "Cross-border search",
+              "body": "Families from Kanyakumari district may search in Tamil as well as English before travelling."
+            },
+            {
+              "title": "Technopark professionals",
+              "body": "People working around Kazhakoottam often look for care near work, with timings that fit the day."
+            },
+            {
+              "title": "Specialist credentials",
+              "body": "For IVF, eye care and hospital treatment, patients look closely at specialist qualifications and accreditation."
+            }
+          ]
+        },
+        {
+          "eyebrow": "What we run",
+          "heading": "What Does Reinvent Digital Handle for Thiruvananthapuram Clinics and Hospitals?",
+          "body": "The Reinvent Digital Patient Acquisition System links four services, so every Thiruvananthapuram enquiry is tracked to the walk-in.",
+          "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Healthcare Google Ads",
+              "body": "Campaigns by treatment and area, including Kazhakoottam and the Kanyakumari border belt, with call tracking."
+            },
+            {
+              "title": "Healthcare SEO and AEO",
+              "body": "Service pages that answer patient questions directly, written for search results and Featured Snippets."
+            },
+            {
+              "title": "Doctor directory and Maps details",
+              "body": "Doctor names, qualifications and registration numbers shown accurately on Maps profiles and websites."
+            },
+            {
+              "title": "Messaging and follow-up",
+              "body": "Missed calls and WhatsApp enquiries answered quickly, with reminders before each appointment."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Why work with us",
+          "heading": "Why Do Thiruvananthapuram Healthcare Groups Choose Reinvent Digital?",
+          "body": "A digital marketing company in Thiruvananthapuram should show results, process and compliance in one place. Here is the record behind ours.",
+          "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            "Walk-ins up from 5,500 to 11,500 a month for one dental group.",
+            "185+ healthcare accounts managed.",
+            "Owner with 20+ years in healthcare marketing.",
+            "20–30% of missed leads recovered through WhatsApp.",
+            "Show-up rate typically up 15–25% within 60 days.",
+            "Call scoring and weekly coaching for front desks.",
+            "Registration numbers on every client ad, as NMC rules require.",
+            "Nearby areas: Thampanoor, East Fort, Peroorkada, Vellayambalam, Kesavadasapuram, Kazhakoottam, Technopark and Neyyattinkara."
+          ]
+        },
+        {
+          "eyebrow": "On-site support",
+          "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+          "body": "Our team visits your clinic in Thiruvananthapuram at onboarding and on a regular schedule after that.",
+          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "First visit",
+              "body": "We meet your team, review enquiry handling and note how patients currently find you."
+            },
+            {
+              "title": "Return visits",
+              "body": "Our team returns on an agreed schedule to review walk-ins and front-desk handling."
+            },
+            {
+              "title": "One record per enquiry",
+              "body": "Every website form and WhatsApp enquiry is saved in one record with its source."
+            },
+            {
+              "title": "Walk-ins by channel",
+              "body": "A dashboard shows leads, appointments and walk-ins by channel."
+            },
+            {
+              "title": "Your CRM or ours",
+              "body": "We keep your CRM if it captures source and outcome, or move you to MedLift."
+            },
+            {
+              "title": "Book a visit",
+              "body": "To plan an onboarding visit at your clinic or hospital in Thiruvananthapuram, call our team on +91 7428094567."
+            }
+          ]
+        }
+      ],
       "faqs": [
         {
           "q": "How do you choose the best digital marketing company in Thiruvananthapuram?",

@@ -121,6 +121,18 @@ export function normaliseLandingPage(raw) {
     // A free-text section rendered just before the FAQ. Like `intro` it is
     // HTML, so the CMS can send paragraphs; the template shows it only when set.
     overview: sanitise(raw.overview ?? ""),
+    // Alternating image / copy sections. Each is a heading, a lead line, a
+    // bullet list ({title, body} or a bare string) and an image; the template
+    // lays them out image-one-side, copy-the-other, flipping each row.
+    splitSections: (Array.isArray(raw.splitSections) ? raw.splitSections : [])
+      .map((section) => ({
+        eyebrow: text(section?.eyebrow),
+        heading: text(section?.heading),
+        body: text(section?.body),
+        image: text(section?.image),
+        points: cards(section?.points),
+      }))
+      .filter((section) => section.heading),
     reasons: block(raw.reasons, "points", lines(raw.reasons?.points)),
     services: block(raw.services, "items", cards(raw.services?.items)),
     // Industry-layout blocks: the problems, the help timeline and the proof.

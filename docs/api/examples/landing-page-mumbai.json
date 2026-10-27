@@ -31,47 +31,112 @@
             "value": "2.1x",
             "label": "Monthly walk-ins for a multi-location group"
           }
+        ],
+        "highlights": [
+          "Google Ads",
+          "Meta Ads",
+          "SEO, AEO & GEO",
+          "Google Maps & Local SEO"
         ]
       },
-      "intro": "<p>A patient in Mumbai can find a clinic through search, Maps, social media or an AI answer. Each channel needs to lead to the same booking.</p><ul><li><strong>Google Search:</strong> searches naming a treatment and a suburb, such as root canal in Andheri, show clear intent to book.</li><li><strong>Google Maps:</strong> the Maps profile shows hours, location and doctor details before a patient decides which clinic to call.</li><li><strong>Meta platforms:</strong> Facebook and Instagram reach patients before they search, which suits planned treatments rather than urgent care.</li><li><strong>AI answers:</strong> tools such as Google AI Overviews and ChatGPT now answer clinic questions, so clear, consistent information matters.</li></ul>",
-      "reasons": {
-        "eyebrow": "Why work with us",
-        "heading": "Why Do Mumbai Clinics and Hospitals Choose Reinvent Digital?",
-        "body": "Clinic owners comparing a digital marketing company in Mumbai should look at proof, process and compliance. Here is ours.",
-        "points": [
-          "5,500 to 11,500 monthly walk-ins in 8 months.",
-          "Walk-ins per agent up from about 367 to 767 a month.",
-          "Show-up rate typically up 15–25% within 60 days of reminders.",
-          "Doctor name and registration number shown on every client ad.",
-          "Four core specialities: dental, IVF, eye care and hospitals.",
-          "Founded in 2015, now focused only on healthcare.",
-          "Owner with 20+ years in healthcare marketing."
-        ]
-      },
-      "services": {
-        "eyebrow": "What we run",
-        "heading": "What Digital Marketing Services Does Reinvent Digital Offer in Mumbai?",
-        "body": "Each service runs inside the Reinvent Digital Patient Acquisition System, so every channel is tracked from first enquiry to walk-in.",
-        "items": [
-          {
-            "title": "Google Ads",
-            "body": "Treatment and locality campaigns for Mumbai clinics and hospitals, with call tracking and NMC-compliant ad copy."
-          },
-          {
-            "title": "Meta Ads",
-            "body": "Facebook and Instagram campaigns with doctor registration details on every ad, built for planned treatments."
-          },
-          {
-            "title": "SEO, AEO and GEO",
-            "body": "Search Engine Optimisation, Answer Engine Optimisation and Generative Engine Optimisation for search results, direct answers and AI tools."
-          },
-          {
-            "title": "Google Maps and Local SEO",
-            "body": "Profile management, location pages and name, address and phone checks for every Mumbai clinic or hospital you run."
-          }
-        ]
-      },
-      "overview": "<p><strong>How we plan: three steps from first audit to patient walk-ins.</strong> We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads. First, you tell us about your clinic — your centres, treatments, targets and the problems you are facing right now. Then we map the gaps, reviewing your ads, Maps listings, calls and CRM to find where patients drop off. Finally you get a proven plan, scoped to start within 5 km of each centre, with monthly walk-in reviews built in.</p><p><strong>No office visit needed — we come to your clinic or hospital.</strong> Our team visits at onboarding to review your front desk, call flow and Google Maps profiles before any campaign goes live, then returns on an agreed schedule to review results with you. Between visits, a live attribution dashboard shows leads, appointments and walk-ins by channel; enquiry calls are scored on a 100-point scale with weekly coaching; and we set up your existing CRM if it tracks source and outcome, or move you to MedLift. To book an onboarding visit at your clinic or hospital in Mumbai, call our team on +91 7428094567. We cover Colaba, Dadar, Worli, Bandra, Andheri, Powai, Chembur and Borivali, and the localities between them.</p>",
+      "splitSections": [
+        {
+          "eyebrow": "Channels",
+          "heading": "Which Digital Marketing Channels Bring Mumbai Patients to a Clinic or Hospital?",
+          "body": "A patient in Mumbai can find a clinic through search, Maps, social media or an AI answer. Each channel needs to lead to the same booking.",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Google Search",
+              "body": "Searches naming a treatment and a suburb, such as root canal in Andheri, show clear intent to book."
+            },
+            {
+              "title": "Google Maps",
+              "body": "The Maps profile shows hours, location and doctor details before a patient decides which clinic to call."
+            },
+            {
+              "title": "Meta platforms",
+              "body": "Facebook and Instagram reach patients before they search, which suits planned treatments rather than urgent care."
+            },
+            {
+              "title": "AI answers",
+              "body": "Tools such as Google AI Overviews and ChatGPT now answer clinic questions, so clear, consistent information matters."
+            }
+          ]
+        },
+        {
+          "eyebrow": "What we run",
+          "heading": "What Digital Marketing Services Does Reinvent Digital Offer in Mumbai?",
+          "body": "Each service runs inside the Reinvent Digital Patient Acquisition System, so every channel is tracked from first enquiry to walk-in.",
+          "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Google Ads",
+              "body": "Treatment and locality campaigns for Mumbai clinics and hospitals, with call tracking and NMC-compliant ad copy."
+            },
+            {
+              "title": "Meta Ads",
+              "body": "Facebook and Instagram campaigns with doctor registration details on every ad, built for planned treatments."
+            },
+            {
+              "title": "SEO, AEO and GEO",
+              "body": "Search Engine Optimisation, Answer Engine Optimisation and Generative Engine Optimisation for search results, direct answers and AI tools."
+            },
+            {
+              "title": "Google Maps and local SEO",
+              "body": "Profile management, location pages and name, address and phone checks for every Mumbai clinic or hospital you run."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Why work with us",
+          "heading": "Why Do Mumbai Clinics and Hospitals Choose Reinvent Digital?",
+          "body": "Clinic owners comparing a digital marketing company in Mumbai should look at proof, process and compliance. Here is ours.",
+          "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            "5,500 to 11,500 monthly walk-ins in 8 months.",
+            "Walk-ins per agent up from about 367 to 767 a month.",
+            "Show-up rate typically up 15–25% within 60 days of reminders.",
+            "Doctor name and registration number shown on every client ad.",
+            "Four core specialities: dental, IVF, eye care and hospitals.",
+            "Founded in 2015, now focused only on healthcare.",
+            "Owner with 20+ years in healthcare marketing.",
+            "Nearby areas: Colaba, Dadar, Worli, Bandra, Andheri, Powai, Chembur and Borivali, and the localities between them."
+          ]
+        },
+        {
+          "eyebrow": "On-site support",
+          "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+          "body": "Our team visits your clinic in Mumbai at onboarding and on a regular schedule after that.",
+          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Onboarding visit",
+              "body": "We review your front desk, call flow and Google Maps profiles before any campaign goes live."
+            },
+            {
+              "title": "Scheduled visits",
+              "body": "Our team returns on an agreed schedule to review results and front-desk handling with you."
+            },
+            {
+              "title": "Live attribution dashboard",
+              "body": "See leads, appointments and walk-ins by channel, without waiting for a monthly report."
+            },
+            {
+              "title": "Call scoring and coaching",
+              "body": "Enquiry calls are scored on a 100-point scale, with weekly coaching for your front desk or call team."
+            },
+            {
+              "title": "Your CRM or ours",
+              "body": "We set up your existing CRM if it tracks source and outcome, or move you to MedLift."
+            },
+            {
+              "title": "Book a visit",
+              "body": "To book an onboarding visit at your clinic or hospital in Mumbai, call our team on +91 7428094567."
+            }
+          ]
+        }
+      ],
       "faqs": [
         {
           "q": "How do you choose the best digital marketing company in Mumbai for a clinic?",

@@ -31,47 +31,112 @@
             "value": "2.1x",
             "label": "Monthly walk-ins for a multi-location group"
           }
+        ],
+        "highlights": [
+          "Branch-level Google Maps",
+          "Healthcare Google Ads",
+          "Healthcare Meta Ads",
+          "Call-centre optimisation"
         ]
       },
-      "intro": "<p>Kochi stretches from Fort Kochi to Aluva, so patients weigh distance as much as reputation. Many of those checks happen online, before the first call.</p><ul><li><strong>Distance and traffic:</strong> patients compare how far a clinic is from home or work, often across bridges and busy junctions.</li><li><strong>Branch details:</strong> for clinic groups, patients look for the nearest branch's hours, doctors and directions on Google Maps.</li><li><strong>Doctor qualifications:</strong> specialist training and registration details help patients compare doctors for planned treatments such as implants or eye surgery.</li><li><strong>Response speed:</strong> an unanswered call or a slow WhatsApp reply can send the patient straight to the next listing.</li></ul>",
-      "reasons": {
-        "eyebrow": "Why work with us",
-        "heading": "What Makes Reinvent Digital a Fit for Kochi Healthcare Groups?",
-        "body": "A digital marketing company in Kochi should prove results, show its process and keep every ad within NMC rules.",
-        "points": [
-          "5,500 to 11,500 monthly walk-ins in 8 months.",
-          "Walk-ins per agent: about 367 to 767 a month.",
-          "Show-up rate typically up 15–25% within 60 days.",
-          "20–30% of missed leads recovered in the same session.",
-          "Every form and WhatsApp enquiry held in one record.",
-          "Registration details on every client ad, as NMC requires.",
-          "Founded in 2015, focused only on healthcare today."
-        ]
-      },
-      "services": {
-        "eyebrow": "What we run",
-        "heading": "What Does Reinvent Digital Manage for Kochi Clinics and Hospitals?",
-        "body": "Under the Reinvent Digital Patient Acquisition System, every service reports into one view of enquiries, appointments and walk-ins.",
-        "items": [
-          {
-            "title": "Branch-Level Google Maps",
-            "body": "A separate, accurate profile for every branch, with hours, doctors and services kept consistent."
-          },
-          {
-            "title": "Healthcare Google Ads",
-            "body": "Treatment and area campaigns, from Kakkanad to Tripunithura, with call tracking from ad to walk-in."
-          },
-          {
-            "title": "Healthcare Meta Ads",
-            "body": "Facebook and Instagram campaigns for planned treatments, each ad showing the doctor's registration details."
-          },
-          {
-            "title": "Call-Centre Optimisation",
-            "body": "Routing, call scoring and coaching, whether your front desk or our agents answer the phone."
-          }
-        ]
-      },
-      "overview": "<p><strong>How we plan: three steps from first audit to patient walk-ins.</strong> We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads. First you tell us about your clinic — your centres, treatments, targets and the problems you are facing. Then we map the gaps, reviewing your ads, Maps listings, calls and CRM to find where patients drop off. Finally you get a proven plan, scoped to start within 5 km of each centre, with monthly walk-in reviews built in.</p><p><strong>No office visit needed — we come to your clinic or hospital.</strong> At onboarding our team spends time with your reception staff and checks how enquiries are answered and logged, then returns on a schedule set with you to cover results and anything to fix on site. Calls are scored out of 100 with weekly coaching, and we configure your existing CRM if it captures source and outcome or set up MedLift. We cover Edappally, Kakkanad, Palarivattom, Kaloor, Vyttila, Kadavanthra, Panampilly Nagar, Aluva and nearby areas. To schedule an onboarding visit, call our team on +91 7428094567.</p>",
+      "splitSections": [
+        {
+          "eyebrow": "Channels",
+          "heading": "How Do Patients in Kochi Choose a Clinic or Hospital?",
+          "body": "Kochi stretches from Fort Kochi to Aluva, so patients weigh distance as much as reputation. Many of those checks happen online, before the first call.",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Distance and traffic",
+              "body": "Patients compare how far a clinic is from home or work, often across bridges and busy junctions."
+            },
+            {
+              "title": "Branch details",
+              "body": "For clinic groups, patients look for the nearest branch's hours, doctors and directions on Google Maps."
+            },
+            {
+              "title": "Doctor qualifications",
+              "body": "Specialist training and registration details help patients compare doctors for planned treatments such as implants or eye surgery."
+            },
+            {
+              "title": "Response speed",
+              "body": "An unanswered call or a slow WhatsApp reply can send the patient straight to the next listing."
+            }
+          ]
+        },
+        {
+          "eyebrow": "What we run",
+          "heading": "What Does Reinvent Digital Manage for Kochi Clinics and Hospitals?",
+          "body": "Under the Reinvent Digital Patient Acquisition System, every service reports into one view of enquiries, appointments and walk-ins.",
+          "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Branch-level Google Maps",
+              "body": "A separate, accurate profile for every branch, with hours, doctors and services kept consistent."
+            },
+            {
+              "title": "Healthcare Google Ads",
+              "body": "Treatment and area campaigns, from Kakkanad to Tripunithura, with call tracking from ad to walk-in."
+            },
+            {
+              "title": "Healthcare Meta Ads",
+              "body": "Facebook and Instagram campaigns for planned treatments, each ad showing the doctor's registration details."
+            },
+            {
+              "title": "Call-centre optimisation",
+              "body": "Routing, call scoring and coaching, whether your front desk or our agents answer the phone."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Why work with us",
+          "heading": "What Makes Reinvent Digital a Fit for Kochi Healthcare Groups?",
+          "body": "A digital marketing company in Kochi should prove results, show its process and keep every ad within NMC rules.",
+          "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            "5,500 to 11,500 monthly walk-ins in 8 months.",
+            "Walk-ins per agent: about 367 to 767 a month.",
+            "Show-up rate typically up 15–25% within 60 days.",
+            "20–30% of missed leads recovered in the same session.",
+            "Every form and WhatsApp enquiry held in one record.",
+            "Registration details on every client ad, as NMC requires.",
+            "Founded in 2015, focused only on healthcare today.",
+            "Nearby areas: Edappally, Kakkanad, Palarivattom, Kaloor, Vyttila, Kadavanthra, Panampilly Nagar and Aluva."
+          ]
+        },
+        {
+          "eyebrow": "On-site support",
+          "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+          "body": "Our team visits your clinic in Kochi at onboarding and on a regular schedule after that.",
+          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "First visit",
+              "body": "We spend time with your reception staff and check how enquiries are answered and logged."
+            },
+            {
+              "title": "Return visits",
+              "body": "Our team returns on a schedule set with you, to cover results and anything to fix on site."
+            },
+            {
+              "title": "Call scoring",
+              "body": "Calls are scored out of 100, with weekly coaching for your front desk."
+            },
+            {
+              "title": "One record per enquiry",
+              "body": "Every form and WhatsApp enquiry is held in one patient record with its source."
+            },
+            {
+              "title": "Your CRM or ours",
+              "body": "We configure your existing CRM if it captures source and outcome, or set up MedLift."
+            },
+            {
+              "title": "Book a visit",
+              "body": "To schedule an onboarding visit at your clinic or hospital in Kochi, call our team on +91 7428094567."
+            }
+          ]
+        }
+      ],
       "faqs": [
         {
           "q": "How do you choose the best digital marketing company in Kochi for a clinic or hospital?",

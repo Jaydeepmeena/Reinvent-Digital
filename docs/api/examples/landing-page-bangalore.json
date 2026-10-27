@@ -31,47 +31,112 @@
             "value": "11+",
             "label": "Years of healthcare marketing experience"
           }
+        ],
+        "highlights": [
+          "Google Ads by corridor",
+          "Google Maps & Local SEO",
+          "Appointment reminders",
+          "Call-centre optimisation"
         ]
       },
-      "intro": "<p>Bangalore patients fit healthcare around work and traffic. That shapes where they search, which clinic they pick and whether they arrive.</p><ul><li><strong>Commute-based choice:</strong> patients often choose a clinic near the office or along their daily route, not only near home.</li><li><strong>Timings matter:</strong> evening and weekend availability on a Google Maps profile can decide which clinic gets the call.</li><li><strong>Close comparison:</strong> patients compare Maps profiles, doctor qualifications and clinic websites before making contact.</li><li><strong>Bookings that slip:</strong> traffic and busy schedules can turn a confirmed appointment into a no-show without a timely reminder.</li></ul>",
-      "reasons": {
-        "eyebrow": "Why work with us",
-        "heading": "What Do Bangalore Healthcare Groups Get With Reinvent Digital?",
-        "body": "Before shortlisting a digital marketing company in Bangalore, ask for proof you can check. Here is what Reinvent Digital can show.",
-        "points": [
-          "A 115+ clinic dental group grew walk-ins 2.1x in 8 months.",
-          "6,000 more walk-ins a month, with the same 15 agents.",
-          "185+ healthcare accounts managed.",
-          "Missed calls answered on WhatsApp, with 20–30% recovered.",
-          "Weekly coaching from 100-point call scores.",
-          "Doctor registration details on every client ad.",
-          "Founded in 2015, with a healthcare-only focus today."
-        ]
-      },
-      "services": {
-        "eyebrow": "What we run",
-        "heading": "How Does Reinvent Digital Support Bangalore Clinics and Hospitals?",
-        "body": "The Reinvent Digital Patient Acquisition System covers the full path in Bangalore, from the first search to the patient arriving.",
-        "items": [
-          {
-            "title": "Google Ads by Corridor",
-            "body": "Campaigns for Whitefield, Electronic City, Outer Ring Road and other hubs, tracked from click to walk-in."
-          },
-          {
-            "title": "Google Maps and Local SEO",
-            "body": "Accurate timings, services and doctor details on every profile, so patients can compare with confidence."
-          },
-          {
-            "title": "Appointment Reminders",
-            "body": "Confirmation and reminder messages before each visit, which typically lift show-up rates by 15–25% within 60 days."
-          },
-          {
-            "title": "Call-Centre Optimisation",
-            "body": "Enquiry calls routed, scored and coached, whether your front desk or our agents answer them."
-          }
-        ]
-      },
-      "overview": "<p><strong>How we plan: three steps from first audit to patient walk-ins.</strong> We audit what you run today, launch channels by locality, then keep refining against walk-ins, not clicks or leads. First you tell us about your clinic — your centres, treatments, targets and the problems you are facing. Then we map the gaps, reviewing your ads, Maps listings, calls and CRM to find where patients drop off. Finally you get a proven plan, scoped to start within 5 km of each centre, with monthly walk-in reviews built in.</p><p><strong>No office visit needed — we come to your clinic or hospital.</strong> At onboarding we watch how bookings, reminders and walk-ins are handled at your front desk on a normal day, then return on an agreed schedule to review no-shows, walk-ins and call quality in person. Form and WhatsApp enquiries are saved in one patient record with their source, reporting shows leads, appointments and walk-ins by channel, and we work in your CRM if it tracks source and outcome or set up MedLift. We cover Whitefield, Marathahalli, Bellandur, Sarjapur Road, Electronic City, Bannerghatta Road, Rajajinagar, Malleshwaram, Hebbal and Yelahanka. For an onboarding visit, call our team on +91 7428094567.</p>",
+      "splitSections": [
+        {
+          "eyebrow": "Channels",
+          "heading": "How Do Bangalore Patients Choose a Clinic?",
+          "body": "Bangalore patients fit healthcare around work and traffic. That shapes where they search, which clinic they pick and whether they arrive.",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Commute-based choice",
+              "body": "Patients often choose a clinic near the office or along their daily route, not only near home."
+            },
+            {
+              "title": "Timings matter",
+              "body": "Evening and weekend availability on a Google Maps profile can decide which clinic gets the call."
+            },
+            {
+              "title": "Close comparison",
+              "body": "Patients compare Maps profiles, doctor qualifications and clinic websites before making contact."
+            },
+            {
+              "title": "Bookings that slip",
+              "body": "Traffic and busy schedules can turn a confirmed appointment into a no-show without a timely reminder."
+            }
+          ]
+        },
+        {
+          "eyebrow": "What we run",
+          "heading": "How Does Reinvent Digital Support Bangalore Clinics and Hospitals?",
+          "body": "The Reinvent Digital Patient Acquisition System covers the full path in Bangalore, from the first search to the patient arriving.",
+          "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "Google Ads by corridor",
+              "body": "Campaigns for Whitefield, Electronic City, Outer Ring Road and other hubs, tracked from click to walk-in."
+            },
+            {
+              "title": "Google Maps and Local SEO",
+              "body": "Accurate timings, services and doctor details on every profile, so patients can compare with confidence."
+            },
+            {
+              "title": "Appointment reminders",
+              "body": "Confirmation and reminder messages before each visit, which typically lift show-up rates by 15–25% within 60 days."
+            },
+            {
+              "title": "Call-centre optimisation",
+              "body": "Enquiry calls routed, scored and coached, whether your front desk or our agents answer them."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Why work with us",
+          "heading": "What Do Bangalore Healthcare Groups Get With Reinvent Digital?",
+          "body": "Before shortlisting a digital marketing company in Bangalore, ask for proof you can check. Here is what Reinvent Digital can show.",
+          "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            "A 115+ clinic dental group grew walk-ins 2.1x in 8 months.",
+            "6,000 more walk-ins a month, with the same 15 agents.",
+            "185+ healthcare accounts managed.",
+            "Missed calls answered on WhatsApp, with 20–30% recovered.",
+            "Weekly coaching from 100-point call scores.",
+            "Doctor registration details on every client ad.",
+            "Founded in 2015, with a healthcare-only focus today.",
+            "Nearby areas: Whitefield, Marathahalli, Bellandur, Sarjapur Road, Electronic City, Bannerghatta Road, Rajajinagar, Malleshwaram, Hebbal and Yelahanka."
+          ]
+        },
+        {
+          "eyebrow": "On-site support",
+          "heading": "No Office Visit Needed. We Come to Your Clinic or Hospital.",
+          "body": "Our team visits your clinic in Bangalore at onboarding and on a regular schedule after that.",
+          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=70",
+          "points": [
+            {
+              "title": "First visit",
+              "body": "We watch how bookings, reminders and walk-ins are handled at your front desk on a normal day."
+            },
+            {
+              "title": "Return visits",
+              "body": "Our team returns on an agreed schedule to review no-shows, walk-ins and call quality in person."
+            },
+            {
+              "title": "One record per enquiry",
+              "body": "Form and WhatsApp enquiries are saved in one patient record with their source."
+            },
+            {
+              "title": "Walk-ins by channel",
+              "body": "Reporting shows leads, appointments and walk-ins by channel."
+            },
+            {
+              "title": "Your CRM or ours",
+              "body": "We work in your CRM if it tracks source and outcome, or set up MedLift."
+            },
+            {
+              "title": "Book a visit",
+              "body": "For an onboarding visit at your clinic or hospital in Bangalore, call our team on +91 7428094567."
+            }
+          ]
+        }
+      ],
       "faqs": [
         {
           "q": "How do you choose the best digital marketing company in Bangalore for a clinic?",
