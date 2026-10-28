@@ -6,7 +6,26 @@
 //
 // Anything it does not recognise comes back as { type: "prose", html }, so a
 // study whose body is shaped differently still renders in full.
-const cap = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) : text);
+// Title-case a heading the way the source doc does: edge words always capital,
+// short joining words lower, and anything already carrying a capital or a digit
+// (SEO, UX, FAQs, D2C, WhatsApp, A+) left untouched. Hyphen parts capitalise.
+const SMALL = new Set([
+  "a", "an", "and", "as", "at", "but", "by", "for", "if", "in", "nor", "of", "on", "or", "per", "the", "to", "vs", "via", "with",
+]);
+function titleCase(text) {
+  if (!text || typeof text !== "string") return text;
+  const words = text.trim().split(/\s+/);
+  const last = words.length - 1;
+  return words
+    .map((word, i) => {
+      if (i !== 0 && i !== last && SMALL.has(word.toLowerCase())) return word.toLowerCase();
+      return word
+        .split("-")
+        .map((seg) => (!seg || /[A-Z0-9]/.test(seg) ? seg : seg.charAt(0).toUpperCase() + seg.slice(1).toLowerCase()))
+        .join("-");
+    })
+    .join(" ");
+}
 
 function toContainer(nodes, doc) {
   const el = doc.createElement("div");
@@ -20,7 +39,7 @@ function readBullets(el) {
     .map((li) => {
       const strong = li.querySelector("strong");
       if (strong) {
-        const title = strong.textContent.trim().replace(/:\s*$/, "");
+        const title = titleCase(strong.textContent.trim().replace(/:\s*$/, ""));
         const body = li.textContent.replace(strong.textContent, "").replace(/^\s*:?\s*/, "").trim();
         return { title, body };
       }
@@ -42,7 +61,7 @@ function readSteps(el) {
       const match = text.match(/^(\d+)\s*[·.-]\s*(.*)$/);
       current = {
         num: match ? match[1].padStart(2, "0") : String(steps.length + 1).padStart(2, "0"),
-        title: match ? match[2].trim() : text,
+        title: titleCase(match ? match[2].trim() : text),
         body: "",
       };
       steps.push(current);
@@ -59,18 +78,33 @@ function readSteps(el) {
   return { steps: steps.filter((s) => s.title), note: extra.join(" ").trim() || null };
 }
 
+// The intro facts line: "Industry: … · Location: … · Timeframe: …".
+function readMeta(el) {
+  const text = el.textContent.trim();
+  if (!/industry\s*[:：]/i.test(text)) return null;
+  const fields = text
+    .replace(/\.\s*$/, "")
+    .split(/\s+[·•]\s+/)
+    .map((segment) => {
+      const match = segment.match(/^\s*([^:：]+)[:：]\s*(.+)$/);
+      return match ? { label: match[1].trim(), value: match[2].trim() } : null;
+    })
+    .filter(Boolean);
+  return fields.length >= 2 ? fields : null;
+}
+
 // "Results by channel": "<h3>Channel</h3><ul><li><strong>value</strong> — label"
 function readChannels(el) {
   const channels = [];
   let current = null;
   [...el.children].forEach((node) => {
     if (node.tagName === "H3") {
-      current = { name: node.textContent.trim(), metrics: [] };
+      current = { name: titleCase(node.textContent.trim()), metrics: [] };
       channels.push(current);
     } else if (node.tagName === "UL" && current) {
       node.querySelectorAll("li").forEach((li) => {
         const value = (li.querySelector("strong")?.textContent ?? li.textContent.split(/[—–-]/)[0]).trim();
-        const label = cap(li.textContent.replace(value, "").replace(/^\s*[—–-]\s*/, "").trim());
+        const label = titleCase(li.textContent.replace(value, "").replace(/^\s*[—–-]\s*/, "").trim());
         if (value && label) current.metrics.push({ value, label });
       });
     }
@@ -101,11 +135,16 @@ export function parseCaseStudy(html) {
   return raw.map(({ title, nodes }) => {
     const el = toContainer(nodes, doc);
     const key = (title ?? "").toLowerCase();
-    if (/results?\s+by\s+channel/.test(key)) return { type: "channels", title, channels: readChannels(el) };
-    if (/the\s+challenge/.test(key)) return { type: "challenge", title, items: readBullets(el) };
-    if (/what\s+we\s+did/.test(key)) return { type: "whatWeDid", title, ...readSteps(el) };
-    if (/about\s+the\s+client/.test(key)) return { type: "callout", variant: "about", title, html: el.innerHTML };
-    if (/our\s+approach/.test(key)) return { type: "callout", variant: "approach", title, html: el.innerHTML };
-    return { type: "prose", html: (title ? `<h2>${title}</h2>` : "") + el.innerHTML };
+    if (title === null) {
+      const fields = readMeta(el);
+      if (fields) return { type: "meta", fields };
+    }
+    if (/results?\s+by\s+channel/.test(key)) return { type: "channels", title: titleCase(title), channels: readChannels(el) };
+    if (/the\s+challenge/.test(key)) return { type: "challenge", title: titleCase(title), items: readBullets(el) };
+    if (/what\s+we\s+did/.test(key)) return { type: "whatWeDid", title: titleCase(title), ...readSteps(el) };
+    if (/about\s+the\s+client/.test(key)) return { type: "callout", variant: "about", title: titleCase(title), html: el.innerHTML };
+    if (/our\s+approach/.test(key)) return { type: "callout", variant: "approach", title: titleCase(title), html: el.innerHTML };
+    el.querySelectorAll("h3").forEach((h) => (h.textContent = titleCase(h.textContent.trim())));
+    return { type: "prose", html: (title ? `<h2>${titleCase(title)}</h2>` : "") + el.innerHTML };
   });
 }
