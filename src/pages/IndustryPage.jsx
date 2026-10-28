@@ -271,7 +271,8 @@ export default function IndustryPage({ slug: given }) {
             </div>
           </div>
 
-          {testimonial && (
+          {/* The CMS sends `[]` for "no testimonial", so require an actual quote. */}
+          {testimonial?.quote && (
             <div className="mx-auto mt-16 max-w-4xl px-5 text-center sm:mt-24 sm:px-8">
               <Quote className="mx-auto h-10 w-10 text-lime" fill="currentColor" strokeWidth={0} />
               <SplitReveal
