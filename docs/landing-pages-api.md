@@ -197,6 +197,40 @@ Aliases accepted, in case they fit your CMS better: `q`/`question`, `a`/`answer`
 
 ---
 
+## 2b. Layout fields (which template renders)
+
+The pages ship in two layouts. **`design` decides which**, and each layout reads a
+few extra blocks. The `hero` also takes two optional fields shared by both.
+
+| Field | Type | Notes |
+|---|---|---|
+| `design` | string | `"industry"` renders the industry layout (numbered problems, a process timeline, proof stat cards). Anything else, or omitted, renders the default service layout. |
+| `hero.highlights` | array of strings | Short chips ringing the hero (and driving the marquee on service pages). Four works best. |
+| `hero.metric` | `{value, label}` | A single metric chip in the hero. |
+
+**Service layout only** — when `splitSections` is present it replaces the
+`intro` / `reasons` / `services` / `overview` stack:
+
+| Field | Type | Notes |
+|---|---|---|
+| `splitSections` | array | Alternating image/copy sections. Each: `{ eyebrow, heading, body, image, points }`, where `points` is an array of `{title, body}` (or bare strings). `heading` is required for a section to render. |
+| `plan` | `{eyebrow, heading, steps}` | The "how we plan" step timeline. `steps` is an array of `{label, title, body}`. |
+
+**Industry layout only** (`design: "industry"`):
+
+| Field | Type | Notes |
+|---|---|---|
+| `problems` | `{eyebrow, heading, body, points}` | Numbered problems list. `points` is `[{title, body}]`. |
+| `help` | `{eyebrow, heading, body, points}` | Process timeline. `points` is `[{title, body}]`. |
+| `proof` | `{eyebrow, heading, body, stats}` | Before/after proof. `stats` is `[{value, label}]`. |
+
+All of these are optional and hidden when empty, same as the base blocks. The
+quickest reference for a real payload of each layout is the example files:
+`examples/landing-page-mumbai.json` (service / split), `examples/landing-page-seo.json`
+(industry).
+
+---
+
 ## 3. Pushing pages in bulk
 
 This part is yours to design, the frontend never calls it. What it has to produce
