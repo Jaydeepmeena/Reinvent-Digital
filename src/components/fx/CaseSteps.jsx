@@ -13,6 +13,17 @@ export default function CaseSteps({ title = "What we did", steps = [], note }) {
   const index = Math.min(active, steps.length - 1);
   const step = steps[index];
 
+  // Split "Services used: A · B · C." into a label and chips.
+  const noteLabel = note ? (note.match(/^([^:：]+)[:：]/)?.[1]?.trim() ?? null) : null;
+  const noteItems = note
+    ? note
+        .replace(/^[^:：]*[:：]\s*/, "")
+        .replace(/\.\s*$/, "")
+        .split(/\s*[·•]\s*/)
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : [];
+
   return (
     <section className="section-y bg-paper">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
@@ -69,11 +80,29 @@ export default function CaseSteps({ title = "What we did", steps = [], note }) {
           </div>
         </div>
 
-        {note && (
-          <p className="mt-6 text-[13px] leading-relaxed text-ink-soft">
-            <span className="font-semibold text-ink">{note.replace(/[:：].*$/, "")}:</span>{" "}
-            {note.replace(/^[^:：]*[:：]\s*/, "")}
-          </p>
+        {note && noteItems.length > 0 ? (
+          <div className="mt-10 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 shadow-xl shadow-ink/5 sm:flex-row sm:items-center sm:gap-5 sm:p-6">
+            <span className="shrink-0 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-soft/70">
+              {noteLabel ?? "Services used"}
+            </span>
+            <ul className="flex flex-wrap gap-2">
+              {noteItems.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-ink/10 bg-paper px-3.5 py-1.5 text-[13px] font-semibold text-ink transition-colors hover:border-lime hover:bg-lime/10"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          note && (
+            <p className="mt-6 text-[13px] leading-relaxed text-ink-soft">
+              <span className="font-semibold text-ink">{note.replace(/[:：].*$/, "")}:</span>{" "}
+              {note.replace(/^[^:：]*[:：]\s*/, "")}
+            </p>
+          )
         )}
       </div>
     </section>
