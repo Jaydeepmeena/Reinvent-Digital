@@ -6,42 +6,49 @@ import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import CountUp from "../components/motion/CountUp";
 import ChannelResults from "../components/fx/ChannelResults";
+import Challenges from "../components/fx/Challenges";
+import CaseSteps from "../components/fx/CaseSteps";
 import { fetchCaseStudies, fetchCaseStudy, formatDate } from "../lib/caseStudies";
+import { parseCaseStudy } from "../lib/caseStudySections";
 
-const cap = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) : text);
-
-// Pulls the "Results by channel" block out of the article body so it can be
-// rendered as an interactive panel, and returns the body with that block
-// removed. The block is a <h2> titled "Results by channel", followed by an
-// <h3> per channel and a <ul> of "<strong>value</strong> — label" metrics,
-// up to the next <h2>. Any content without it is returned unchanged.
-function extractChannels(html) {
-  if (!html || typeof window === "undefined") return { channels: [], body: html ?? "" };
-  const doc = new DOMParser().parseFromString(`<div id="cs-root">${html}</div>`, "text/html");
-  const root = doc.getElementById("cs-root");
-  const heading = [...root.querySelectorAll("h2")].find((h) => /results?\s+by\s+channel/i.test(h.textContent));
-  if (!heading) return { channels: [], body: html };
-
-  const channels = [];
-  const remove = [heading];
-  let current = null;
-  let node = heading.nextElementSibling;
-  while (node && node.tagName !== "H2") {
-    remove.push(node);
-    if (node.tagName === "H3") {
-      current = { name: node.textContent.trim(), metrics: [] };
-      channels.push(current);
-    } else if (node.tagName === "UL" && current) {
-      node.querySelectorAll("li").forEach((li) => {
-        const value = (li.querySelector("strong")?.textContent ?? li.textContent.split(/[—–-]/)[0]).trim();
-        const label = cap(li.textContent.replace(value, "").replace(/^\s*[—–-]\s*/, "").trim());
-        if (value && label) current.metrics.push({ value, label });
-      });
-    }
-    node = node.nextElementSibling;
-  }
-  remove.forEach((el) => el.remove());
-  return { channels: channels.filter((c) => c.metrics.length), body: root.innerHTML };
+// A run of prose, revealing each top-level block as it scrolls into view. The
+// body is injected HTML, so this walks its children rather than wrapping each.
+function ProseBlock({ html }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const reveal = (el) => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      io.unobserve(el);
+    };
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          // Reveal on entry, and also once scrolled (or jumped) to at/above the
+          // viewport, so a fast jump never leaves a block hidden.
+          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) reveal(entry.target);
+        }),
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    Array.from(root.children).forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(18px)";
+      const delay = Math.min(i, 6) * 0.04;
+      el.style.transition = `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`;
+      io.observe(el);
+    });
+    return () => io.disconnect();
+  }, [html]);
+  return (
+    <div className="bg-white">
+      <div className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-12">
+        <div ref={ref} className="prose-post" dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
+    </div>
+  );
 }
 
 // A thin bar that fills as the reader moves through the article. Written to the
@@ -114,48 +121,34 @@ export default function CaseStudyPage() {
   const [related, setRelated] = useState([]);
   const [status, setStatus] = useState("loading");
   const articleRef = useRef(null);
-  const contentRef = useRef(null);
 
-  const { channels, body } = useMemo(
-    () => (study?.content ? extractChannels(study.content) : { channels: [], body: "" }),
-    [study]
-  );
-
-  // Reveal each top-level block of the article as it scrolls into view. The body
-  // is injected HTML, so this walks its children rather than wrapping each one.
-  useEffect(() => {
-    if (status !== "ready") return undefined;
-    const root = contentRef.current;
-    if (!root) return undefined;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
-
-    const blocks = Array.from(root.children);
-    const reveal = (el) => {
-      el.style.opacity = "1";
-      el.style.transform = "none";
-      io.unobserve(el);
+  // The article body, split into ordered sections. "The challenge", "what we
+  // did" and "results by channel" render as interactive blocks; the rest stay
+  // as prose, with consecutive prose sections flowed back into one.
+  const sections = useMemo(() => (study?.content ? parseCaseStudy(study.content) : []), [study]);
+  const rendered = useMemo(() => {
+    const out = [];
+    let buffer = [];
+    const flushProse = (key) => {
+      if (buffer.length) {
+        out.push(<ProseBlock key={`prose-${key}`} html={buffer.join("")} />);
+        buffer = [];
+      }
     };
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Reveal on entry, and also when a block has been scrolled (or jumped)
-          // to at or above the viewport, so a fast jump never leaves one hidden.
-          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
-            reveal(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-    );
-    blocks.forEach((el, i) => {
-      el.style.opacity = "0";
-      el.style.transform = "translateY(18px)";
-      const delay = Math.min(i, 6) * 0.04;
-      el.style.transition = `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`;
-      io.observe(el);
+    sections.forEach((section, i) => {
+      if (section.type === "prose") {
+        buffer.push(section.html);
+        return;
+      }
+      flushProse(i);
+      if (section.type === "challenge") out.push(<Challenges key={i} title={section.title} items={section.items} />);
+      else if (section.type === "whatWeDid")
+        out.push(<CaseSteps key={i} title={section.title} steps={section.steps} note={section.note} />);
+      else if (section.type === "channels") out.push(<ChannelResults key={i} channels={section.channels} />);
     });
-    return () => io.disconnect();
-  }, [status, study]);
+    flushProse("tail");
+    return out;
+  }, [sections]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -259,40 +252,34 @@ export default function CaseStudyPage() {
             </div>
           </header>
 
-          <div className="section-y bg-white">
-            <div className="mx-auto max-w-3xl px-5 sm:px-8">
-              {status === "loading" && (
+          {status === "loading" && (
+            <div className="bg-white">
+              <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
                 <div className="space-y-4">
                   {Array.from({ length: 8 }, (_, i) => (
                     <div key={i} className="h-4 w-full animate-pulse rounded bg-ink/[0.06]" />
                   ))}
                 </div>
-              )}
-
-              {status === "ready" && study && (
-                // Content comes from the CMS and is sanitised in src/lib/cms.js.
-                <div ref={contentRef} className="prose-post" dangerouslySetInnerHTML={{ __html: body }} />
-              )}
-
-              {status === "missing" && (
-                <div className="text-center">
-                  <h1 className="text-2xl font-extrabold text-ink">That case study isn&rsquo;t available.</h1>
-                  <p className="mt-3 text-[15px] text-ink-soft">
-                    It may have been unpublished, or the link may be out of date.
-                  </p>
-                </div>
-              )}
-
-              {status === "error" && (
-                <div className="text-center">
-                  <h1 className="text-2xl font-extrabold text-ink">We couldn&rsquo;t load this case study.</h1>
-                  <p className="mt-3 text-[15px] text-ink-soft">Please try again in a moment.</p>
-                </div>
-              )}
+              </div>
             </div>
-          </div>
+          )}
 
-          {status === "ready" && channels.length > 0 && <ChannelResults channels={channels} />}
+          {status === "ready" && study && rendered}
+
+          {(status === "missing" || status === "error") && (
+            <div className="bg-white">
+              <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8">
+                <h1 className="text-2xl font-extrabold text-ink">
+                  {status === "missing" ? "That case study isn’t available." : "We couldn’t load this case study."}
+                </h1>
+                <p className="mt-3 text-[15px] text-ink-soft">
+                  {status === "missing"
+                    ? "It may have been unpublished, or the link may be out of date."
+                    : "Please try again in a moment."}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="bg-white pb-16 sm:pb-20">
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
