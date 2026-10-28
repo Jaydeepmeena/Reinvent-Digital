@@ -13,8 +13,7 @@ export default function CaseSteps({ title = "What we did", steps = [], note }) {
   const index = Math.min(active, steps.length - 1);
   const step = steps[index];
 
-  // Split "Services used: A · B · C." into a label and chips.
-  const noteLabel = note ? (note.match(/^([^:：]+)[:：]/)?.[1]?.trim() ?? null) : null;
+  // Split "Services used: A · B · C." into chips.
   const noteItems = note
     ? note
         .replace(/^[^:：]*[:：]\s*/, "")
@@ -81,10 +80,7 @@ export default function CaseSteps({ title = "What we did", steps = [], note }) {
         </div>
 
         {note && noteItems.length > 0 ? (
-          <div className="mt-10 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 shadow-xl shadow-ink/5 sm:flex-row sm:items-center sm:gap-5 sm:p-6">
-            <span className="shrink-0 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-soft/70">
-              {noteLabel ?? "Services used"}
-            </span>
+          <div className="mt-10 rounded-2xl border border-ink/10 bg-white p-5 shadow-xl shadow-ink/5 sm:p-6">
             <ul className="flex flex-wrap gap-2">
               {noteItems.map((item) => (
                 <li
