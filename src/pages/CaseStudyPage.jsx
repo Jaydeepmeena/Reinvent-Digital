@@ -9,7 +9,6 @@ import ChannelResults from "../components/fx/ChannelResults";
 import Challenges from "../components/fx/Challenges";
 import CaseSteps from "../components/fx/CaseSteps";
 import CaseCallout from "../components/fx/CaseCallout";
-import CaseMeta from "../components/fx/CaseMeta";
 import { fetchCaseStudies, fetchCaseStudy, formatDate } from "../lib/caseStudies";
 import { parseCaseStudy } from "../lib/caseStudySections";
 
@@ -149,7 +148,7 @@ export default function CaseStudyPage() {
       else if (section.type === "channels") out.push(<ChannelResults key={i} channels={section.channels} />);
       else if (section.type === "callout")
         out.push(<CaseCallout key={i} variant={section.variant} title={section.title} html={section.html} />);
-      else if (section.type === "meta") out.push(<CaseMeta key={i} fields={section.fields} />);
+      // "meta" (the intro facts line) is intentionally not rendered.
     });
     flushProse("tail");
     return out;
