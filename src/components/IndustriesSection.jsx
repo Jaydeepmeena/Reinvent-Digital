@@ -105,7 +105,8 @@ export default function IndustriesSection() {
                     >
                       <img
                         src={IMAGES[slug]}
-                        alt=""
+                        alt={`Digital marketing for ${title}`}
+                        title={title}
                         aria-hidden="true"
                         loading="lazy"
                         decoding="async"

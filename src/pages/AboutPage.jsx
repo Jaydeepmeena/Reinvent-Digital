@@ -182,6 +182,7 @@ function Founder({ eyebrow, heading, body, name, role, note, image, imageFallbac
                 src={image}
                 fallback={imageFallback}
                 alt={imageAlt ?? name}
+                title={name}
                 loading="lazy"
                 className="aspect-[4/5] w-full object-cover"
               />
@@ -255,7 +256,7 @@ function Drivers({ eyebrow, heading, items = [] }) {
  * picture stays with the copy while it scrolls on a wide screen, and drops
  * below it on a phone, where a half-width image would be a postage stamp.
  */
-function Story({ eyebrow, heading, body, highlight, image, imageFallback, imageAlt = "" }) {
+function Story({ eyebrow, heading, body, highlight, image, imageFallback, imageAlt }) {
   const paragraphs = (Array.isArray(body) ? body : [body]).filter(Boolean);
 
   return (
@@ -287,7 +288,8 @@ function Story({ eyebrow, heading, body, highlight, image, imageFallback, imageA
             <SmartImage
               src={image}
               fallback={imageFallback}
-              alt={imageAlt}
+              alt={imageAlt || heading}
+              title={imageAlt || heading}
               loading="lazy"
               /* Left at the photograph's own 4:3. A portrait crop would cut
                  people off either end of a group shot. */

@@ -136,7 +136,8 @@ export default function SubPageHero({
         <div className="pointer-events-none absolute inset-x-0 top-20 h-[88vw] sm:h-[72vw] lg:inset-0 lg:top-0 lg:h-auto">
           <img
             src={photo}
-            alt=""
+            alt={[title, headline].filter(Boolean).join(" – ") || eyebrow || "Reinvent Digital"}
+            title={title || headline || eyebrow}
             decoding="async"
             style={{ objectPosition: crop }}
             className="h-full w-full object-cover"

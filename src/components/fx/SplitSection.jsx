@@ -13,7 +13,7 @@ export default function SplitSection({ eyebrow, heading, body, points = [], imag
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <Reveal className={flip ? "lg:order-2" : ""}>
           <div className="overflow-hidden rounded-3xl border border-ink/10 bg-ink/[0.03]">
-            <SmartImage src={image} alt="" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+            <SmartImage src={image} alt={heading} title={heading} loading="lazy" className="aspect-[4/3] w-full object-cover" />
           </div>
         </Reveal>
 

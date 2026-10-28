@@ -42,7 +42,8 @@ export default function Hero() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-20 h-[88vw] sm:h-[72vw] lg:inset-0 lg:top-0 lg:h-auto">
         <img
           src={HOME_HERO_IMAGE}
-          alt=""
+          alt="Patients waiting in a busy clinic waiting hall"
+          title="Healthcare digital marketing that fills the waiting hall"
           decoding="async"
           className="h-full w-full object-cover object-[82%_center] lg:object-center"
         />

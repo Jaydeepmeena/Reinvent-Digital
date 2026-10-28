@@ -112,7 +112,8 @@ export default function LandingHero({ hero }) {
             <div className="overflow-hidden rounded-[1.75rem] border border-ink/10 shadow-2xl shadow-ink/15">
               <img
                 src={image}
-                alt=""
+                alt={hero.imageAlt ?? headline}
+                title={headline}
                 className="aspect-[4/3] w-full object-cover lg:aspect-[5/6]"
               />
             </div>

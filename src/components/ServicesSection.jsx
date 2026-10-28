@@ -124,7 +124,8 @@ export default function ServicesSection() {
                   {isActive && (
                     <img
                       src={image}
-                      alt=""
+                      alt={`${key} services for healthcare`}
+                      title={key}
                       aria-hidden="true"
                       loading="lazy"
                       decoding="async"

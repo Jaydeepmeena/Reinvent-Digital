@@ -73,7 +73,8 @@ export default function RelatedBlogs({ blogs }) {
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
                     src={post.image.src}
-                    alt={post.image.alt ?? ""}
+                    alt={post.image.alt || post.title}
+                    title={post.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

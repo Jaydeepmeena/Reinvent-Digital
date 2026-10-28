@@ -60,7 +60,8 @@ function MarqueePanel({ clients, direction, from }) {
             >
               <img
                 src={logo}
-                alt={i < clients.length ? name : ""}
+                alt={`${name} logo`}
+                title={name}
                 decoding="async"
                 draggable="false"
                 className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"

@@ -99,7 +99,8 @@ function Related({ studies }) {
                 <div className="h-32 w-full overflow-hidden">
                   <img
                     src={study.image.src}
-                    alt=""
+                    alt={study.image.alt || study.title}
+                    title={study.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -186,7 +187,7 @@ export default function CaseStudyPage() {
           <header className="relative overflow-hidden bg-ink pb-24 pt-28 text-cream sm:pb-28 sm:pt-36">
             {study?.image.src && (
               <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-                <img src={study.image.src} alt="" className="h-full w-full object-cover" />
+                <img src={study.image.src} alt={study.image.alt || study.title} title={study.title} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/60" />
               </div>
             )}

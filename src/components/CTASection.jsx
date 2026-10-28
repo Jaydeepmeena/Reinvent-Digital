@@ -74,7 +74,8 @@ export default function CTASection({
             <div className="relative hidden min-h-[22rem] lg:block">
               <img
                 src={contactImg}
-                alt=""
+                alt="Reinvent Digital team discussing a patient acquisition plan"
+                title="Talk to Reinvent Digital"
                 aria-hidden="true"
                 loading="lazy"
                 decoding="async"

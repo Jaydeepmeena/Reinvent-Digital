@@ -20,7 +20,7 @@ function Related({ posts }) {
               className="group overflow-hidden rounded-2xl border border-ink/10 bg-white transition-[border-color,box-shadow] hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10"
             >
               {post.image.src && (
-                <img src={post.image.src} alt="" loading="lazy" className="h-32 w-full object-cover" />
+                <img src={post.image.src} alt={post.image.alt || post.title} title={post.title} loading="lazy" className="h-32 w-full object-cover" />
               )}
               <span className="block p-5 text-[15px] font-semibold leading-snug text-ink transition-colors group-hover:text-green-deep">
                 {post.title}
@@ -70,7 +70,7 @@ export default function BlogPostPage() {
           <header className="relative overflow-hidden bg-ink pb-14 pt-28 text-cream sm:pb-16 sm:pt-36">
             {post?.image.src && (
               <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-                <img src={post.image.src} alt="" className="h-full w-full object-cover" />
+                <img src={post.image.src} alt={post.image.alt || post.title} title={post.title} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/60" />
               </div>
             )}
@@ -105,7 +105,7 @@ export default function BlogPostPage() {
                     {post.author.name && (
                       <span className="flex items-center gap-2">
                         {post.author.avatar && (
-                          <img src={post.author.avatar} alt="" className="h-7 w-7 rounded-full object-cover" />
+                          <img src={post.author.avatar} alt={post.author.name} title={post.author.name} className="h-7 w-7 rounded-full object-cover" />
                         )}
                         {post.author.name}
                       </span>

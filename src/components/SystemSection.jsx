@@ -185,7 +185,8 @@ export default function SystemSection() {
                 >
                   <img
                     src={image}
-                    alt=""
+                    alt={title}
+                    title={title}
                     aria-hidden="true"
                     loading="lazy"
                     decoding="async"

@@ -190,7 +190,8 @@ export default function Navbar() {
           >
             <img
               src={logo}
-              alt="Reinvent Digital"
+              alt="Reinvent Digital logo"
+              title="Reinvent Digital"
               className="h-14 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-[1.04] sm:h-12"
             />
           </Link>

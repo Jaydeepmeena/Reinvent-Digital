@@ -47,7 +47,8 @@ function StudyCard({ study, featured = false }) {
         {study.image.src ? (
           <img
             src={study.image.src}
-            alt={study.image.alt}
+            alt={study.image.alt || study.title}
+            title={study.title}
             loading="lazy"
             decoding="async"
             className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] ${

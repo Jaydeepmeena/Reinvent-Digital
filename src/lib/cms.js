@@ -34,6 +34,29 @@ const SANITISE = {
   ALLOWED_URI_REGEXP: /^(?:https?:|mailto:|tel:|#|\/)/i,
 };
 
+/** "/uploads/dental-chair_2-1024x683.jpg" -> "Dental chair 2" */
+const nameFromSrc = (src) => {
+  const file = decodeURIComponent((src ?? "").split(/[?#]/)[0].split("/").pop() ?? "");
+  const words = file
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/-\d+x\d+$/, "")
+    .replace(/[-_]+/g, " ")
+    .trim();
+  return words ? words[0].toUpperCase() + words.slice(1) : "";
+};
+
+// Every image in CMS content gets an alt and a title: whichever one the editor
+// set fills the other, and with neither, the file name stands in.
+DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+  if (node.nodeName !== "IMG") return;
+  const alt = node.getAttribute("alt")?.trim();
+  const title = node.getAttribute("title")?.trim();
+  const caption = node.closest?.("figure")?.querySelector("figcaption")?.textContent?.trim();
+  const text = alt || title || caption || nameFromSrc(node.getAttribute("src"));
+  if (!alt) node.setAttribute("alt", text);
+  if (!title) node.setAttribute("title", text);
+});
+
 export const sanitise = (html) => DOMPurify.sanitize(html ?? "", SANITISE);
 
 /** WordPress returns titles and excerpts with entities already encoded. */

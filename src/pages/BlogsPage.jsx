@@ -24,7 +24,8 @@ function PostCard({ post, featured = false }) {
         {post.image.src ? (
           <img
             src={post.image.src}
-            alt={post.image.alt}
+            alt={post.image.alt || post.title}
+            title={post.title}
             loading="lazy"
             decoding="async"
             className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] ${
