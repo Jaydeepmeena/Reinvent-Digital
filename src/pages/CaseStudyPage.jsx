@@ -179,7 +179,7 @@ export default function CaseStudyPage() {
       <Fragment key={slug}>
         {status === "ready" && <ReadingProgress targetRef={articleRef} />}
         <article ref={articleRef}>
-          <header className="relative overflow-hidden bg-ink pb-14 pt-28 text-cream sm:pb-16 sm:pt-36">
+          <header className="relative overflow-hidden bg-ink pb-24 pt-28 text-cream sm:pb-28 sm:pt-36">
             {study?.image.src && (
               <div aria-hidden="true" className="pointer-events-none absolute inset-0">
                 <img src={study.image.src} alt="" className="h-full w-full object-cover" />
@@ -229,28 +229,30 @@ export default function CaseStudyPage() {
                       {study.readingTime} min read
                     </span>
                   </div>
-
-                  {study.results.length > 0 && (
-                    <dl className="mt-10 grid grid-cols-2 gap-3 border-t border-cream/15 pt-8 sm:grid-cols-4 sm:gap-4">
-                      {study.results.map((result) => (
-                        <div
-                          key={result.label}
-                          className="group rounded-2xl border border-cream/10 bg-cream/[0.04] p-4 transition duration-300 hover:-translate-y-1 hover:border-lime/40 hover:bg-cream/[0.07] sm:p-5"
-                        >
-                          <dd className="text-[clamp(1.6rem,1.3rem+1.4vw,2.4rem)] font-extrabold leading-none tracking-tight text-lime">
-                            <CountUp value={result.value} />
-                          </dd>
-                          <dt className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-cream/60 transition-colors group-hover:text-cream/80">
-                            {result.label}
-                          </dt>
-                        </div>
-                      ))}
-                    </dl>
-                  )}
                 </>
               )}
             </div>
           </header>
+
+          {/* Results at a glance — an elevated strip floating over the hero edge. */}
+          {status === "ready" && study && study.results.length > 0 && (
+            <div className="relative z-10 bg-white">
+              <div className="mx-auto max-w-5xl px-5 sm:px-8">
+                <dl className="-mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 shadow-2xl shadow-ink/25 sm:-mt-16 sm:grid-cols-4">
+                  {study.results.map((result) => (
+                    <div key={result.label} className="group bg-white p-5 text-center transition-colors hover:bg-paper sm:p-6">
+                      <dd className="text-[clamp(1.5rem,1.2rem+1.3vw,2.2rem)] font-extrabold leading-none tracking-tight text-ink">
+                        <CountUp value={result.value} />
+                      </dd>
+                      <dt className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-ink-soft/70">
+                        {result.label}
+                      </dt>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          )}
 
           {status === "loading" && (
             <div className="bg-white">
