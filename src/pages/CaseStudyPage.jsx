@@ -1,10 +1,39 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Clock3 } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
+import CountUp from "../components/motion/CountUp";
 import { fetchCaseStudies, fetchCaseStudy, formatDate } from "../lib/caseStudies";
+
+// A thin bar that fills as the reader moves through the article. Written to the
+// DOM on scroll, so there is no re-render per frame.
+function ReadingProgress({ targetRef }) {
+  const barRef = useRef(null);
+  useEffect(() => {
+    const update = () => {
+      const el = targetRef.current;
+      const bar = barRef.current;
+      if (!el || !bar) return;
+      const total = el.offsetHeight - window.innerHeight;
+      const scrolled = Math.min(Math.max(-el.getBoundingClientRect().top, 0), Math.max(total, 1));
+      bar.style.transform = `scaleX(${total > 0 ? scrolled / total : 0})`;
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [targetRef]);
+  return (
+    <div aria-hidden="true" className="fixed inset-x-0 top-0 z-[60] h-1 bg-transparent">
+      <div ref={barRef} className="h-full origin-left bg-lime" style={{ transform: "scaleX(0)" }} />
+    </div>
+  );
+}
 
 function Related({ studies }) {
   if (studies.length === 0) return null;
@@ -19,10 +48,17 @@ function Related({ studies }) {
             <Link
               key={study.id}
               to={`/resources/case-study/${study.slug}`}
-              className="group overflow-hidden rounded-2xl border border-ink/10 bg-white transition-[border-color,box-shadow] hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10"
+              className="group overflow-hidden rounded-2xl border border-ink/10 bg-white transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10"
             >
               {study.image.src && (
-                <img src={study.image.src} alt="" loading="lazy" className="h-32 w-full object-cover" />
+                <div className="h-32 w-full overflow-hidden">
+                  <img
+                    src={study.image.src}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
               )}
               <span className="block p-5 text-[15px] font-semibold leading-snug text-ink transition-colors group-hover:text-green-deep">
                 {study.title}
@@ -40,6 +76,44 @@ export default function CaseStudyPage() {
   const [study, setStudy] = useState(null);
   const [related, setRelated] = useState([]);
   const [status, setStatus] = useState("loading");
+  const articleRef = useRef(null);
+  const contentRef = useRef(null);
+
+  // Reveal each top-level block of the article as it scrolls into view. The body
+  // is injected HTML, so this walks its children rather than wrapping each one.
+  useEffect(() => {
+    if (status !== "ready") return undefined;
+    const root = contentRef.current;
+    if (!root) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+
+    const blocks = Array.from(root.children);
+    const reveal = (el) => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      io.unobserve(el);
+    };
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Reveal on entry, and also when a block has been scrolled (or jumped)
+          // to at or above the viewport, so a fast jump never leaves one hidden.
+          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+            reveal(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    blocks.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(18px)";
+      const delay = Math.min(i, 6) * 0.04;
+      el.style.transition = `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s`;
+      io.observe(el);
+    });
+    return () => io.disconnect();
+  }, [status, study]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -68,7 +142,8 @@ export default function CaseStudyPage() {
   return (
     <InnerPage>
       <Fragment key={slug}>
-        <article>
+        {status === "ready" && <ReadingProgress targetRef={articleRef} />}
+        <article ref={articleRef}>
           <header className="relative overflow-hidden bg-ink pb-14 pt-28 text-cream sm:pb-16 sm:pt-36">
             {study?.image.src && (
               <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -121,13 +196,16 @@ export default function CaseStudyPage() {
                   </div>
 
                   {study.results.length > 0 && (
-                    <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-cream/15 pt-8 sm:grid-cols-4">
+                    <dl className="mt-10 grid grid-cols-2 gap-3 border-t border-cream/15 pt-8 sm:grid-cols-4 sm:gap-4">
                       {study.results.map((result) => (
-                        <div key={result.label}>
+                        <div
+                          key={result.label}
+                          className="group rounded-2xl border border-cream/10 bg-cream/[0.04] p-4 transition duration-300 hover:-translate-y-1 hover:border-lime/40 hover:bg-cream/[0.07] sm:p-5"
+                        >
                           <dd className="text-[clamp(1.6rem,1.3rem+1.4vw,2.4rem)] font-extrabold leading-none tracking-tight text-lime">
-                            {result.value}
+                            <CountUp value={result.value} />
                           </dd>
-                          <dt className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-cream/60">
+                          <dt className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-cream/60 transition-colors group-hover:text-cream/80">
                             {result.label}
                           </dt>
                         </div>
@@ -151,7 +229,7 @@ export default function CaseStudyPage() {
 
               {status === "ready" && study && (
                 // Content comes from the CMS and is sanitised in src/lib/cms.js.
-                <div className="prose-post" dangerouslySetInnerHTML={{ __html: study.content }} />
+                <div ref={contentRef} className="prose-post" dangerouslySetInnerHTML={{ __html: study.content }} />
               )}
 
               {status === "missing" && (
