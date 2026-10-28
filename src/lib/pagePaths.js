@@ -29,6 +29,7 @@ import {
   PREVIOUS_FOLDERS,
   RESERVED_PATHS,
   RETIRED_PAGES,
+  SHIPPED_PAGES,
   SHIPPED_RENAMES,
 } from "../data/routes.js";
 
@@ -98,7 +99,8 @@ export function buildPageRoutes(collections) {
   for (const collection of COLLECTIONS) {
     const { entries = [], bundled = [] } = collections[collection] ?? {};
 
-    const shippedSlug = new Map();
+    // Pages whose content has moved to the CMS keep their URL history too.
+    const shippedSlug = new Map((SHIPPED_PAGES[collection] ?? []).map((slug) => [slug, slug]));
     for (const entry of bundled) {
       const id = identityOf(entry?.slug);
       if (id) shippedSlug.set(id, entry.slug);

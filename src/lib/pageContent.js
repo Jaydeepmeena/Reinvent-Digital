@@ -21,12 +21,19 @@ import { Circle } from "lucide-react";
 import { buildRedirects } from "./renameRules";
 import { identityOf, pathOf } from "./pagePaths";
 import { mergeContent } from "./contentRules";
+import { PAGE_ICONS } from "../data/pageIcons";
+import { SHIPPED_PAGES } from "../data/routes.js";
 
 // Icons are bundled React components, not JSON, so an entry the CMS publishes on
 // its own carries none. The menus and cards render the icon unconditionally, so
 // every resolved entry gets one: its own where it has it, this neutral mark
 // otherwise.
 const FALLBACK_ICON = Circle;
+
+// Lucide icons are forwardRef components, which are objects rather than
+// functions, so a plain `typeof … === "function"` turns every one away.
+const isComponent = (value) =>
+  typeof value === "function" || (typeof value === "object" && value !== null && "$$typeof" in value);
 
 export { mergeContent };
 
@@ -65,10 +72,18 @@ const isHidden = (entry) =>
   entry?.published === false ||
   (typeof entry?.status === "string" && HIDDEN_STATUSES.has(entry.status.toLowerCase()));
 
+// WordPress gives every post a menu order of 0 unless someone sets one, so 0
+// reads as "not set" rather than "first".
 const orderOf = (entry) => {
   const raw = entry?.order ?? entry?.menuOrder ?? entry?.menu_order;
   const value = Number(raw);
-  return Number.isFinite(value) ? value : null;
+  return Number.isFinite(value) && value !== 0 ? value : null;
+};
+
+/** Where a page sits in the shipped menu order; pages the site never shipped go last. */
+const shippedRank = (collection, id) => {
+  const index = SHIPPED_PAGES[collection]?.indexOf(id) ?? -1;
+  return index === -1 ? Infinity : index;
 };
 
 /**
@@ -108,7 +123,7 @@ export function resolveCollection(collection, bundled = [], remote = new Map()) 
       ...merged,
       id,
       path: pathOf(collection, merged.slug),
-      icon: typeof merged.icon === "function" ? merged.icon : FALLBACK_ICON,
+      icon: isComponent(merged.icon) ? merged.icon : (PAGE_ICONS[collection]?.[id] ?? FALLBACK_ICON),
     };
     byId.set(id, placed);
     entries.push(placed);
@@ -127,8 +142,13 @@ export function resolveCollection(collection, bundled = [], remote = new Map()) 
 
   // Then the pages the CMS has published that the site does not ship at all.
   // A page that has since been renamed away is not one of them: its URL
-  // redirects now, and only the name it ended up with is live.
-  for (const entry of remote.values()) {
+  // redirects now, and only the name it ended up with is live. Pages the site
+  // used to ship keep their old place; the rest follow in the CMS's order.
+  const cmsOnly = [...remote.values()]
+    .map((entry, index) => ({ entry, index, rank: shippedRank(collection, identityOf(entry?.slug)) }))
+    .sort((a, b) => a.rank - b.rank || a.index - b.index)
+    .map((row) => row.entry);
+  for (const entry of cmsOnly) {
     const id = identityOf(entry?.slug);
     if (!id || bundledById.has(id) || redirects.has(id)) continue;
     add(undefined, entry);

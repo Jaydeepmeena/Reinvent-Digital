@@ -65,3 +65,22 @@ export const RETIRED_PAGES = {
     "research-reports": "/resources/blogs",
   },
 };
+
+// The pages the site has shipped, by slug, in menu order. The content of these
+// pages lives in the CMS now; this list keeps only what the CMS cannot know:
+// that these URLs existed under the old folders above (so they still redirect)
+// and the order they appear in when the CMS sets none.
+export const SHIPPED_PAGES = {
+  services: [
+    "google-ads", "meta-ads", "chatgpt-ads", "seo", "aeo", "geo",
+    "business-profile-optimisation", "local-seo", "youtube-marketing",
+    "social-media-management", "marketing-automation", "crm",
+    "call-centre-management", "telephony", "booking-attribution",
+    "walk-in-tracking", "messaging-follow-up",
+  ],
+  industries: ["dental-clinic", "ivf-clinic", "eye-clinics", "multi-speciality-hospital"],
+  locations: [
+    "jaipur", "delhi", "hyderabad", "noida", "gurgaon", "mumbai", "bangalore",
+    "kochi", "chennai", "calicut", "thiruvananthapuram", "vijayawada",
+  ],
+};

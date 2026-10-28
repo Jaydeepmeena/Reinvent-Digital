@@ -11,10 +11,22 @@ import ChatVisual from "../components/fx/ChatVisual";
 import DealCards from "../components/fx/DealCards";
 import PathSteps from "../components/fx/PathSteps";
 import LeadForm from "../components/fx/LeadForm";
+import PageLoading from "../components/fx/PageLoading";
 
 export default function ContactPage() {
-  const { entry: page } = usePageContent("contact", "contact", CONTACT_PAGE);
-  const { email, phone, cities, next } = page;
+  const { entry, status } = usePageContent("contact", "contact", CONTACT_PAGE);
+
+  if (status === "loading") return <PageLoading />;
+
+  // The content comes from the CMS; if it never arrives, the page still works
+  // as a contact page with the details every other page already shows.
+  const page = entry ?? { title: "Contact Us" };
+  const {
+    email = "sales@reinventdigital.com",
+    phone = "",
+    cities = [],
+    next = { steps: [] },
+  } = page;
   const mailto = `mailto:${email}`;
 
   return (
