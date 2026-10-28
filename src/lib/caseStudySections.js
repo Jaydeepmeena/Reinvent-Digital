@@ -104,6 +104,8 @@ export function parseCaseStudy(html) {
     if (/results?\s+by\s+channel/.test(key)) return { type: "channels", title, channels: readChannels(el) };
     if (/the\s+challenge/.test(key)) return { type: "challenge", title, items: readBullets(el) };
     if (/what\s+we\s+did/.test(key)) return { type: "whatWeDid", title, ...readSteps(el) };
+    if (/about\s+the\s+client/.test(key)) return { type: "callout", variant: "about", title, html: el.innerHTML };
+    if (/our\s+approach/.test(key)) return { type: "callout", variant: "approach", title, html: el.innerHTML };
     return { type: "prose", html: (title ? `<h2>${title}</h2>` : "") + el.innerHTML };
   });
 }

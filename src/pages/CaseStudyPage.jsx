@@ -8,6 +8,7 @@ import CountUp from "../components/motion/CountUp";
 import ChannelResults from "../components/fx/ChannelResults";
 import Challenges from "../components/fx/Challenges";
 import CaseSteps from "../components/fx/CaseSteps";
+import CaseCallout from "../components/fx/CaseCallout";
 import { fetchCaseStudies, fetchCaseStudy, formatDate } from "../lib/caseStudies";
 import { parseCaseStudy } from "../lib/caseStudySections";
 
@@ -145,6 +146,8 @@ export default function CaseStudyPage() {
       else if (section.type === "whatWeDid")
         out.push(<CaseSteps key={i} title={section.title} steps={section.steps} note={section.note} />);
       else if (section.type === "channels") out.push(<ChannelResults key={i} channels={section.channels} />);
+      else if (section.type === "callout")
+        out.push(<CaseCallout key={i} variant={section.variant} title={section.title} html={section.html} />);
     });
     flushProse("tail");
     return out;
