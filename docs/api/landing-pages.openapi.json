@@ -1,0 +1,299 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Reinvent Digital — Landing Pages API",
+    "version": "1.0.0",
+    "description": "The bulk landing-page collection the site renders at the root URL (https://reinventdigital.com/<slug>). The frontend is already built; this is the endpoint it reads. Until it answers, the site falls back to bundled sample pages. Prose spec: docs/landing-pages-api.md. Ready payloads: docs/api/examples/landing-page-*.json. Optional WordPress implementation: docs/api/wordpress/."
+  },
+  "servers": [
+    {
+      "url": "https://reinventmedia.in/staging-reinventdigital/wp-json/wp/v2",
+      "description": "Read base — the SAME base already used for /posts/ and /case-studies/ (value of VITE_BLOG_API_URL). The read path must resolve as {base}/landing-pages/ with rest_base exactly 'landing-pages'."
+    },
+    {
+      "url": "https://reinventmedia.in/staging-reinventdigital/wp-json/reinvent/v1",
+      "description": "Write base (authenticated). Design freely; the frontend never calls it."
+    }
+  ],
+  "paths": {
+    "/landing-pages/": {
+      "get": {
+        "summary": "Read landing pages",
+        "description": "Called once per page view with ?slug=. Keep the trailing slash before '?'. An unknown slug must return 200 with an empty list (or 404), never 500. Return only published pages. CORS headers are required on every response, including errors: Access-Control-Allow-Origin (https://reinventdigital.com and http://localhost:5173 while building), Access-Control-Allow-Methods: GET, OPTIONS, Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages.",
+        "parameters": [
+          { "name": "slug", "in": "query", "required": false, "schema": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "description": "The single page to read. This is the only request the site makes." },
+          { "name": "page", "in": "query", "required": false, "schema": { "type": "integer", "minimum": 1, "default": 1 }, "description": "List paging, for sitemap generation only." },
+          { "name": "per_page", "in": "query", "required": false, "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 10 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching pages. A bare array, a single object, or a wrapped object are all accepted.",
+            "headers": {
+              "X-WP-Total": { "schema": { "type": "integer" }, "description": "Total pages in the collection (for sitemap paging)." },
+              "X-WP-TotalPages": { "schema": { "type": "integer" } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LandingPagesResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/landing-pages/bulk": {
+      "post": {
+        "summary": "Create or replace up to 100 pages (authenticated)",
+        "description": "Upsert on slug — re-pushing the same slug updates it. Authenticate with an application password / bearer token. Validate slug (a-z 0-9 -) and reject the reserved slugs (what-we-do, industries, about, resources, locations, contact). Report per row; never a single 500 for the whole batch.",
+        "security": [ { "appPassword": [] } ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  { "type": "array", "items": { "$ref": "#/components/schemas/LandingPage" } },
+                  { "type": "object", "properties": { "landing_pages": { "type": "array", "items": { "$ref": "#/components/schemas/LandingPage" } } } }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Per-row result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "slug": { "type": "string" },
+                          "status": { "type": "string", "enum": ["created", "updated", "error"] },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/landing-pages/{slug}": {
+      "delete": {
+        "summary": "Remove one page (authenticated)",
+        "security": [ { "appPassword": [] } ],
+        "parameters": [
+          { "name": "slug", "in": "path", "required": true, "schema": { "type": "string", "pattern": "^[a-z0-9-]+$" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted." },
+          "404": { "description": "No such slug." }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "appPassword": { "type": "http", "scheme": "basic", "description": "WordPress application password (user:password), or any bearer/basic scheme on a non-WordPress backend." }
+    },
+    "schemas": {
+      "Cta": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "href": { "type": "string", "description": "Site-relative path, e.g. /contact." }
+        }
+      },
+      "Stat": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "string", "description": "2–5 chars, e.g. '2.4x', '-38%', '600+'." },
+          "label": { "type": "string" }
+        }
+      },
+      "TitledPoint": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "body": { "type": "string" }
+        },
+        "description": "Aliases accepted: heading for title; text/description for body."
+      },
+      "Seo": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "description": "Defaults to '<title> | Reinvent Digital'." },
+          "description": { "type": "string", "description": "Under 160 chars." },
+          "canonical": { "type": "string" },
+          "noindex": { "type": "boolean", "default": false }
+        }
+      },
+      "Hero": {
+        "type": "object",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "headline": { "type": "string", "description": "First part of the h1. Defaults to title." },
+          "accent": { "type": "string", "description": "Second part of the h1, lime italic. Do not repeat inside headline." },
+          "description": { "type": "string" },
+          "image": { "type": "string", "description": "Absolute URL, landscape 1600x900+. Without it the hero renders light." },
+          "cta": { "$ref": "#/components/schemas/Cta" },
+          "stats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" }, "maxItems": 3 },
+          "highlights": { "type": "array", "items": { "type": "string" }, "description": "Short chips ringing the hero (and the service marquee). Four works best." },
+          "metric": { "$ref": "#/components/schemas/Stat" }
+        }
+      },
+      "ReasonsBlock": {
+        "type": "object",
+        "description": "Service layout. Bento grid of reasons.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "points": { "type": "array", "items": { "type": "string" }, "description": "Each becomes a tile. Six works best." }
+        }
+      },
+      "ServicesBlock": {
+        "type": "object",
+        "description": "Service layout. Stacking process cards.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "items": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" }, "description": "Four works best." },
+          "cta": { "$ref": "#/components/schemas/Cta" }
+        }
+      },
+      "SplitSection": {
+        "type": "object",
+        "description": "Service layout. Alternating image/copy section. When splitSections is present it replaces intro/reasons/services/overview.",
+        "required": ["heading"],
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "image": { "type": "string", "description": "Absolute image URL." },
+          "points": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                { "$ref": "#/components/schemas/TitledPoint" },
+                { "type": "string" }
+              ]
+            }
+          }
+        }
+      },
+      "Plan": {
+        "type": "object",
+        "description": "Service layout. The 'how we plan' step timeline.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": { "type": "string", "description": "Kicker, e.g. 'Day 1'." },
+                "title": { "type": "string" },
+                "body": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "ProblemsBlock": {
+        "type": "object",
+        "description": "Industry layout (design='industry'). Numbered problems, or the help timeline.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "points": { "type": "array", "items": { "$ref": "#/components/schemas/TitledPoint" } }
+        }
+      },
+      "Proof": {
+        "type": "object",
+        "description": "Industry layout. Proof stat cards.",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "stats": { "type": "array", "items": { "$ref": "#/components/schemas/Stat" } }
+        }
+      },
+      "Blogs": {
+        "type": "object",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" },
+          "slugs": { "type": "array", "items": { "type": "string" }, "description": "Slugs of posts from /posts/ to feature. Missing ones are skipped." }
+        }
+      },
+      "Faq": {
+        "type": "object",
+        "properties": {
+          "q": { "type": "string" },
+          "a": { "type": "string" }
+        },
+        "description": "Aliases: question/answer. Also emitted as FAQPage JSON-LD."
+      },
+      "Closing": {
+        "type": "object",
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "heading": { "type": "string" },
+          "body": { "type": "string" }
+        }
+      },
+      "LandingPage": {
+        "type": "object",
+        "required": ["slug", "title"],
+        "description": "Only slug and title are required. Every block is optional and hidden when empty, so a thin page comes out short rather than broken. 'design' picks the template: 'industry' => industry layout (problems/help/proof); anything else => service layout (splitSections/plan, or intro/reasons/services/overview).",
+        "properties": {
+          "slug": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "URL segment. The page's address." },
+          "title": { "type": "string" },
+          "design": { "type": "string", "description": "'industry' or omitted (service layout)." },
+          "seo": { "$ref": "#/components/schemas/Seo" },
+          "hero": { "$ref": "#/components/schemas/Hero" },
+          "intro": { "type": "string", "description": "Sanitised HTML lead paragraph (service layout, when no splitSections)." },
+          "overview": { "type": "string", "description": "Sanitised HTML section before the FAQ." },
+          "reasons": { "$ref": "#/components/schemas/ReasonsBlock" },
+          "services": { "$ref": "#/components/schemas/ServicesBlock" },
+          "splitSections": { "type": "array", "items": { "$ref": "#/components/schemas/SplitSection" } },
+          "plan": { "$ref": "#/components/schemas/Plan" },
+          "problems": { "$ref": "#/components/schemas/ProblemsBlock" },
+          "help": { "$ref": "#/components/schemas/ProblemsBlock" },
+          "proof": { "$ref": "#/components/schemas/Proof" },
+          "blogs": { "$ref": "#/components/schemas/Blogs" },
+          "faqs": { "type": "array", "items": { "$ref": "#/components/schemas/Faq" } },
+          "closing": { "$ref": "#/components/schemas/Closing" }
+        }
+      },
+      "LandingPagesResponse": {
+        "oneOf": [
+          { "type": "array", "items": { "$ref": "#/components/schemas/LandingPage" } },
+          { "$ref": "#/components/schemas/LandingPage" },
+          {
+            "type": "object",
+            "description": "Wrapper. List key may be landing_pages, pages, items or data.",
+            "properties": {
+              "landing_pages": { "type": "array", "items": { "$ref": "#/components/schemas/LandingPage" } },
+              "total": { "type": "integer" },
+              "total_pages": { "type": "integer" }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

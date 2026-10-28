@@ -1,7 +1,30 @@
-# Site Pages API — machine-readable spec
+# CMS API — machine-readable spec
 
-For the developer building the CMS endpoints. The prose version, with the
-reasoning and the rollout order, is in [../pages-api.md](../pages-api.md).
+For the developer building the CMS endpoints.
+
+## Landing pages (city / service / industry pages)
+
+The bulk landing-page collection served at the site root (`/<slug>`). This is the
+one most teams start with.
+
+| File | What it is |
+|---|---|
+| `landing-pages.openapi.json` | OpenAPI 3.1 for the landing-pages endpoint: read (`?slug=` / list), the authenticated bulk-upsert and delete, and every field incl. the layout blocks (`design`, `splitSections`, `plan`, `problems`, `help`, `proof`). Import into Swagger UI, Postman, Insomnia or Stoplight. |
+| `examples/landing-page-*.json` | 17 ready-to-serve pages — every live page, already in the response shape `{ "landing_pages": [ … ] }`. Serve one at `GET /landing-pages/?slug=<slug>` and that page renders from the CMS. |
+| `../landing-pages-api.md` | The prose spec: endpoint rules, CORS, bulk-push design, field reference. |
+| `wordpress/` | An optional drop-in WordPress plugin that implements all of the above, plus a README and a push script. The current CMS is WordPress, so this is the fastest path. |
+
+Fastest connect: install `wordpress/reinvent-landing-pages.php`, push the 17
+example payloads (see `wordpress/README.md`), point `VITE_BLOG_API_URL` at the
+same base `/posts/` and `/case-studies/` already use. Or implement the OpenAPI
+spec in any stack — the frontend only needs the JSON at the URL with CORS.
+
+---
+
+## Site pages (services, industries, locations, about, resources, contact)
+
+The prose version, with the reasoning and the rollout order, is in
+[../pages-api.md](../pages-api.md).
 
 | File | What it is |
 |---|---|
