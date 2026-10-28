@@ -18,12 +18,14 @@
 // disagree with what the site does in the browser. With no API to ask it leaves
 // vercel.json alone, so it is safe to run in any checkout.
 import { readFileSync, writeFileSync } from "node:fs";
-import { buildPageRoutes, identityOf, COLLECTIONS } from "../src/lib/pagePaths.js";
-import { buildRedirects } from "../src/lib/renameRules.js";
-import { mergeContent } from "../src/lib/contentRules.js";
 
 const CONFIG = new URL("../vercel.json", import.meta.url);
 const BASE = (process.env.VITE_BLOG_API_URL ?? process.argv[2] ?? "").replace(/\/+$/, "");
+// The loader reads the CMS base from the environment, so set it before loading.
+if (BASE) process.env.CMS_BASE = BASE;
+
+const { buildPageRoutes } = await import("../src/lib/pagePaths.js");
+const { loadPageCollections } = await import("../api/_lib/siteContent.js");
 
 if (!BASE) {
   // The folders these pages used to sit in redirect whatever the CMS says, so
@@ -33,71 +35,9 @@ if (!BASE) {
   console.log("  npm run redirects -- https://reinventmedia.in/staging-reinventdigital");
 }
 
-// The bundled lists carry Lucide icon components, which cannot be imported
-// outside the bundler, so the shipped slugs are read out of the source files.
-// Only the slugs matter here: they are what says where a page sits today.
-async function shippedSlugs(collection) {
-  const file = new URL(`../src/data/${collection === "services" ? "services" : collection}.js`, import.meta.url);
-  const source = readFileSync(file, "utf8");
-  return [...source.matchAll(/^\s+"?slug"?:\s*"([^"]+)"/gm)].map((match) => ({ slug: match[1] }));
-}
-
-async function get(path) {
-  if (!BASE) return null;
-  try {
-    const res = await fetch(`${BASE}/${path}/?per_page=100`, { headers: { Accept: "application/json" } });
-    if (!res.ok) return null;
-    return await res.json();
-  } catch {
-    return null;
-  }
-}
-
-const listOf = (body, resource) => {
-  if (Array.isArray(body)) return body;
-  const list = body?.[resource] ?? body?.pages ?? body?.items ?? body?.data;
-  return Array.isArray(list) ? list : [];
-};
-
-// The same merge the site does, so a path here is the path a visitor gets.
-const collections = {};
-let reachable = false;
-
-for (const collection of COLLECTIONS) {
-  const bundled = await shippedSlugs(collection);
-  const body = await get(collection);
-  if (body) reachable = true;
-
-  const remote = new Map();
-  for (const entry of listOf(body, collection)) {
-    const id = identityOf(entry?.slug);
-    if (id) remote.set(id, entry);
-  }
-
-  const renames = buildRedirects(remote.values());
-  const entries = [];
-  const seen = new Set();
-  const add = (base, patch) => {
-    const merged = patch ? mergeContent(base ?? {}, patch) : base;
-    const id = identityOf(merged?.slug);
-    if (!id || seen.has(id)) return;
-    seen.add(id);
-    entries.push(merged);
-  };
-
-  for (const base of bundled) {
-    const id = identityOf(base.slug);
-    const renamedTo = renames.get(id);
-    add(base, remote.get(renamedTo ?? id));
-  }
-  for (const entry of remote.values()) {
-    const id = identityOf(entry?.slug);
-    if (!id || seen.has(id) || renames.has(id)) continue;
-    add(undefined, entry);
-  }
-
-  collections[collection] = { entries, bundled };
-}
+// The same merge the site does, so a path here is the path a visitor gets. The
+// sitemap reads pages through the same loader.
+const { collections, reachable } = await loadPageCollections();
 
 if (!reachable) {
   console.log("No collection answered. Writing the redirects the bundle alone implies.");
@@ -118,8 +58,10 @@ const before = JSON.stringify(config.redirects ?? []);
 if (rules.length > 0) config.redirects = rules;
 else delete config.redirects;
 
-// The SPA rewrite has to stay, and stay last.
-config.rewrites = [{ source: "/(.*)", destination: "/index.html" }];
+// Other rewrites (the sitemap, robots.txt, llms.txt) are kept; the SPA
+// rewrite has to stay, and stay last.
+const SPA = { source: "/(.*)", destination: "/index.html" };
+config.rewrites = [...(config.rewrites ?? []).filter((rule) => rule.source !== SPA.source), SPA];
 
 if (JSON.stringify(config.redirects ?? []) === before) {
   console.log(`No change. ${rules.length} redirect${rules.length === 1 ? "" : "s"} already in vercel.json.`);
