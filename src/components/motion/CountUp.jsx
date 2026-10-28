@@ -25,9 +25,14 @@ function parse(value, pad) {
 }
 
 // Writes straight to the DOM while counting: no React re-render per frame.
-export default function CountUp({ value, duration = 1.6, pad, className }) {
+//
+// By default it counts up the first time it scrolls into view. Pass `trigger`
+// to drive it from a parent instead — e.g. so a group of figures animates
+// together when their section arrives, and replays when it is re-mounted.
+export default function CountUp({ value, duration = 1.6, pad, className, trigger }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const auto = useInView(ref, { once: true, margin: "-40px" });
+  const inView = trigger === undefined ? auto : trigger;
   const reduce = useReducedMotion();
   const parsed = useMemo(() => parse(value, pad), [value, pad]);
   const animated = parsed && !reduce;

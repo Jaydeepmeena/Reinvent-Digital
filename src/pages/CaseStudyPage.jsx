@@ -1,11 +1,48 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Clock3 } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import CountUp from "../components/motion/CountUp";
+import ChannelResults from "../components/fx/ChannelResults";
 import { fetchCaseStudies, fetchCaseStudy, formatDate } from "../lib/caseStudies";
+
+const cap = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) : text);
+
+// Pulls the "Results by channel" block out of the article body so it can be
+// rendered as an interactive panel, and returns the body with that block
+// removed. The block is a <h2> titled "Results by channel", followed by an
+// <h3> per channel and a <ul> of "<strong>value</strong> — label" metrics,
+// up to the next <h2>. Any content without it is returned unchanged.
+function extractChannels(html) {
+  if (!html || typeof window === "undefined") return { channels: [], body: html ?? "" };
+  const doc = new DOMParser().parseFromString(`<div id="cs-root">${html}</div>`, "text/html");
+  const root = doc.getElementById("cs-root");
+  const heading = [...root.querySelectorAll("h2")].find((h) => /results?\s+by\s+channel/i.test(h.textContent));
+  if (!heading) return { channels: [], body: html };
+
+  const channels = [];
+  const remove = [heading];
+  let current = null;
+  let node = heading.nextElementSibling;
+  while (node && node.tagName !== "H2") {
+    remove.push(node);
+    if (node.tagName === "H3") {
+      current = { name: node.textContent.trim(), metrics: [] };
+      channels.push(current);
+    } else if (node.tagName === "UL" && current) {
+      node.querySelectorAll("li").forEach((li) => {
+        const value = (li.querySelector("strong")?.textContent ?? li.textContent.split(/[—–-]/)[0]).trim();
+        const label = cap(li.textContent.replace(value, "").replace(/^\s*[—–-]\s*/, "").trim());
+        if (value && label) current.metrics.push({ value, label });
+      });
+    }
+    node = node.nextElementSibling;
+  }
+  remove.forEach((el) => el.remove());
+  return { channels: channels.filter((c) => c.metrics.length), body: root.innerHTML };
+}
 
 // A thin bar that fills as the reader moves through the article. Written to the
 // DOM on scroll, so there is no re-render per frame.
@@ -78,6 +115,11 @@ export default function CaseStudyPage() {
   const [status, setStatus] = useState("loading");
   const articleRef = useRef(null);
   const contentRef = useRef(null);
+
+  const { channels, body } = useMemo(
+    () => (study?.content ? extractChannels(study.content) : { channels: [], body: "" }),
+    [study]
+  );
 
   // Reveal each top-level block of the article as it scrolls into view. The body
   // is injected HTML, so this walks its children rather than wrapping each one.
@@ -229,7 +271,7 @@ export default function CaseStudyPage() {
 
               {status === "ready" && study && (
                 // Content comes from the CMS and is sanitised in src/lib/cms.js.
-                <div ref={contentRef} className="prose-post" dangerouslySetInnerHTML={{ __html: study.content }} />
+                <div ref={contentRef} className="prose-post" dangerouslySetInnerHTML={{ __html: body }} />
               )}
 
               {status === "missing" && (
@@ -247,8 +289,14 @@ export default function CaseStudyPage() {
                   <p className="mt-3 text-[15px] text-ink-soft">Please try again in a moment.</p>
                 </div>
               )}
+            </div>
+          </div>
 
-              <div className="mt-14 border-t border-ink/10 pt-8">
+          {status === "ready" && channels.length > 0 && <ChannelResults channels={channels} />}
+
+          <div className="bg-white pb-16 sm:pb-20">
+            <div className="mx-auto max-w-3xl px-5 sm:px-8">
+              <div className="border-t border-ink/10 pt-8">
                 <Link
                   to="/resources/case-study"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-green-deep transition-colors hover:text-ink"
