@@ -1,0 +1,23 @@
+{
+  "resources": [
+    {
+      "slug": "resources/blogs",
+      "eyebrow": "Insights",
+      "title": "Blog",
+      "accent": "practical notes on patient acquisition",
+      "description": "Short, practical writing on the systems behind patient acquisition: call centre operations, healthcare SEO, CRM setup and what we're learning from the accounts we run.",
+      "items": [
+        {
+          "title": "Why 'Cost Per Lead' Is the Wrong Metric for Healthcare Marketing",
+          "tag": "Strategy",
+          "summary": "And what to measure instead if you actually want fuller appointment books."
+        },
+        {
+          "title": "A Front Desk's Guide to Call Scoring",
+          "tag": "Call Centre",
+          "summary": "The 100-point rubric we use to turn call recordings into coaching material."
+        }
+      ]
+    }
+  ]
+}

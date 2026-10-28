@@ -126,3 +126,62 @@ those CMS-editable too, clone this plugin with `rest_base => 'case-studies'` and
 blob of `{ client, results, category, content, image, excerpt, date }`. The
 frontend is already bundled-first for case studies, so a CMS entry only needs to
 **match a bundled slug** to override it.
+
+---
+
+# Content Write API — `reinvent-content-write-api.php`
+
+Makes the existing page endpoints writable. The `reinvent/v1` GET routes are
+read-only today, and the `wp/v2/service|industry|location` routes only take core
+fields (title/slug/content), so the page content (hero, stats, includes, FAQs…)
+could not be pushed. This plugin adds, next to each existing GET:
+
+```
+POST   /wp-json/reinvent/v1/{services|industries|locations|resources|about|contact}
+DELETE /wp-json/reinvent/v1/{collection}/{slug}
+```
+
+- **Auth:** a user who can edit posts, via an **Application Password** (Basic auth).
+- **Body:** one entry `{slug, …}`, a list, or the GET's own shape `{ "services": [ … ] }`.
+- **Upsert by slug.** Response: `{ "results": [ {slug, status: created|updated|error} ] }`.
+- **The GET routes are not modified.** Pushed entries are overlaid onto their
+  responses: same slug → merged over the original (sent fields win, the rest
+  kept); new slug → appended. The frontend picks it up with no change.
+
+## Install
+
+1. Copy `reinvent-content-write-api.php` to `wp-content/plugins/` and activate it.
+2. Check the route is live (no auth needed for this check — expect `rest_forbidden`/401, **not** `rest_no_route`):
+
+   ```bash
+   curl -s -X POST https://reinventmedia.in/staging-reinventdigital/wp-json/reinvent/v1/services
+   ```
+
+## Push
+
+```powershell
+$env:CMS_BASE="https://reinventmedia.in/staging-reinventdigital"
+$env:PAYLOAD_DIR="<folder with services.json, industries.json, …>"
+$env:WP_USER="admin"
+$env:WP_APP_PASSWORD="xxxx xxxx xxxx xxxx xxxx xxxx"   # Application Password
+node push-cms.mjs            # dry run
+node push-cms.mjs --push     # write
+```
+
+## Verify the site sees it
+
+After a push, both of these must show the pushed content (e.g. a changed
+`eyebrow`):
+
+```bash
+curl -s "https://reinventmedia.in/staging-reinventdigital/wp-json/reinvent/v1/services?slug=google-ads"
+curl -s "https://reinventmedia.in/staging-reinventdigital/services/?slug=google-ads"
+```
+
+The second URL is the one the frontend reads. If it does **not** reflect the
+push while the first does, that front URL reads the database directly instead
+of going through the REST route — point it at the REST route (or set the
+frontend's `VITE_BLOG_API_URL` to `…/wp-json/reinvent/v1`).
+
+To undo a push: `DELETE /wp-json/reinvent/v1/{collection}/{slug}` removes the
+pushed entry and the original content shows again.

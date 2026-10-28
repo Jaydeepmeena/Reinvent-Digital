@@ -1,0 +1,112 @@
+{
+  "industries": [
+    {
+      "slug": "dental-clinic",
+      "eyebrow": "Digital Marketing Agency for Dental Clinics",
+      "title": "Dental Clinic",
+      "heading": "Only Leads Won’t Fill the Chairs.",
+      "accent": "Actual Patient Walk-Ins Will!",
+      "description": "At Reinvent Digital, we run Google Ads, optimise Google Maps and run SEO, AEO and GEO strategies. We also automate WhatsApp follow-up and train call teams for dental clinics and chains across India. Every enquiry is tracked to the patient in the chair, not just to leads and impressions.",
+      "ctaLabel": "Discuss Your Dental Growth",
+      "heroStats": [
+        {
+          "value": "2.1x",
+          "label": "Increased Monthly Walk-Ins for a Dental Group"
+        },
+        {
+          "value": "271%",
+          "label": "More Site Conversions in Just 6 Months"
+        }
+      ],
+      "highlights": [
+        "Implant & cosmetic campaign targeting",
+        "Multi-location call routing"
+      ],
+      "metric": {
+        "value": "2.1x",
+        "label": "More Booked Appointments",
+        "sub": "across managed dental groups"
+      },
+      "problems": {
+        "eyebrow": "Where Dental Groups Lose Patients",
+        "headingA": "Demand Isn’t The Problem.",
+        "headingB": "Follow-Ups Are!",
+        "body": "Many dental clinics or multi-location dental chains get consistent patient enquiries, but only a few convert into the actual patients. The gap is what happens between the first call to the appointment booking stage.",
+        "points": [
+          {
+            "title": "A Competitor Shows First on Maps",
+            "body": "Patients searching “dentist near me” see the clinic down the road before yours, and call them instead."
+          },
+          {
+            "title": "Enquiries Go Cold Before Callback",
+            "body": "An implant or aligner enquiry waits hours for a call, and the patient books whoever answered first."
+          }
+        ]
+      },
+      "help": {
+        "eyebrow": "How We Help",
+        "headingA": "Every Leak,",
+        "headingB": "Fixed In One System!",
+        "body": "Each fix runs inside the Reinvent Digital Patient Acquisition System, so marketing, your front desk and your appointment book work as one.",
+        "points": [
+          {
+            "title": "Treatment-Level Campaigns",
+            "body": "Separate Google Ads and Meta campaigns for implants, aligners and root canals, with 2,400+ negative keywords blocking wasted clicks."
+          },
+          {
+            "title": "Google Maps for Every Clinic",
+            "body": "Each clinic’s Business Profile kept complete and active, with review requests sent after every visit."
+          }
+        ]
+      },
+      "proof": {
+        "eyebrow": "Proof, Not a Vague Promise",
+        "heading": "5500 to 11,500 Walk-Ins, Without Hiring a Single Agent!",
+        "body": "Same 15 agents. Same CRM. Same 115+ clinics. Eight months later, this dental group was seeing 6,000 more walk-ins every month. What changed sits between the enquiry and the appointment.",
+        "comparison": {
+          "label": "Before → After",
+          "growth": "2.1x",
+          "growthLabel": "growth",
+          "before": {
+            "value": "~48",
+            "label": "avg monthly walk-ins per clinic"
+          },
+          "after": {
+            "value": "~100",
+            "label": "after eight months"
+          }
+        },
+        "stats": [
+          {
+            "value": "20-30%",
+            "label": "MISSED LEADS RECOVERED IN SAME SESSION"
+          },
+          {
+            "value": "232%",
+            "label": "ORGANIC GROWTH IN A YEAR"
+          }
+        ]
+      },
+      "closing": {
+        "eyebrow": "DENTAL CLINICS & CHAINS",
+        "heading": "Ready to Build a Patient Acquisition System for Your Dental Clinics?",
+        "body": "Share your clinics and enquiry data. We’ll show how the Reinvent Digital Patient Acquisition System can fill your chairs, starting with the gaps costing you most."
+      },
+      "faqs": [
+        {
+          "q": "Is Google Ads Worth It for Dental Clinics?",
+          "a": "Yes, if every click is tracked to a booking. Patients searching “dental implants near me” or “root canal cost” are ready to act. Google Ads fails when campaigns attract job seekers or free-camp searches, or when calls go unanswered. Negative keywords, call tracking and fast callbacks decide whether the spend returns patients."
+        },
+        {
+          "q": "How Much Should a Dental Clinic Spend on Marketing Each Month?",
+          "a": "Work backwards from the patients you want, not a fixed figure. For example, 60 new patients a month at a 25% booking rate needs 240 leads. At ₹200 per lead, that’s about ₹48,000 in ad spend. Your real numbers depend on city, treatment mix and conversion rate."
+        }
+      ],
+      "testimonial": {
+        "quote": "Reinvent Digital didn't just send us leads, they rebuilt how our front desk handles them. Our chair utilisation has never been this consistent.",
+        "name": "Dr. Aakash Mehta",
+        "role": "Clinical Director, multi-location dental group"
+      }
+    }
+  ]
+}

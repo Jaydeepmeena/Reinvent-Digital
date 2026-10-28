@@ -1,0 +1,84 @@
+{
+  "services": [
+    {
+      "slug": "google-ads",
+      "category": "Digital Marketing",
+      "eyebrow": "Paid Search for Healthcare",
+      "title": "Google Ads",
+      "accent": "Judged on Who Walks In",
+      "description": "Keywords show intent. Negatives cut browsers. Call tracking shows who booked. Search and Performance Max budget moves towards walk-ins, instead of just leads.",
+      "ctaLabel": "Talk to a Google Ads Specialist",
+      "highlights": [
+        "Search & Performance Max Builds",
+        "Procedure & Specialty Keywords"
+      ],
+      "metric": {
+        "value": "4.6x",
+        "label": "Avg. Google Ads ROAS",
+        "sub": "Across Active Healthcare Accounts"
+      },
+      "heroStats": [
+        {
+          "value": "4.6x",
+          "label": "Avg. ROAS"
+        },
+        {
+          "value": "38%",
+          "label": "Lower Cost Per Booking"
+        }
+      ],
+      "includesTitle": "Everything That Turns a Click Into a Patient",
+      "includesIntro": "Campaigns, controls, tracking and reporting for hospitals, dental chains, IVF and eye-care groups, run as the demand stage of the Patient Acquisition System.",
+      "includes": [
+        {
+          "title": "Search & Performance Max Campaign Build",
+          "body": "Separate campaigns for each priority procedure, with location targeting and ad schedules set by catchment, so implant, IVF or cataract budgets never share one pool."
+        },
+        {
+          "title": "Procedure & Specialty Keyword Research",
+          "body": "Keywords mapped by treatment, location and urgency, including “near me” searches, with match types chosen to reach patients ready to book rather than people researching symptoms."
+        }
+      ],
+      "processEyebrow": "How We Approach It",
+      "processTitle": "From Audit to Scale, a Repeatable 6-step Cycle",
+      "processNote": "Reviewed every week. Meaningful data in 30 to 45 days. Budget decisions from day 60.",
+      "process": [
+        {
+          "title": "Audit the Account",
+          "body": "Search terms, tracking, landing pages and policy flags reviewed before anything changes."
+        },
+        {
+          "title": "Map Search Intent",
+          "body": "Procedures, locations and urgency mapped to how patients actually search for care."
+        }
+      ],
+      "proofStats": [
+        {
+          "value": "2400+",
+          "label": "Negative Keywords Across Healthcare Accounts"
+        },
+        {
+          "value": "185+",
+          "label": "Healthcare Google Ads Accounts Managed"
+        }
+      ],
+      "faqTitle": "Common Queries About Healthcare Google Ads, Answered",
+      "faqs": [
+        {
+          "q": "What does a healthcare Google Ads agency do?",
+          "a": "A healthcare Google Ads agency runs paid search for hospitals and clinics. Reinvent Digital builds campaigns by procedure and centre, tracks calls and conversions, and optimises for bookings."
+        },
+        {
+          "q": "How is healthcare Google Ads different from general PPC?",
+          "a": "Healthcare Pay-Per-Click (PPC) follows stricter rules: Google's healthcare and personalised advertising policies, NMC guidance and the ASCI code. Call tracking matters more, because many patients phone rather than fill forms."
+        }
+      ],
+      "closing": {
+        "eyebrow": "Start With An Audit",
+        "heading": "Ready to Put Google Ads to Work For Your Clinic?",
+        "body": "Share your account, and we'll show you where spend leaks, which searches lead to bookings, and what to fix first.",
+        "ctaLabel": "Book Your Account Audit"
+      }
+    }
+  ]
+}
