@@ -222,6 +222,12 @@ export default function CaseStudyPage() {
                     {study.title}
                   </h1>
 
+                  {study.excerpt && (
+                    <p className="mt-5 max-w-2xl text-pretty text-[16px] leading-relaxed text-cream/75 sm:text-[17px]">
+                      {study.excerpt}
+                    </p>
+                  )}
+
                   <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-cream/65">
                     {study.date && <time dateTime={study.date}>{formatDate(study.date)}</time>}
                     <span className="inline-flex items-center gap-1.5">

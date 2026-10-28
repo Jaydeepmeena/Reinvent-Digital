@@ -14,7 +14,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "AILBS — Dr. Vivek Vij's liver transplant practice",
     category: "Liver Transplant Care",
     excerpt:
-      "How we built a digital presence from the ground up for a liver transplant practice, bringing in national and international patient enquiries.",
+      "How Reinvent Digital built a digital presence from the ground up for Dr. Vivek Vij's liver transplant practice, bringing in national and international patient enquiries.",
     date: "2026-10-10T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
@@ -81,7 +81,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "PSRI Hospital, Delhi",
     category: "Multi-Speciality Hospital",
     excerpt:
-      "How we helped a Delhi multi-speciality hospital attract national and international patients for specialised treatment, through focused search campaigns and SEO.",
+      "How Reinvent Digital helped a Delhi multi-speciality hospital attract national and international patients for specialised treatment, through focused search campaigns and SEO.",
     date: "2026-09-22T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
@@ -146,7 +146,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "National Dental Care",
     category: "Multi-Location Dental Network",
     excerpt:
-      "How we helped National Dental Care grow enquiries, local visibility and brand recognition across its clinic network.",
+      "How Reinvent Digital helped National Dental Care grow enquiries, local visibility and brand recognition across its clinic network.",
     date: "2026-09-05T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
@@ -210,7 +210,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "Elite Dental Studio, Kerala",
     category: "Kerala Dental Chain",
     excerpt:
-      "How we helped a Kerala dental chain grow visibility, enquiries and brand recognition across three cities.",
+      "How Reinvent Digital helped a Kerala dental chain grow visibility, enquiries and brand recognition across three cities.",
     date: "2026-08-18T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
@@ -280,7 +280,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "Radiant Dental Care, Chennai",
     category: "Chennai Dental Clinic",
     excerpt:
-      "How we helped a Chennai dental clinic grow enquiries, visibility and patient visits across its locations.",
+      "How Reinvent Digital helped a Chennai dental clinic grow enquiries, visibility and patient visits across its locations.",
     date: "2026-07-30T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
@@ -345,7 +345,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "Oracare Prime, Mumbai",
     category: "Mumbai Dental Clinic",
     excerpt:
-      "How we helped a single dental clinic in Ghatkopar East, Mumbai, stand out in one of India's most competitive dental markets.",
+      "How Reinvent Digital helped a single dental clinic in Ghatkopar East, Mumbai, stand out in one of India's most competitive dental markets.",
     date: "2026-07-12T10:00:00+05:30",
     reading_time: 5,
     author: { name: "Reinvent Digital" },
@@ -409,7 +409,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "Partha Dental, Skin & Hair Clinics",
     category: "Multi-Speciality Clinic Chain",
     excerpt:
-      "How we helped a South Indian dental, skin and hair clinic chain grow enquiries across four states, while bringing down the cost of every lead.",
+      "How Reinvent Digital helped a South Indian dental, skin and hair clinic chain grow enquiries across four states, while bringing down the cost of every lead.",
     date: "2026-06-24T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
@@ -467,7 +467,7 @@ export const SAMPLE_CASE_STUDIES = [
     client: "UrgentDent, Northwest Indiana, USA",
     category: "Emergency Dental Care, USA",
     excerpt:
-      "How we grew UrgentDent's visibility and enquiries in Northwest Indiana, without paid ads or social media campaigns.",
+      "How Reinvent Digital grew UrgentDent's visibility and enquiries in Northwest Indiana, without paid ads or social media campaigns.",
     date: "2026-06-06T10:00:00+05:30",
     reading_time: 5,
     author: { name: "Reinvent Digital" },
