@@ -9,6 +9,9 @@ import SplitReveal from "./SplitReveal";
 // on a narrow screen the steps become a scrollable row of chips above it.
 export default function CaseSteps({ title = "What we did", steps = [], note }) {
   const [active, setActive] = useState(0);
+  const [reduce] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
   if (!steps.length) return null;
   const index = Math.min(active, steps.length - 1);
   const step = steps[index];
@@ -80,18 +83,37 @@ export default function CaseSteps({ title = "What we did", steps = [], note }) {
         </div>
 
         {note && noteItems.length > 0 ? (
-          <div className="mt-10 rounded-2xl border border-ink/10 bg-white p-5 shadow-xl shadow-ink/5 sm:p-6">
-            <ul className="flex flex-wrap gap-2">
-              {noteItems.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-ink/10 bg-paper px-3.5 py-1.5 text-[13px] font-semibold text-ink transition-colors hover:border-lime hover:bg-lime/10"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          reduce ? (
+            <div className="mt-10 rounded-2xl border border-ink/10 bg-white p-5 shadow-xl shadow-ink/5 sm:p-6">
+              <ul className="flex flex-wrap gap-2">
+                {noteItems.map((item) => (
+                  <li key={item} className="rounded-full border border-ink/10 bg-paper px-3.5 py-1.5 text-[13px] font-semibold text-ink">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            // A chip marquee that drifts left to right, pausing on hover.
+            <div className="group/mq mt-10 overflow-hidden rounded-2xl border border-ink/10 bg-white py-4 shadow-xl shadow-ink/5">
+              <ul className="sr-only">
+                {noteItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <ul aria-hidden="true" className="cs-marquee flex w-max items-center gap-2 pl-2 group-hover/mq:[animation-play-state:paused]">
+                {[...noteItems, ...noteItems].map((item, i) => (
+                  <li
+                    key={`${item}-${i}`}
+                    className="shrink-0 rounded-full border border-ink/10 bg-paper px-3.5 py-1.5 text-[13px] font-semibold text-ink"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <style>{`@keyframes cs-marquee-move{from{transform:translateX(-50%)}to{transform:translateX(0)}}.cs-marquee{animation:cs-marquee-move 18s linear infinite}`}</style>
+            </div>
+          )
         ) : (
           note && (
             <p className="mt-6 text-[13px] leading-relaxed text-ink-soft">
