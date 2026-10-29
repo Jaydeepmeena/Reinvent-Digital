@@ -6,7 +6,8 @@
 // send. Nothing on the site links to them.
 export const SAMPLE_LANDING_PAGES = [
   {
-    slug: "digital-marketing-agency-for-multi-specialty-hospitals",
+    slug: "digital-marketing-agency-for-hospital",
+    replaces: "digital-marketing-agency-for-multi-specialty-hospitals",
     title: "Digital Marketing Agency for Multi-Specialty Hospitals",
     seo: {
       title: "Digital Marketing Agency for Multi-Specialty Hospitals | Reinvent Digital",
