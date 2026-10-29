@@ -52,6 +52,15 @@ for (const { path, collection, id, why } of conflicts) {
 
 const rules = redirects.map(({ from, to }) => ({ source: from, destination: to, permanent: true }));
 
+// Landing pages sit at the root and are not in the page collections, so a
+// renamed one names its old slug in `replaces` and is redirected from here.
+const { SAMPLE_LANDING_PAGES } = await import("../src/data/sampleLandingPages.js");
+for (const page of SAMPLE_LANDING_PAGES) {
+  if (page.replaces && page.replaces !== page.slug) {
+    rules.unshift({ source: `/${page.replaces}`, destination: `/${page.slug}`, permanent: true });
+  }
+}
+
 const config = JSON.parse(readFileSync(CONFIG, "utf8"));
 const before = JSON.stringify(config.redirects ?? []);
 
