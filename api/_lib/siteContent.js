@@ -249,14 +249,15 @@ export async function loadSite() {
     ],
   };
 
-  // Case studies: the bundled set is authoritative, the CMS only enriches it
-  // (see src/lib/caseStudies.js), so a CMS-only slug has no page to list.
-  const caseOverlay = new Map((caseStudies ?? []).map((entry) => [entry?.slug, entry]));
+  // Case studies: the CMS's list when it has one, each laid over its bundled
+  // entry; the bundled set when it has none (see src/lib/caseStudies.js).
+  const shipped = new Map(shippedEntries("case-studies").map((base) => [base.slug, base]));
+  const published = (caseStudies ?? []).filter((entry) => typeof entry?.slug === "string" && entry.slug);
   const caseSection = {
     title: "Case studies",
-    items: shippedEntries("case-studies").map((base) => {
-      const entry = caseOverlay.has(base.slug) ? mergeContent(base, caseOverlay.get(base.slug)) : base;
-      return item(`${CASE_STUDY_PATH}/${base.slug}`, entry, base.slug);
+    items: (published.length ? published : [...shipped.values()]).map((entry) => {
+      const merged = shipped.has(entry.slug) && published.length ? mergeContent(shipped.get(entry.slug), entry) : entry;
+      return item(`${CASE_STUDY_PATH}/${entry.slug}`, merged, entry.slug);
     }),
   };
 
