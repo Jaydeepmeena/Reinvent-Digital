@@ -7,6 +7,11 @@
   ],
   "redirects": [
     {
+      "source": "/programmatic-seo-agency",
+      "destination": "/programmatic-seo-services",
+      "permanent": true
+    },
+    {
       "source": "/social-media-marketing-agency",
       "destination": "/social-media-marketing",
       "permanent": true
