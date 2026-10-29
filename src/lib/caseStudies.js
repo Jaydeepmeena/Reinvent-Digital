@@ -8,16 +8,12 @@
 //   results  up to four headline numbers, shown as a strip on the card and
 //            the article, e.g. [{ label: "Monthly bookings", value: "2.2x" }]
 //
-// The CMS decides which case studies are published and in what order: what it
-// lists is what the hub shows, newest first, so one added in WordPress appears
-// and one trashed there disappears. A CMS entry whose slug matches one in
-// src/data/sampleCaseStudies.js is laid over it (the bundle still wins for
-// images and for any field the CMS leaves thin or empty); one with no match is
-// shown as the CMS sent it, with a stock image if it has none. When the feed is
-// off, failing or empty, the bundled set is shown instead. See docs/cms-api.md.
-import { createCollection, decode, isCmsConfigured, normaliseEntry } from "./cms";
-import { mergeContent } from "./contentRules";
-import { SAMPLE_CASE_STUDIES } from "../data/sampleCaseStudies";
+// The case studies come from the CMS only: what it lists is what the hub shows,
+// newest first, so one added in WordPress appears and one trashed there
+// disappears. Each takes its photo from src/data/caseStudyImages.js, else its
+// CMS featured image, else a stock image. See docs/cms-api.md.
+import { createCollection, decode, isCmsConfigured } from "./cms";
+import { CASE_STUDY_IMAGES } from "../data/caseStudyImages";
 import stockImage from "../assets/heroes/Case-Studies.jpg";
 
 export { formatDate } from "./cms";
@@ -50,19 +46,8 @@ const decorate = (model, raw) => {
 const caseStudies = createCollection({
   resource: "case-studies",
   perPage: 9,
-  samples: () => SAMPLE_CASE_STUDIES,
-  // Still used by the underlying fetcher when the endpoint 404s; the overlay
-  // below is what makes the bundle authoritative even when the feed answers.
-  fallback: true,
   decorate,
 });
-
-/** The bundled set, normalised into the same model the CMS entries become. */
-const normaliseBundled = (raw) => {
-  const model = normaliseEntry(raw);
-  return model ? decorate(model, raw) : null;
-};
-const bundled = () => SAMPLE_CASE_STUDIES.map(normaliseBundled).filter(Boolean);
 
 /** CMS entries by slug, in the order the feed sent them; null when the feed is off or errors. */
 async function cmsBySlug(signal) {
@@ -84,18 +69,18 @@ async function cmsBySlug(signal) {
 
 const time = (entry) => Date.parse(entry?.date ?? "") || 0;
 
-/** The published case studies: the CMS's list, each laid over its bundled entry. */
+/** The photo a case study shows: its own, else the CMS's, else the stock one. */
+function withImage(entry) {
+  const own = CASE_STUDY_IMAGES[entry.slug];
+  if (own) return { ...entry, image: { ...entry.image, ...own } };
+  if (entry.image?.src) return entry;
+  return { ...entry, image: { ...entry.image, src: stockImage, alt: entry.image?.alt || entry.title } };
+}
+
+/** The published case studies, newest first; none when the feed is off or failing. */
 async function overlaid(signal) {
   const cms = await cmsBySlug(signal);
-  if (!cms?.size) return bundled();
-
-  const base = new Map(bundled().map((entry) => [entry.slug, entry]));
-  return [...cms.values()]
-    .map((entry) => {
-      if (base.has(entry.slug)) return mergeContent(base.get(entry.slug), entry);
-      return entry.image?.src ? entry : { ...entry, image: { ...entry.image, src: stockImage, alt: entry.image?.alt || entry.title } };
-    })
-    .sort((a, b) => time(b) - time(a));
+  return [...(cms?.values() ?? [])].map(withImage).sort((a, b) => time(b) - time(a));
 }
 
 export async function fetchCaseStudies({ page = 1, perPage = 9, signal } = {}) {

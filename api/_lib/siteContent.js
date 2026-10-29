@@ -31,7 +31,6 @@ const DATA_FILES = {
   about: "about",
   resources: "resources",
   contact: "contact",
-  "case-studies": "sampleCaseStudies",
 };
 
 const unescape = (value) => {
@@ -249,16 +248,12 @@ export async function loadSite() {
     ],
   };
 
-  // Case studies: the CMS's list when it has one, each laid over its bundled
-  // entry; the bundled set when it has none (see src/lib/caseStudies.js).
-  const shipped = new Map(shippedEntries("case-studies").map((base) => [base.slug, base]));
-  const published = (caseStudies ?? []).filter((entry) => typeof entry?.slug === "string" && entry.slug);
+  // Case studies: the CMS's list (see src/lib/caseStudies.js).
   const caseSection = {
     title: "Case studies",
-    items: (published.length ? published : [...shipped.values()]).map((entry) => {
-      const merged = shipped.has(entry.slug) && published.length ? mergeContent(shipped.get(entry.slug), entry) : entry;
-      return item(`${CASE_STUDY_PATH}/${entry.slug}`, merged, entry.slug);
-    }),
+    items: (caseStudies ?? [])
+      .filter((entry) => typeof entry?.slug === "string" && entry.slug)
+      .map((entry) => item(`${CASE_STUDY_PATH}/${entry.slug}`, entry, entry.slug)),
   };
 
   const postSection = {
