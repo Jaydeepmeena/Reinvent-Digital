@@ -10,6 +10,7 @@ import SplitReveal from "../components/fx/SplitReveal";
 import FannedDocs from "../components/fx/FannedDocs";
 import { getResourceBySlug } from "../data/resources";
 import { fetchPosts, formatDate } from "../lib/blog";
+import { BLOG_PATH, CASE_STUDY_PATH } from "../data/routes";
 
 const page = getResourceBySlug("blogs");
 
@@ -56,7 +57,7 @@ function PostCard({ post, featured = false }) {
             featured ? "text-[clamp(1.4rem,1.1rem+1.2vw,2rem)]" : "text-lg"
           }`}
         >
-          <Link to={`/resources/blogs/${post.slug}`} className="after:absolute after:inset-0">
+          <Link to={`${BLOG_PATH}/${post.slug}`} className="after:absolute after:inset-0">
             {post.title}
           </Link>
         </h3>
@@ -140,7 +141,7 @@ export default function BlogsPage() {
         <SubPageHero
           variant="resources"
           image={RESOURCE_HERO_IMAGES.blogs}
-          trail={[{ label: "Resources", href: "/resources/case-study" }, { label: page.title }]}
+          trail={[{ label: "Resources", href: CASE_STUDY_PATH }, { label: page.title }]}
           eyebrow={page.eyebrow}
           title={page.title}
           accent={page.accent}

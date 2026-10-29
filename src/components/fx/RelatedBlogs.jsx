@@ -4,6 +4,7 @@ import { fetchPosts, formatDate } from "../../lib/blog";
 import { SAMPLE_POSTS } from "../../data/sampleBlogs";
 import Eyebrow from "./Eyebrow";
 import SplitReveal from "./SplitReveal";
+import { BLOG_PATH } from "../../data/routes";
 
 /**
  * The blog posts a landing page wants to feature, named by slug.
@@ -87,7 +88,7 @@ export default function RelatedBlogs({ blogs }) {
                   </time>
                 )}
                 <h3 className="mt-2 text-[17px] font-bold leading-snug text-ink">
-                  <Link to={`/resources/blogs/${post.slug}`} className="after:absolute after:inset-0">
+                  <Link to={`${BLOG_PATH}/${post.slug}`} className="after:absolute after:inset-0">
                     {post.title}
                   </Link>
                 </h3>

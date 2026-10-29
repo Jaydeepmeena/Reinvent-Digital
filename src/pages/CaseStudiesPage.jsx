@@ -12,6 +12,7 @@ import FlipLinkCard from "../components/fx/FlipLinkCard";
 import { getResourceBySlug, RESOURCE_PAGES } from "../data/resources";
 import { fetchCaseStudies, formatDate } from "../lib/caseStudies";
 import { usePageCollection } from "../lib/pageContent";
+import { CASE_STUDY_PATH } from "../data/routes";
 
 const page = getResourceBySlug("case-study");
 
@@ -80,7 +81,7 @@ function StudyCard({ study, featured = false }) {
             featured ? "text-[clamp(1.4rem,1.1rem+1.2vw,2rem)]" : "text-lg"
           }`}
         >
-          <Link to={`/resources/case-study/${study.slug}`} className="after:absolute after:inset-0">
+          <Link to={`${CASE_STUDY_PATH}/${study.slug}`} className="after:absolute after:inset-0">
             {study.title}
           </Link>
         </h3>
@@ -172,7 +173,7 @@ export default function CaseStudiesPage() {
         <SubPageHero
           variant="resources"
           image={RESOURCE_HERO_IMAGES["case-study"]}
-          trail={[{ label: "Resources", href: "/resources/case-study" }, { label: page.title }]}
+          trail={[{ label: "Resources", href: CASE_STUDY_PATH }, { label: page.title }]}
           eyebrow={page.eyebrow}
           title={page.title}
           accent={page.accent}

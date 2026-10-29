@@ -12,6 +12,7 @@ import SplitReveal from "../components/fx/SplitReveal";
 import HoverPreviewList from "../components/fx/HoverPreviewList";
 import FannedDocs from "../components/fx/FannedDocs";
 import FlipLinkCard from "../components/fx/FlipLinkCard";
+import { CASE_STUDY_PATH } from "../data/routes";
 
 export default function ResourcePage({ slug: given }) {
   const { slug: fromUrl } = useParams();
@@ -33,7 +34,7 @@ export default function ResourcePage({ slug: given }) {
         <SubPageHero
           variant="resources"
           image={RESOURCE_HERO_IMAGES[slug]}
-          trail={[{ label: "Resources", href: "/resources/case-study" }, { label: title }]}
+          trail={[{ label: "Resources", href: CASE_STUDY_PATH }, { label: title }]}
           eyebrow={eyebrow}
           title={title}
           accent={accent}

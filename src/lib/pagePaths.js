@@ -26,6 +26,7 @@
 // because scripts/sync-redirects.mjs imports this in plain Node.
 import {
   DEFAULT_FOLDERS,
+  PAGE_URLS,
   PREVIOUS_FOLDERS,
   RESERVED_PATHS,
   RETIRED_PAGES,
@@ -57,6 +58,15 @@ export function pathOf(collection, slug) {
 
   const folder = DEFAULT_FOLDERS[collection];
   return folder ? `/${folder}/${value}` : `/${value}`;
+}
+
+/**
+ * The path a page is served at: its slug's path, unless PAGE_URLS gives the
+ * page another one. Use this for links and routes; pathOf is the slug alone.
+ */
+export function urlOf(collection, slug) {
+  const custom = PAGE_URLS[collection]?.[identityOf(tidy(slug))];
+  return custom ? pathOf(collection, custom) : pathOf(collection, slug);
 }
 
 const isReserved = (path) =>
@@ -108,14 +118,15 @@ export function buildPageRoutes(collections) {
 
     for (const entry of entries) {
       const id = identityOf(entry?.slug);
-      const path = pathOf(collection, entry?.slug);
+      const path = urlOf(collection, entry?.slug);
       if (!id || !path) continue;
       if (!claim(path, collection, id)) continue;
 
       pages.push({ path, collection, id, slug: entry.slug });
 
-      // Wherever this page used to be, it still answers.
-      const was = new Set();
+      // Wherever this page used to be, it still answers — its slug's own URL
+      // included, when PAGE_URLS serves it somewhere else.
+      const was = new Set([pathOf(collection, entry.slug)]);
 
       // Every name this page has gone by: the one it has now, and any it says
       // it replaced.
@@ -152,7 +163,7 @@ export function buildPageRoutes(collections) {
       const current = pages.find((page) => page.collection === collection && page.id === to);
       const target = to.startsWith("/")
         ? to
-        : (current?.path ?? (taken.has(pathOf(collection, to)) ? pathOf(collection, to) : null));
+        : (current?.path ?? (taken.has(urlOf(collection, to)) ? urlOf(collection, to) : null));
       if (!target) continue;
       const froms = [pathOf(collection, from)];
       for (const folder of PREVIOUS_FOLDERS[collection] ?? []) froms.push(`/${folder}/${from}`);

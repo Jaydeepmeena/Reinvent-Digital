@@ -19,7 +19,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Circle } from "lucide-react";
 import { buildRedirects } from "./renameRules";
-import { identityOf, pathOf } from "./pagePaths";
+import { identityOf, urlOf } from "./pagePaths";
 import { mergeContent } from "./contentRules";
 import { PAGE_ICONS } from "../data/pageIcons";
 import { SHIPPED_PAGES } from "../data/routes.js";
@@ -122,7 +122,7 @@ export function resolveCollection(collection, bundled = [], remote = new Map()) 
     const placed = {
       ...merged,
       id,
-      path: pathOf(collection, merged.slug),
+      path: urlOf(collection, merged.slug),
       icon: isComponent(merged.icon) ? merged.icon : (PAGE_ICONS[collection]?.[id] ?? FALLBACK_ICON),
     };
     byId.set(id, placed);

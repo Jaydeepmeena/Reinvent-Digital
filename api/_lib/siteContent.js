@@ -15,6 +15,8 @@ import { readFileSync } from "node:fs";
 import { buildPageRoutes, identityOf, COLLECTIONS, pathOf } from "../../src/lib/pagePaths.js";
 import { buildRedirects } from "../../src/lib/renameRules.js";
 import { mergeContent } from "../../src/lib/contentRules.js";
+import { SAMPLE_LANDING_PAGES } from "../../src/data/sampleLandingPages.js";
+import { BLOG_PATH, CASE_STUDY_PATH } from "../../src/data/routes.js";
 
 export const CMS_BASE = (process.env.CMS_BASE ?? process.env.VITE_BLOG_API_URL ?? "").replace(/\/+$/, "");
 
@@ -238,8 +240,8 @@ export async function loadSite() {
     items: [
       { path: "/", title: "Home", description: "Healthcare digital marketing agency focused on patients who walk in, not just leads.", lastmod: null },
       item("/contact", contact, "contact"),
-      item("/resources/blogs", resources.get("blogs"), "blogs"),
-      item("/resources/case-study", resources.get("case-study"), "case-study"),
+      item(BLOG_PATH, resources.get("blogs"), "blogs"),
+      item(CASE_STUDY_PATH, resources.get("case-study"), "case-study"),
       { path: "/privacy-policy", title: "Privacy Policy", description: "", lastmod: null },
     ],
   };
@@ -251,7 +253,7 @@ export async function loadSite() {
     title: "Case studies",
     items: shippedEntries("case-studies").map((base) => {
       const entry = caseOverlay.has(base.slug) ? mergeContent(base, caseOverlay.get(base.slug)) : base;
-      return item(`/resources/case-study/${base.slug}`, entry, base.slug);
+      return item(`${CASE_STUDY_PATH}/${base.slug}`, entry, base.slug);
     }),
   };
 
@@ -259,15 +261,19 @@ export async function loadSite() {
     title: "Blog",
     items: (posts ?? [])
       .filter((post) => typeof post?.slug === "string" && post.slug && (post.status ?? "publish") === "publish")
-      .map((post) => item(`/resources/blogs/${post.slug}`, post, post.slug)),
+      .map((post) => item(`${BLOG_PATH}/${post.slug}`, post, post.slug)),
   };
 
   // Landing pages sit on a single root segment, and only where no other page
   // has that path already — the router gives the static route precedence.
+  // The site serves its bundled pages for any slug the CMS does not have yet
+  // (src/lib/landingPages.js), so those are live pages too.
   const taken = new Set([...pages.map((page) => page.path), ...main.items.map((entry) => entry.path)]);
+  const inCms = new Set((landing ?? []).map((entry) => entry?.slug));
+  const landingPages = [...(landing ?? []), ...SAMPLE_LANDING_PAGES.filter((entry) => !inCms.has(entry.slug))];
   const landingSection = {
     title: "Landing pages",
-    items: (landing ?? [])
+    items: landingPages
       .filter((entry) => typeof entry?.slug === "string" && /^[a-z0-9-]+$/.test(entry.slug))
       .filter((entry) => entry.seo?.noindex !== true && entry.noindex !== true)
       .map((entry) => item(pathOf("landing-pages", entry.slug), entry, entry.slug))

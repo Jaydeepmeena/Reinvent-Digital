@@ -1,8 +1,9 @@
 import { lazy } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import { useSitePages } from "./lib/sitePages";
+import { BLOG_PATH, CASE_STUDY_PATH, PREVIOUS_HUBS } from "./data/routes";
 
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const IndustryPage = lazy(() => import("./pages/IndustryPage"));
@@ -26,6 +27,14 @@ const PAGES = {
   resources: ResourcePage,
 };
 
+// An old blog or case-study URL, sent to the same post under the new hub.
+function HubRedirect({ to }) {
+  const { slug } = useParams();
+  return <Navigate to={slug ? `${to}/${slug}` : to} replace />;
+}
+
+const route = (path) => path.replace(/^\//, "");
+
 export default function App() {
   // One route per page, at the path that page's slug asks for. The pages the
   // site ships are known on the first frame, so the router is right immediately,
@@ -40,10 +49,14 @@ export default function App() {
         {/* The blog and the case studies are CMS-backed sections of their own,
             indexed at these URLs. They are declared before the pages below and
             their paths are reserved, so nothing the CMS does can take them. */}
-        <Route path="resources/blogs" element={<BlogsPage />} />
-        <Route path="resources/blogs/:slug" element={<BlogPostPage />} />
-        <Route path="resources/case-study" element={<CaseStudiesPage />} />
-        <Route path="resources/case-study/:slug" element={<CaseStudyPage />} />
+        <Route path={route(BLOG_PATH)} element={<BlogsPage />} />
+        <Route path={`${route(BLOG_PATH)}/:slug`} element={<BlogPostPage />} />
+        <Route path={route(CASE_STUDY_PATH)} element={<CaseStudiesPage />} />
+        <Route path={`${route(CASE_STUDY_PATH)}/:slug`} element={<CaseStudyPage />} />
+        {Object.entries(PREVIOUS_HUBS).flatMap(([from, to]) => [
+          <Route key={from} path={route(from)} element={<HubRedirect to={to} />} />,
+          <Route key={`${from}/:slug`} path={`${route(from)}/:slug`} element={<HubRedirect to={to} />} />,
+        ])}
 
         <Route path="contact" element={<ContactPage />} />
         <Route path="privacy-policy" element={<PrivacyPolicyPage />} />

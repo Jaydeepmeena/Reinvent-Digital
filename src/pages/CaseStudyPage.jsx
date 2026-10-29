@@ -11,6 +11,7 @@ import CaseSteps from "../components/fx/CaseSteps";
 import CaseCallout from "../components/fx/CaseCallout";
 import { fetchCaseStudies, fetchCaseStudy, formatDate } from "../lib/caseStudies";
 import { parseCaseStudy } from "../lib/caseStudySections";
+import { CASE_STUDY_PATH } from "../data/routes";
 
 // A run of prose, revealing each top-level block as it scrolls into view. The
 // body is injected HTML, so this walks its children rather than wrapping each.
@@ -92,7 +93,7 @@ function Related({ studies }) {
           {studies.map((study) => (
             <Link
               key={study.id}
-              to={`/resources/case-study/${study.slug}`}
+              to={`${CASE_STUDY_PATH}/${study.slug}`}
               className="group overflow-hidden rounded-2xl border border-ink/10 bg-white transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10"
             >
               {study.image.src && (
@@ -196,7 +197,7 @@ export default function CaseStudyPage() {
               <Breadcrumb
                 tone="dark"
                 trail={[
-                  { label: "Case Studies", href: "/resources/case-study" },
+                  { label: "Case Studies", href: CASE_STUDY_PATH },
                   { label: study?.title ?? "Case study" },
                 ]}
               />
@@ -298,7 +299,7 @@ export default function CaseStudyPage() {
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               <div className="border-t border-ink/10 pt-8">
                 <Link
-                  to="/resources/case-study"
+                  to={CASE_STUDY_PATH}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-green-deep transition-colors hover:text-ink"
                 >
                   <ArrowLeft className="h-4 w-4" />
