@@ -3,8 +3,15 @@
 // These are used while VITE_BLOG_API_URL is unset or the /case-studies/
 // endpoint is not yet live; once the real feed answers these are never read.
 // The matching CMS payloads live in docs/api/examples/case-study-*.json.
-import dentalImg from "../assets/cards/industry-dental.jpg";
-import hospitalImg from "../assets/cards/industry-hospital.jpg";
+// One photo per case study, so no two cards on the hub look alike.
+import ailbsImg from "../assets/heroes/Multi-Speciality-Hospital.jpg";
+import psriImg from "../assets/heroes/google-ads.jpg";
+import nationalDentalImg from "../assets/heroes/Local-SEO-&-Google-Maps.jpg";
+import eliteDentalImg from "../assets/heroes/Healthcare-SEO.jpg";
+import radiantDentalImg from "../assets/heroes/Healthcare-Booking-Attribution.jpg";
+import oracareImg from "../assets/heroes/dental-clinic.jpg";
+import parthaDentalImg from "../assets/heroes/Healthcare-Telephony-&-Call-Tracking-.jpg";
+import urgentDentImg from "../assets/heroes/Google-Business-Profile.jpg";
 
 export const SAMPLE_CASE_STUDIES = [
   {
@@ -18,7 +25,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-10-10T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
-    image: { src: hospitalImg, alt: "A hospital outpatient reception" },
+    image: { src: ailbsImg, alt: "Doctors and nurses with patients in a hospital ward" },
     results: [
       { value: "94%", label: "More site conversions in six months" },
       { value: "110%", label: "Month-on-month site traffic growth" },
@@ -85,7 +92,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-09-22T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
-    image: { src: hospitalImg, alt: "A hospital outpatient reception" },
+    image: { src: psriImg, alt: "A hand tapping a search ad on a tablet" },
     results: [
       { value: "300%", label: "More leads" },
       { value: "200%", label: "More website traffic" },
@@ -150,7 +157,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-09-05T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
-    image: { src: dentalImg, alt: "A dental clinic reception during morning hours" },
+    image: { src: nationalDentalImg, alt: "A clinic listing on Google Maps beside a clinic storefront" },
     results: [
       { value: "220%", label: "More leads" },
       { value: "326%", label: "Organic traffic growth" },
@@ -214,7 +221,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-08-18T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
-    image: { src: dentalImg, alt: "A dental clinic reception during morning hours" },
+    image: { src: eliteDentalImg, alt: "Healthcare search icons above a tablet and stethoscope" },
     results: [
       { value: "232%", label: "Organic traffic growth in one year" },
       { value: "520%", label: "More leads from awareness campaigns" },
@@ -284,7 +291,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-07-30T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
-    image: { src: dentalImg, alt: "A dental clinic reception during morning hours" },
+    image: { src: radiantDentalImg, alt: "A doctor scheduling appointments on a digital calendar" },
     results: [
       { value: "271%", label: "More site conversions in six months" },
       { value: "387%", label: "More traffic from new users" },
@@ -349,7 +356,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-07-12T10:00:00+05:30",
     reading_time: 5,
     author: { name: "Reinvent Digital" },
-    image: { src: dentalImg, alt: "A dental clinic reception during morning hours" },
+    image: { src: oracareImg, alt: "A model tooth beside dental instruments" },
     results: [
       { value: "100%", label: "More site conversions" },
       { value: "82%", label: "More traffic from new users" },
@@ -413,7 +420,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-06-24T10:00:00+05:30",
     reading_time: 6,
     author: { name: "Reinvent Digital" },
-    image: { src: dentalImg, alt: "A dental clinic reception during morning hours" },
+    image: { src: parthaDentalImg, alt: "A doctor on a headset answering patient calls and messages" },
     results: [
       { value: "333%", label: "More leads" },
       { value: "125+", label: "Clinics supported" },
@@ -471,7 +478,7 @@ export const SAMPLE_CASE_STUDIES = [
     date: "2026-06-06T10:00:00+05:30",
     reading_time: 5,
     author: { name: "Reinvent Digital" },
-    image: { src: dentalImg, alt: "A dental clinic reception during morning hours" },
+    image: { src: urgentDentImg, alt: "A clinic's Google Business Profile shown on a tablet" },
     results: [
       { value: "111", label: "Total site conversions" },
       { value: "195%", label: "More traffic from new users" },
