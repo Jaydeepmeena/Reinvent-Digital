@@ -24,6 +24,11 @@
   ],
   "redirects": [
     {
+      "source": "/seo-agency",
+      "destination": "/search-engine-optimization",
+      "permanent": true
+    },
+    {
       "source": "/digital-marketing-agency-for-multi-specialty-hospitals",
       "destination": "/digital-marketing-agency-for-hospital",
       "permanent": true

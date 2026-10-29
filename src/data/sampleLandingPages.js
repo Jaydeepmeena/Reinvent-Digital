@@ -1512,9 +1512,10 @@ export const SAMPLE_LANDING_PAGES = [
   },
 
   // A service landing page: SEO, in the industry-page layout.
-  // Lives at /seo-agency.
+  // Lives at /search-engine-optimization (was /seo-agency).
   {
-    slug: "seo-agency",
+    slug: "search-engine-optimization",
+    replaces: "seo-agency",
     design: "industry",
     title: "SEO Agency in India",
     seo: {
