@@ -1594,9 +1594,10 @@ export const SAMPLE_LANDING_PAGES = [
   },
 
   // A service landing page: PPC management, in the industry-page layout.
-  // Lives at /ppc-management-services.
+  // Lives at /ppc-management-service (was /ppc-management-services).
   {
-    slug: "ppc-management-services",
+    slug: "ppc-management-service",
+    replaces: "ppc-management-services",
     design: "industry",
     title: "PPC Management Services in India",
     seo: {

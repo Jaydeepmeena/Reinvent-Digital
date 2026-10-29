@@ -7,6 +7,11 @@
   ],
   "redirects": [
     {
+      "source": "/ppc-management-services",
+      "destination": "/ppc-management-service",
+      "permanent": true
+    },
+    {
       "source": "/programmatic-seo-agency",
       "destination": "/programmatic-seo-services",
       "permanent": true
