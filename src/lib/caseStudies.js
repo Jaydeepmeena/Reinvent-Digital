@@ -8,16 +8,17 @@
 //   results  up to four headline numbers, shown as a strip on the card and
 //            the article, e.g. [{ label: "Monthly bookings", value: "2.2x" }]
 //
-// Unlike the blog, the case studies are bundled-first: the entries in
-// src/data/sampleCaseStudies.js are the published set, and the CMS overlays
-// them by slug. A CMS entry whose slug matches a bundled one enriches it (the
-// bundle still wins for images and for any field the CMS leaves thin or empty);
-// a CMS entry with no matching bundled slug is ignored, so a half-seeded or
-// flaky feed can neither hide a case study nor inject a stray one. See
-// docs/cms-api.md.
+// The CMS decides which case studies are published and in what order: what it
+// lists is what the hub shows, newest first, so one added in WordPress appears
+// and one trashed there disappears. A CMS entry whose slug matches one in
+// src/data/sampleCaseStudies.js is laid over it (the bundle still wins for
+// images and for any field the CMS leaves thin or empty); one with no match is
+// shown as the CMS sent it, with a stock image if it has none. When the feed is
+// off, failing or empty, the bundled set is shown instead. See docs/cms-api.md.
 import { createCollection, decode, isCmsConfigured, normaliseEntry } from "./cms";
 import { mergeContent } from "./contentRules";
 import { SAMPLE_CASE_STUDIES } from "../data/sampleCaseStudies";
+import stockImage from "../assets/heroes/Case-Studies.jpg";
 
 export { formatDate } from "./cms";
 
@@ -63,9 +64,9 @@ const normaliseBundled = (raw) => {
 };
 const bundled = () => SAMPLE_CASE_STUDIES.map(normaliseBundled).filter(Boolean);
 
-/** Best-effort map of CMS entries by slug; empty when the feed is off or errors. */
+/** CMS entries by slug, in the order the feed sent them; null when the feed is off or errors. */
 async function cmsBySlug(signal) {
-  if (!isCmsConfigured) return new Map();
+  if (!isCmsConfigured) return null;
   const map = new Map();
   try {
     for (let page = 1; page <= 5; page++) {
@@ -75,16 +76,26 @@ async function cmsBySlug(signal) {
     }
   } catch (error) {
     if (error?.name === "AbortError") throw error;
-    // A failing or flaky feed just means no overlay; the bundle still renders.
-    return new Map();
+    // A failing or flaky feed means the bundle renders instead.
+    return null;
   }
   return map;
 }
 
-/** Bundled entries, each enriched by a CMS entry of the same slug when present. */
+const time = (entry) => Date.parse(entry?.date ?? "") || 0;
+
+/** The published case studies: the CMS's list, each laid over its bundled entry. */
 async function overlaid(signal) {
-  const overlay = await cmsBySlug(signal);
-  return bundled().map((entry) => (overlay.has(entry.slug) ? mergeContent(entry, overlay.get(entry.slug)) : entry));
+  const cms = await cmsBySlug(signal);
+  if (!cms?.size) return bundled();
+
+  const base = new Map(bundled().map((entry) => [entry.slug, entry]));
+  return [...cms.values()]
+    .map((entry) => {
+      if (base.has(entry.slug)) return mergeContent(base.get(entry.slug), entry);
+      return entry.image?.src ? entry : { ...entry, image: { ...entry.image, src: stockImage, alt: entry.image?.alt || entry.title } };
+    })
+    .sort((a, b) => time(b) - time(a));
 }
 
 export async function fetchCaseStudies({ page = 1, perPage = 9, signal } = {}) {
