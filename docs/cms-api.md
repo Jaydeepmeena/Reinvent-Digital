@@ -248,16 +248,14 @@ gracefully. Sort newest first, the frontend does not re-sort.
 
 ## 8. Before an endpoint is live
 
-With `VITE_BLOG_API_URL` unset, both collections run on bundled entries
-(`src/data/sampleBlogs.js`, `src/data/sampleCaseStudies.js`) so neither page is
-ever empty.
+With `VITE_BLOG_API_URL` unset, the blog runs on bundled entries
+(`src/data/sampleBlogs.js`) so the page is never empty.
 
-The case studies also fall back to those bundled entries when the endpoint is
-unreachable, because it has still to be built. A one-line note appears in the
-browser console when that happens. Once `/case-studies/` answers, the fallback
-never runs, and `fallback: true` in `src/lib/caseStudies.js` can be dropped.
+The case studies have no bundled entries: they come from `/case-studies/` only,
+and the hub shows none when that endpoint is unset or failing. Each one's photo
+is set by slug in `src/data/caseStudyImages.js`.
 
-The blog has no such fallback: its endpoint exists, so a failure there is a
+The blog has no fallback for a failing endpoint: its endpoint exists, so a failure there is a
 real failure and the page says so.
 
 ---
