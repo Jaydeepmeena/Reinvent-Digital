@@ -1275,9 +1275,10 @@ export const SAMPLE_LANDING_PAGES = [
   },
 
   // A service landing page: Social Media Marketing, in the industry-page layout.
-  // Lives at /social-media-marketing-agency.
+  // Lives at /social-media-marketing (was /social-media-marketing-agency).
   {
-    slug: "social-media-marketing-agency",
+    slug: "social-media-marketing",
+    replaces: "social-media-marketing-agency",
     design: "industry",
     title: "Social Media Marketing Agency in India",
     seo: {
