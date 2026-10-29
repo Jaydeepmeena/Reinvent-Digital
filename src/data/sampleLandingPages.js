@@ -67,7 +67,7 @@ export const SAMPLE_LANDING_PAGES = [
           body: "Demand is the easy half. We sit with your call centre on response time, scripting and follow-up, and wire the outcome back into the CRM, so an admission in March can be traced to the campaign that started it in January.",
         },
       ],
-      cta: { label: "See how the system works", href: "/what-we-do/google-ads" },
+      cta: { label: "See how the system works", href: "/healthcare-google-ads" },
     },
     faqs: [
       {
@@ -154,7 +154,7 @@ export const SAMPLE_LANDING_PAGES = [
           body: "We connect the ad spend to the booking, so the report shows what each filled chair cost, not a dashboard of impressions nobody acts on.",
         },
       ],
-      cta: { label: "See how the system works", href: "/google-ads" },
+      cta: { label: "See how the system works", href: "/healthcare-google-ads" },
     },
     // The blog posts to feature on this page, by slug, in the order they should
     // appear. These come from the blog, so the slugs must match posts that
@@ -1675,9 +1675,11 @@ export const SAMPLE_LANDING_PAGES = [
 
   // An industry landing page: digital marketing for dietary and supplement
   // brands, in the industry-page layout. Lives at
-  // /digital-marketing-for-dietary-products.
+  // /digital-marketing-agency-for-dietary-products-in-india (was
+  // /digital-marketing-for-dietary-products).
   {
-    slug: "digital-marketing-for-dietary-products",
+    slug: "digital-marketing-agency-for-dietary-products-in-india",
+    replaces: "digital-marketing-for-dietary-products",
     design: "industry",
     title: "Digital Marketing for Dietary Products in India",
     seo: {

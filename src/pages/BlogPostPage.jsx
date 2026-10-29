@@ -5,6 +5,7 @@ import Breadcrumb from "../components/Breadcrumb";
 import CTASection from "../components/CTASection";
 import InnerPage from "../components/fx/InnerPage";
 import { fetchPost, fetchPosts, formatDate } from "../lib/blog";
+import { BLOG_PATH } from "../data/routes";
 
 function Related({ posts }) {
   if (posts.length === 0) return null;
@@ -16,7 +17,7 @@ function Related({ posts }) {
           {posts.map((post) => (
             <Link
               key={post.id}
-              to={`/resources/blogs/${post.slug}`}
+              to={`${BLOG_PATH}/${post.slug}`}
               className="group overflow-hidden rounded-2xl border border-ink/10 bg-white transition-[border-color,box-shadow] hover:border-ink/25 hover:shadow-xl hover:shadow-ink/10"
             >
               {post.image.src && (
@@ -78,7 +79,7 @@ export default function BlogPostPage() {
             <div className="relative mx-auto max-w-3xl px-5 sm:px-8">
               <Breadcrumb
                 tone="dark"
-                trail={[{ label: "Blog", href: "/resources/blogs" }, { label: post?.title ?? "Article" }]}
+                trail={[{ label: "Blog", href: BLOG_PATH }, { label: post?.title ?? "Article" }]}
               />
 
               {status === "loading" && (
@@ -154,7 +155,7 @@ export default function BlogPostPage() {
 
               <div className="mt-14 border-t border-ink/10 pt-8">
                 <Link
-                  to="/resources/blogs"
+                  to={BLOG_PATH}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-green-deep transition-colors hover:text-ink"
                 >
                   <ArrowLeft className="h-4 w-4" />

@@ -7,8 +7,18 @@
   ],
   "redirects": [
     {
+      "source": "/digital-marketing-for-dietary-products",
+      "destination": "/digital-marketing-agency-for-dietary-products-in-india",
+      "permanent": true
+    },
+    {
       "source": "/ppc-management-services",
       "destination": "/ppc-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/seo-agency",
+      "destination": "/search-engine-optimization",
       "permanent": true
     },
     {
@@ -22,23 +32,48 @@
       "permanent": true
     },
     {
-      "source": "/seo-agency",
-      "destination": "/search-engine-optimization",
-      "permanent": true
-    },
-    {
       "source": "/digital-marketing-agency-for-multi-specialty-hospitals",
       "destination": "/digital-marketing-agency-for-hospital",
       "permanent": true
     },
     {
+      "source": "/resources/case-study",
+      "destination": "/case-study",
+      "permanent": true
+    },
+    {
+      "source": "/resources/case-study/:slug",
+      "destination": "/case-study/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/resources/blogs",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/resources/blogs/:slug",
+      "destination": "/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/google-ads",
+      "destination": "/healthcare-google-ads",
+      "permanent": true
+    },
+    {
       "source": "/what-we-do/google-ads",
-      "destination": "/google-ads",
+      "destination": "/healthcare-google-ads",
+      "permanent": true
+    },
+    {
+      "source": "/meta-ads",
+      "destination": "/healthcare-meta-ads",
       "permanent": true
     },
     {
       "source": "/what-we-do/meta-ads",
-      "destination": "/meta-ads",
+      "destination": "/healthcare-meta-ads",
       "permanent": true
     },
     {
@@ -47,18 +82,33 @@
       "permanent": true
     },
     {
+      "source": "/seo",
+      "destination": "/healthcare-seo",
+      "permanent": true
+    },
+    {
       "source": "/what-we-do/seo",
-      "destination": "/seo",
+      "destination": "/healthcare-seo",
+      "permanent": true
+    },
+    {
+      "source": "/aeo",
+      "destination": "/healthcare-aeo-services",
       "permanent": true
     },
     {
       "source": "/what-we-do/aeo",
-      "destination": "/aeo",
+      "destination": "/healthcare-aeo-services",
+      "permanent": true
+    },
+    {
+      "source": "/geo",
+      "destination": "/healthcare-geo-services",
       "permanent": true
     },
     {
       "source": "/what-we-do/geo",
-      "destination": "/geo",
+      "destination": "/healthcare-geo-services",
       "permanent": true
     },
     {
@@ -67,8 +117,13 @@
       "permanent": true
     },
     {
+      "source": "/local-seo",
+      "destination": "/local-seo-agency",
+      "permanent": true
+    },
+    {
       "source": "/what-we-do/local-seo",
-      "destination": "/local-seo",
+      "destination": "/local-seo-agency",
       "permanent": true
     },
     {
@@ -77,8 +132,13 @@
       "permanent": true
     },
     {
+      "source": "/social-media-management",
+      "destination": "/healthcare-social-media",
+      "permanent": true
+    },
+    {
       "source": "/what-we-do/social-media-management",
-      "destination": "/social-media-management",
+      "destination": "/healthcare-social-media",
       "permanent": true
     },
     {
@@ -118,12 +178,12 @@
     },
     {
       "source": "/aeo-geo",
-      "destination": "/aeo",
+      "destination": "/healthcare-aeo-services",
       "permanent": true
     },
     {
       "source": "/what-we-do/aeo-geo",
-      "destination": "/aeo",
+      "destination": "/healthcare-aeo-services",
       "permanent": true
     },
     {
@@ -207,8 +267,13 @@
       "permanent": true
     },
     {
+      "source": "/our-story",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
       "source": "/about/our-story",
-      "destination": "/our-story",
+      "destination": "/about-us",
       "permanent": true
     },
     {
@@ -218,32 +283,27 @@
     },
     {
       "source": "/life-at-rd",
-      "destination": "/our-story",
+      "destination": "/about-us",
       "permanent": true
     },
     {
       "source": "/about/life-at-rd",
-      "destination": "/our-story",
+      "destination": "/about-us",
       "permanent": true
     },
     {
       "source": "/founders-message",
-      "destination": "/our-story",
+      "destination": "/about-us",
       "permanent": true
     },
     {
       "source": "/about/founders-message",
-      "destination": "/our-story",
-      "permanent": true
-    },
-    {
-      "source": "/research-reports",
-      "destination": "/resources/blogs",
+      "destination": "/about-us",
       "permanent": true
     },
     {
       "source": "/resources/research-reports",
-      "destination": "/resources/blogs",
+      "destination": "/blog",
       "permanent": true
     }
   ]

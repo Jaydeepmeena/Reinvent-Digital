@@ -19,7 +19,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Circle } from "lucide-react";
 import { buildRedirects } from "./renameRules";
-import { identityOf, pathOf } from "./pagePaths";
+import { identityOf, urlOf } from "./pagePaths";
 import { mergeContent } from "./contentRules";
 
 // Icons are bundled React components, not JSON, so an entry the CMS publishes on
@@ -107,7 +107,7 @@ export function resolveCollection(collection, bundled = [], remote = new Map()) 
     const placed = {
       ...merged,
       id,
-      path: pathOf(collection, merged.slug),
+      path: urlOf(collection, merged.slug),
       icon: typeof merged.icon === "function" ? merged.icon : FALLBACK_ICON,
     };
     byId.set(id, placed);

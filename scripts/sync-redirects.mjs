@@ -112,6 +112,15 @@ for (const { path, collection, id, why } of conflicts) {
 
 const rules = redirects.map(({ from, to }) => ({ source: from, destination: to, permanent: true }));
 
+// The blog and case-study hubs moved, and every post under them with them.
+const { PREVIOUS_HUBS } = await import("../src/data/routes.js");
+for (const [from, to] of Object.entries(PREVIOUS_HUBS)) {
+  rules.unshift(
+    { source: from, destination: to, permanent: true },
+    { source: `${from}/:slug`, destination: `${to}/:slug`, permanent: true }
+  );
+}
+
 // Landing pages sit at the root and are not in the page collections, so a
 // renamed one names its old slug in `replaces` and is redirected from here.
 const { SAMPLE_LANDING_PAGES } = await import("../src/data/sampleLandingPages.js");

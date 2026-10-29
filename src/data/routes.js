@@ -24,21 +24,55 @@ export const PREVIOUS_FOLDERS = {
   resources: ["resources"],
 };
 
+// Where the blog and the case studies live. They moved out of /resources/, and
+// the old hubs, posts included, redirect here (see PREVIOUS_HUBS).
+export const BLOG_PATH = "/blog";
+export const CASE_STUDY_PATH = "/case-study";
+export const PREVIOUS_HUBS = {
+  "/resources/blogs": BLOG_PATH,
+  "/resources/case-study": CASE_STUDY_PATH,
+};
+
+// Pages served at a URL other than their slug. Keyed by collection, from the
+// page's slug to the path it is served at. The slug stays the page's identity,
+// so its CMS entry, icon and hero still match it; only the URL changes, and the
+// slug's own URL redirects. A value with a "/" is a path written in full.
+export const PAGE_URLS = {
+  services: {
+    "google-ads": "healthcare-google-ads",
+    "meta-ads": "healthcare-meta-ads",
+    seo: "healthcare-seo",
+    aeo: "healthcare-aeo-services",
+    geo: "healthcare-geo-services",
+    "local-seo": "local-seo-agency",
+    "social-media-management": "healthcare-social-media",
+  },
+  about: {
+    "our-story": "about-us",
+  },
+  // The menu entries for the two hubs.
+  resources: {
+    blogs: BLOG_PATH,
+    "case-study": CASE_STUDY_PATH,
+  },
+};
+
 // Paths that belong to something other than these collections, and that a page
 // may not take.
 //
-// The blog and the case studies live under /resources/ and are indexed there.
-// They are their own CMS-backed sections, and the resources collection carries
-// an entry for each so they appear in the menus — which is why these two paths
-// are claimed rather than free: the menu entry points at the hub, and the hub
-// is what answers.
+// The blog and the case studies are their own CMS-backed sections, and the
+// resources collection carries an entry for each so they appear in the menus —
+// which is why these paths are claimed rather than free: the menu entry points
+// at the hub, and the hub is what answers. Their old paths stay claimed too, so
+// no page can take a URL that redirects.
 export const RESERVED_PATHS = [
   "/",
   "/contact",
-  "/resources/blogs",
-  "/resources/blogs/*",
-  "/resources/case-study",
-  "/resources/case-study/*",
+  BLOG_PATH,
+  `${BLOG_PATH}/*`,
+  CASE_STUDY_PATH,
+  `${CASE_STUDY_PATH}/*`,
+  ...Object.keys(PREVIOUS_HUBS).flatMap((path) => [path, `${path}/*`]),
 ];
 
 // Pages the site has already moved once, by hand, before the CMS owned this.
@@ -62,6 +96,6 @@ export const RETIRED_PAGES = {
   // begins with "/" is an absolute path, since the blog is not an ordinary
   // resources entry.
   resources: {
-    "research-reports": "/resources/blogs",
+    "research-reports": BLOG_PATH,
   },
 };
