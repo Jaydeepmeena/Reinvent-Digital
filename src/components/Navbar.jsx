@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Menu, X, ArrowUpRight, ChevronDown, MapPin } from "lucide-react";
-import logo from "../assets/rd-logo.png";
+// The logo cropped to its edges, so its height is the mark's height.
+import logo from "../assets/rd-logo-nav.png";
 import { SERVICES } from "../data/services";
 import { LOCATIONS } from "../data/locations";
 import { INDUSTRIES } from "../data/industries";
@@ -192,7 +193,7 @@ export default function Navbar() {
               src={logo}
               alt="Reinvent Digital logo"
               title="Reinvent Digital"
-              className="h-14 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-[1.04] sm:h-12"
+              className="h-11 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-[1.04] sm:h-12"
             />
           </Link>
 
