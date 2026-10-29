@@ -16,7 +16,7 @@ import { buildPageRoutes, identityOf, COLLECTIONS, pathOf } from "../../src/lib/
 import { buildRedirects } from "../../src/lib/renameRules.js";
 import { mergeContent } from "../../src/lib/contentRules.js";
 import { SAMPLE_LANDING_PAGES } from "../../src/data/sampleLandingPages.js";
-import { BLOG_PATH, CASE_STUDY_PATH } from "../../src/data/routes.js";
+import { BLOG_PATH, CASE_STUDY_PATH, RETIRED_PAGES } from "../../src/data/routes.js";
 import { seoMetaFor } from "../../src/data/seoMeta.js";
 
 export const CMS_BASE = (process.env.CMS_BASE ?? process.env.VITE_BLOG_API_URL ?? "").replace(/\/+$/, "");
@@ -228,7 +228,8 @@ export async function loadSite() {
     return {
       title,
       items: pages
-        .filter((page) => page.collection === collection)
+        // A retired page redirects elsewhere even while the CMS still has it.
+        .filter((page) => page.collection === collection && !RETIRED_PAGES[collection]?.[page.id])
         .map((page) => item(page.path, entries.get(page.id), page.id)),
     };
   };
