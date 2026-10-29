@@ -1434,9 +1434,10 @@ export const SAMPLE_LANDING_PAGES = [
   },
 
   // A service landing page: Programmatic SEO, in the industry-page layout.
-  // Lives at /programmatic-seo-agency.
+  // Lives at /programmatic-seo-services (was /programmatic-seo-agency).
   {
-    slug: "programmatic-seo-agency",
+    slug: "programmatic-seo-services",
+    replaces: "programmatic-seo-agency",
     design: "industry",
     title: "Programmatic SEO Agency in India",
     seo: {
