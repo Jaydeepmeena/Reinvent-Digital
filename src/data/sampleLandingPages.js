@@ -10,9 +10,9 @@ export const SAMPLE_LANDING_PAGES = [
     replaces: "digital-marketing-agency-for-multi-specialty-hospitals",
     title: "Digital Marketing Agency for Multi-Specialty Hospitals",
     seo: {
-      title: "Digital Marketing Agency for Multi-Specialty Hospitals | Reinvent Digital",
+      title: "Hospital Digital Marketing Agency India | Reinvent Digital",
       description:
-        "Patient acquisition for multi-specialty hospitals: demand across Google, Meta and Maps, a call centre that answers, and CRM proof of which department each admission came from.",
+        "Grow hospital visibility, patient enquiries, and appointments with SEO, PPC, social media, and healthcare marketing from Reinvent Digital.",
       noindex: false,
     },
     hero: {
@@ -105,7 +105,7 @@ export const SAMPLE_LANDING_PAGES = [
     seo: {
       title: "Google Ads for Dental Clinics | Reinvent Digital",
       description:
-        "Google Ads built for dental clinics: treatment-level campaigns, call tracking on every number, and cost reported per booked chair, not per click.",
+        "Generate more patient enquiries with Google Ads for dental clinics. Reach high-intent patients, improve campaign performance, and grow your dental practice.",
       noindex: false,
     },
     hero: {
@@ -196,9 +196,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-mumbai",
     title: "Digital Marketing Company in Mumbai for Clinics",
     seo: {
-      title: "Digital Marketing Company in Mumbai for Clinics | Reinvent Digital",
+      title: "Best Digital Marketing Company & Agency in Mumbai",
       description:
-        "A digital marketing company in Mumbai for clinics and hospitals, from Colaba to Mulund. Google Ads, SEO and Google Maps, measured on walk-ins, not clicks.",
+        "Achieve online success with the best digital marketing company in Mumbai. Expert SEO, PPC, social media, and branding solutions for business growth.",
       noindex: false,
     },
     hero: {
@@ -320,9 +320,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-calicut",
     title: "Digital Marketing Company in Calicut for Clinics",
     seo: {
-      title: "Digital Marketing Company in Calicut for Clinics | Reinvent Digital",
+      title: "Digital Marketing Company & Agency in Calicut",
       description:
-        "A digital marketing company in Calicut for clinics and hospitals, from Mavoor Road to Feroke. Every campaign is measured on the walk-ins it brings.",
+        "Drive business growth with a top digital marketing company in Calicut. Expert SEO, PPC, and social media services to elevate your online presence.",
       noindex: false,
     },
     hero: {
@@ -425,9 +425,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-kochi",
     title: "Digital Marketing Company in Kochi for Clinics",
     seo: {
-      title: "Digital Marketing Company in Kochi for Clinics | Reinvent Digital",
+      title: "Best Digital Marketing Agency & Company in Kochi",
       description:
-        "A digital marketing company in Kochi for clinics and hospitals, from Edappally to Tripunithura. We track every channel to the walk-ins it brings.",
+        "Boost your brand with the best digital marketing company in Kochi. SEO, social media, PPC & more—tailored strategies to grow your business online.",
       noindex: false,
     },
     hero: {
@@ -530,9 +530,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-chennai",
     title: "Digital Marketing Company in Chennai for Clinics",
     seo: {
-      title: "Digital Marketing Company in Chennai for Clinics | Reinvent Digital",
+      title: "Best Digital Marketing Company & Agency in Chennai",
       description:
-        "A digital marketing company in Chennai for clinics and hospitals, from Anna Nagar to OMR. Every channel is reported on the walk-ins it brings.",
+        "Boost your business with Chennai's best digital marketing company. Expert SEO, PPC, and social media strategies to enhance your online presence.",
       noindex: false,
     },
     hero: {
@@ -635,9 +635,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-bangalore",
     title: "Digital Marketing Company in Bangalore for Clinics",
     seo: {
-      title: "Digital Marketing Company in Bangalore for Clinics | Reinvent Digital",
+      title: "Best Digital Marketing Agency & Company in Bangalore",
       description:
-        "A digital marketing company in Bangalore for clinics and hospitals, from Whitefield to Jayanagar. We measure every channel on the walk-ins it brings.",
+        "Discover top digital marketing agencies in Bangalore offering SEO, PPC, social media, and web design services to boost your brand's online presence",
       noindex: false,
     },
     hero: {
@@ -739,9 +739,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-thiruvananthapuram",
     title: "Digital Marketing Company in Thiruvananthapuram",
     seo: {
-      title: "Digital Marketing Company in Thiruvananthapuram | Reinvent Digital",
+      title: "Digital Marketing Company & Agency in Thiruvananthapuram",
       description:
-        "A digital marketing company in Thiruvananthapuram for clinics and hospitals, from Pattom to Kazhakoottam. Every channel is measured on walk-ins.",
+        "Partner with the leading digital marketing company in Thiruvananthapuram. SEO, PPC, social media & web solutions to grow your brand and boost ROI.",
       noindex: false,
     },
     hero: {
@@ -843,9 +843,9 @@ export const SAMPLE_LANDING_PAGES = [
     slug: "digital-marketing-company-in-dubai",
     title: "Digital Marketing Company in Dubai",
     seo: {
-      title: "Digital Marketing Company in Dubai for Clinics | Reinvent Digital",
+      title: "Best Digital Marketing Company & Agency in Dubai",
       description:
-        "A digital marketing company in Dubai for clinics and hospitals, from Deira to Dubai Marina. Every campaign follows DHA rules and is measured on patient visits.",
+        "Elevate your brand with the best digital marketing company in Dubai. Get top-notch SEO, PPC, social media, and web solutions for impactful online growth.",
       noindex: false,
     },
     hero: {
@@ -949,9 +949,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "Digital Marketing Agency for Pharmaceutical Industry",
     seo: {
-      title: "Digital Marketing Agency for Pharmaceutical Industry | Reinvent Digital",
+      title: "Digital Marketing Agency for Pharma Industry | Reinvent Digital",
       description:
-        "Compliant Google Ads, Google Maps and SEO for pharmacy chains and consumer health brands. Every enquiry tracked to an order or store visit.",
+        "Grow your pharmaceutical brand with digital marketing services, including healthcare SEO, Google Ads, content marketing, and targeted campaigns to boost brand visibility and engagement.",
       noindex: false,
     },
     hero: {
@@ -1036,9 +1036,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "Digital Marketing for Dentists & Dental Clinics",
     seo: {
-      title: "Digital Marketing for Dentists & Dental Clinics | Reinvent Digital",
+      title: "Best Digital Marketing Agency for Dentist in India | Reinvent Digital",
       description:
-        "A digital marketing agency for dental clinics: Google Ads, Google Maps, SEO and compliant dentist profiles, with every enquiry tracked to the patient in the chair.",
+        "Reinvent Digital is a leading digital marketing agency for dental clinics, using AI SEO, AEO and GEO to boost online visibility, patient leads and growth.",
       noindex: false,
     },
     hero: {
@@ -1123,9 +1123,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "AEO Services in India",
     seo: {
-      title: "AEO Services in India | Reinvent Digital",
+      title: "AEO Services in India | AEO Company in India",
       description:
-        "Answer Engine Optimisation that structures your content for Featured Snippets, People Also Ask, voice search and AI Overviews, so buyers find you first.",
+        "Boost your online visibility with AEO services in India by Reinvent Digital. Leading AEO company helping brands rank in AI-powered search results.",
       noindex: false,
     },
     hero: {
@@ -1202,9 +1202,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "GEO Services in India",
     seo: {
-      title: "GEO Services in India | Reinvent Digital",
+      title: "GEO Services in India | GEO Agency in India",
       description:
-        "Generative Engine Optimisation that helps ChatGPT, Gemini, Perplexity and Google AI Overviews understand, trust and recommend your brand.",
+        "Enhance your brand’s visibility with GEO services in India by Reinvent Digital. Trusted GEO agency helping businesses rank in generative search results.",
       noindex: false,
     },
     hero: {
@@ -1282,9 +1282,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "Social Media Marketing Agency in India",
     seo: {
-      title: "Social Media Marketing Agency in India | Reinvent Digital",
+      title: "#1 Best Social Media Agency in India - Reinvent Digital",
       description:
-        "A social media marketing agency in India that plans, creates and manages content to help people find, trust and contact your brand, tracked to enquiries.",
+        "Reinvent Digital is the Best Social Media Marketing Company in Delhi. We Offer Affordable Facebook/Instagram Promotions and Marketing Packages in Delhi.",
       noindex: false,
     },
     hero: {
@@ -1361,9 +1361,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "Website Development Company in India",
     seo: {
-      title: "Website Development Company in India | Reinvent Digital",
+      title: "Digital Marketing Agency for Website Design & Development",
       description:
-        "A website development company in India building fast, mobile-first websites that rank, load quickly and turn visitors into enquiries.",
+        "Hire best digital marketing agency for website design & development, we are leading digital marketing service providers for design development, Consult now.",
       noindex: false,
     },
     hero: {
@@ -1441,9 +1441,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "Programmatic SEO Agency in India",
     seo: {
-      title: "Programmatic SEO Agency in India | Reinvent Digital",
+      title: "Programmatic SEO Services | Scale Organic Traffic & Rankings",
       description:
-        "A programmatic SEO agency in India that builds hundreds of useful, search-ready pages from structured data, so you rank for more of the variations buyers search.",
+        "Drive scalable organic growth with programmatic SEO services. Create optimized pages at scale, target long-tail keywords, and increase search visibility, traffic, and conversions.",
       noindex: false,
     },
     hero: {
@@ -1521,9 +1521,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "SEO Agency in India",
     seo: {
-      title: "SEO Agency in India | Reinvent Digital",
+      title: "SEO Agency in India | SEO Company in India",
       description:
-        "An SEO agency in India that fixes technical issues, builds content matched to search intent and tracks rankings to the enquiries they bring.",
+        "Reinvent Digital delivers SEO services in India to grow rankings, qualified organic traffic, enquiries and sales for ambitious brands.",
       noindex: false,
     },
     hero: {
@@ -1601,9 +1601,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "PPC Management Services in India",
     seo: {
-      title: "PPC Management Services in India | Reinvent Digital",
+      title: "PPC Agency in India | PPC Services in India",
       description:
-        "A PPC agency in India that plans, builds and manages Google Ads and Meta campaigns to bring qualified enquiries, not just clicks, with every rupee tracked.",
+        "Result-oriented PPC company in Delhi, India, Our PPC experts design effective PPC services campaign focused on conversions, right here in Delhi.",
       noindex: false,
     },
     hero: {
@@ -1683,9 +1683,9 @@ export const SAMPLE_LANDING_PAGES = [
     design: "industry",
     title: "Digital Marketing for Dietary Products in India",
     seo: {
-      title: "Digital Marketing for Dietary Products in India | Reinvent Digital",
+      title: "Digital Marketing Services For Nutrition & Dietary Brands",
       description:
-        "Compliant Google Ads and Meta campaigns, marketplace listings and SEO, AEO and GEO content for supplement and nutrition brands, tracked to orders and reorders.",
+        "Get your dietary products noticed with a leading digital marketing agency. From SEO to social media, we'll help you grow your brand and drive sales.",
       noindex: false,
     },
     hero: {

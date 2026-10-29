@@ -17,6 +17,7 @@ import { buildRedirects } from "../../src/lib/renameRules.js";
 import { mergeContent } from "../../src/lib/contentRules.js";
 import { SAMPLE_LANDING_PAGES } from "../../src/data/sampleLandingPages.js";
 import { BLOG_PATH, CASE_STUDY_PATH } from "../../src/data/routes.js";
+import { seoMetaFor } from "../../src/data/seoMeta.js";
 
 export const CMS_BASE = (process.env.CMS_BASE ?? process.env.VITE_BLOG_API_URL ?? "").replace(/\/+$/, "");
 
@@ -214,10 +215,11 @@ export async function loadSite() {
   const byId = (collection) =>
     new Map((collections[collection]?.entries ?? []).map((entry) => [identityOf(entry.slug), entry]));
 
+  // The SEO sheet's title and description win wherever it lists the page.
   const item = (path, entry, id) => ({
     path,
-    title: titleOf(entry, id),
-    description: descriptionOf(entry),
+    title: seoMetaFor(path)?.title ?? titleOf(entry, id),
+    description: seoMetaFor(path)?.description ?? descriptionOf(entry),
     lastmod: dateOf(entry),
   });
 
