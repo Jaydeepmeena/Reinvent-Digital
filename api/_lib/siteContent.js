@@ -136,7 +136,7 @@ export async function loadPageCollections() {
       const add = (base, patch) => {
         const merged = patch ? mergeContent(base ?? {}, patch) : base;
         const id = identityOf(merged?.slug);
-        if (!id || seen.has(id)) return;
+        if (!id || seen.has(id) || RETIRED_PAGES[collection]?.[id]) return;
         seen.add(id);
         entries.push(merged);
       };
@@ -227,8 +227,7 @@ export async function loadSite() {
     return {
       title,
       items: pages
-        // A retired page redirects elsewhere even while the CMS still has it.
-        .filter((page) => page.collection === collection && !RETIRED_PAGES[collection]?.[page.id])
+        .filter((page) => page.collection === collection)
         .map((page) => item(page.path, entries.get(page.id), page.id)),
     };
   };

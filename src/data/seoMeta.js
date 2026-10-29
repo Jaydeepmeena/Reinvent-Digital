@@ -140,11 +140,6 @@ export const SEO_META = {
     description:
       "Stay tuned with the latest blogs of Digital Marketing industry at Reinvent Digital. Contact the best Digital Marketing agency in Delhi, India now!",
   },
-  "/research-reports": {
-    title: "Market Research Reports & Insights | Reinvent Digital",
-    description:
-      "Explore market research reports, consumer insights, industry trends, and data-driven findings to understand markets, identify opportunities, and make informed business decisions.",
-  },
   "/jaipur": {
     title: "Healthcare Digital Marketing Agency in Jaipur | Reinvent Digital",
     description:
