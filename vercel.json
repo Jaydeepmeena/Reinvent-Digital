@@ -24,6 +24,11 @@
   ],
   "redirects": [
     {
+      "source": "/social-media-marketing-agency",
+      "destination": "/social-media-marketing",
+      "permanent": true
+    },
+    {
       "source": "/seo-agency",
       "destination": "/search-engine-optimization",
       "permanent": true
