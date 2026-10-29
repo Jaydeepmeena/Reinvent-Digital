@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import LeadFormModal from "./fx/LeadFormModal";
+import { SheetMeta } from "../lib/head";
 
 const NAV_OFFSET = -88;
 const SITE_EXPIRATION_DATE = new Date("2027-02-01T00:00:00");
@@ -109,6 +110,7 @@ export default function Layout() {
     <div className="relative min-h-screen bg-cream text-ink">
       <ScrollProgress />
       <ScrollManager />
+      <SheetMeta />
       <Navbar />
       <main>
         <Suspense fallback={<div className="min-h-screen" />}>

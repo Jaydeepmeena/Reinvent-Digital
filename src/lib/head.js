@@ -4,6 +4,8 @@
 // set the tags themselves. Everything written here is removed on unmount, so a
 // landing page's canonical or noindex never leaks onto the page after it.
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { seoMetaFor } from "../data/seoMeta";
 
 const SITE = "Reinvent Digital";
 
@@ -15,13 +17,20 @@ function tag(selector, create) {
   return { el, owned: true };
 }
 
-export function useDocumentHead({ title, description, canonical, noindex = false, jsonLd } = {}) {
+export function useDocumentHead({ title: ownTitle, description: ownDescription, canonical, noindex = false, jsonLd } = {}) {
+  // The SEO sheet decides the title and description of every page it lists,
+  // and its titles are used as written, brand suffix or not.
+  const sheet = seoMetaFor(useLocation().pathname);
+  const title = sheet?.title ?? ownTitle;
+  const description = sheet?.description ?? ownDescription;
+  const exact = Boolean(sheet?.title);
+
   useEffect(() => {
     const previousTitle = document.title;
     const added = [];
     const restored = [];
 
-    if (title) document.title = title.includes(SITE) ? title : `${title} | ${SITE}`;
+    if (title) document.title = exact || title.includes(SITE) ? title : `${title} | ${SITE}`;
 
     const setMeta = (attr, name, content) => {
       if (!content) return;
@@ -69,5 +78,14 @@ export function useDocumentHead({ title, description, canonical, noindex = false
       );
       script?.remove();
     };
-  }, [title, description, canonical, noindex, jsonLd]);
+  }, [title, description, exact, canonical, noindex, jsonLd]);
+}
+
+/**
+ * The sheet's title and description for whatever page is showing. Mounted once
+ * in the layout, so pages that set no head of their own still get theirs.
+ */
+export function SheetMeta() {
+  useDocumentHead();
+  return null;
 }
