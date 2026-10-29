@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import { gsap, MOTION_OK, SplitText, useGSAP } from "./gsap";
+import { splitKey } from "./splitKey";
 
 export default function ScrubText({ as: Tag = "p", dim = 0.16, className, children }) {
   const ref = useRef(null);
+  const key = splitKey(children);
 
   useGSAP(
     () => {
@@ -27,11 +29,11 @@ export default function ScrubText({ as: Tag = "p", dim = 0.16, className, childr
         return () => split.revert();
       });
     },
-    { scope: ref }
+    { scope: ref, dependencies: [key], revertOnUpdate: true }
   );
 
   return (
-    <Tag ref={ref} className={className}>
+    <Tag key={key} ref={ref} className={className}>
       {children}
     </Tag>
   );
