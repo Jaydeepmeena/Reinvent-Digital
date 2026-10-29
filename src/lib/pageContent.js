@@ -22,7 +22,7 @@ import { buildRedirects } from "./renameRules";
 import { identityOf, urlOf } from "./pagePaths";
 import { mergeContent } from "./contentRules";
 import { PAGE_ICONS } from "../data/pageIcons";
-import { SHIPPED_PAGES } from "../data/routes.js";
+import { RETIRED_PAGES, SHIPPED_PAGES } from "../data/routes.js";
 
 // Icons are bundled React components, not JSON, so an entry the CMS publishes on
 // its own carries none. The menus and cards render the icon unconditionally, so
@@ -116,7 +116,9 @@ export function resolveCollection(collection, bundled = [], remote = new Map()) 
   const add = (base, patch) => {
     const merged = patch ? mergeContent(base ?? {}, patch) : base;
     const id = identityOf(merged?.slug);
-    if (!id || byId.has(id)) return;
+    // A retired page stays retired even while the CMS still has it: no menu
+    // entry and no route, so its URL redirects.
+    if (!id || byId.has(id) || RETIRED_PAGES[collection]?.[id]) return;
     // Every entry carries where it lives, worked out once, so nothing has to
     // assemble a URL from a prefix and a slug ever again.
     const placed = {

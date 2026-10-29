@@ -319,6 +319,11 @@
       "permanent": true
     },
     {
+      "source": "/research-reports",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
       "source": "/resources/research-reports",
       "destination": "/blog",
       "permanent": true
