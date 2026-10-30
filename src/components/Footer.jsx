@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, Briefcase, MapPin } from "lucide-react";
-import logo from "../assets/rd-logo.png";
+// The logo cropped to its edges, so its height is the mark's height.
+import logo from "../assets/rd-logo-nav.png";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
 import { ABOUT_PAGES } from "../data/about";
@@ -95,7 +96,7 @@ export default function Footer() {
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_0.8fr]">
           <div>
             <Link to="/" className="inline-block">
-              <img src={logo} alt="Reinvent Digital logo" title="Reinvent Digital" className="h-12 w-auto brightness-0 invert" />
+              <img src={logo} alt="Reinvent Digital logo" title="Reinvent Digital" className="h-14 w-auto brightness-0 invert sm:h-16" />
             </Link>
             <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-cream/55">
               Patient acquisition systems for healthcare groups: marketing, CRM and call centre on
