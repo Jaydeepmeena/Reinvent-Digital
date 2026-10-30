@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Menu, X, ArrowUpRight, ChevronDown, MapPin } from "lucide-react";
 // The logo cropped to its edges, so its height is the mark's height.
-import logo from "../assets/rd-logo-nav.png";
+import logo from "../assets/rd-logo-nav.webp";
 import { SERVICES } from "../data/services";
 import { LOCATIONS } from "../data/locations";
 import { INDUSTRIES } from "../data/industries";
