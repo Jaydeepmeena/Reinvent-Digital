@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, Briefcase, MapPin } from "lucide-react";
 // The logo cropped to its edges, so its height is the mark's height.
-import logo from "../assets/rd-logo-nav.png";
+import logo from "../assets/rd-logo-nav.webp";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
 import { ABOUT_PAGES } from "../data/about";
